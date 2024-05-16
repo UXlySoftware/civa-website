@@ -31,6 +31,7 @@ const SecondSection = () => {
 
 const styles = {
   container: {
+    border: "1px solid red",
     display: { xs: "none", md: "block" },
     textAlign: "center",
     marginTop: 9,

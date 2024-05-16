@@ -1,8 +1,10 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import DragHandleIcon from "@mui/icons-material/DragHandle";
 import Government from "../assets/Government.svg";
 import Community from "../assets/Community.svg";
+import eclipse from "../assets/eclipse.png";
 
 const Platform = ({ text, imgSrc, altText, customStyles = {} }) => (
   <Box sx={{ ...styles.platform, ...customStyles }}>
@@ -16,6 +18,9 @@ const Platform = ({ text, imgSrc, altText, customStyles = {} }) => (
 );
 
 const FourthSection = () => {
+  const secondLayerColors = ["#74ADC7", "#A4ACB1"];
+  const thirdLayerColors = ["#BFD9E5", "#D5D9DB"];
+
   return (
     <Container
       sx={{
@@ -29,14 +34,14 @@ const FourthSection = () => {
       </Typography>
       <Box sx={styles.divider} />
       <Box sx={styles.platformSection}>
-        <Box sx={{ ...styles.platform, gap: 7 }}>
+        <Box sx={{ ...styles.platform, gap: 7, background: "#2E86AB" }}>
           <Typography variant="body1" sx={styles.platformText}>
             EXISTING GOVERNMENT
             <br /> ENGAGEMENT PLATFORMS
           </Typography>
           <img src={Government} alt="Government Icon" style={styles.icon} />
         </Box>
-        <Box sx={{ ...styles.platform, gap: 7 }}>
+        <Box sx={{ ...styles.platform, gap: 7, background: "#76848A" }}>
           <img src={Community} alt="Community Icon" style={styles.icon} />
           <Typography variant="body1" sx={styles.platformText}>
             EXISTING COMMUNITY <br />
@@ -48,36 +53,50 @@ const FourthSection = () => {
         </Box>
       </Box>
 
-      {/* Second Layer */}
-      <Box sx={styles.shortenedPlatformSection}>
-        {["#74ADC7", "#A4ACB1"].map((bgColor, index) => (
-          <Platform
-            key={index}
-            customStyles={{
-              ...styles.shortenedPlatform,
-              backgroundColor: bgColor,
-            }}
-            text={undefined}
-            imgSrc={undefined}
-            altText={undefined}
-          />
-        ))}
-      </Box>
+      <Box sx={styles.backgroundSection}>
+        <Box sx={styles.dragHandleSignContainer}>
+          <DragHandleIcon sx={styles.DragHandleIcon} />
+        </Box>
 
-      {/* Third Layer */}
-      <Box sx={styles.shortestPlatformSection}>
-        {["#BFD9E5", "#D5D9DB"].map((bgColor, index) => (
-          <Platform
-            key={index}
-            customStyles={{
-              ...styles.shortenedPlatform,
-              backgroundColor: bgColor,
-            }}
-            text={undefined}
-            imgSrc={undefined}
-            altText={undefined}
-          />
-        ))}
+        <Box sx={styles.shortenedPlatformSection}>
+          {secondLayerColors.map((bgColor, index) => (
+            <Platform
+              key={index}
+              customStyles={{
+                ...styles.shortenedPlatform,
+                backgroundColor: bgColor,
+              }}
+              text={undefined}
+              imgSrc={undefined}
+              altText={undefined}
+            />
+          ))}
+        </Box>
+
+        <Box sx={styles.shortestPlatformSection}>
+          {thirdLayerColors.map((bgColor, index) => (
+            <Platform
+              key={index}
+              customStyles={{
+                ...styles.shortenedPlatform,
+                backgroundColor: bgColor,
+              }}
+              text={undefined}
+              imgSrc={undefined}
+              altText={undefined}
+            />
+          ))}
+        </Box>
+
+        <Box
+          sx={{
+            marginTop: { xl: 10, xs: 15 },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <img src={eclipse} alt="Eclipse" />
+        </Box>
       </Box>
     </Container>
   );
@@ -103,23 +122,26 @@ const styles = {
     width: "100%",
     position: "relative",
   },
+  backgroundSection: {
+    width: "100%",
+    minHeight: "50vh",
+    background: "#374957",
+  },
   shortenedPlatformSection: {
-    display: { xs: "none", sm: "flex" },
     alignItems: "center",
     gap: "25%",
-    border: "1px solid red",
     maxWidth: "100%",
     width: "100%",
     position: "relative",
+    display: { xs: "none", sm: "flex" },
   },
   shortestPlatformSection: {
-    display: { xs: "none", sm: "flex" },
     alignItems: "center",
     gap: "55%",
-    border: "1px solid red",
     maxWidth: "100%",
     width: "100%",
     position: "relative",
+    display: { xs: "none", sm: "flex" },
   },
   platform: {
     flex: 1,
@@ -131,11 +153,7 @@ const styles = {
     padding: "20px",
     height: { xl: "90px", lg: "90px", xs: "100px" },
     maxHeight: "10%",
-    backgroundColor: "#2E86AB",
     color: "#fff",
-    ":nth-of-type(2)": {
-      backgroundColor: "#76848A",
-    },
   },
   shortenedPlatform: {
     height: "50px",
@@ -169,10 +187,42 @@ const styles = {
     "@media (max-width: 900px)": {
       left: "44%",
     },
+    "@media (max-width: 600px)": {
+      left: "40%",
+      top: "40%",
+    },
+  },
+  dragHandleSignContainer: {
+    position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FFC000",
+    width: { xs: "50px", sm: "79px", md: "130px" },
+    height: { xs: "50px", sm: "79px", md: "130px" },
+    borderRadius: "50%",
+    left: "46.5%",
+    bottom: "-190%",
+    "@media (max-width: 1900px)": {
+      left: "46%",
+      bottom: "-210%",
+    },
+    "@media (max-width: 1024px)": {
+      left: "45.5%",
+    },
+    "@media (max-width: 900px)": {
+      left: "44%",
+    },
     "@media (max-width: 500px)": {
       left: "42%",
-      top: "42%",
+      top: "268%",
     },
+  },
+  DragHandleIcon: {
+    fontFamily: "Raleway sans-serif",
+    fontWeight: "900",
+    fontSize: { xl: "50px", md: "65px", xs: "35px" },
+    margin: { xl: "40px", lg: "30px", md: "30px", sm: "15px", xs: "8px 6px" },
+    color: "black",
   },
   divider: {
     width: "665px",
@@ -194,7 +244,7 @@ const styles = {
   plusSign: {
     fontFamily: "Raleway sans-serif",
     fontWeight: "900",
-    fontSize: { xl: "50px", xs: "45px" },
+    fontSize: { xl: "50px", lg: "50px", md: "50px", xs: "45px" },
     margin: { sm: "12px 12px", xs: "3px 3px" },
     color: "black",
   },
