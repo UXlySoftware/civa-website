@@ -129,14 +129,14 @@ const styles = {
     },
   },
   listItem: {
-    padding: "6px 12px", // Adjust padding to decrease space between items
+    padding: "6px 12px",
   },
   drawer: {
     "& .MuiDrawer-paper": {
       width: "100vw",
       height: "20vh",
       backgroundColor: "#FFD454",
-      borderBottomLeftRadius: "12px", // Add border radius to the bottom left
+      borderBottomLeftRadius: "12px",
       borderBottomRightRadius: "12px",
       marginTop: 7,
     },

@@ -4,6 +4,17 @@ import AddIcon from "@mui/icons-material/Add";
 import Government from "../assets/Government.svg";
 import Community from "../assets/Community.svg";
 
+const Platform = ({ text, imgSrc, altText, customStyles = {} }) => (
+  <Box sx={{ ...styles.platform, ...customStyles }}>
+    {imgSrc && <img src={imgSrc} alt={altText} style={styles.icon} />}
+    {text && (
+      <Typography variant="body1" sx={styles.platformText}>
+        {text}
+      </Typography>
+    )}
+  </Box>
+);
+
 const FourthSection = () => {
   return (
     <Container
@@ -36,6 +47,38 @@ const FourthSection = () => {
           <AddIcon sx={styles.plusSign} />
         </Box>
       </Box>
+
+      {/* Second Layer */}
+      <Box sx={styles.shortenedPlatformSection}>
+        {["#74ADC7", "#A4ACB1"].map((bgColor, index) => (
+          <Platform
+            key={index}
+            customStyles={{
+              ...styles.shortenedPlatform,
+              backgroundColor: bgColor,
+            }}
+            text={undefined}
+            imgSrc={undefined}
+            altText={undefined}
+          />
+        ))}
+      </Box>
+
+      {/* Third Layer */}
+      <Box sx={styles.shortestPlatformSection}>
+        {["#BFD9E5", "#D5D9DB"].map((bgColor, index) => (
+          <Platform
+            key={index}
+            customStyles={{
+              ...styles.shortenedPlatform,
+              backgroundColor: bgColor,
+            }}
+            text={undefined}
+            imgSrc={undefined}
+            altText={undefined}
+          />
+        ))}
+      </Box>
     </Container>
   );
 };
@@ -60,6 +103,24 @@ const styles = {
     width: "100%",
     position: "relative",
   },
+  shortenedPlatformSection: {
+    display: { xs: "none", sm: "flex" },
+    alignItems: "center",
+    gap: "25%",
+    border: "1px solid red",
+    maxWidth: "100%",
+    width: "100%",
+    position: "relative",
+  },
+  shortestPlatformSection: {
+    display: { xs: "none", sm: "flex" },
+    alignItems: "center",
+    gap: "55%",
+    border: "1px solid red",
+    maxWidth: "100%",
+    width: "100%",
+    position: "relative",
+  },
   platform: {
     flex: 1,
     display: "flex",
@@ -69,12 +130,17 @@ const styles = {
     gap: 10,
     padding: "20px",
     height: { xl: "90px", lg: "90px", xs: "100px" },
-    maxHeight: "100%",
+    maxHeight: "10%",
     backgroundColor: "#2E86AB",
     color: "#fff",
     ":nth-of-type(2)": {
       backgroundColor: "#76848A",
     },
+  },
+  shortenedPlatform: {
+    height: "50px",
+    borderBottomLeftRadius: "8px",
+    borderBottomRightRadius: "8px",
   },
   heading: {
     fontFamily: "Public Sans",
@@ -114,26 +180,6 @@ const styles = {
     height: "16px",
     backgroundColor: "#FFC000",
     marginBottom: { lg: "119px", md: "51px", xs: "45px" },
-  },
-  engagementPlatforms: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: "199px",
-  },
-  equalSignContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#FFC000",
-    width: "60px",
-    height: "60px",
-    borderRadius: "50%",
-    marginTop: "-30px",
-  },
-  equalSign: {
-    fontSize: "24px",
-    color: "#000",
   },
   icon: {
     fontSize: "30px",
