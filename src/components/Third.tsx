@@ -11,13 +11,11 @@ const ThirdSection = () => {
       }}
     >
       <Box sx={styles.vennContainer}>
-        <Box sx={styles.vennWrapper}>
-          <img
-            src={venDiagram}
-            alt="CIVA Venn Diagram"
-            style={styles.vennImage}
-          />
-        </Box>
+        <img
+          src={venDiagram}
+          alt="CIVA Venn Diagram"
+          style={styles.vennImage}
+        />
       </Box>
       <Box sx={styles.textContainer}>
         <Typography variant="h4" sx={styles.heading}>
@@ -42,21 +40,19 @@ const styles = {
     flexDirection: { xs: "column", md: "row-reverse" },
     justifyContent: "space-between",
     alignItems: "center",
-    gap: { xs: 14, sm: 0 }, /// gap ekle
-    marginTop: 19,
+    gap: { xs: 13 },
+    marginTop: { xl: 19, xs: 5 },
     marginBottom: 4,
     marginLeft: { xl: 51, lg: 20 },
-    border: "1px solid black",
   },
   textContainer: {
-    border: "1px solid blue",
     textAlign: "left",
     width: "500px",
     display: "flex",
     flexDirection: "column",
     gap: "32px",
     maxWidth: { xs: "100%", md: "45%" },
-    paddingLeft: { lg: 0, md: 5 },
+    paddingLeft: { lg: 0, md: 5, xs: 3 },
     "&::before": {
       content: '""',
       position: "absolute",
@@ -87,7 +83,7 @@ const styles = {
     marginBottom: 3,
   },
   button: {
-    width: "30%",
+    width: { md: "50%", xs: "100" },
     padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" },
     fontFamily: "Inter",
     fontSize: {
@@ -96,7 +92,7 @@ const styles = {
       md: "clamp(16px, 3vw, 18px)",
       lg: "clamp(18px, 3vw, 22px)",
     },
-    marginLeft: { xs: 4, md: 0 },
+
     fontWeight: 700,
     borderRadius: "12px",
     textTransform: "none",
@@ -105,8 +101,8 @@ const styles = {
   },
   vennContainer: {
     position: "relative",
-    width: { xs: "100%", md: "45%" },
-    height: 350,
+    // width: { xs: "10%", md: "40%" },
+    // height: 350,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -129,23 +125,11 @@ const styles = {
     fontWeight: "bold",
     textAlign: "center",
   },
-  vennWrapper: {
-    position: "absolute",
-    width: 200,
-    height: 200,
-    borderRadius: "50%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    zIndex: 3,
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-  },
+
   vennImage: {
-    maxWidth: "528px",
-    maxHeight: "391px",
+    maxWidth: "100%", // Ensure the image doesn't exceed the container's width
+    height: "auto", // Maintain aspect ratio
+    width: "100%", // Make the image responsive
   },
 };
 

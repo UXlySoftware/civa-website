@@ -33,7 +33,6 @@ const styles = {
   container: {
     display: { xs: "none", md: "block" },
     textAlign: "center",
-    border: "1px solid red",
     marginTop: 9,
     marginBottom: 4,
     marginLeft: { xl: 51, lg: 20 },
