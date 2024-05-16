@@ -3,6 +3,7 @@ import Header from "./components/Header.tsx";
 import Hero from "./components/Hero.tsx";
 import Second from "./components/Second.tsx";
 import ThirdSection from "./components/Third.tsx";
+import Fourth from "./components/Fourth.tsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       {/* Third Section */}
       <ThirdSection />
       {/* How it works section */}
+      <Fourth />
       {/* Partners */}
       {/* Footer */}
     </div>
