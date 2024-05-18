@@ -4,7 +4,6 @@ import Hero from "./components/Hero.tsx";
 import Second from "./components/Second.tsx";
 import ThirdSection from "./components/Third.tsx";
 import Fourth from "./components/Fourth.tsx";
-import Fifth from "./components/Fifth.tsx";
 
 function App() {
   return (
@@ -13,14 +12,12 @@ function App() {
       <Header />
       {/* Hero */}
       <Hero />
-
       {/* Second Section */}
-      {/* <Second /> */}
+      <Second />
       {/* Third Section */}
-      {/* <ThirdSection /> */}
+      <ThirdSection />
       {/* How it works section */}
-      {/* <Fourth /> */}
-
+      <Fourth />
       {/* Partners */}
       {/* Footer */}
     </div>

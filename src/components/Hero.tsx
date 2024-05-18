@@ -8,25 +8,7 @@ const HeroSection = () => {
     <Box sx={styles.heroBox}>
       <Container sx={styles.container}>
         <Box sx={styles.innerBox}>
-          <Box
-            sx={{
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                left: {
-                  xl: "-311px",
-                  lg: "-311px",
-                  md: "-180px",
-                  sm: "-110px",
-                  xs: "-15px",
-                },
-                top: "0px",
-                height: { xl: "478px", lg: "428px", md: "318px", xs: "399px" },
-                width: "16px",
-                backgroundColor: "#FFC000",
-              },
-            }}
-          />
+          <Box sx={styles.sideBorder} />
           <Typography variant="h3" component="h1" sx={styles.mainHeading}>
             CONNECT, EMPOWER, <br /> & TRANSFORM YOUR{" "}
             <span style={{ color: "white" }}>COMMUNITY.</span>
@@ -64,8 +46,8 @@ const styles = {
       xl: "calc(100vh - 64px)",
       lg: "100vh",
       md: "50vh",
-      sm: "35vh",
-      xs: "45vh",
+      sm: "50vh",
+      xs: "75vh",
     },
     margin: "0 auto",
     "@media (min-width: 1024px)": {
@@ -82,10 +64,10 @@ const styles = {
     },
   },
   container: {
-    border: "1px solid blue",
     paddingRight: { xs: 2, md: 3, lg: 14, xl: 20 },
-    paddingTop: { xs: 2, md: 15, lg: 20, xl: 23 },
+    paddingTop: { xs: 10, md: 15, lg: 20, xl: 23 },
     zIndex: 1,
+    height: "65vh",
     position: "relative",
     maxWidth: { xs: "100%", sm: "80%", md: "70%", lg: "60%", xl: "50%" },
   },
@@ -93,24 +75,40 @@ const styles = {
     position: "relative",
     marginTop: { xs: "10px", sm: "100px", md: 0 },
     left: { xl: -25 },
-    // border: "1px solid red",
     width: "100%",
+  },
+  sideBorder: {
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      left: {
+        xl: "-311px",
+        lg: "-311px",
+        md: "-180px",
+        sm: "-110px",
+        xs: "-15px",
+      },
+      top: "0px",
+      height: { xl: "478px", lg: "428px", md: "318px", xs: "399px" },
+      width: "16px",
+      backgroundColor: "#FFC000",
+    },
   },
   mainHeading: {
     letterSpacing: "-0.02em",
     fontWeight: "900",
     color: "#f9a825",
     marginBottom: 0,
-    marginTop: { xs: 7, md: 15, lg: 0, xl: 0 },
+    marginTop: { xs: 0, sm: 7, md: 5, lg: 0, xl: 0 },
     marginLeft: { xs: 4, md: 0 },
     fontSize: {
-      xs: "42px",
+      xs: "40px",
       sm: " 42px",
       md: "52px",
       lg: "72px",
       xl: "72px",
     },
-    position: "relative", // Ensure parent has a position
+    position: "relative",
   },
   subHeading: {
     color: "#fff",
@@ -147,7 +145,7 @@ const styles = {
     position: "absolute",
     display: { xs: "none", sm: "none", md: "none", lg: "flex" },
     right: { xs: "10%", md: "10%", lg: "5%", xl: "10%" },
-    bottom: { xs: "5%", md: "35%", lg: "0%", xl: "0%" },
+    bottom: { xs: "5%", md: "35%", lg: "0%", xl: "10%" },
     width: {
       xs: "clamp(30%, 20vw, 60%)",
       md: "clamp(30%, 20vw, 40%)",

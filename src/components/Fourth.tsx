@@ -7,15 +7,15 @@ import Community from "../assets/Community.svg";
 import eclipse from "../assets/eclipse.png";
 import social from "../assets/social.png";
 import socialMobile from "../assets/socialMobile.png";
-
-const Platform = ({ text, imgSrc, altText, customStyles = {} }) => (
+interface PlatformProps {
+  text?: string;
+  imgSrc?: string;
+  altText?: string;
+  customStyles?: object;
+}
+const Platform = ({ customStyles = {} }) => (
   <Box sx={{ ...styles.platform, ...customStyles }}>
-    {imgSrc && <img src={imgSrc} alt={altText} style={styles.icon} />}
-    {text && (
-      <Typography variant="body1" sx={styles.platformText}>
-        {text}
-      </Typography>
-    )}
+    {<img src={""} style={styles.icon} />}
   </Box>
 );
 
@@ -27,35 +27,49 @@ const FourthSection = () => {
     <Container
       sx={{
         ...styles.container,
-        paddingLeft: "0 !important",
-        paddingRight: "0 !important",
+        // paddingLeft: "0 !important",
+        // paddingRight: "0 !important",
       }}
     >
-      <Typography variant="h4" sx={styles.heading}>
-        A NEW APPROACH TO <br /> CIVIC ENGAGEMENT
-      </Typography>
-      <Box sx={styles.divider} />
-      <Box sx={styles.platformSection}>
-        <Box sx={{ ...styles.platform, gap: 7, background: "#2E86AB" }}>
-          <Typography variant="body1" sx={styles.platformText}>
-            EXISTING GOVERNMENT
-            <br /> ENGAGEMENT PLATFORMS
-          </Typography>
-          <img src={Government} alt="Government Icon" style={styles.icon} />
-        </Box>
-        <Box sx={{ ...styles.platform, gap: 7, background: "#76848A" }}>
-          <img src={Community} alt="Community Icon" style={styles.icon} />
-          <Typography variant="body1" sx={styles.platformText}>
-            EXISTING COMMUNITY <br />
-            ENGAGEMENT PLATFORMS
-          </Typography>
-        </Box>
-        <Box sx={styles.plusSignContainer}>
-          <AddIcon sx={styles.plusSign} />
-        </Box>
+      {/* New Approach section begins */}
+      <Box
+        sx={{
+          width: "100%",
+          margin: 10,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography variant="h4" sx={styles.heading}>
+          A NEW APPROACH TO <br /> CIVIC ENGAGEMENT
+        </Typography>
+        <Box sx={styles.divider} />
       </Box>
-
+      {/* Platforms begin */}
       <Box sx={styles.backgroundSection}>
+        <Box sx={styles.platformSection}>
+          <Box sx={{ ...styles.platform, gap: 7, background: "#2E86AB" }}>
+            <Typography variant="body1" sx={styles.platformText}>
+              EXISTING GOVERNMENT
+              <br /> ENGAGEMENT PLATFORMS
+            </Typography>
+            <img src={Government} alt="Government Icon" style={styles.icon} />
+            {/* Plus sign */}
+          </Box>
+          <Box sx={styles.plusSignContainer}>
+            <AddIcon sx={styles.plusSign} />
+          </Box>
+          <Box sx={{ ...styles.platform, gap: 7, background: "#76848A" }}>
+            <img src={Community} alt="Community Icon" style={styles.icon} />
+            <Typography variant="body1" sx={styles.platformText}>
+              EXISTING COMMUNITY <br />
+              ENGAGEMENT PLATFORMS
+            </Typography>
+          </Box>
+        </Box>
+        {/* Equal sign */}
         <Box sx={styles.dragHandleSignContainer}>
           <DragHandleIcon sx={styles.DragHandleIcon} />
         </Box>
@@ -68,13 +82,9 @@ const FourthSection = () => {
                 ...styles.shortenedPlatform,
                 backgroundColor: bgColor,
               }}
-              text={undefined}
-              imgSrc={undefined}
-              altText={undefined}
             />
           ))}
         </Box>
-
         <Box sx={styles.shortestPlatformSection}>
           {thirdLayerColors.map((bgColor, index) => (
             <Platform
@@ -83,55 +93,57 @@ const FourthSection = () => {
                 ...styles.shortenedPlatform,
                 backgroundColor: bgColor,
               }}
-              text={undefined}
-              imgSrc={undefined}
-              altText={undefined}
             />
           ))}
         </Box>
         <Box
           sx={{
-            marginTop: { xl: 10, xs: 15 },
+            marginTop: { xl: 10, sm: 5, xs: 20 },
             display: "flex",
             justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <img src={eclipse} alt="Eclipse" />
         </Box>
-        <Box sx={styles.outerContainer}>
-          <Box sx={styles.topRightRectangle} />
-          <Box sx={styles.topRightRectangle1}>
-            <Box sx={styles.textBox}>
-              <Typography variant="body1" sx={styles.text}>
-                CIVA offers both <b>government and community engagement —</b>
-                <br />
-                plus advanced communication tools, integration with local
-                resources, expert guidance, and more —
-                <b> in a single integrated platform</b>.
-              </Typography>
+        <Box>
+          <Box sx={styles.wrapper}>
+            <Box sx={styles.outerContainer}>
+              <Box sx={styles.topRightRectangle} />
+              <Box sx={styles.bottomLeftRectangle}>
+                <Box sx={styles.textBox}>
+                  <Typography variant="body1" sx={styles.text}>
+                    CIVA offers both
+                    <b>government and community engagement —</b>
+                    <br />
+                    plus advanced communication tools, integration with local
+                    resources, expert guidance, and more —
+                    <b> in a single integrated platform</b>.
+                  </Typography>
+                </Box>
+              </Box>
+              {/* <Box sx={styles.bottomLeftRectangle} /> */}
+              <Box sx={styles.imageContainer}>
+                <Box
+                  component="img"
+                  sx={{
+                    ...styles.image,
+                    display: { xs: "none", sm: "block" },
+                  }}
+                  src={social}
+                  alt="Group Discussion"
+                />
+                <Box
+                  component="img"
+                  sx={{
+                    ...styles.image,
+                    display: { xs: "block", sm: "none" },
+                  }}
+                  src={socialMobile}
+                  alt="Group Discussion"
+                />
+              </Box>
             </Box>
-          </Box>
-
-          {/* <Box sx={styles.bottomLeftRectangle} /> */}
-          <Box sx={styles.imageContainer}>
-            <Box
-              component="img"
-              sx={{
-                ...styles.image,
-                display: { xs: "none", sm: "block" },
-              }}
-              src={social}
-              alt="Group Discussion"
-            />
-            <Box
-              component="img"
-              sx={{
-                ...styles.image,
-                display: { xs: "block", sm: "none" },
-              }}
-              src={socialMobile}
-              alt="Group Discussion"
-            />
           </Box>
         </Box>
       </Box>
@@ -140,40 +152,34 @@ const FourthSection = () => {
 };
 
 const styles = {
+  wrapper: {
+    padding: 8,
+    marginTop: 10,
+    display: "flex",
+    justifyContent: "center",
+  },
+
   outerContainer: {
     minHeight: "400px",
     position: "relative",
-    width: "100%",
     maxWidth: { xl: "1210px", md: "1210px", xs: "342px" },
-    maxWith: "100%",
-    marginBottom: "40px",
-    marginLeft: { xl: "20%", md: "10%", xs: "9%" },
-    marginTop: { sm: "141px", xs: "60px" },
   },
+
   topRightRectangle: {
     position: "absolute",
-    top: { sm: "-30px", xs: "-15px" },
-    right: { sm: "-20px", xs: "-15px" },
+    top: { sm: "-20px", xs: "-15px" },
+    right: { sm: "-18px", xs: "-15px" },
     width: "250px",
     height: "150px",
     backgroundColor: "#4ABDAC",
   },
-  topRightRectangle1: {
-    position: "absolute",
-    top: "210px",
-    right: { xl: "251px", lg: "251px", md: "251px", xs: "-15px" },
-    width: { xl: "1002px", lg: "1002px", md: "1002px", xs: "370px" },
-    height: { xl: "0%", xs: "40%" },
-    paddingTop: { xl: "386px", xs: "86px" },
-    backgroundColor: "#FFC000",
-  },
   bottomLeftRectangle: {
     position: "absolute",
-    bottom: "-155px",
-    left: "-30px",
-    width: "150px",
-    height: "540px",
-    display: { xs: "none", sm: "flex" },
+    top: { xl: "210px", lg: "450px", md: "350px", sm: "350px", xs: "170px" },
+    right: { xl: "251px", lg: "251px", md: "220px", xs: "-17px" },
+    width: { xl: "1002px", lg: "1002px", md: "702px", xs: "330px" },
+    height: { xl: "0%", lg: "30%", sm: "10%", xs: "40%" },
+    paddingTop: { xl: "386px", lg: "130px", xs: "86px" },
     backgroundColor: "#FFC000",
   },
   imageContainer: {
@@ -186,12 +192,6 @@ const styles = {
     display: "flex",
   },
   textBox: {
-    // position: "relative",
-    // top: "-10px",
-    // left: "-24px",
-    // maxWidth: "1002px",
-    // minHeight: "580px",
-    // marginTop: 44,
     paddingLeft: { sm: "38px", xs: "16px" },
     paddingBottom: { sm: "56px", xs: "25px" },
     backgroundColor: "#FFC000",
@@ -202,20 +202,17 @@ const styles = {
     fontSize: { xl: "28px", xs: "20px" },
     textAlign: "left",
     lineHeight: { xl: "41px", xs: "28px" },
-    // marginTop: 48,
     color: "#000",
   },
   container: {
     minWidth: "100%",
-    border: "1px solid white",
-    width: "100vw",
+
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "20px 20px 0px 20px",
+
     backgroundColor: "#000",
-    color: "#fff",
   },
   platformSection: {
     display: { xs: "column", sm: "flex" },
@@ -225,8 +222,9 @@ const styles = {
     position: "relative",
   },
   backgroundSection: {
-    width: "100%",
+    width: "100vw",
     minHeight: "400vh",
+
     background: "#374957",
   },
   shortenedPlatformSection: {
@@ -291,7 +289,7 @@ const styles = {
     },
     "@media (max-width: 600px)": {
       left: "40%",
-      top: "40%",
+      top: "41%",
     },
   },
   dragHandleSignContainer: {
@@ -299,31 +297,36 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFC000",
-    width: { xs: "50px", sm: "79px", md: "130px" },
-    height: { xs: "50px", sm: "79px", md: "130px" },
+    width: { xs: "70px", sm: "79px", md: "110px", lg: "130px" },
+    height: { xs: "70px", sm: "79px", md: "110px", lg: "130px" },
     borderRadius: "50%",
     left: "46.5%",
-    bottom: "-190%",
+    marginTop: 5,
     "@media (max-width: 1900px)": {
       left: "46%",
-      bottom: "-210%",
+      bottom: "-230%",
+    },
+    "@media (max-width: 1450px)": {
+      left: "45.5%",
+      bottom: "-205%",
     },
     "@media (max-width: 1024px)": {
       left: "45.5%",
+      bottom: "-75%",
     },
     "@media (max-width: 900px)": {
       left: "44%",
     },
     "@media (max-width: 500px)": {
       left: "42%",
-      top: "268%",
+      top: "245%",
     },
   },
   DragHandleIcon: {
     fontFamily: "Raleway sans-serif",
     fontWeight: "900",
-    fontSize: { xl: "50px", md: "65px", xs: "35px" },
-    margin: { xl: "40px", lg: "30px", md: "30px", sm: "15px", xs: "8px 6px" },
+    fontSize: { xl: "50px", lg: "55px", md: "50px", xs: "45px" },
+    margin: { xl: "40px", lg: "40px", md: "30px", sm: "15px", xs: "13px" },
     color: "black",
   },
   divider: {
@@ -331,7 +334,7 @@ const styles = {
     maxWidth: "100%",
     height: "16px",
     backgroundColor: "#FFC000",
-    marginBottom: { lg: "119px", md: "51px", xs: "45px" },
+    // marginBottom: { lg: "119px", md: "51px", xs: "45px" },
   },
   icon: {
     fontSize: "30px",
@@ -339,7 +342,7 @@ const styles = {
   platformText: {
     fontFamily: "Public Sans",
     fontWeight: "800",
-    fontSize: { xs: "15px", sm: "17px", md: "26px", lg: "32px" },
+    fontSize: { xs: "15px", sm: "17px", md: "19px", lg: "32px" },
     lineHeight: { xs: "24px", sm: "30px", md: "37.6px" },
     marginTop: "10px",
   },
