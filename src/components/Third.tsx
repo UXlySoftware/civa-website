@@ -75,7 +75,7 @@ const styles = {
       },
       "@media (max-width: 1900px)": {
         height: "478px",
-        bottom: "-32%",
+        bottom: "-125%",
       },
       "@media (max-width: 1024px)": {
         height: "438px",
