@@ -5,8 +5,8 @@ import DragHandleIcon from "@mui/icons-material/DragHandle";
 import Government from "../assets/Government.svg";
 import Community from "../assets/Community.svg";
 import eclipse from "../assets/eclipse.png";
-import social from "../assets/social.png"; // Update the path accordingly
-import socialMobile from "../assets/socialMobile.png"; // Update the path accordingly
+import social from "../assets/social.png";
+import socialMobile from "../assets/socialMobile.png";
 
 const Platform = ({ text, imgSrc, altText, customStyles = {} }) => (
   <Box sx={{ ...styles.platform, ...customStyles }}>
