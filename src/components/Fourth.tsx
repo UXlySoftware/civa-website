@@ -5,6 +5,8 @@ import DragHandleIcon from "@mui/icons-material/DragHandle";
 import Government from "../assets/Government.svg";
 import Community from "../assets/Community.svg";
 import eclipse from "../assets/eclipse.png";
+import social from "../assets/social.png"; // Update the path accordingly
+import socialMobile from "../assets/socialMobile.png"; // Update the path accordingly
 
 const Platform = ({ text, imgSrc, altText, customStyles = {} }) => (
   <Box sx={{ ...styles.platform, ...customStyles }}>
@@ -87,7 +89,6 @@ const FourthSection = () => {
             />
           ))}
         </Box>
-
         <Box
           sx={{
             marginTop: { xl: 10, xs: 15 },
@@ -97,12 +98,113 @@ const FourthSection = () => {
         >
           <img src={eclipse} alt="Eclipse" />
         </Box>
+        <Box sx={styles.outerContainer}>
+          <Box sx={styles.topRightRectangle} />
+          <Box sx={styles.topRightRectangle1}>
+            <Box sx={styles.textBox}>
+              <Typography variant="body1" sx={styles.text}>
+                CIVA offers both <b>government and community engagement —</b>
+                <br />
+                plus advanced communication tools, integration with local
+                resources, expert guidance, and more —
+                <b> in a single integrated platform</b>.
+              </Typography>
+            </Box>
+          </Box>
+
+          {/* <Box sx={styles.bottomLeftRectangle} /> */}
+          <Box sx={styles.imageContainer}>
+            <Box
+              component="img"
+              sx={{
+                ...styles.image,
+                display: { xs: "none", sm: "block" },
+              }}
+              src={social}
+              alt="Group Discussion"
+            />
+            <Box
+              component="img"
+              sx={{
+                ...styles.image,
+                display: { xs: "block", sm: "none" },
+              }}
+              src={socialMobile}
+              alt="Group Discussion"
+            />
+          </Box>
+        </Box>
       </Box>
     </Container>
   );
 };
 
 const styles = {
+  outerContainer: {
+    minHeight: "400px",
+    position: "relative",
+    width: "100%",
+    maxWidth: { xl: "1210px", md: "1210px", xs: "342px" },
+    maxWith: "100%",
+    marginBottom: "40px",
+    marginLeft: { xl: "20%", md: "10%", xs: "9%" },
+    marginTop: { sm: "141px", xs: "60px" },
+  },
+  topRightRectangle: {
+    position: "absolute",
+    top: { sm: "-30px", xs: "-15px" },
+    right: { sm: "-20px", xs: "-15px" },
+    width: "250px",
+    height: "150px",
+    backgroundColor: "#4ABDAC",
+  },
+  topRightRectangle1: {
+    position: "absolute",
+    top: "210px",
+    right: { xl: "251px", lg: "251px", md: "251px", xs: "-15px" },
+    width: { xl: "1002px", lg: "1002px", md: "1002px", xs: "370px" },
+    height: { xl: "0%", xs: "40%" },
+    paddingTop: { xl: "386px", xs: "86px" },
+    backgroundColor: "#FFC000",
+  },
+  bottomLeftRectangle: {
+    position: "absolute",
+    bottom: "-155px",
+    left: "-30px",
+    width: "150px",
+    height: "540px",
+    display: { xs: "none", sm: "flex" },
+    backgroundColor: "#FFC000",
+  },
+  imageContainer: {
+    position: "relative",
+    width: "100%",
+  },
+  image: {
+    width: "100%",
+    height: "auto",
+    display: "flex",
+  },
+  textBox: {
+    // position: "relative",
+    // top: "-10px",
+    // left: "-24px",
+    // maxWidth: "1002px",
+    // minHeight: "580px",
+    // marginTop: 44,
+    paddingLeft: { sm: "38px", xs: "16px" },
+    paddingBottom: { sm: "56px", xs: "25px" },
+    backgroundColor: "#FFC000",
+  },
+  text: {
+    fontFamily: "Inter",
+    fontWeight: 400,
+    fontSize: { xl: "28px", xs: "20px" },
+    textAlign: "left",
+    lineHeight: { xl: "41px", xs: "28px" },
+    // marginTop: 48,
+    color: "#000",
+  },
   container: {
     minWidth: "100%",
     border: "1px solid white",
@@ -124,7 +226,7 @@ const styles = {
   },
   backgroundSection: {
     width: "100%",
-    minHeight: "50vh",
+    minHeight: "400vh",
     background: "#374957",
   },
   shortenedPlatformSection: {

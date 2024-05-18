@@ -8,20 +8,37 @@ const HeroSection = () => {
     <Box sx={styles.heroBox}>
       <Container sx={styles.container}>
         <Box sx={styles.innerBox}>
+          <Box
+            sx={{
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                left: {
+                  xl: "-311px",
+                  lg: "-311px",
+                  md: "-180px",
+                  sm: "-110px",
+                  xs: "-15px",
+                },
+                top: "0px",
+                height: { xl: "478px", lg: "428px", md: "318px", xs: "399px" },
+                width: "16px",
+                backgroundColor: "#FFC000",
+              },
+            }}
+          />
           <Typography variant="h3" component="h1" sx={styles.mainHeading}>
             CONNECT, EMPOWER, <br /> & TRANSFORM YOUR{" "}
             <span style={{ color: "white" }}>COMMUNITY.</span>
           </Typography>
-          <Box sx={{ height: "87px" }}>
-            <Typography variant="h5" component="p" sx={styles.subHeading}>
-              CIVA breaks through bureaucratic barriers — bringing organizations
-              and communities together to create sustainable social impact
-              through civic engagement.
-            </Typography>
-            <Button variant="contained" color="secondary" sx={styles.button}>
-              Sign Up for Early Access
-            </Button>
-          </Box>
+          <Typography variant="h5" component="p" sx={styles.subHeading}>
+            CIVA breaks through bureaucratic barriers — bringing organizations
+            and communities together to create sustainable social impact through
+            civic engagement.
+          </Typography>
+          <Button variant="contained" color="secondary" sx={styles.button}>
+            Sign Up for Early Access
+          </Button>
         </Box>
       </Container>
       <Box
@@ -40,43 +57,60 @@ const styles = {
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    height: { xs: "63vh", md: "100vh" },
-    maxWidth: "100%", // Maximum width for xl screens
-    margin: "0 auto", // Center the box
+    width: "100%",
+    minWidth: "100%",
+    height: "100%",
+    minHeight: {
+      xl: "calc(100vh - 64px)",
+      lg: "100vh",
+      md: "50vh",
+      sm: "35vh",
+      xs: "45vh",
+    },
+    margin: "0 auto",
+    "@media (min-width: 1024px)": {
+      minWidth: "100%",
+    },
+    "@media (max-width: 1024px)": {
+      minWidth: "100%",
+    },
+    "@media (max-width: 768px)": {
+      minWidth: "100%",
+    },
+    "@media (max-width: 600px)": {
+      minWidth: "100%",
+    },
   },
   container: {
+    border: "1px solid blue",
     paddingRight: { xs: 2, md: 3, lg: 14, xl: 20 },
-    paddingTop: { xs: 2, md: 3, lg: 20, xl: 30 },
+    paddingTop: { xs: 2, md: 15, lg: 20, xl: 23 },
     zIndex: 1,
     position: "relative",
     maxWidth: { xs: "100%", sm: "80%", md: "70%", lg: "60%", xl: "50%" },
   },
   innerBox: {
     position: "relative",
-    left: { xl: -50 },
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      left: { lg: "-311px", md: "-290px", sm: "-110px", xs: "-15px" },
-      height: "120%",
-      width: { xs: "12px", md: "16px" },
-      backgroundColor: "#FFC000",
-    },
+    marginTop: { xs: "10px", sm: "100px", md: 0 },
+    left: { xl: -25 },
+    // border: "1px solid red",
+    width: "100%",
   },
   mainHeading: {
-    letterSpacing: "-1.44px",
+    letterSpacing: "-0.02em",
     fontWeight: "900",
     color: "#f9a825",
-    marginBottom: 4,
+    marginBottom: 0,
     marginTop: { xs: 7, md: 15, lg: 0, xl: 0 },
     marginLeft: { xs: 4, md: 0 },
     fontSize: {
-      xs: "clamp(24px, 5vw, 24px)",
-      sm: "clamp(24px, 5vw, 36px)",
-      md: "clamp(32px, 5vw, 32px)",
-      lg: "clamp(30px, 5vw, 45px)",
-      xl: "clamp(48px, 5vw, 72px)",
+      xs: "42px",
+      sm: " 42px",
+      md: "52px",
+      lg: "72px",
+      xl: "72px",
     },
+    position: "relative", // Ensure parent has a position
   },
   subHeading: {
     color: "#fff",
@@ -89,6 +123,7 @@ const styles = {
       md: "clamp(18px, 4vw, 24px)",
       lg: "clamp(20px, 4vw, 29px)",
     },
+
     fontFamily: "Inter",
     fontWeight: "700",
   },
@@ -110,13 +145,13 @@ const styles = {
   },
   mobileAppImg: {
     position: "absolute",
-    display: { xs: "none", sm: "none", md: "flex" },
+    display: { xs: "none", sm: "none", md: "none", lg: "flex" },
     right: { xs: "10%", md: "10%", lg: "5%", xl: "10%" },
-    bottom: { xs: "5%", md: "35%", lg: "5%", xl: "5%" },
+    bottom: { xs: "5%", md: "35%", lg: "0%", xl: "0%" },
     width: {
       xs: "clamp(30%, 20vw, 60%)",
       md: "clamp(30%, 20vw, 40%)",
-      lg: "clamp(30%, 20vw, 35%)",
+      lg: "clamp(35%, 20vw, 35%)",
       xl: "clamp(30%, 20vw, 30%)",
     },
   },
