@@ -1,67 +1,75 @@
-import React from "react";
+import React, { FC, ReactNode } from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
-import phoneImage from "../assets/phone.png"; // Update the path accordingly
+import phoneImage from "../assets/phone.png";
+import discussionImage from "../assets/discussion.png";
+
+interface ListItemProps {
+  number: number;
+  text: string;
+}
+interface ImageSectionProps {
+  src: string;
+  alt: string;
+  button: ReactNode;
+}
+interface InfoSectionProps {
+  imgSrc: string;
+  imgAlt: string;
+  text: ReactNode;
+}
+
+const ListItem: FC<ListItemProps> = ({ number, text }) => (
+  <Box sx={styles.listItem}>
+    <Typography variant="h5" sx={styles.listNumber}>
+      {number}.
+    </Typography>
+    <Typography variant="body1" sx={styles.listText}>
+      {text}
+    </Typography>
+  </Box>
+);
+
+const ImageSection: FC<ImageSectionProps> = ({ src, alt, button }) => (
+  <Box sx={styles.imageBox}>
+    <img src={src} alt={alt} style={styles.image} />
+    {button}
+  </Box>
+);
+
+const InfoSection: FC<InfoSectionProps> = ({ imgSrc, imgAlt, text }) => (
+  <Box sx={styles.infoSection}>
+    <Box sx={styles.infoSectionImageBox}>
+      <img src={imgSrc} alt={imgAlt} style={styles.infoSectionImage} />
+    </Box>
+    <Box sx={styles.infoSectionTextBox}>
+      <Typography variant="body1" sx={styles.infoSectionText}>
+        {text}
+      </Typography>
+    </Box>
+  </Box>
+);
 
 const HowItWorks = () => {
+  const listItems = [
+    "Organization and community members join CIVA.",
+    "Organization and community members discover government resources.",
+    "Organizations and communities find each other.",
+    "Organizations and community members communicate and collaborate through CIVA.",
+    "Organization receives analytics, metrics, and insights based on community feedback to make programs effective.",
+    "Community members have a stronger voice and greater influence.",
+  ];
+
   return (
     <Container sx={styles.container}>
-      {/* Text */}
       <Typography variant="h4" sx={styles.heading}>
         HOW IT WORKS
       </Typography>
       <Box sx={styles.divider} />
       <Box sx={styles.contentBox}>
         <Box sx={styles.listBox}>
-          <Box sx={styles.listItem}>
-            <Typography variant="h5" sx={styles.listNumber}>
-              1.
-            </Typography>
-            <Typography variant="body1" sx={styles.listText}>
-              Organization and community members join CIVA.
-            </Typography>
-          </Box>
-          <Box sx={styles.listItem}>
-            <Typography variant="h5" sx={styles.listNumber}>
-              2.
-            </Typography>
-            <Typography variant="body1" sx={styles.listText}>
-              Organization and community members discover government resources.
-            </Typography>
-          </Box>
-          <Box sx={styles.listItem}>
-            <Typography variant="h5" sx={styles.listNumber}>
-              3.
-            </Typography>
-            <Typography variant="body1" sx={styles.listText}>
-              Organizations and communities find each other.
-            </Typography>
-          </Box>
-          <Box sx={styles.listItem}>
-            <Typography variant="h5" sx={styles.listNumber}>
-              4.
-            </Typography>
-            <Typography variant="body1" sx={styles.listText}>
-              Organizations and community members communicate and collaborate
-              through CIVA.
-            </Typography>
-          </Box>
-          <Box sx={styles.listItem}>
-            <Typography variant="h5" sx={styles.listNumber}>
-              5.
-            </Typography>
-            <Typography variant="body1" sx={styles.listText}>
-              Organization receives analytics, metrics, and insights based on
-              community feedback to make programs effective.
-            </Typography>
-          </Box>
-          <Box sx={styles.listItem}>
-            <Typography variant="h5" sx={styles.listNumber}>
-              6.
-            </Typography>
-            <Typography variant="body1" sx={styles.listText}>
-              Community members have a stronger voice and greater influence.
-            </Typography>
-          </Box>
+          {listItems.map((text, index) => (
+            <ListItem key={index} number={index + 1} text={text} />
+          ))}
           <Button
             variant="contained"
             color="primary"
@@ -69,29 +77,38 @@ const HowItWorks = () => {
           >
             Learn More
           </Button>
-          {/* Image */}
         </Box>
-        <Box sx={styles.imageBox}>
-          <img
-            src={phoneImage}
-            alt="Phone showing CIVA app"
-            style={styles.image}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{
-              ...styles.button,
-              display: { xs: "flex", md: "none" },
-              position: "relative",
-              bottom: "50px",
-              width: "100%",
-            }}
-          >
-            Learn More
-          </Button>
-        </Box>
+        <ImageSection
+          src={phoneImage}
+          alt="Phone showing CIVA app"
+          button={
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                ...styles.button,
+                display: { xs: "flex", md: "none" },
+                position: "relative",
+                bottom: "50px",
+                width: "100%",
+              }}
+            >
+              Learn More
+            </Button>
+          }
+        />
       </Box>
+      <InfoSection
+        imgSrc={discussionImage}
+        imgAlt="Discussion"
+        text={
+          <>
+            CIVA enables <b>multi-layered engagement</b> and helps organizations
+            and communities <b>discover</b> relevant policies and government
+            resources that impact their programs.
+          </>
+        }
+      />
     </Container>
   );
 };
@@ -101,6 +118,7 @@ const styles = {
     padding: "142px 0px",
     minWidth: "100%",
     paddingLeft: "0px !important",
+    paddingRight: "0px !important",
   },
   heading: {
     fontFamily: "Public Sans",
@@ -175,6 +193,45 @@ const styles = {
   image: {
     maxWidth: "100%",
     height: "auto",
+  },
+  infoSection: {
+    display: "flex",
+    flexDirection: { xs: "column", sm: "row" },
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#74ADC7",
+    padding: { xl: "65px", lg: "65px", md: "50px" },
+    paddingTop: { xs: "60px", sm: "0px" },
+    paddingBottom: { xs: "100px", sm: "0px" },
+    marginTop: "20px",
+  },
+  infoSectionImageBox: {
+    width: { xs: "85%", sm: "100%", md: "85%", lg: "50%", xl: "40%" },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  infoSectionImage: {
+    width: "100%",
+    height: "auto",
+    zIndex: 1,
+  },
+  infoSectionTextBox: {
+    width: { xs: "95%", sm: "40%" },
+    height: { xl: "392px", lg: "392px", md: "392px", sm: "332px", xs: "192px" },
+    paddingTop: { xs: "100px", sm: "0px" },
+    position: "relative",
+    bottom: { xs: 90, sm: 0 },
+    zIndex: 0,
+    backgroundColor: "#FFC000",
+  },
+  infoSectionText: {
+    padding: { xl: "55px", md: "80px 25px", xs: "0px 25px" },
+    fontFamily: "Inter",
+    fontWeight: 400,
+    fontSize: { xl: "28px", lg: "28px", md: "18px", sm: "18px", xs: "18px" },
+    lineHeight: { xl: "41px", lg: "41px", md: "24px" },
+    textAlign: "left",
   },
 };
 
