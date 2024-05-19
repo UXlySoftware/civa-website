@@ -24,13 +24,7 @@ const FourthSection = () => {
   const thirdLayerColors = ["#BFD9E5", "#D5D9DB"];
 
   return (
-    <Container
-      sx={{
-        ...styles.container,
-        // paddingLeft: "0 !important",
-        // paddingRight: "0 !important",
-      }}
-    >
+    <Container sx={styles.container}>
       {/* New Approach section begins */}
       <Box
         sx={{
@@ -223,8 +217,13 @@ const styles = {
   },
   backgroundSection: {
     width: "100vw",
-    minHeight: "400vh",
-
+    minHeight: {
+      xl: "180vh",
+      lg: "220vh",
+      md: "110vh",
+      sm: "160vh",
+      xs: "160vh",
+    },
     background: "#374957",
   },
   shortenedPlatformSection: {
@@ -334,7 +333,6 @@ const styles = {
     maxWidth: "100%",
     height: "16px",
     backgroundColor: "#FFC000",
-    // marginBottom: { lg: "119px", md: "51px", xs: "45px" },
   },
   icon: {
     fontSize: "30px",
