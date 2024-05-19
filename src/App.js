@@ -5,6 +5,7 @@ import Second from "./components/Second.tsx";
 import ThirdSection from "./components/Third.tsx";
 import Fourth from "./components/Fourth.tsx";
 import HowItWorks from "./components/HowItWorks";
+import Partners from "./components/Partners";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Fourth />
       <HowItWorks />
       {/* Partners */}
+      <Partners />
       {/* Footer */}
     </div>
   );
