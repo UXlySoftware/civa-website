@@ -6,6 +6,7 @@ import mtiLogo from "../assets/mtiLogo.png";
 import resurgensLogo from "../assets/resurgensLogo.png";
 import urbanLeagueLogo from "../assets/urbanLeague.png";
 import atlantaLogo from "../assets/atlantaLogo.png";
+import JoinCommunity from "./JoinCommunity";
 
 const PartnersSection = () => (
   <Box sx={styles.partnersSection}>
@@ -44,6 +45,7 @@ const PartnersSection = () => (
         <img src={urbanLeagueLogo} alt="urbanLeague" style={styles.logo} />
       </Grid>
     </Grid>
+    <JoinCommunity />
   </Box>
 );
 
@@ -70,7 +72,7 @@ const styles = {
     width: { xl: "50%", lg: "100%", md: "50%" },
     display: "flex",
     flexWrap: "wrap",
-    margin: "0 auto 40px auto",
+    margin: "0 auto 0px auto",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -83,68 +85,6 @@ const styles = {
   logo: {
     maxWidth: "100%",
     margin: "0px 0px",
-  },
-  joinCommunitySection: {
-    backgroundColor: "#FFC000",
-    padding: "40px 20px",
-    textAlign: "center",
-  },
-  joinHeading: {
-    fontFamily: "Public Sans",
-    fontWeight: "900",
-    fontSize: "28px",
-    marginBottom: "16px",
-  },
-  joinText: {
-    fontFamily: "Inter",
-    fontSize: "18px",
-    marginBottom: "24px",
-  },
-  demoButton: {
-    backgroundColor: "#000",
-    color: "#fff",
-    padding: "12px 24px",
-    fontFamily: "Inter",
-    fontSize: "16px",
-    textTransform: "none",
-    "&:hover": {
-      backgroundColor: "#333",
-    },
-  },
-  footer: {
-    backgroundColor: "#000",
-    color: "#fff",
-    padding: "40px 20px",
-    textAlign: "center",
-  },
-  footerLogo: {
-    height: "40px",
-    marginBottom: "20px",
-  },
-  footerLinks: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "20px",
-    marginBottom: "20px",
-  },
-  footerLink: {
-    fontFamily: "Inter",
-    fontSize: "16px",
-    cursor: "pointer",
-  },
-  footerSocial: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "10px",
-    marginBottom: "20px",
-  },
-  footerSocialLink: {
-    fontFamily: "Inter",
-    fontSize: "16px",
-  },
-  footerEmail: {
-    fontFamily: "Inter",
-    fontSize: "16px",
   },
 };
 

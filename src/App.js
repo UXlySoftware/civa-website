@@ -6,6 +6,7 @@ import ThirdSection from "./components/Third.tsx";
 import Fourth from "./components/Fourth.tsx";
 import HowItWorks from "./components/HowItWorks";
 import Partners from "./components/Partners";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       {/* Partners */}
       <Partners />
       {/* Footer */}
+      <Footer />
     </div>
   );
 }
