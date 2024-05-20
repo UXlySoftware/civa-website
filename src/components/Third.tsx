@@ -113,6 +113,7 @@ const styles = {
     fontWeight: 700,
     fontSize: { sm: "24px", xs: "18px" },
     lineHeight: "29px",
+    fontFamily: "Inter",
   },
   button: {
     width: { md: "100%", xs: "95%" },

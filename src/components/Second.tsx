@@ -61,6 +61,7 @@ const styles = {
     textAlign: "center",
     lineHeight: { xl: "28px", lg: "28px", md: "19px" },
     color: "#fff",
+    fontFamily: "Public Sans",
   },
   innerCircle: {
     width: { xl: 253, lg: 253, md: 173 },

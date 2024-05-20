@@ -69,7 +69,7 @@ const styles = {
     zIndex: 1,
     height: "65vh",
     position: "relative",
-    maxWidth: { xs: "100%", sm: "80%", md: "70%", lg: "60%", xl: "50%" },
+    maxWidth: { xs: "100%", sm: "80%", md: "70%", lg: "70%", xl: "50%" },
   },
   innerBox: {
     position: "relative",
@@ -96,7 +96,8 @@ const styles = {
   },
   mainHeading: {
     letterSpacing: "-0.02em",
-    fontWeight: "900",
+    fontFamily: "Public Sans",
+    fontWeight: 900,
     color: "#f9a825",
     marginBottom: 0,
     marginTop: { xs: 0, sm: 7, md: 5, lg: 0, xl: 0 },

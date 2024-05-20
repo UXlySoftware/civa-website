@@ -108,7 +108,7 @@ const FourthSection = () => {
                 <Box sx={styles.textBox}>
                   <Typography variant="body1" sx={styles.text}>
                     CIVA offers both
-                    <b>government and community engagement —</b>
+                    <b> government and community engagement —</b>
                     <br />
                     plus advanced communication tools, integration with local
                     resources, expert guidance, and more —
@@ -165,7 +165,7 @@ const styles = {
     right: { sm: "-18px", xs: "-15px" },
     width: "250px",
     height: "150px",
-    backgroundColor: "#4ABDAC",
+    backgroundColor: "#2E86AB",
   },
   bottomLeftRectangle: {
     position: "absolute",
