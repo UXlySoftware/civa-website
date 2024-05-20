@@ -1,16 +1,34 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.78686efa.js",
+    "main.js": "/static/js/main.12fc3949.js",
     "static/media/united.png": "/static/media/united.3483afff9b6e01eb6605.png",
+    "static/media/social.png": "/static/media/social.b64c6c0366dd48f8d95f.png",
+    "static/media/phone.png": "/static/media/phone.ef4145653e183521c185.png",
+    "static/media/discussion.png": "/static/media/discussion.0a000fdea38c90f6680c.png",
     "static/media/mobileApp.png": "/static/media/mobileApp.06a07a5c53b8ce8999a2.png",
+    "static/media/socialMobile.png": "/static/media/socialMobile.a1e5a0a8faa70aa14896.png",
     "static/media/venDiagram.png": "/static/media/venDiagram.f13eb0791c40911a6081.png",
+    "static/media/resurgensLogo.png": "/static/media/resurgensLogo.2b9dba529e1c770c588c.png",
+    "static/media/mtiLogo.png": "/static/media/mtiLogo.f446088dfc999f2a2f0b.png",
+    "static/media/ctsiLogo.png": "/static/media/ctsiLogo.2d52a79f225693c7c58c.png",
+    "static/media/urbanLeague.png": "/static/media/urbanLeague.67cde9a87428cca29ac2.png",
+    "static/media/atlantaLogo.png": "/static/media/atlantaLogo.c9837f27b186a4343cbc.png",
+    "static/media/eclipse.png": "/static/media/eclipse.b706527bcebe024f722b.png",
+    "static/media/mhirLogo.png": "/static/media/mhirLogo.a7f06f30bd5c634d7878.png",
+    "static/media/Community.svg": "/static/media/Community.3fb194d6581e32e925582d92d11a80d7.svg",
+    "static/media/instagram.svg": "/static/media/instagram.3c242ba786fc8b88bf479a67c79a306c.svg",
+    "static/media/Government.svg": "/static/media/Government.facfa0eba19ebb8089852c75af2a12d4.svg",
     "index.html": "/index.html",
+    "static/media/twitter.svg": "/static/media/twitter.9423a1475e994b1d8cf7cfae88911137.svg",
+    "static/media/youtube.svg": "/static/media/youtube.7c09f49df3a3d7f95cadb8fcbbd8749c.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.6eab64320009b550d176507d38f41b6e.svg",
+    "static/media/facebook.svg": "/static/media/facebook.3e5f1573ce30a3acb3e477982bd0f6ec.svg",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.78686efa.js.map": "/static/js/main.78686efa.js.map"
+    "main.12fc3949.js.map": "/static/js/main.12fc3949.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.78686efa.js"
+    "static/js/main.12fc3949.js"
   ]
 }
