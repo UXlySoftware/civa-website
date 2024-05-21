@@ -7,12 +7,7 @@ import Community from "../assets/Community.svg";
 import eclipse from "../assets/eclipse.png";
 import social from "../assets/social.png";
 import socialMobile from "../assets/socialMobile.png";
-interface PlatformProps {
-  text?: string;
-  imgSrc?: string;
-  altText?: string;
-  customStyles?: object;
-}
+
 const Platform = ({ customStyles = {} }) => (
   <Box sx={{ ...styles.platform, ...customStyles }}>
     {<img src={""} style={styles.icon} />}
@@ -289,55 +284,46 @@ const styles = {
     },
   },
   dragHandleSignContainer: {
-    position: "absolute",
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFC000",
     width: { xs: "100px", sm: "89px", md: "110px", lg: "140px" },
     height: { xs: "100px", sm: "89px", md: "110px", lg: "140px" },
     borderRadius: "50%",
-    left: "46.5%",
-    marginTop: 9,
-    "@media (max-width: 1900px)": {
-      left: "46%",
-      bottom: "-175%",
-    },
-    // "@media (max-width: 1200px)": {
-    //   left: "45.5%",
-    //   bottom: "-210%",
-    // },
-    "@media (max-width: 1200px)": {
-      left: "45.5%",
-      bottom: "-110%",
-    },
-    "@media (max-width: 1024px)": {
-      left: "45.5%",
-      bottom: "-110%",
-    },
-    "@media (max-width: 900px)": {
-      left: "44%",
+    position: "absolute",
+    left: "50%",
+    transform: "translateX(-50%)",
+    marginTop: "2%",
+    "@media (min-width: 1900px)": {
       bottom: "-120%",
     },
-    "@media (max-width: 670px)": {
-      left: "44%",
-      bottom: "-125%",
+    // "@media (max-width: 1900px)": {
+    //   bottom: "-120%",
+    // },
+    "@media (max-width: 1200px)": {
+      bottom: "-60%",
     },
-    "@media (max-width: 655px)": {
-      left: "44%",
-      bottom: "-130%",
+    // "@media (max-width: 1024px)": {
+    //   bottom: "-110%",
+    // },
+    "@media (max-width: 900px)": {
+      bottom: "-65%",
     },
+    // "@media (max-width: 670px)": {
+    //   bottom: "-125%",
+    // },
+    // "@media (max-width: 655px)": {
+    //   bottom: "-110%",
+    // },
     "@media (max-width: 600px)": {
-      left: "39%",
-      bottom: "-145%",
+      bottom: "-92%",
     },
-    "@media (max-width: 500px)": { left: "39%", bottom: "-145%" },
+    // "@media (max-width: 500px)": {
+    //   bottom: "-94%",
+    // },
     "@media (max-width: 450px)": {
-      left: "39%",
-      bottom: "-139%",
-    },
-    "@media (max-width: 425px)": {
-      left: "36%",
-      bottom: "-135%",
+      bottom: "-177%",
     },
   },
   DragHandleIcon: {
@@ -371,7 +357,6 @@ const styles = {
   },
   eclipse: {
     height: "auto",
-    // width: { xl: "100%" },
     "@media (max-width: 2900px)": {
       width: "100%",
     },
