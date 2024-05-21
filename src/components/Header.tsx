@@ -134,7 +134,7 @@ const styles = {
   drawer: {
     "& .MuiDrawer-paper": {
       width: "100vw",
-      height: "20vh",
+      height: "25vh",
       backgroundColor: "#FFD454",
       borderBottomLeftRadius: "12px",
       borderBottomRightRadius: "12px",
