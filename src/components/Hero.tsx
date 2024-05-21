@@ -88,7 +88,6 @@ const styles = {
     justifyContent: "space-between",
     flexDirection: "row",
     width: "100%",
-
     margin: {
       xl: "0px 300px",
       lg: "0px 100px",

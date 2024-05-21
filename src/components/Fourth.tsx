@@ -55,7 +55,7 @@ const FourthSection = () => {
           <Box sx={styles.plusSignContainer}>
             <AddIcon sx={styles.plusSign} />
           </Box>
-          <Box sx={{ ...styles.platform, gap: 7, background: "#76848A" }}>
+          <Box sx={{ ...styles.platform, gap: 6, background: "#76848A" }}>
             <img src={Community} alt="Community Icon" style={styles.icon} />
             <Typography variant="body1" sx={styles.platformText}>
               EXISTING COMMUNITY <br />
@@ -98,7 +98,7 @@ const FourthSection = () => {
             alignItems: "center",
           }}
         >
-          <img src={eclipse} alt="Eclipse" />
+          <img src={eclipse} alt="Eclipse" width={350} height={350} />
         </Box>
         <Box>
           <Box sx={styles.wrapper}>
@@ -116,7 +116,6 @@ const FourthSection = () => {
                   </Typography>
                 </Box>
               </Box>
-              {/* <Box sx={styles.bottomLeftRectangle} /> */}
               <Box sx={styles.imageContainer}>
                 <Box
                   component="img"
@@ -200,12 +199,10 @@ const styles = {
   },
   container: {
     minWidth: "100%",
-
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-
     backgroundColor: "#000",
   },
   platformSection: {
@@ -296,37 +293,44 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFC000",
-    width: { xs: "70px", sm: "79px", md: "110px", lg: "130px" },
-    height: { xs: "70px", sm: "79px", md: "110px", lg: "130px" },
+    width: { xs: "100px", sm: "79px", md: "110px", lg: "140px" },
+    height: { xs: "100px", sm: "79px", md: "110px", lg: "140px" },
     borderRadius: "50%",
     left: "46.5%",
-    marginTop: 5,
+    marginTop: 9,
     "@media (max-width: 1900px)": {
       left: "46%",
       bottom: "-230%",
     },
     "@media (max-width: 1450px)": {
       left: "45.5%",
-      bottom: "-205%",
+      bottom: "-210%",
     },
     "@media (max-width: 1024px)": {
       left: "45.5%",
-      bottom: "-75%",
+      bottom: "-60%",
     },
     "@media (max-width: 900px)": {
       left: "44%",
     },
     "@media (max-width: 500px)": {
-      left: "42%",
-      top: "245%",
+      left: "39%",
+      top: "255%",
+    },
+    "@media (max-width: 430px)": {
+      left: "39%",
+      top: "220%",
+    },
+    "@media (max-width: 425px)": {
+      left: "36%",
+      top: "255%",
     },
   },
   DragHandleIcon: {
-    fontFamily: "Raleway sans-serif",
-    fontWeight: "900",
-    fontSize: { xl: "50px", lg: "55px", md: "50px", xs: "45px" },
-    margin: { xl: "40px", lg: "40px", md: "30px", sm: "15px", xs: "13px" },
-    color: "black",
+    fontFamily: "'Raleway', sans-serif",
+    fontWeight: 900,
+    fontSize: { xl: "75px", lg: "75px", md: "70px", xs: "65px" },
+    margin: { xl: "30px", lg: "30px", md: "20px", sm: "15px", xs: "19px" },
   },
   divider: {
     width: "665px",
@@ -350,6 +354,16 @@ const styles = {
     fontSize: { xl: "50px", lg: "50px", md: "50px", xs: "45px" },
     margin: { sm: "12px 12px", xs: "3px 3px" },
     color: "black",
+  },
+  eclipse: {
+    height: "auto",
+    // width: { xl: "100%" },
+    "@media (max-width: 2900px)": {
+      width: "100%",
+    },
+    "@media (max-width: 1920px)": {
+      width: "110%",
+    },
   },
 };
 

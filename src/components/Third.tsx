@@ -10,15 +10,8 @@ const ThirdSection = () => {
         paddingLeft: "0 !important",
       }}
     >
-      <Box sx={styles.vennContainer}>
-        <img
-          src={venDiagram}
-          alt="CIVA Venn Diagram"
-          style={styles.vennImage}
-        />
-      </Box>
-      <Box sx={styles.sideBorder} />
       <Box sx={styles.textContainer}>
+        <Box sx={styles.sideBorder} />
         <Typography variant="h4" sx={styles.heading}>
           CONNECT. COLLABORATE. COMMUNITY.
         </Typography>
@@ -30,6 +23,13 @@ const ThirdSection = () => {
           Get Demo
         </Button>
       </Box>
+      <Box sx={styles.vennContainer}>
+        <img
+          src={venDiagram}
+          alt="CIVA Venn Diagram"
+          style={styles.vennImage}
+        />
+      </Box>
     </Container>
   );
 };
@@ -40,65 +40,47 @@ const styles = {
     display: "flex",
     justfiyContent: "center",
     justifyItems: "center",
-    flexDirection: { xs: "column", md: "row-reverse" },
+    flexDirection: { xs: "column-reverse", md: "row" },
     justifyContent: "space-between",
     alignItems: "center",
-    gap: { xs: 12 },
-
-    marginTop: { xl: 19, xs: 7 },
-    marginBottom: 4,
-    marginLeft: { xl: 51, lg: 20 },
+    // gap: 15,
+    // marginTop: { xl: 19, xs: 7 },
+    marginBottom: 5,
+    // marginLeft: { xl: 51, lg: 20 },
   },
   textContainer: {
+    justifyContent: "center",
     textAlign: "left",
-    // width: "500px",
+    maxWidth: { xl: "50%", lg: "50%", md: "50%", sm: "75%", xs: "100%" },
+    // width: "100%",
     display: "flex",
     flexDirection: "column",
     gap: { sm: "34px", xs: "22px" },
-    maxWidth: { xs: "100%", md: "45%" },
-    paddingLeft: { lg: 0, md: 5, xs: 5 },
+    marginRight: { xl: 10 },
+    // maxWidth: { xs: "100%", md: "50%" },
+    paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
   },
   sideBorder: {
     "&::before": {
       content: '""',
       position: "absolute",
       left: {
-        xl: "168px",
+        xl: "230px",
         lg: "0px",
         md: "0px",
         sm: "0px",
         xs: "0px",
       },
-      "@media (max-width: 2900px)": {
-        height: "448px",
-        bottom: "-113%",
+      height: {
+        xl: "418px",
+        lg: "418px",
+        md: "418px",
+        sm: "360px",
+        xs: "355px",
       },
-      "@media (max-width: 1900px)": {
-        height: "478px",
-        bottom: "-125%",
-      },
-      "@media (max-width: 1024px)": {
-        height: "438px",
-        bottom: "-32%",
-      },
-      "@media (max-width: 900px)": {
-        height: "388px",
-        bottom: "-80%",
-      },
-      "@media (max-width: 820px)": {
-        height: "328px",
-        bottom: "-60%",
-      },
-      "@media (max-width: 430px)": {
-        height: "315px",
-        bottom: "-83%",
-      },
-      "@media (max-width: 375px)": {
-        height: "345px",
-        bottom: "-123%",
-      },
+      marginTop: { xl: 4, lg: 4, md: 3, sm: 2, xs: 2 },
       width: "16px",
-      backgroundColor: "#010101",
+      backgroundColor: "black",
     },
   },
   heading: {
@@ -130,15 +112,17 @@ const styles = {
     textTransform: "none",
     backgroundColor: "#FFC000",
     color: "black",
+    "&:hover": {
+      backgroundColor: "#e8ae00",
+    },
   },
   vennContainer: {
     position: "relative",
-    // width: { xs: "10%", md: "40%" },
-    // height: 350,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    // marginTop: { xs: 4, md: 0 },
+    marginTop: { xs: 4, md: 0 },
+    paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
   },
   circle: {
     position: "absolute",
@@ -159,9 +143,9 @@ const styles = {
   },
 
   vennImage: {
-    maxWidth: "100%", // Ensure the image doesn't exceed the container's width
-    height: "auto", // Maintain aspect ratio
-    width: "100%", // Make the image responsive
+    maxWidth: "100%",
+    height: "auto",
+    width: "100%",
   },
 };
 
