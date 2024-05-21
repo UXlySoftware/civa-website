@@ -293,43 +293,57 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFC000",
-    width: { xs: "100px", sm: "79px", md: "110px", lg: "140px" },
-    height: { xs: "100px", sm: "79px", md: "110px", lg: "140px" },
+    width: { xs: "100px", sm: "89px", md: "110px", lg: "140px" },
+    height: { xs: "100px", sm: "89px", md: "110px", lg: "140px" },
     borderRadius: "50%",
     left: "46.5%",
     marginTop: 9,
     "@media (max-width: 1900px)": {
       left: "46%",
-      bottom: "-230%",
+      bottom: "-175%",
     },
-    "@media (max-width: 1450px)": {
+    // "@media (max-width: 1200px)": {
+    //   left: "45.5%",
+    //   bottom: "-210%",
+    // },
+    "@media (max-width: 1200px)": {
       left: "45.5%",
-      bottom: "-210%",
+      bottom: "-110%",
     },
     "@media (max-width: 1024px)": {
       left: "45.5%",
-      bottom: "-60%",
+      bottom: "-110%",
     },
     "@media (max-width: 900px)": {
       left: "44%",
+      bottom: "-120%",
     },
-    "@media (max-width: 500px)": {
-      left: "39%",
-      top: "255%",
+    "@media (max-width: 670px)": {
+      left: "44%",
+      bottom: "-125%",
     },
-    "@media (max-width: 430px)": {
+    "@media (max-width: 655px)": {
+      left: "44%",
+      bottom: "-130%",
+    },
+    "@media (max-width: 600px)": {
       left: "39%",
-      top: "220%",
+      bottom: "-145%",
+    },
+    "@media (max-width: 500px)": { left: "39%", bottom: "-145%" },
+    "@media (max-width: 450px)": {
+      left: "39%",
+      bottom: "-139%",
     },
     "@media (max-width: 425px)": {
       left: "36%",
-      top: "255%",
+      bottom: "-135%",
     },
   },
   DragHandleIcon: {
     fontFamily: "'Raleway', sans-serif",
     fontWeight: 900,
-    fontSize: { xl: "75px", lg: "75px", md: "70px", xs: "65px" },
+    fontSize: { xl: "75px", lg: "75px", md: "70px", sm: "60px", xs: "65px" },
     margin: { xl: "30px", lg: "30px", md: "20px", sm: "15px", xs: "19px" },
   },
   divider: {
