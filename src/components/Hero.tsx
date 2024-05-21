@@ -170,7 +170,6 @@ const styles = {
       md: "clamp(16px, 3vw, 18px)",
       lg: "clamp(18px, 3vw, 22px)",
     },
-    // marginLeft: { xs: 0, md: 0 },
     fontWeight: 700,
     borderRadius: "12px",
     textTransform: "none",
