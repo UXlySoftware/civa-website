@@ -51,7 +51,6 @@ const styles = {
     // marginLeft: { xl: 51, lg: 20 },
   },
   textContainer: {
-    border: "1px solid yellow",
     justifyContent: "center",
     textAlign: "left",
     maxWidth: { xl: "60%", lg: "50%", md: "50%", sm: "75%", xs: "100%" },
@@ -94,7 +93,6 @@ const styles = {
     marginBottom: 2,
   },
   subHeading: {
-    border: "1px solid red",
     color: "#010101",
     fontWeight: 700,
     fontSize: { sm: "23px", xs: "18px" },

@@ -23,7 +23,6 @@ const FourthSection = () => {
       {/* New Approach section begins */}
       <Box
         sx={{
-          border: "1px solid red",
           width: { xl: "35%", lg: "40%", md: "45%", xs: "100%" },
           margin: 10,
           display: "flex",
