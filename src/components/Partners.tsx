@@ -103,7 +103,7 @@ const styles = {
     marginBottom: "16px",
   },
   divider: {
-    width: { xl: "20%", xs: "90%" },
+    width: { xl: "20%", lg: "25%", md: "30%", xs: "90%" },
     height: "16px",
     backgroundColor: "#FFC000",
     margin: "0 auto 40px auto",
