@@ -13,11 +13,13 @@ const ThirdSection = () => {
       <Box sx={styles.textContainer}>
         <Box sx={styles.sideBorder} />
         <Typography variant="h4" sx={styles.heading}>
-          CONNECT. COLLABORATE. COMMUNITY.
+          CIVA CONNECTS
         </Typography>
-        <Typography variant="h6" sx={styles.subHeading}>
-          CIVA brings government, organizations, and communities together to
-          create meaningful and measurable programs.
+        <Typography variant="h1" sx={styles.subHeading}>
+          Our dynamic, integrated platform brings stakeholders together to
+          create meaningful programs with measurable impact.Our dynamic,
+          integrated platform brings stakeholders together to create meaningful
+          programs with measurable impact.
         </Typography>
         <Button variant="contained" sx={styles.button}>
           Get Demo
@@ -49,9 +51,10 @@ const styles = {
     // marginLeft: { xl: 51, lg: 20 },
   },
   textContainer: {
+    border: "1px solid yellow",
     justifyContent: "center",
     textAlign: "left",
-    maxWidth: { xl: "50%", lg: "50%", md: "50%", sm: "75%", xs: "100%" },
+    maxWidth: { xl: "60%", lg: "50%", md: "50%", sm: "75%", xs: "100%" },
     // width: "100%",
     display: "flex",
     flexDirection: "column",
@@ -72,7 +75,7 @@ const styles = {
         xs: "0px",
       },
       height: {
-        xl: "418px",
+        xl: "338px",
         lg: "418px",
         md: "418px",
         sm: "360px",
@@ -86,19 +89,20 @@ const styles = {
   heading: {
     fontFamily: "Public Sans",
     fontWeight: "900",
-    fontSize: { xs: "36px", sm: "52px" },
+    fontSize: { xs: "3s6px", sm: "52px" },
     lineHeight: { xs: "42px", sm: "58px" },
     marginBottom: 2,
   },
   subHeading: {
+    border: "1px solid red",
     color: "#010101",
     fontWeight: 700,
-    fontSize: { sm: "24px", xs: "18px" },
+    fontSize: { sm: "23px", xs: "18px" },
     lineHeight: "29px",
     fontFamily: "Inter",
   },
   button: {
-    width: { md: "100%", xs: "95%" },
+    width: { md: "70%", xs: "95%" },
     padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" },
     fontFamily: "Inter",
     fontSize: {

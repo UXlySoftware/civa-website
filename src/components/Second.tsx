@@ -34,7 +34,7 @@ const styles = {
     display: { xs: "none", md: "block" },
     textAlign: "center",
     marginTop: 9,
-    marginBottom: 4,
+    marginBottom: 14,
     marginLeft: { xl: 51, lg: 20 },
   },
   circleContainer: {

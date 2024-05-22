@@ -10,8 +10,8 @@ const HeroSection = () => {
         <Box sx={styles.sideBorder} />
         <Box sx={styles.innerLeft}>
           <Typography variant="h3" component="h1" sx={styles.mainHeading}>
-            CONNECT, EMPOWER, <br /> & TRANSFORM YOUR{" "}
-            <span style={{ color: "white" }}>COMMUNITY.</span>
+            CONNECT, EMPOWER, <br /> & TRANSFORM <br />
+            <span style={{ color: "white" }}> YOUR COMMUNITY.</span>
           </Typography>
           <Typography variant="h5" component="p" sx={styles.subHeading}>
             CIVA breaks through bureaucratic barriers — bringing organizations
@@ -173,7 +173,7 @@ const styles = {
     borderRadius: "12px",
     textTransform: "none",
     backgroundColor: "#FFC000",
-    width: { xl: "50%", xs: "95%" },
+    width: { xl: "50%", sm: "50%", xs: "95%" },
     color: "black",
     "&:hover": {
       backgroundColor: "#e8ae00",

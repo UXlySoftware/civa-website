@@ -23,7 +23,8 @@ const FourthSection = () => {
       {/* New Approach section begins */}
       <Box
         sx={{
-          width: "100%",
+          border: "1px solid red",
+          width: { xl: "35%", lg: "40%", md: "45%", xs: "100%" },
           margin: 10,
           display: "flex",
           flexDirection: "column",
@@ -32,7 +33,7 @@ const FourthSection = () => {
         }}
       >
         <Typography variant="h4" sx={styles.heading}>
-          A NEW APPROACH TO <br /> CIVIC ENGAGEMENT
+          CIVIC ENGAGEMENT EMPOWERS
         </Typography>
         <Box sx={styles.divider} />
       </Box>
@@ -62,7 +63,7 @@ const FourthSection = () => {
         <Box sx={styles.dragHandleSignContainer}>
           <DragHandleIcon sx={styles.DragHandleIcon} />
         </Box>
-
+        {/* Platforms begin */}
         <Box sx={styles.shortenedPlatformSection}>
           {secondLayerColors.map((bgColor, index) => (
             <Platform
@@ -294,37 +295,7 @@ const styles = {
     position: "absolute",
     left: "50%",
     transform: "translateX(-50%)",
-    marginTop: "2%",
-    "@media (min-width: 1900px)": {
-      bottom: "-120%",
-    },
-    // "@media (max-width: 1900px)": {
-    //   bottom: "-120%",
-    // },
-    "@media (max-width: 1200px)": {
-      bottom: "-60%",
-    },
-    // "@media (max-width: 1024px)": {
-    //   bottom: "-110%",
-    // },
-    "@media (max-width: 900px)": {
-      bottom: "-65%",
-    },
-    // "@media (max-width: 670px)": {
-    //   bottom: "-125%",
-    // },
-    // "@media (max-width: 655px)": {
-    //   bottom: "-110%",
-    // },
-    "@media (max-width: 600px)": {
-      bottom: "-92%",
-    },
-    // "@media (max-width: 500px)": {
-    //   bottom: "-94%",
-    // },
-    "@media (max-width: 450px)": {
-      bottom: "-177%",
-    },
+    marginTop: "20px",
   },
   DragHandleIcon: {
     fontFamily: "'Raleway', sans-serif",
@@ -333,8 +304,8 @@ const styles = {
     margin: { xl: "30px", lg: "30px", md: "20px", sm: "15px", xs: "19px" },
   },
   divider: {
-    width: "665px",
-    maxWidth: "100%",
+    width: { xl: "675px", lg: "515px", md: "470px", sm: "450px", xs: "370px" },
+    // maxWidth: "100%",
     height: "16px",
     backgroundColor: "#FFC000",
   },

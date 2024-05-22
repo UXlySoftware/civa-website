@@ -33,13 +33,10 @@ const Footer = () => (
       <Box sx={styles.footerRight}>
         <Box sx={styles.footerLinks}>
           <Typography variant="body2" sx={styles.footerLink}>
-            Product
-          </Typography>
-          <Typography variant="body2" sx={styles.footerLink}>
             About Us
           </Typography>
           <Typography variant="body2" sx={styles.footerLink}>
-            News
+            Product
           </Typography>
           <Typography variant="body2" sx={styles.footerLink}>
             Contact
@@ -119,9 +116,9 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: {
-      xl: "center",
-      lg: "center",
-      md: "center",
+      xl: "left",
+      lg: "left",
+      md: "left",
       sm: "left",
       xs: "left",
     },
@@ -141,6 +138,7 @@ const styles = {
     fontSize: "18px",
     fontWeight: 600,
     color: "#FFC000",
+    textAlign: "left",
   },
   footerEmail: {
     fontFamily: "Inter",

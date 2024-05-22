@@ -28,8 +28,8 @@ const Header = () => {
         <Toolbar disableGutters sx={styles.toolbar}>
           <Box component="img" src={logo} alt="logo" />
           <Box sx={styles.menuBox}>
-            <Button sx={styles.button}>Product</Button>
             <Button sx={styles.button}>About Us</Button>
+            <Button sx={styles.button}>Product</Button>
             <Button sx={styles.button}>Contact</Button>
           </Box>
           <Stack sx={styles.menuIcon}>
