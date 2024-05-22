@@ -2,10 +2,30 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import united from "../assets/united.png";
 import mobileApp from "../assets/mobileApp.png";
+import backgroundVideo from "../assets/backgroundVideo.mp4";
 
 const HeroSection = () => {
   return (
     <Box sx={styles.heroBox}>
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: -1,
+          filter: "brightness(0.3)",
+        }}
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <Box sx={styles.innerBox}>
         <Box sx={styles.sideBorder} />
         <Box sx={styles.innerLeft}>
@@ -24,10 +44,7 @@ const HeroSection = () => {
         </Box>
         <Box
           sx={{
-            // border: "1px solid orange",
-            // display: "flex",
             justifyContent: "right",
-            // width: "100%",
           }}
         >
           <Box
@@ -43,14 +60,20 @@ const HeroSection = () => {
 };
 
 const styles = {
+  videoBackground: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    zIndex: -1,
+  },
   heroBox: {
+    position: "relative",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundImage: `url(${united})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
     width: "100%",
     minWidth: "100%",
     height: "100%",
@@ -61,19 +84,7 @@ const styles = {
       sm: "50vh",
       xs: "80vh",
     },
-    margin: "0 auto",
-    "@media (min-width: 1024px)": {
-      minWidth: "100%",
-    },
-    "@media (max-width: 1024px)": {
-      minWidth: "100%",
-    },
-    "@media (max-width: 768px)": {
-      minWidth: "100%",
-    },
-    "@media (max-width: 600px)": {
-      minWidth: "100%",
-    },
+    overflow: "hidden",
   },
   container: {
     paddingRight: { xs: 2, md: 3, lg: 14, xl: 20 },

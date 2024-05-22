@@ -26,7 +26,7 @@ const styles = {
       lg: "1296px",
       md: "785px",
       sm: "383px",
-      xs: "383px",
+      xs: "375px",
     },
     top: { xl: "250px", lg: "250px", md: "170px", sm: "170px", xs: "200px" },
     position: "relative",

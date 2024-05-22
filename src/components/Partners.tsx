@@ -21,17 +21,24 @@ const PartnersSection = () => (
         md={4}
         sx={{
           margin: { xl: "0px 90px", lg: "0px 90px", md: "0px 30px" },
+          maxWidth: "100%",
         }}
       >
-        <img src={ctsiLogo} alt="CTSI" style={styles.logo} />
+        <Box sx={styles.logoWrapper}>
+          <img src={ctsiLogo} alt="CTSI" style={styles.logo} />
+        </Box>
       </Grid>
       <Grid
         item
         xs={12}
         md={6}
-        sx={{ margin: { xl: "0px 0px", lg: "0px 0px", md: "0px 10px" } }}
+        sx={{
+          margin: { xl: "0px 0px", lg: "0px 0px", md: "0px 10px" },
+        }}
       >
-        <img src={mhirLogo} alt="MaineHealth" style={styles.logo} />
+        <Box sx={styles.logoWrapper}>
+          <img src={mhirLogo} alt="MaineHealth" style={styles.logo} />
+        </Box>
       </Grid>
       <Grid
         item
@@ -41,48 +48,54 @@ const PartnersSection = () => (
           margin: {
             xl: "0px -70px",
             lg: "0px -70px",
-            md: "0px 0px 0px -20px",
-            xs: "0px 0px ",
+            md: "0px -25px 0px -50px",
+            xs: "0px 0px",
           },
           paddingRight: { xs: "30px", md: 0 },
         }}
       >
-        <img
-          src={resurgensLogo}
-          alt="Institute for Research"
-          style={styles.logo}
-        />
+        <Box sx={styles.logoWrapper}>
+          <img
+            src={resurgensLogo}
+            alt="Institute for Research"
+            style={styles.logo}
+          />
+        </Box>
       </Grid>
       <Grid
         item
         xs={6}
         md={3}
-        sx={{ marginRight: { xl: "0px", lg: "-55px", md: "30px" } }}
+        sx={{ marginRight: { xl: "0px", lg: "-55px", md: "0px" } }}
       >
-        <img src={mtiLogo} alt="MTI" style={styles.logo} />
+        <Box sx={styles.logoWrapper}>
+          <img src={mtiLogo} alt="MTI" style={styles.logo} />
+        </Box>
       </Grid>
       <Grid
         item
         xs={6}
         md={3}
         sx={{
-          marginRight: { xl: "0px", lg: "0px", md: "30px" },
+          marginRight: { xl: "0px", lg: "0px", md: "0px" },
           paddingRight: { xs: "30px", md: 0 },
         }}
       >
-        <img src={atlantaLogo} alt="Atlanta" style={styles.logo} />
+        <Box sx={styles.logoWrapper}>
+          <img src={atlantaLogo} alt="Atlanta" style={styles.logo} />
+        </Box>
       </Grid>
       <Grid
         item
         xs={6}
         md={3}
-        sx={{ marginRight: { xl: "-55px", lg: "-55px", md: "-45px" } }}
+        sx={{
+          marginRight: { xl: "-55px", lg: "-55px", md: "-40px" },
+        }}
       >
-        <img
-          src={urbanLeagueLogo}
-          alt="urbanLeague"
-          style={{ ...styles.logo, marginRight: "55px" }}
-        />
+        <Box sx={styles.logoWrapper}>
+          <img src={urbanLeagueLogo} alt="urbanLeague" style={styles.logo} />
+        </Box>
       </Grid>
     </Grid>
     <JoinCommunity />
@@ -109,7 +122,8 @@ const styles = {
     margin: "0 auto 40px auto",
   },
   logosContainer: {
-    width: { xl: "60%", lg: "100%", md: "70%", xs: "90%" },
+    border: "1px solid black",
+    width: { xl: "60%", lg: "100%", md: "90%", xs: "90%" },
     padding: { sm: "0px", xs: "10px" },
     display: "flex",
     flexWrap: "wrap",
@@ -118,10 +132,10 @@ const styles = {
     alignItems: "center",
   },
   logoWrapper: {
-    flexBasis: "60%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    maxWidth: "100%",
   },
   logo: {
     maxWidth: "100%",
