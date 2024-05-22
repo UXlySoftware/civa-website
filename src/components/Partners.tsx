@@ -20,29 +20,69 @@ const PartnersSection = () => (
         xs={12}
         md={4}
         sx={{
-          margin: "2px 10px",
+          margin: { xl: "0px 90px", lg: "0px 90px", md: "0px 30px" },
         }}
       >
         <img src={ctsiLogo} alt="CTSI" style={styles.logo} />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{ margin: { xl: "0px 0px", lg: "0px 0px", md: "0px 10px" } }}
+      >
         <img src={mhirLogo} alt="MaineHealth" style={styles.logo} />
       </Grid>
-      <Grid item xs={6} md={3}>
+      <Grid
+        item
+        xs={6}
+        md={3}
+        sx={{
+          margin: {
+            xl: "0px -70px",
+            lg: "0px -70px",
+            md: "0px 0px 0px -20px",
+            xs: "0px 0px ",
+          },
+          paddingRight: { xs: "30px", md: 0 },
+        }}
+      >
         <img
           src={resurgensLogo}
           alt="Institute for Research"
           style={styles.logo}
         />
       </Grid>
-      <Grid item xs={6} md={3}>
+      <Grid
+        item
+        xs={6}
+        md={3}
+        sx={{ marginRight: { xl: "0px", lg: "-55px", md: "30px" } }}
+      >
         <img src={mtiLogo} alt="MTI" style={styles.logo} />
       </Grid>
-      <Grid item xs={6} md={3}>
+      <Grid
+        item
+        xs={6}
+        md={3}
+        sx={{
+          marginRight: { xl: "0px", lg: "0px", md: "30px" },
+          paddingRight: { xs: "30px", md: 0 },
+        }}
+      >
         <img src={atlantaLogo} alt="Atlanta" style={styles.logo} />
       </Grid>
-      <Grid item xs={6} md={3}>
-        <img src={urbanLeagueLogo} alt="urbanLeague" style={styles.logo} />
+      <Grid
+        item
+        xs={6}
+        md={3}
+        sx={{ marginRight: { xl: "-55px", lg: "-55px", md: "-45px" } }}
+      >
+        <img
+          src={urbanLeagueLogo}
+          alt="urbanLeague"
+          style={{ ...styles.logo, marginRight: "55px" }}
+        />
       </Grid>
     </Grid>
     <JoinCommunity />
@@ -69,7 +109,8 @@ const styles = {
     margin: "0 auto 40px auto",
   },
   logosContainer: {
-    width: { xl: "50%", lg: "100%", md: "50%" },
+    width: { xl: "60%", lg: "100%", md: "70%", xs: "90%" },
+    padding: { sm: "0px", xs: "10px" },
     display: "flex",
     flexWrap: "wrap",
     margin: "0 auto 0px auto",
@@ -84,7 +125,7 @@ const styles = {
   },
   logo: {
     maxWidth: "100%",
-    margin: "0px 0px",
+    margin: "15px 0px",
   },
 };
 

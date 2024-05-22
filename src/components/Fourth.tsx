@@ -20,7 +20,7 @@ const FourthSection = () => {
 
   return (
     <Container sx={styles.container}>
-      {/* New Approach section begins */}
+      {/* Engagement Empower section begins */}
       <Box
         sx={{
           width: { xl: "35%", lg: "40%", md: "45%", xs: "100%" },
@@ -155,19 +155,19 @@ const styles = {
 
   topRightRectangle: {
     position: "absolute",
-    top: { sm: "-20px", xs: "-15px" },
-    right: { sm: "-18px", xs: "-15px" },
-    width: "250px",
-    height: "150px",
+    top: { sm: "-42px", xs: "-15px" },
+    right: { sm: "-42px", xs: "-15px" },
+    width: { xl: "409px", lg: "409px", md: "269px" },
+    height: { xl: "305px", lg: "305px", md: "185px" },
     backgroundColor: "#2E86AB",
   },
   bottomLeftRectangle: {
     position: "absolute",
-    top: { xl: "210px", lg: "450px", md: "350px", sm: "350px", xs: "170px" },
-    right: { xl: "251px", lg: "251px", md: "220px", xs: "-17px" },
-    width: { xl: "1002px", lg: "1002px", md: "702px", xs: "330px" },
-    height: { xl: "0%", lg: "30%", sm: "10%", xs: "40%" },
-    paddingTop: { xl: "386px", lg: "130px", xs: "86px" },
+    top: { xl: "210px", lg: "400px", md: "290px", sm: "350px", xs: "145px" },
+    right: { xl: "251px", lg: "251px", md: "170px", xs: "-14px" },
+    width: { xl: "1003px", lg: "1003px", md: "762px", xs: "370px" },
+    height: { xl: "194px", lg: "160px", md: "150px", sm: "10%", xs: "40%" },
+    paddingTop: { xl: "386px", lg: "180px", md: "150px", xs: "156px" },
     backgroundColor: "#FFC000",
   },
   imageContainer: {
@@ -175,7 +175,7 @@ const styles = {
     width: "100%",
   },
   image: {
-    width: "100%",
+    width: { xl: "1213px", lg: "1213px", md: "898px", xs: "342px" },
     height: "auto",
     display: "flex",
   },
@@ -187,7 +187,7 @@ const styles = {
   text: {
     fontFamily: "Inter",
     fontWeight: 400,
-    fontSize: { xl: "28px", xs: "20px" },
+    fontSize: { xl: "28px", lg: "28px", md: "20px", sm: "20px", xs: "19px" },
     textAlign: "left",
     lineHeight: { xl: "41px", xs: "28px" },
     color: "#000",
@@ -214,7 +214,7 @@ const styles = {
       lg: "220vh",
       md: "110vh",
       sm: "160vh",
-      xs: "160vh",
+      xs: "210vh",
     },
     background: "#374957",
   },

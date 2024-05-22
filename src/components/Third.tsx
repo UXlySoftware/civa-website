@@ -47,7 +47,7 @@ const styles = {
     alignItems: "center",
     // gap: 15,
     // marginTop: { xl: 19, xs: 7 },
-    marginBottom: 5,
+    marginBottom: 20,
     // marginLeft: { xl: 51, lg: 20 },
   },
   textContainer: {

@@ -158,6 +158,7 @@ const styles = {
     marginBottom: "37px",
   },
   listNumber: {
+    fontFamily: "Public Sans",
     fontWeight: "700",
     color: "#2E86AB",
     marginRight: "20px",
@@ -217,6 +218,10 @@ const styles = {
     zIndex: 1,
   },
   infoSectionTextBox: {
+    display: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "left",
     width: { xs: "95%", sm: "40%" },
     height: { xl: "392px", lg: "392px", md: "392px", sm: "332px", xs: "192px" },
     paddingTop: { xs: "100px", sm: "0px" },
@@ -231,7 +236,6 @@ const styles = {
     fontWeight: 400,
     fontSize: { xl: "28px", lg: "28px", md: "18px", sm: "18px", xs: "18px" },
     lineHeight: { xl: "41px", lg: "41px", md: "24px" },
-    textAlign: "left",
   },
 };
 
