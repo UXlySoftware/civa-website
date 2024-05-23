@@ -9,9 +9,7 @@ import social from "../assets/social.png";
 import socialMobile from "../assets/socialMobile.png";
 
 const Platform = ({ customStyles = {} }) => (
-  <Box sx={{ ...styles.platform, ...customStyles }}>
-    {<img src={""} style={styles.icon} />}
-  </Box>
+  <Box sx={{ ...styles.platform, ...customStyles }}></Box>
 );
 
 const FourthSection = () => {
@@ -62,7 +60,7 @@ const FourthSection = () => {
         <Box sx={styles.dragHandleSignContainer}>
           <DragHandleIcon sx={styles.DragHandleIcon} />
         </Box>
-        {/* Platforms begin */}
+        {/*2nd and 3rd Platforms*/}
         <Box sx={styles.shortenedPlatformSection}>
           {secondLayerColors.map((bgColor, index) => (
             <Platform
@@ -85,6 +83,7 @@ const FourthSection = () => {
             />
           ))}
         </Box>
+        {/* eClipse  */}
         <Box
           sx={{
             marginTop: { xl: 10, sm: 5, xs: 20 },
@@ -103,11 +102,18 @@ const FourthSection = () => {
                 <Box sx={styles.textBox}>
                   <Typography variant="body1" sx={styles.text}>
                     CIVA offers both
-                    <b> government and community engagement —</b>
+                    <Typography component="span" sx={styles.spanBold}>
+                      {" "}
+                      government and community engagement —
+                    </Typography>
                     <br />
                     plus advanced communication tools, integration with local
-                    resources, expert guidance, and more —
-                    <b> in a single integrated platform</b>.
+                    resources, expert guidance, and more
+                    <Typography component="span" sx={styles.spanBold}>
+                      {" "}
+                      — in a single integrated platform
+                    </Typography>
+                    .
                   </Typography>
                 </Box>
               </Box>
@@ -187,10 +193,15 @@ const styles = {
   text: {
     fontFamily: "Inter",
     fontWeight: 400,
-    fontSize: { xl: "28px", lg: "28px", md: "20px", sm: "20px", xs: "19px" },
+    fontSize: { xl: "28px", lg: "28px", md: "20px", sm: "20px", xs: "20px" },
     textAlign: "left",
     lineHeight: { xl: "41px", xs: "28px" },
     color: "#000",
+  },
+  spanBold: {
+    fontFamily: "Public Sans",
+    fontWeight: 800,
+    fontSize: { xl: "32px", lg: "32px", md: "20px", sm: "20px", xs: "20px" },
   },
   container: {
     minWidth: "100%",
@@ -268,20 +279,8 @@ const styles = {
     height: { xs: "49px", sm: "79px" },
     borderRadius: "50%",
     margin: "0 10px",
-    left: "47.5%",
-    "@media (max-width: 1900px)": {
-      left: "47%",
-    },
-    "@media (max-width: 1024px)": {
-      left: "45.5%",
-    },
-    "@media (max-width: 900px)": {
-      left: "44%",
-    },
-    "@media (max-width: 600px)": {
-      left: "40%",
-      top: "41%",
-    },
+    left: { xl: "47.5%", lg: "46.5%", md: "45%", sm: "45%", xs: "40%" },
+    top: { xl: "20%", lg: "20%", md: "20%", sm: "41%", xs: "41%" },
   },
   dragHandleSignContainer: {
     display: "flex",
@@ -304,7 +303,7 @@ const styles = {
   },
   divider: {
     width: { xl: "675px", lg: "515px", md: "470px", sm: "450px", xs: "370px" },
-    // maxWidth: "100%",
+
     height: "16px",
     backgroundColor: "#FFC000",
   },

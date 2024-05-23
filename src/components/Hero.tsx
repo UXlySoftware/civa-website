@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import united from "../assets/united.png";
 import mobileApp from "../assets/mobileApp.png";
 import backgroundVideo from "../assets/backgroundVideo.mp4";
 
@@ -11,6 +10,7 @@ const HeroSection = () => {
         autoPlay
         loop
         muted
+        playsInline
         style={{
           position: "absolute",
           top: 0,
@@ -19,11 +19,9 @@ const HeroSection = () => {
           height: "100%",
           objectFit: "cover",
           zIndex: -1,
-          filter: "brightness(0.3)",
         }}
       >
         <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
 
       <Box sx={styles.innerBox}>
@@ -158,27 +156,42 @@ const styles = {
     // marginLeft: { xs: 4, md: 0 },
   },
   subHeading: {
-    lineHeight: { xl: "36px", lg: "36px", md: "29px", sm: "29px", xs: "23px" },
+    lineHeight: {
+      xl: "29px",
+      lg: "29px",
+      md: "19.5px",
+      sm: "19.5px",
+      xs: "19.5px",
+    },
     fontFamily: "Inter",
     fontWeight: "700",
     color: "#fff",
     marginBottom: { xl: 4, lg: 4, md: 4, sm: 4, xs: 3 },
     // marginLeft: { xs: 4, md: 0 },
     fontSize: {
-      xs: "clamp(16px, 4vw, 16px)",
-      sm: "clamp(16px, 4vw, 20px)",
-      md: "clamp(18px, 4vw, 24px)",
-      lg: "clamp(20px, 4vw, 29px)",
+      xs: "16px",
+      sm: "16px",
+      md: "16px",
+      lg: "24px",
+      xl: "24px",
     },
   },
   button: {
     padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" },
     fontFamily: "Inter",
     fontSize: {
-      xs: "clamp(12px, 3vw, 14px)",
-      sm: "clamp(14px, 3vw, 16px)",
-      md: "clamp(16px, 3vw, 18px)",
-      lg: "clamp(18px, 3vw, 22px)",
+      xs: "18px",
+      sm: "18px",
+      md: "18px",
+      lg: "22px",
+      xl: "22px",
+    },
+    lineHeight: {
+      xl: "27px",
+      lg: "27px",
+      md: "22px",
+      sm: "22px",
+      xs: "22px",
     },
     fontWeight: 700,
     borderRadius: "12px",

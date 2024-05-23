@@ -17,9 +17,7 @@ const ThirdSection = () => {
         </Typography>
         <Typography variant="h1" sx={styles.subHeading}>
           Our dynamic, integrated platform brings stakeholders together to
-          create meaningful programs with measurable impact.Our dynamic,
-          integrated platform brings stakeholders together to create meaningful
-          programs with measurable impact.
+          create meaningful programs with measurable impact.
         </Typography>
         <Button variant="contained" sx={styles.button}>
           Get Demo
@@ -53,11 +51,11 @@ const styles = {
   textContainer: {
     justifyContent: "center",
     textAlign: "left",
-    maxWidth: { xl: "60%", lg: "50%", md: "50%", sm: "75%", xs: "100%" },
+    maxWidth: { xl: "40%", lg: "50%", md: "50%", sm: "75%", xs: "100%" },
     // width: "100%",
     display: "flex",
     flexDirection: "column",
-    gap: { sm: "34px", xs: "22px" },
+    gap: { sm: "31px", xs: "22px" },
     marginRight: { xl: 10 },
     // maxWidth: { xs: "100%", md: "50%" },
     paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
@@ -74,7 +72,7 @@ const styles = {
         xs: "0px",
       },
       height: {
-        xl: "338px",
+        xl: "368px",
         lg: "418px",
         md: "418px",
         sm: "360px",

@@ -116,13 +116,18 @@ const styles = {
     marginBottom: "16px",
   },
   divider: {
-    width: { xl: "20%", lg: "25%", md: "30%", xs: "90%" },
+    width: { xl: "26%", lg: "26%", md: "35%", xs: "90%" },
     height: "16px",
     backgroundColor: "#FFC000",
-    margin: "0 auto 40px auto",
+    margin: {
+      xl: "0 auto 79px auto",
+      lg: "0 auto 79px auto",
+      md: "0 auto 45px auto",
+      sm: "0 auto 0px auto",
+      xs: "0 auto 0px auto",
+    },
   },
   logosContainer: {
-    border: "1px solid black",
     width: { xl: "60%", lg: "100%", md: "90%", xs: "90%" },
     padding: { sm: "0px", xs: "10px" },
     display: "flex",

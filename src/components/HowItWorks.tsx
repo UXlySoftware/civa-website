@@ -5,7 +5,7 @@ import discussionImage from "../assets/discussion.png";
 
 interface ListItemProps {
   number: number;
-  text: string;
+  text: ReactNode;
 }
 interface ImageSectionProps {
   src: string;
@@ -31,7 +31,7 @@ const ListItem: FC<ListItemProps> = ({ number, text }) => (
 
 const ImageSection: FC<ImageSectionProps> = ({ src, alt, button }) => (
   <Box sx={styles.imageBox}>
-    <img src={src} alt={alt} style={styles.image} />
+    <Box component="img" src={src} alt={alt} sx={styles.image} />
     {button}
   </Box>
 );
@@ -39,7 +39,12 @@ const ImageSection: FC<ImageSectionProps> = ({ src, alt, button }) => (
 const InfoSection: FC<InfoSectionProps> = ({ imgSrc, imgAlt, text }) => (
   <Box sx={styles.infoSection}>
     <Box sx={styles.infoSectionImageBox}>
-      <img src={imgSrc} alt={imgAlt} style={styles.infoSectionImage} />
+      <Box
+        component="img"
+        src={imgSrc}
+        alt={imgAlt}
+        sx={styles.infoSectionImage}
+      />
     </Box>
     <Box sx={styles.infoSectionTextBox}>
       <Typography variant="body1" sx={styles.infoSectionText}>
@@ -51,12 +56,27 @@ const InfoSection: FC<InfoSectionProps> = ({ imgSrc, imgAlt, text }) => (
 
 const HowItWorks = () => {
   const listItems = [
-    "Organization and community members join CIVA.",
-    "Organization and community members discover government resources.",
-    "Organizations and communities find each other.",
-    "Organizations and community members communicate and collaborate through CIVA.",
-    "Organization receives analytics, metrics, and insights based on community feedback to make programs effective.",
-    "Community members have a stronger voice and greater influence.",
+    <>
+      Organization and community <br /> members join CIVA.
+    </>,
+    <>
+      Organization and community members <br /> discover government resources.
+    </>,
+    <>
+      Organizations and communities <br /> find each other.
+    </>,
+    <>
+      Organizations and community members <br />
+      communicate and collaborate through CIVA.
+    </>,
+    <>
+      Organization receives analytics, metrics, and
+      <br /> insights based on community feedback to
+      <br /> make programs effective.
+    </>,
+    <>
+      Community members have a stronger voice <br /> and greater influence.
+    </>,
   ];
 
   return (
@@ -103,9 +123,17 @@ const HowItWorks = () => {
         imgAlt="Discussion"
         text={
           <>
-            CIVA enables <b>multi-layered engagement</b> and helps organizations
-            and communities <b>discover</b> relevant policies and government
-            resources that impact their programs.
+            CIVA enables{" "}
+            <Typography component="span" sx={styles.spanBold}>
+              multi-layered engagement{" "}
+            </Typography>
+            and helps organizations and communities{" "}
+            <Typography component="span" sx={styles.spanBold}>
+              {" "}
+              discover
+            </Typography>{" "}
+            relevant policies and government resources that impact their
+            programs.
           </>
         }
       />
@@ -148,9 +176,16 @@ const styles = {
     flexDirection: { xs: "column", md: "row" },
   },
   listBox: {
-    width: { xs: "90%", md: "40%", lg: "35%", xl: "27%" },
-    padding: "0 20px",
-    marginLeft: { xl: 35, lg: 7 },
+    width: { xs: "90%", md: "56%", lg: "45%", xl: "40%" },
+    padding: {
+      xl: "0 20px",
+      lg: "0 20px",
+      md: "0px 0px 30px 60px",
+      sm: "0 20px",
+      xs: "0 20px",
+    },
+    marginLeft: { xl: 42, lg: 12, md: 0 },
+    marginTop: { xl: "-250px", lg: "-220px", md: "-90px", xs: "41px" },
   },
   listItem: {
     display: "flex",
@@ -184,15 +219,18 @@ const styles = {
     textTransform: "none",
   },
   imageBox: {
-    width: { xs: "90%", md: "40%" },
+    width: { xs: "90%", md: "55%", lg: "45%", xl: "40%" },
+    height: "auto",
     display: "flex",
+    position: "relative",
+    top: { xl: "-55px", lg: "-55px", md: "-15px" },
     justifyContent: "center",
     alignItems: "center",
-    padding: "20px",
+    paddingBottom: "30px",
     flexDirection: { xs: "column", md: "column-reverse" },
   },
   image: {
-    maxWidth: "100%",
+    width: { xl: "80%", lg: "90%", md: "100%", sm: "100%", xs: "100%" },
     height: "auto",
   },
   infoSection: {
@@ -202,8 +240,7 @@ const styles = {
     justifyContent: "center",
     backgroundColor: "#74ADC7",
     padding: { xl: "65px", lg: "65px", md: "50px" },
-    paddingTop: { xs: "60px", sm: "0px" },
-    paddingBottom: { xs: "100px", sm: "0px" },
+    paddingTop: { xs: "68px", sm: "0px" },
     marginTop: "20px",
   },
   infoSectionImageBox: {
@@ -222,18 +259,24 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "left",
-    width: { xs: "95%", sm: "40%" },
-    height: { xl: "392px", lg: "392px", md: "392px", sm: "332px", xs: "192px" },
-    paddingTop: { xs: "100px", sm: "0px" },
+    width: { xl: "570px", lg: "570px", md: "493px", xs: "95%", sm: "30%" },
+    height: { xl: "392px", lg: "392px", md: "267px", sm: "332px", xs: "202px" },
+    paddingTop: { xs: "90px", sm: "0px" },
     position: "relative",
     bottom: { xs: 90, sm: 0 },
     zIndex: 0,
     backgroundColor: "#FFC000",
   },
   infoSectionText: {
-    padding: { xl: "55px", md: "80px 25px", xs: "0px 25px" },
+    padding: { xl: "55px", md: "0px 35px", xs: "0px 17px" },
     fontFamily: "Inter",
     fontWeight: 400,
+    fontSize: { xl: "28px", lg: "28px", md: "18px", sm: "18px", xs: "18px" },
+    lineHeight: { xl: "41px", lg: "41px", md: "24px" },
+  },
+  spanBold: {
+    fontFamily: "Public Sans",
+    fontWeight: 800,
     fontSize: { xl: "28px", lg: "28px", md: "18px", sm: "18px", xs: "18px" },
     lineHeight: { xl: "41px", lg: "41px", md: "24px" },
   },

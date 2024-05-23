@@ -9,8 +9,8 @@ const JoinCommunity = () => {
         Join the CIVA Community.
       </Typography>
       <Typography variant="body1" sx={styles.joinText}>
-        Unlock the full potential of your organization or community with CIVA's
-        data-driven engagement tools. Schedule a demo today.
+        Transform your organization or community with CIVA’s data-driven
+        engagement platform. Schedule a demo today.
       </Typography>
       <Button variant="contained" color="primary" sx={styles.demoButton}>
         Get A Demo

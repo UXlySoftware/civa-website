@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" sx={styles.appBar}>
+    <AppBar position="sticky" sx={styles.appBar}>
       <Container maxWidth={false} sx={styles.container}>
         <Toolbar disableGutters sx={styles.toolbar}>
           <Box component="img" src={logo} alt="logo" />
