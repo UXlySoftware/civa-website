@@ -1,4 +1,4 @@
-import React, { useState, SyntheticEvent } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -31,25 +31,11 @@ const ContactUs = () => {
           </Typography>
         </Box>
         {/* Tab menu starts */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            // gap: "10px",
-            justifyContent: "space-between",
-          }}
-        >
-          {/* Tabs */}
-          <Box
-            sx={{
-              display: "flex",
-              flexdirection: "row",
-              alignItems: "flex-end",
-            }}
-          >
+        <Box sx={styles.rightSide}>
+          <Box sx={styles.tabs}>
             <Box
               onClick={() => handleChange("1")}
-              sx={tabValue === "1" ? styles.selectedTabBox : styles.tabBox}
+              sx={tabValue === "1" ? styles.selectedTabBoxDemo : styles.tabBox}
             >
               <Typography
                 sx={tabValue === "1" ? styles.selectedTab : styles.tab}
@@ -58,8 +44,10 @@ const ContactUs = () => {
               </Typography>
             </Box>
             <Box
-              // onClick={() => handleChange("2")}
-              sx={tabValue === "2" ? styles.selectedTabBox : styles.tabBox}
+              onClick={() => handleChange("2")}
+              sx={
+                tabValue === "2" ? styles.selectedTabBoxSupport : styles.tabBox
+              }
             >
               <Typography
                 sx={tabValue === "2" ? styles.selectedTab : styles.tab}
@@ -68,135 +56,68 @@ const ContactUs = () => {
               </Typography>
             </Box>
           </Box>
-          {/* form */}
-          <Box sx={styles.form}>
+          <Box sx={styles.formBox}>
             <TabContext value={tabValue}>
               <TabPanel value="1" sx={styles.tabPanel}>
                 <Grid container spacing={2} sx={styles.formContainer}>
                   <Grid item xs={12} sm={6}>
-                    <Typography
-                      sx={{
-                        fontFamily: "Public Sans",
-                        fontWeight: 700,
-                        fontSize: "18px",
-                        lineHeight: "22px",
-                        marginBottom: "8px",
-                        color: "#010101",
-                      }}
-                    >
-                      * First Name
-                    </Typography>
+                    <Typography sx={styles.label}>* First Name</Typography>
                     <TextField
-                      label="Please enter your first name"
+                      placeholder="Please enter your first name"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Typography
-                      sx={{
-                        fontFamily: "Public Sans",
-                        fontWeight: 700,
-                        fontSize: "18px",
-                        lineHeight: "22px",
-                        marginBottom: "8px",
-                        color: "#010101",
-                      }}
-                    >
-                      * Organization
-                    </Typography>
+                    <Typography sx={styles.label}>* Organization</Typography>
                     <TextField
-                      label="Please enter your organization"
+                      placeholder="Please enter your organization"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Typography
-                      sx={{
-                        fontFamily: "Public Sans",
-                        fontWeight: 700,
-                        fontSize: "18px",
-                        lineHeight: "22px",
-                        marginBottom: "8px",
-                        color: "#010101",
-                      }}
-                    >
-                      * Last Name
-                    </Typography>
+                    <Typography sx={styles.label}>* Last Name</Typography>
                     <TextField
-                      label="Please enter your last name"
+                      placeholder="Please enter your last name"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Typography
-                      sx={{
-                        fontFamily: "Public Sans",
-                        fontWeight: 700,
-                        fontSize: "18px",
-                        lineHeight: "22px",
-                        marginBottom: "8px",
-                        color: "#010101",
-                      }}
-                    >
-                      Title
-                    </Typography>
+                    <Typography sx={styles.label}>Title</Typography>
                     <TextField
-                      label="Please enter your title"
+                      placeholder="Please enter your title"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Typography
-                      sx={{
-                        fontFamily: "Public Sans",
-                        fontWeight: 700,
-                        fontSize: "18px",
-                        lineHeight: "22px",
-                        marginBottom: "8px",
-                        color: "#010101",
-                      }}
-                    >
-                      * Email
-                    </Typography>
+                    <Typography sx={styles.label}>* Email</Typography>
                     <TextField
-                      label="abc@email.com"
+                      placeholder="abc@email.com"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Typography
-                      sx={{
-                        fontFamily: "Public Sans",
-                        fontWeight: 700,
-                        fontSize: "18px",
-                        lineHeight: "22px",
-                        marginBottom: "8px",
-                        color: "#010101",
-                      }}
-                    >
-                      * Phone
-                    </Typography>
+                    <Typography sx={styles.label}>* Phone</Typography>
                     <TextField
-                      label="+123 00 000 00"
+                      placeholder="+123 00 000 00"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
                   </Grid>
-
                   <Grid item xs={12}>
+                    <Typography sx={styles.label}>Notes</Typography>
                     <TextField
-                      label="Notes"
+                      placeholder="Tell us about your needs"
                       variant="outlined"
                       fullWidth
                       multiline
@@ -222,43 +143,66 @@ const ContactUs = () => {
                   </Grid>
                 </Grid>
               </TabPanel>
-              <TabPanel value="2" sx={styles.tabPanel}>
+              <TabPanel value="2" sx={styles.tabSupportPanel}>
                 <Grid container spacing={2} sx={styles.formContainer}>
-                  {/* <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={6}>
+                    <Typography sx={styles.label}>* First Name</Typography>
                     <TextField
-                      label="Organization"
+                      placeholder="Please enter your first name"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
-                  </Grid> */}
-                  {/* <Grid item xs={12} sm={6}>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography sx={styles.label}>* Organization</Typography>
                     <TextField
-                      label="Title"
+                      placeholder="Please enter your organization"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
-                  </Grid> */}
-                  {/* <Grid item xs={12} sm={6}>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography sx={styles.label}>* Last Name</Typography>
                     <TextField
-                      label="Email"
+                      placeholder="Please enter your last name"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
-                  </Grid> */}
-                  {/* <Grid item xs={12} sm={6}>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography sx={styles.label}>Title</Typography>
                     <TextField
-                      label="Phone"
+                      placeholder="Please enter your title"
                       variant="outlined"
                       fullWidth
                       sx={styles.textField}
                     />
-                  </Grid> */}
-                  {/* <Grid item xs={12}>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography sx={styles.label}>* Email</Typography>
                     <TextField
-                      label="Description"
+                      placeholder="abc@email.com"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography sx={styles.label}>* Phone</Typography>
+                    <TextField
+                      placeholder="+123 00 000 00"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography sx={styles.label}>Notes</Typography>
+                    <TextField
+                      placeholder="Tell us about your needs"
                       variant="outlined"
                       fullWidth
                       multiline
@@ -274,7 +218,7 @@ const ContactUs = () => {
                     >
                       Submit for Support
                     </Button>
-                  </Grid> */}
+                  </Grid>
                 </Grid>
               </TabPanel>
             </TabContext>
@@ -286,25 +230,6 @@ const ContactUs = () => {
 };
 
 const styles = {
-  sideBorder: {
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      left: {
-        xl: "227px",
-        lg: "0px",
-        md: "0px",
-      },
-      height: {
-        xl: "318px",
-        lg: "478px",
-        md: "438px",
-        xs: "410px",
-      },
-      width: "16px",
-      backgroundColor: "#FFC000",
-    },
-  },
   container: {
     backgroundImage: `url(${contactBg})`,
     backgroundPosition: "center",
@@ -330,6 +255,25 @@ const styles = {
     height: "500px",
     maxWidth: "100%",
   },
+  sideBorder: {
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      left: {
+        xl: "227px",
+        lg: "0px",
+        md: "0px",
+      },
+      height: {
+        xl: "318px",
+        lg: "478px",
+        md: "438px",
+        xs: "410px",
+      },
+      width: "16px",
+      backgroundColor: "#FFC000",
+    },
+  },
   heading: {
     fontFamily: "Inter",
     fontWeight: 900,
@@ -344,19 +288,16 @@ const styles = {
     fontWeight: 700,
     fontFamily: "Inter",
   },
-  form: {
-    width: "784px",
-    height: "auto",
-    backgroundColor: "#FFCC33",
-    borderBottomLeftRadius: "12px",
-    borderBottomRightRadius: "12px",
-    overflow: "hidden",
-  },
-  tabListContainer: {
+  rightSide: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    background: "red !important",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+  tabs: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-end",
+    justifyContent: "space-between",
   },
   tabBox: {
     flex: 1,
@@ -366,12 +307,21 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginRight: "10px",
   },
-  selectedTabBox: {
+  selectedTabBoxDemo: {
     flex: 1,
     height: "85px",
     background: "#FFCC33",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderTopRightRadius: "12px",
+    borderTopLeftRadius: "12px",
+  },
+  selectedTabBoxSupport: {
+    flex: 1,
+    height: "85px",
+    background: "#74ADC7", // Blue color for support tab
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -393,6 +343,27 @@ const styles = {
   },
   tabPanel: {
     padding: "30px",
+    backgroundColor: "#FFCC33",
+  },
+  formBox: {
+    width: "784px",
+    height: "auto",
+    // backgroundColor: "#FFCC33",
+    borderBottomLeftRadius: "12px",
+    borderBottomRightRadius: "12px",
+    overflow: "hidden",
+  },
+  formSupportBox: {
+    width: "784px",
+    height: "auto",
+    backgroundColor: "#74ADC7",
+    borderBottomLeftRadius: "12px",
+    borderBottomRightRadius: "12px",
+    overflow: "hidden",
+  },
+  tabSupportPanel: {
+    padding: "30px",
+    backgroundColor: "#74ADC7",
   },
   formContainer: {
     width: "100%",
@@ -417,6 +388,14 @@ const styles = {
     fontSize: "22px",
     color: "#fff",
     borderRadius: "12px",
+  },
+  label: {
+    fontFamily: "Public Sans",
+    fontWeight: 700,
+    fontSize: "18px",
+    lineHeight: "22px",
+    marginBottom: "8px",
+    color: "#010101",
   },
 };
 
