@@ -30,6 +30,256 @@ const ContactUs = () => {
             CIVA's here to help.
           </Typography>
         </Box>
+        {/* Tab menu starts */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            // gap: "10px",
+            justifyContent: "space-between",
+          }}
+        >
+          {/* Tabs */}
+          <Box
+            sx={{
+              display: "flex",
+              flexdirection: "row",
+              alignItems: "flex-end",
+            }}
+          >
+            <Box
+              onClick={() => handleChange("1")}
+              sx={tabValue === "1" ? styles.selectedTabBox : styles.tabBox}
+            >
+              <Typography
+                sx={tabValue === "1" ? styles.selectedTab : styles.tab}
+              >
+                REQUEST A DEMO
+              </Typography>
+            </Box>
+            <Box
+              // onClick={() => handleChange("2")}
+              sx={tabValue === "2" ? styles.selectedTabBox : styles.tabBox}
+            >
+              <Typography
+                sx={tabValue === "2" ? styles.selectedTab : styles.tab}
+              >
+                GET SUPPORT
+              </Typography>
+            </Box>
+          </Box>
+          {/* form */}
+          <Box sx={styles.form}>
+            <TabContext value={tabValue}>
+              <TabPanel value="1" sx={styles.tabPanel}>
+                <Grid container spacing={2} sx={styles.formContainer}>
+                  <Grid item xs={12} sm={6}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Public Sans",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                        lineHeight: "22px",
+                        marginBottom: "8px",
+                        color: "#010101",
+                      }}
+                    >
+                      * First Name
+                    </Typography>
+                    <TextField
+                      label="Please enter your first name"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Public Sans",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                        lineHeight: "22px",
+                        marginBottom: "8px",
+                        color: "#010101",
+                      }}
+                    >
+                      * Organization
+                    </Typography>
+                    <TextField
+                      label="Please enter your organization"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Public Sans",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                        lineHeight: "22px",
+                        marginBottom: "8px",
+                        color: "#010101",
+                      }}
+                    >
+                      * Last Name
+                    </Typography>
+                    <TextField
+                      label="Please enter your last name"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Public Sans",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                        lineHeight: "22px",
+                        marginBottom: "8px",
+                        color: "#010101",
+                      }}
+                    >
+                      Title
+                    </Typography>
+                    <TextField
+                      label="Please enter your title"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Public Sans",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                        lineHeight: "22px",
+                        marginBottom: "8px",
+                        color: "#010101",
+                      }}
+                    >
+                      * Email
+                    </Typography>
+                    <TextField
+                      label="abc@email.com"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Public Sans",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                        lineHeight: "22px",
+                        marginBottom: "8px",
+                        color: "#010101",
+                      }}
+                    >
+                      * Phone
+                    </Typography>
+                    <TextField
+                      label="+123 00 000 00"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <TextField
+                      label="Notes"
+                      variant="outlined"
+                      fullWidth
+                      multiline
+                      rows={4}
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <FormControlLabel
+                      control={<Checkbox color="primary" />}
+                      label="Sign up for news & updates"
+                      sx={styles.checkbox}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      sx={styles.button}
+                    >
+                      Submit for Demo
+                    </Button>
+                  </Grid>
+                </Grid>
+              </TabPanel>
+              <TabPanel value="2" sx={styles.tabPanel}>
+                <Grid container spacing={2} sx={styles.formContainer}>
+                  {/* <Grid item xs={12} sm={6}>
+                    <TextField
+                      label="Organization"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid> */}
+                  {/* <Grid item xs={12} sm={6}>
+                    <TextField
+                      label="Title"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid> */}
+                  {/* <Grid item xs={12} sm={6}>
+                    <TextField
+                      label="Email"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid> */}
+                  {/* <Grid item xs={12} sm={6}>
+                    <TextField
+                      label="Phone"
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                    />
+                  </Grid> */}
+                  {/* <Grid item xs={12}>
+                    <TextField
+                      label="Description"
+                      variant="outlined"
+                      fullWidth
+                      multiline
+                      rows={4}
+                      sx={styles.textField}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      sx={styles.button}
+                    >
+                      Submit for Support
+                    </Button>
+                  </Grid> */}
+                </Grid>
+              </TabPanel>
+            </TabContext>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
@@ -94,24 +344,23 @@ const styles = {
     fontWeight: 700,
     fontFamily: "Inter",
   },
-  rightSide: {
+  form: {
     width: "784px",
     height: "auto",
     backgroundColor: "#FFCC33",
-    borderRadius: "12px",
+    borderBottomLeftRadius: "12px",
+    borderBottomRightRadius: "12px",
     overflow: "hidden",
   },
   tabListContainer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    // borderBottom: 1,
-    // borderColor: "divider",
     background: "red !important",
   },
   tabBox: {
     flex: 1,
-    height: "80px",
+    height: "70px",
     background: "#fff",
     color: "black",
     display: "flex",
@@ -121,12 +370,13 @@ const styles = {
   },
   selectedTabBox: {
     flex: 1,
-    height: "90px", // Slightly taller height for the selected tab
+    height: "85px",
     background: "#FFCC33",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    borderBottom: "2px solid black",
+    borderTopRightRadius: "12px",
+    borderTopLeftRadius: "12px",
   },
   tab: {
     fontFamily: "Inter",
@@ -139,7 +389,7 @@ const styles = {
     fontWeight: 900,
     fontSize: "36px",
     color: "#000000 !important",
-    borderBottom: "2px solid black",
+    borderBottom: "7px solid black",
   },
   tabPanel: {
     padding: "30px",
@@ -148,19 +398,25 @@ const styles = {
     width: "100%",
   },
   textField: {
-    marginBottom: "20px",
+    marginBottom: "22px",
     backgroundColor: "#fff",
   },
   checkbox: {
-    marginBottom: "20px",
+    marginBottom: "44px",
+    fontFamily: "Public Sans",
+    fontWeight: 500,
+    fontSize: "20px",
+    lineHeight: "23px",
+    color: "#000",
   },
   button: {
     backgroundColor: "#000",
-    color: "#FFC000",
     padding: "12px 24px",
-    "&:hover": {
-      backgroundColor: "#333",
-    },
+    fontFamily: "Inter",
+    fontWeight: 500,
+    fontSize: "22px",
+    color: "#fff",
+    borderRadius: "12px",
   },
 };
 
