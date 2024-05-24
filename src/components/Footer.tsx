@@ -12,21 +12,42 @@ const Footer = () => (
   <Box sx={styles.footer}>
     <Box sx={styles.footerWrapper}>
       <Box sx={styles.footerLeft}>
-        <img src={logo} alt="CIVA" style={styles.footerLogo} />
+        <Box component="img" src={logo} alt="CIVA" sx={styles.footerLogo} />
         <Box sx={styles.footerSocial}>
           <Typography variant="body2" sx={styles.footerSocialLink}>
             Follow Us
           </Typography>
           <Box sx={styles.socialIcons}>
-            <img src={facebookIcon} alt="Facebook" style={styles.socialIcon} />
-            <img src={twitterIcon} alt="Twitter" style={styles.socialIcon} />
-            <img
+            <Box
+              component="img"
+              src={facebookIcon}
+              alt="Facebook"
+              sx={styles.socialIcon}
+            />
+            <Box
+              component="img"
+              src={twitterIcon}
+              alt="Twitter"
+              sx={styles.socialIcon}
+            />
+            <Box
+              component="img"
               src={instagramIcon}
               alt="Instagram"
-              style={styles.socialIcon}
+              sx={styles.socialIcon}
             />
-            <img src={linkedinIcon} alt="LinkedIn" style={styles.socialIcon} />
-            <img src={youtubeIcon} alt="Youtube" style={styles.socialIcon} />
+            <Box
+              component="img"
+              src={linkedinIcon}
+              alt="LinkedIn"
+              sx={styles.socialIcon}
+            />
+            <Box
+              component="img"
+              src={youtubeIcon}
+              alt="Youtube"
+              sx={styles.socialIcon}
+            />
           </Box>
         </Box>
       </Box>
@@ -73,9 +94,10 @@ const styles = {
     width: "70%",
     flexDirection: { xs: "column", md: "row" },
     margin: {
-      xs: "126px 0 0 10px",
-      md: "126px auto 0 auto",
+      xs: "61px 0 0 10px",
+      md: "129px auto 0 auto",
     },
+
     justifyContent: "space-between",
     gap: { xl: "0px", lg: "0px", md: "0px", sm: "25px", xs: "25px" },
   },
@@ -85,7 +107,7 @@ const styles = {
     alignItems: "left",
     justifyContent: "space-between",
   },
-  footerLogo: { maxHeight: "100%" },
+  footerLogo: { maxHeight: "100%", width: "180px", height: "auto" },
   footerRight: {
     display: "flex",
     flexDirection: "column",
@@ -130,10 +152,11 @@ const styles = {
     gap: { xl: "12px", lg: "12px", md: "12px", sm: "18px", xs: "18px" },
   },
   socialIcon: {
-    width: "24px",
-    height: "24px",
+    width: { xl: "25px", lg: "25px", md: "25px", sm: "34px", xs: "34px" },
+    height: "auto",
   },
   footerSocialLink: {
+    marginTop: "65px",
     fontFamily: "Inter",
     fontSize: "18px",
     fontWeight: 600,

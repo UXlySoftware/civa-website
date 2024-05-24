@@ -98,7 +98,7 @@ const PartnersSection = () => (
         </Box>
       </Grid>
     </Grid>
-    <JoinCommunity />
+    {/* <JoinCommunity /> */}
   </Box>
 );
 

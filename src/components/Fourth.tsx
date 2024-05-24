@@ -7,6 +7,8 @@ import Community from "../assets/Community.svg";
 import eclipse from "../assets/eclipse.png";
 import social from "../assets/social.png";
 import socialMobile from "../assets/socialMobile.png";
+import plusIcon from "../assets/plus.png";
+import equalIcon from "../assets/equal.png";
 
 const Platform = ({ customStyles = {} }) => (
   <Box sx={{ ...styles.platform, ...customStyles }}></Box>
@@ -46,7 +48,12 @@ const FourthSection = () => {
             {/* Plus sign */}
           </Box>
           <Box sx={styles.plusSignContainer}>
-            <AddIcon sx={styles.plusSign} />
+            <Box
+              component="img"
+              src={plusIcon}
+              alt="Plus"
+              sx={styles.plusSign}
+            />
           </Box>
           <Box sx={{ ...styles.platform, gap: 6, background: "#76848A" }}>
             <img src={Community} alt="Community Icon" style={styles.icon} />
@@ -58,7 +65,12 @@ const FourthSection = () => {
         </Box>
         {/* Equal sign */}
         <Box sx={styles.dragHandleSignContainer}>
-          <DragHandleIcon sx={styles.DragHandleIcon} />
+          <Box
+            component="img"
+            alt="equal"
+            src={equalIcon}
+            sx={styles.DragHandleIcon}
+          />
         </Box>
         {/*2nd and 3rd Platforms*/}
         <Box sx={styles.shortenedPlatformSection}>
@@ -92,7 +104,14 @@ const FourthSection = () => {
             alignItems: "center",
           }}
         >
-          <img src={eclipse} alt="Eclipse" width={350} height={350} />
+          <Box
+            component="img"
+            src={eclipse}
+            alt="Eclipse"
+            width={{ xl: 375, md: 345, xs: 250 }}
+            sx={{ maxWidth: "100%", maxHeight: "100%" }}
+            height={{ xl: 375, md: 345, xs: 250 }}
+          />
         </Box>
         <Box>
           <Box sx={styles.wrapper}>
@@ -147,43 +166,64 @@ const FourthSection = () => {
 
 const styles = {
   wrapper: {
-    padding: 8,
-    marginTop: 10,
+    // padding: 8,
+    marginTop: 15,
     display: "flex",
     justifyContent: "center",
+    maxWidth: "100%",
   },
 
   outerContainer: {
     minHeight: "400px",
     position: "relative",
-    maxWidth: { xl: "1210px", md: "1210px", xs: "342px" },
+    maxWidth: { xl: "1210px", md: "1210px", sm: "100%", xs: "342px" },
   },
 
   topRightRectangle: {
     position: "absolute",
     top: { sm: "-42px", xs: "-15px" },
-    right: { sm: "-42px", xs: "-15px" },
-    width: { xl: "409px", lg: "409px", md: "269px" },
-    height: { xl: "305px", lg: "305px", md: "185px" },
+    right: { md: "-42px", sm: "-15px", xs: "-15px" },
+    width: { xl: "409px", lg: "409px", md: "269px", sm: "269px", xs: "226px" },
+    height: { xl: "305px", lg: "305px", md: "185px", sm: "185px", xs: "185px" },
     backgroundColor: "#2E86AB",
   },
   bottomLeftRectangle: {
     position: "absolute",
-    top: { xl: "210px", lg: "400px", md: "290px", sm: "350px", xs: "145px" },
-    right: { xl: "251px", lg: "251px", md: "170px", xs: "-14px" },
-    width: { xl: "1003px", lg: "1003px", md: "762px", xs: "370px" },
-    height: { xl: "194px", lg: "160px", md: "150px", sm: "10%", xs: "40%" },
-    paddingTop: { xl: "386px", lg: "180px", md: "150px", xs: "156px" },
+    top: { xl: "210px", lg: "400px", md: "290px", sm: "160px", xs: "205px" },
+    right: { xl: "251px", lg: "251px", md: "170px", sm: "125px", xs: "-14px" },
+    width: {
+      xl: "1003px",
+      lg: "1003px",
+      md: "762px",
+      sm: "662px",
+      xs: "370px",
+    },
+    height: { xl: "194px", lg: "160px", md: "150px", sm: "150px", xs: "40%" },
+    paddingTop: {
+      xl: "386px",
+      lg: "180px",
+      md: "150px",
+      sm: "205px",
+      xs: "96px",
+    },
     backgroundColor: "#FFC000",
   },
   imageContainer: {
     position: "relative",
     width: "100%",
+    height: "auto",
   },
   image: {
-    width: { xl: "1213px", lg: "1213px", md: "898px", xs: "342px" },
+    width: {
+      xl: "1213px",
+      lg: "1213px",
+      md: "898px",
+      sm: "650px",
+      xs: "342px",
+    },
     height: "auto",
     display: "flex",
+    maxWidth: "100%",
   },
   textBox: {
     paddingLeft: { sm: "38px", xs: "16px" },
@@ -274,36 +314,43 @@ const styles = {
     position: "absolute",
     justifyContent: "center",
     alignItems: "center",
+    display: "flex",
     backgroundColor: "#FFC000",
-    width: { xs: "49px", sm: "79px" },
-    height: { xs: "49px", sm: "79px" },
+    width: { xs: "49px", sm: "79px", xl: "79px" },
+    height: { xs: "49px", sm: "79px", xl: "79px" },
     borderRadius: "50%",
     margin: "0 10px",
     left: { xl: "47.5%", lg: "46.5%", md: "45%", sm: "45%", xs: "40%" },
     top: { xl: "20%", lg: "20%", md: "20%", sm: "41%", xs: "41%" },
+  },
+  plusSign: {
+    width: "100%",
+    height: "auto",
+    maxWidth: "40%",
+    maxHeight: "80%",
   },
   dragHandleSignContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFC000",
-    width: { xs: "100px", sm: "89px", md: "110px", lg: "140px" },
-    height: { xs: "100px", sm: "89px", md: "110px", lg: "140px" },
+    width: { xs: "73px", sm: "89px", md: "110px", lg: "140px" },
+    height: { xs: "73px", sm: "89px", md: "110px", lg: "140px" },
     borderRadius: "50%",
     position: "absolute",
     left: "50%",
     transform: "translateX(-50%)",
-    marginTop: "20px",
+    marginTop: "25px",
   },
   DragHandleIcon: {
-    fontFamily: "'Raleway', sans-serif",
-    fontWeight: 900,
-    fontSize: { xl: "75px", lg: "75px", md: "70px", sm: "60px", xs: "65px" },
-    margin: { xl: "30px", lg: "30px", md: "20px", sm: "15px", xs: "19px" },
+    width: "100%", // Ensure the image fits within the container
+    height: "auto", // Maintain aspect ratio
+    maxWidth: "50%", // Optionally, control the maximum size of the image
+    maxHeight: "80%",
   },
   divider: {
     width: { xl: "675px", lg: "515px", md: "470px", sm: "450px", xs: "370px" },
-
+    maxWidth: "100%",
     height: "16px",
     backgroundColor: "#FFC000",
   },
@@ -313,24 +360,20 @@ const styles = {
   platformText: {
     fontFamily: "Public Sans",
     fontWeight: "800",
-    fontSize: { xs: "15px", sm: "17px", md: "19px", lg: "32px" },
-    lineHeight: { xs: "24px", sm: "30px", md: "37.6px" },
+    fontSize: { xs: "15px", sm: "17px", md: "20px", lg: "32px", xl: "32px" },
+    lineHeight: { xs: "24px", sm: "23px", md: "23px", lg: "38px", xl: "38px" },
     marginTop: "10px",
   },
-  plusSign: {
-    fontFamily: "Raleway sans-serif",
-    fontWeight: "900",
-    fontSize: { xl: "50px", lg: "50px", md: "50px", xs: "45px" },
-    margin: { sm: "12px 12px", xs: "3px 3px" },
-    color: "black",
-  },
+
   eclipse: {
     height: "auto",
     "@media (max-width: 2900px)": {
       width: "100%",
+      maxWith: "100%",
     },
     "@media (max-width: 1920px)": {
       width: "110%",
+      maxWith: "100%",
     },
   },
 };

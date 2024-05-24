@@ -7,26 +7,21 @@ import Fourth from "./components/Fourth.tsx";
 import HowItWorks from "./components/HowItWorks";
 import Partners from "./components/Partners";
 import Footer from "./components/Footer";
+import HomePage from "./components/HomePage";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
-    <div>
-      {/* header */}
+    <Router>
       <Header />
-      {/* Hero */}
-      <Hero />
-      {/* Second Section */}
-      <Second />
-      {/* Third Section */}
-      <ThirdSection />
-      {/* How it works section */}
-      <Fourth />
-      <HowItWorks />
-      {/* Partners */}
-      <Partners />
-      {/* Footer */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contact" element={<ContactUs />} />
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 }
 

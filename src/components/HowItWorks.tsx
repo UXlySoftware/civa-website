@@ -143,7 +143,13 @@ const HowItWorks = () => {
 
 const styles = {
   container: {
-    padding: "142px 0px",
+    padding: {
+      xl: "81px 0px",
+      lg: "81px 0px",
+      md: "46px 0px",
+      sm: "46px 0px",
+      xs: "40px 0px",
+    },
     minWidth: "100%",
     paddingLeft: "0px !important",
     paddingRight: "0px !important",

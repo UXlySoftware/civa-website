@@ -16,8 +16,9 @@ const ThirdSection = () => {
           CIVA CONNECTS
         </Typography>
         <Typography variant="h1" sx={styles.subHeading}>
-          Our dynamic, integrated platform brings stakeholders together to
-          create meaningful programs with measurable impact.
+          Our dynamic, integrated platform brings <br />
+          stakeholders together to create <br /> meaningful programs with
+          measurable <br /> impact.
         </Typography>
         <Button variant="contained" sx={styles.button}>
           Get Demo
@@ -43,20 +44,19 @@ const styles = {
     flexDirection: { xs: "column-reverse", md: "row" },
     justifyContent: "space-between",
     alignItems: "center",
-    // gap: 15,
-    // marginTop: { xl: 19, xs: 7 },
+
     marginBottom: 20,
-    // marginLeft: { xl: 51, lg: 20 },
   },
   textContainer: {
     justifyContent: "center",
     textAlign: "left",
-    maxWidth: { xl: "40%", lg: "50%", md: "50%", sm: "75%", xs: "100%" },
-    // width: "100%",
+    maxWidth: { xl: "40%", lg: "50%", md: "50%", sm: "75%", xs: "356px" },
+    width: "100%",
     display: "flex",
     flexDirection: "column",
-    gap: { sm: "31px", xs: "22px" },
+    gap: { xl: "32px", lg: "32px", md: "22px", sm: "22px", xs: "22px" },
     marginRight: { xl: 10 },
+    marginTop: { xl: "0px", lg: "0px", md: "0px", sm: "0px", xs: "60px" },
     // maxWidth: { xs: "100%", md: "50%" },
     paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
   },
@@ -76,9 +76,9 @@ const styles = {
         lg: "418px",
         md: "418px",
         sm: "360px",
-        xs: "355px",
+        xs: "293px",
       },
-      marginTop: { xl: 4, lg: 4, md: 3, sm: 2, xs: 2 },
+      marginTop: { xl: 4, lg: 4, md: 3, sm: 2, xs: 3 },
       width: "16px",
       backgroundColor: "black",
     },
@@ -88,7 +88,6 @@ const styles = {
     fontWeight: "900",
     fontSize: { xs: "3s6px", sm: "52px" },
     lineHeight: { xs: "42px", sm: "58px" },
-    marginBottom: 2,
   },
   subHeading: {
     color: "#010101",
@@ -102,11 +101,13 @@ const styles = {
     padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" },
     fontFamily: "Inter",
     fontSize: {
-      xs: "clamp(12px, 3vw, 14px)",
-      sm: "clamp(14px, 3vw, 16px)",
-      md: "clamp(16px, 3vw, 18px)",
-      lg: "clamp(18px, 3vw, 22px)",
+      xs: "18px",
+      sm: "18px",
+      md: "18px",
+      lg: "22px",
+      xl: "22px",
     },
+    lineHeight: { xs: "22px", sm: "22px", md: "22px", lg: "27px", xl: "27px" },
     fontWeight: 700,
     borderRadius: "12px",
     textTransform: "none",

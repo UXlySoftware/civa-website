@@ -14,10 +14,11 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-
+  const navigate = useNavigate();
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
@@ -30,7 +31,9 @@ const Header = () => {
           <Box sx={styles.menuBox}>
             <Button sx={styles.button}>About Us</Button>
             <Button sx={styles.button}>Product</Button>
-            <Button sx={styles.button}>Contact</Button>
+            <Button sx={styles.button} onClick={() => navigate("/contact")}>
+              Contact
+            </Button>
           </Box>
           <Stack sx={styles.menuIcon}>
             <IconButton onClick={handleDrawerToggle}>

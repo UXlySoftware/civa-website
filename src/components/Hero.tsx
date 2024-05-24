@@ -6,23 +6,16 @@ import backgroundVideo from "../assets/backgroundVideo.mp4";
 const HeroSection = () => {
   return (
     <Box sx={styles.heroBox}>
-      <video
+      <Box
+        component="video"
         autoPlay
         loop
         muted
         playsInline
-        style={{
-          position: "absolute",
-          height: "100%",
-          top: 0,
-          left: 0,
-          width: "100%",
-          objectFit: "cover",
-          zIndex: -1,
-        }}
+        sx={styles.videoBackground}
       >
         <source src={backgroundVideo} type="video/mp4" />
-      </video>
+      </Box>
 
       <Box sx={styles.innerBox}>
         <Box sx={styles.sideBorder} />
