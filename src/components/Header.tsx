@@ -90,6 +90,7 @@ const Header = () => {
                       fontSize: "20px",
                       fontFamily: "Inter",
                     }}
+                    onClick={() => navigate("/contact")}
                   />
                 </ListItem>
               </List>
