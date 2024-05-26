@@ -1,19 +1,33 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.16613299.js",
+    "main.js": "/static/js/main.f78f9791.js",
     "static/media/backgroundVideo.mp4": "/static/media/backgroundVideo.2ca8bbbe7f174337fa5f.mp4",
     "static/media/contactBg.png": "/static/media/contactBg.62acff9c84fb3ca392bd.png",
+    "static/media/aboutHero.png": "/static/media/aboutHero.fd3927ba2f36d716eb1f.png",
+    "static/media/missionImage.png": "/static/media/missionImage.4d8b950865eae54f46b7.png",
     "static/media/social.png": "/static/media/social.b64c6c0366dd48f8d95f.png",
     "static/media/phone.png": "/static/media/phone.ef4145653e183521c185.png",
+    "static/media/iPhone.png": "/static/media/iPhone.063adfeac8fd0d851f80.png",
     "static/media/discussion.png": "/static/media/discussion.0a000fdea38c90f6680c.png",
     "static/media/mobileApp.png": "/static/media/mobileApp.06a07a5c53b8ce8999a2.png",
+    "static/media/third-2.png": "/static/media/third-2.81262e336184332f7497.png",
+    "static/media/storyImage.png": "/static/media/storyImage.c123ab3bda3d3979dddd.png",
+    "static/media/jermaineImage.png": "/static/media/jermaineImage.8bc04e7e78d066804743.png",
+    "static/media/third-1.png": "/static/media/third-1.a7f55450ddfbd1d92ecb.png",
+    "static/media/third-3.png": "/static/media/third-3.0b9cb8159061b1550e13.png",
+    "static/media/akeemImage.png": "/static/media/akeemImage.a8b6e685e7b3c598b15d.png",
+    "static/media/horaceImage.png": "/static/media/horaceImage.2f5e5bb65bce219aefa1.png",
+    "static/media/mollyImage.png": "/static/media/mollyImage.38d725340c189ae339d4.png",
+    "static/media/aboutHeroMobile.png": "/static/media/aboutHeroMobile.abfb38256ad8500b4e6d.png",
     "static/media/socialMobile.png": "/static/media/socialMobile.a1e5a0a8faa70aa14896.png",
+    "static/media/missionImageMobil.png": "/static/media/missionImageMobil.b2bded54d1495ebff0bc.png",
     "static/media/venDiagram.png": "/static/media/venDiagram.f13eb0791c40911a6081.png",
     "static/media/resurgensLogo.png": "/static/media/resurgensLogo.2b9dba529e1c770c588c.png",
     "static/media/mtiLogo.png": "/static/media/mtiLogo.f446088dfc999f2a2f0b.png",
     "static/media/ctsiLogo.png": "/static/media/ctsiLogo.2d52a79f225693c7c58c.png",
     "static/media/urbanLeague.png": "/static/media/urbanLeague.67cde9a87428cca29ac2.png",
+    "static/media/second.png": "/static/media/second.bfb4601b095aa6957f7f.png",
     "static/media/atlantaLogo.png": "/static/media/atlantaLogo.c9837f27b186a4343cbc.png",
     "static/media/eclipse.png": "/static/media/eclipse.b706527bcebe024f722b.png",
     "static/media/mhirLogo.png": "/static/media/mhirLogo.a7f06f30bd5c634d7878.png",
@@ -26,10 +40,10 @@
     "static/media/linkedin.svg": "/static/media/linkedin.6eab64320009b550d176507d38f41b6e.svg",
     "static/media/facebook.svg": "/static/media/facebook.3e5f1573ce30a3acb3e477982bd0f6ec.svg",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.16613299.js.map": "/static/js/main.16613299.js.map"
+    "main.f78f9791.js.map": "/static/js/main.f78f9791.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.16613299.js"
+    "static/js/main.f78f9791.js"
   ]
 }

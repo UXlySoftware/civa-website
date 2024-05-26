@@ -328,14 +328,36 @@ const styles = {
   },
   textField: {
     width: "100%",
-    // marginBottom: "22px",
     backgroundColor: "#fff",
+    border: "none",
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "transparent",
+      },
+      "&:hover fieldset": {
+        borderColor: "#010101",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#010101",
+      },
+    },
   },
   textFieldNotes: {
     width: "100%",
-    // marginBottom: "22px",
     backgroundColor: "#fff",
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "transparent",
+      },
+      "&:hover fieldset": {
+        borderColor: "#010101",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#010101",
+      },
+    },
   },
+
   checkbox: {
     marginBottom: "44px",
     fontFamily: "Public Sans",
@@ -354,6 +376,9 @@ const styles = {
     color: "#fff",
     borderRadius: "12px",
     textTransform: "none",
+    "&:hover": {
+      backgroundColor: "#E8AE00",
+    },
   },
   label: {
     fontFamily: "Public Sans",
