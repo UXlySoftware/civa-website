@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import {
   Box,
   Typography,
@@ -16,6 +16,7 @@ import missionImage from "../assets/missionImage.png";
 import akeemImage from "../assets/akeemImage.png";
 import jermaineImage from "../assets/jermaineImage.png";
 import missionImageMobil from "../assets/missionImageMobil.png";
+import OurTeam from "./OurTeam";
 
 const MissionAndBios = () => {
   const theme = useTheme();
@@ -27,19 +28,19 @@ const MissionAndBios = () => {
         mt: { xl: 10, lg: 10, md: 7, xs: 75 },
         px: 2,
         height: {
-          xl: "200vh",
-          lg: "330vh",
-          md: "160vh",
+          xl: "400vh",
+          lg: "505vh",
+          md: "230vh",
           sm: "360vh",
-          xs: "430vh",
+          xs: "650vh",
         },
+        marginBottom: { xl: "-65%", lg: "-95%", md: "-95%", xs: "-395%" },
         backgroundColor: "#374957",
         // height: "auto",
       }}
     >
       <Box
         sx={{
-          border: "1px solid red",
           borderBottom: "6px solid #FFC000",
           width: {
             xl: "500px",
@@ -108,7 +109,6 @@ const MissionAndBios = () => {
       </Box>
       <Box
         sx={{
-          border: "1px solid red",
           borderBottom: "16px solid #FFC000",
           width: {
             xl: "519px",
@@ -141,7 +141,7 @@ const MissionAndBios = () => {
             color: "#fff",
           }}
         >
-          FOUNDERS BIOS{" "}
+          FOUNDER BIOS{" "}
         </Typography>
       </Box>
       {/* Founders */}
@@ -306,7 +306,7 @@ const MissionAndBios = () => {
 
           <CardContent sx={{ background: "#fff", pt: 8 }}>
             <Typography variant="h5" sx={{ fontWeight: 700, mt: 2 }}>
-              ACKEEM EVANS
+              JERMAINE HARTSFIELD
             </Typography>
             <Typography variant="subtitle1" sx={{ fontWeight: 400, mb: 2 }}>
               Co-Founder and CEO
@@ -320,6 +320,8 @@ const MissionAndBios = () => {
             <Typography variant="body1" sx={{ mb: 2 }}>
               Jermaine’s experience bringing organizations and communities
               together includes:
+              <br />
+              <br />
             </Typography>
             <List>
               {[

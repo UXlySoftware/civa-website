@@ -11,6 +11,9 @@ import heroBanner from "../assets/aboutHero.png";
 import heroBannerMobile from "../assets/aboutHeroMobile.png";
 import storyImage from "../assets/storyImage.png";
 import OurMission from "../components/OurMission";
+import OurTeam from "../components/OurTeam";
+import JoinCommunity from "./JoinCommunity";
+
 const AboutUs = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -19,7 +22,7 @@ const AboutUs = () => {
     <Box
       sx={{
         height: "auto",
-        marginBottom: { xl: "0px", sm: "700px", xs: "700px" },
+        marginBottom: { xl: "0px", sm: "0px", xs: "700px" },
       }}
     >
       {/* Hero */}
@@ -62,9 +65,8 @@ const AboutUs = () => {
         >
           <Box
             sx={{
-              border: "1px solid red",
-              borderBottom: "16px solid #FFC000", // Adjust the thickness here
-              width: "500px", // Adjust the length here
+              borderBottom: "16px solid #FFC000",
+              width: "500px",
               marginBottom: "8px",
             }}
           >
@@ -169,6 +171,8 @@ const AboutUs = () => {
         </Box>
       </Box>
       <OurMission />
+      <OurTeam />
+      <JoinCommunity />
     </Box>
   );
 };
@@ -184,7 +188,6 @@ const styles = {
     alignItems: "center",
   },
   textOverlay: {
-    border: "1px solid red",
     width: { xl: "40%", lg: "60%" },
     position: "absolute",
     top: { xl: "15%", lg: "8%", md: "0%", sm: "0%", xs: "20%" },
