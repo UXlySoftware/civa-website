@@ -8,27 +8,46 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import missionImage from "../assets/missionImage.png";
 import akeemImage from "../assets/akeemImage.png";
 import jermaineImage from "../assets/jermaineImage.png";
+import missionImageMobil from "../assets/missionImageMobil.png";
 
 const MissionAndBios = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box
       sx={{
         mt: { xl: 10, lg: 10, md: 7, xs: 75 },
         px: 2,
+        height: {
+          xl: "200vh",
+          lg: "330vh",
+          md: "160vh",
+          sm: "360vh",
+          xs: "430vh",
+        },
         backgroundColor: "#374957",
-        height: "auto",
+        // height: "auto",
       }}
     >
       <Box
         sx={{
           border: "1px solid red",
-          borderBottom: "16px solid #FFC000",
-          width: "500px",
+          borderBottom: "6px solid #FFC000",
+          width: {
+            xl: "500px",
+            lg: "500px",
+            md: "500px",
+            sm: "250px",
+            xs: "200px",
+          },
           margin: {
             xl: "0 auto 109px auto",
             lg: "0 auto 109px auto",
@@ -42,7 +61,7 @@ const MissionAndBios = () => {
         <Typography
           variant="h4"
           sx={{
-            marginTop: 10,
+            marginTop: 5,
             fontSize: {
               xl: "52px",
               lg: "52px",
@@ -51,7 +70,7 @@ const MissionAndBios = () => {
             lineHeight: { xl: "58px", lg: "58px" },
           }}
         >
-          Our Story{" "}
+          Our Mission{" "}
         </Typography>
       </Box>
       <Box sx={{ position: "relative", textAlign: "center" }}>
@@ -70,12 +89,18 @@ const MissionAndBios = () => {
         </Box>
         <Box
           component="img"
-          src={missionImage}
+          src={isMobile ? missionImageMobil : missionImage}
           alt="Mission"
           sx={{
             width: "100%",
-            maxWidth: "1209px",
-            mx: "auto",
+            maxWidth: {
+              xl: "1209px",
+              lg: "1209px",
+              md: "736px",
+              sm: "340px",
+              xs: "340px",
+            },
+            mt: "25px",
             zIndex: 2,
             position: "relative",
           }}
@@ -85,13 +110,20 @@ const MissionAndBios = () => {
         sx={{
           border: "1px solid red",
           borderBottom: "16px solid #FFC000",
-          width: "519px",
+          width: {
+            xl: "519px",
+            lg: "519px",
+            md: "571px",
+            sm: "290px",
+            xs: "340px",
+          },
+
           margin: {
             xl: "270px auto 109px auto",
             lg: "270px auto 109px auto",
-            md: "0 auto 49px auto",
+            md: "270px auto 49px auto",
             sm: "0 auto 45px auto",
-            xs: "0 auto 45px auto",
+            xs: "200px auto 45px auto",
           },
           textAlign: "center",
         }}
@@ -113,18 +145,44 @@ const MissionAndBios = () => {
         </Typography>
       </Box>
       {/* Founders */}
-      {/* <Box
+      <Box
         sx={{
           display: "flex",
+          flexDirection: {
+            xl: "row",
+            lg: "row",
+            md: "row",
+            sm: "column",
+            xs: "column",
+          },
           justifyContent: "center",
-          my: 5,
-          px: 2,
-          gap: 12,
+          //   marginTop: { xl: 10, lg: "10px", md: 0 },
+          paddingTop: {
+            xl: "40px",
+            lg: "40px",
+            md: "60px",
+            sm: "40px",
+            xs: "40px",
+          },
+          gap: { xl: 12, lg: 12, md: 12, sm: 100, xs: 124 },
         }}
       >
         <Card
           sx={{
-            maxWidth: "400px",
+            width: {
+              xl: "600px",
+              lg: "600px",
+              md: "365px",
+              sm: "365px",
+              xs: "365px",
+            },
+            height: {
+              xl: "480px",
+              lg: "480px",
+              md: "291px",
+              sm: "270px",
+              xs: "270px",
+            },
             backgroundColor: "#000",
             color: "#000",
             position: "relative",
@@ -136,9 +194,21 @@ const MissionAndBios = () => {
             src={akeemImage}
             alt="Akeem Evans"
             sx={{
-              width: "100%",
-              height: "auto",
-              borderBottom: "8px solid black",
+              width: {
+                xl: "375px",
+                lg: "375px",
+                md: "228px",
+                sm: "228px",
+                xs: "228px",
+              },
+              height: {
+                xl: "539px",
+                lg: "539px",
+                md: "327px",
+                sm: "327px",
+                xs: "327px",
+              },
+              //   borderBottom: "8px solid black",
               marginTop: "-70px", // Move the image upwards
               position: "relative",
               zIndex: 10,
@@ -187,7 +257,20 @@ const MissionAndBios = () => {
         </Card>
         <Card
           sx={{
-            maxWidth: "400px",
+            width: {
+              xl: "600px",
+              lg: "600px",
+              md: "365px",
+              sm: "365px",
+              xs: "365px",
+            },
+            height: {
+              xl: "480px",
+              lg: "480px",
+              md: "291px",
+              sm: "270px",
+              xs: "270px",
+            },
             backgroundColor: "#000",
             color: "#000",
             position: "relative",
@@ -197,44 +280,54 @@ const MissionAndBios = () => {
           <Box
             component="img"
             src={jermaineImage}
-            alt="JERMAINE HARTSFIELD"
+            alt="Jermaine"
             sx={{
-              width: "100%",
-              height: "auto",
-              marginTop: "-70px",
+              width: {
+                xl: "448px",
+                lg: "448px",
+                md: "272px",
+                sm: "272px",
+                xs: "272px",
+              },
+              height: {
+                xl: "537px",
+                lg: "537px",
+                md: "325px",
+                sm: "325px",
+                xs: "325px",
+              },
+
+              marginTop: "-70px", // Move the image upwards
               position: "relative",
               zIndex: 10,
             }}
           />
           <Box sx={styles.divider} />
-          <CardContent sx={{ background: "#fff", pt: 4 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mt: 0 }}>
+
+          <CardContent sx={{ background: "#fff", pt: 8 }}>
+            <Typography variant="h5" sx={{ fontWeight: 700, mt: 2 }}>
               ACKEEM EVANS
             </Typography>
             <Typography variant="subtitle1" sx={{ fontWeight: 400, mb: 2 }}>
               Co-Founder and CEO
             </Typography>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              With an extensive background in public sector leadership as well
-              as program and grants management, Akeem is celebrated for his
-              global contributions to community development, notably with the
-              Peace Corps in Albania and with the Organization for Security and
-              Co-operation in Europe.
+              Jermaine brings a wealth of experience in organizational
+              development and technical analysis to CIVA. Leveraging his public
+              and private sector expertise, he is pivotal in shaping the
+              operational strategies that drive CIVA’s mission forward.
             </Typography>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              As a leader, he is deeply committed to innovation and using
-              technology to spur social change.
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 2 }}>
-              Akeem’s experience in this arena includes:
+              Jermaine’s experience bringing organizations and communities
+              together includes:
             </Typography>
             <List>
               {[
-                "2x Founder",
-                "10+ Years of Experience in Politics & Government",
-                "U.S. Congressional Staffer",
-                "Lead Allocation of $139M in Federal Funding",
-                "M.S. Public Policy c/o '24",
+                "University Professor: Organizational Dynamics",
+                "10+ years Business Development Experience",
+                "Board member of Philadelphia Region Organizational Development Network",
+                "Community Development Specialist",
+                "M.S. in Organizational Development and Leadership",
               ].map((text, index) => (
                 <ListItem key={index} disableGutters>
                   <ListItemIcon sx={{ color: "#FFC000" }}>
@@ -246,7 +339,7 @@ const MissionAndBios = () => {
             </List>
           </CardContent>
         </Card>
-      </Box> */}
+      </Box>
     </Box>
   );
 };
@@ -255,26 +348,26 @@ const styles = {
   topRightRectangle: {
     position: "absolute",
     zIndex: 1,
-    top: { xl: "-47px", lg: "-47px" },
-    right: { xl: "293px", lg: "55px", md: "20px", sm: "-15px", xs: "-15px" },
+    top: { xl: "-30px", lg: "-47px", md: "0px" },
+    right: { xl: "293px", lg: "55px", md: "100px", sm: "-8px", xs: "-8px" },
     width: { xl: "613px", lg: "613px", md: "269px", sm: "269px", xs: "226px" },
     height: { xl: "318px", lg: "318px", md: "185px", sm: "185px", xs: "185px" },
     backgroundColor: "#2E86AB",
   },
   bottomLeftRectangle: {
     position: "absolute",
-    top: { xl: "190px", lg: "350px", md: "290px", sm: "160px", xs: "205px" },
+    top: { xl: "190px", lg: "350px", md: "230px", sm: "160px", xs: "205px" },
     right: {
       xl: "595px",
       lg: "350px",
-      md: "170px",
-      sm: "125px",
-      xs: "-14px",
+      md: "240px",
+      sm: "-5px",
+      xs: "-5px",
     },
     width: {
       xl: "1003px",
       lg: "1003px",
-      md: "762px",
+      md: "662px",
       sm: "662px",
       xs: "370px",
     },
@@ -308,7 +401,7 @@ const styles = {
     lineHeight: "41px",
   },
   divider: {
-    width: { xl: "675px", lg: "515px", md: "470px", sm: "450px", xs: "370px" },
+    width: { xl: "100%", lg: "100%", md: "100%", sm: "100%", xs: "100%" },
     maxWidth: "100%",
     height: "16px",
     backgroundColor: "#FFC000",
