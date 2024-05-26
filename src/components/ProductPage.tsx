@@ -123,7 +123,7 @@ const ProductPage: React.FC = () => {
       </Container>
 
       {/* Fourth section */}
-      <Container maxWidth="xl" sx={styles.fourthSection}>
+      <Container sx={styles.fourthSection} maxWidth={false}>
         <Typography variant="h3" sx={styles.header}>
           CIVA STANDS ALONE
         </Typography>
