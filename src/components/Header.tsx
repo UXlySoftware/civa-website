@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Box,
@@ -17,7 +17,7 @@ import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate();
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -65,6 +65,7 @@ const Header = () => {
                       fontSize: "20px",
                       fontFamily: "Inter",
                     }}
+                    onClick={() => navigate("/product")}
                   />
                 </ListItem>
                 <ListItem
@@ -79,6 +80,7 @@ const Header = () => {
                       fontSize: "20px",
                       fontFamily: "Inter",
                     }}
+                    onClick={() => navigate("/about")}
                   />
                 </ListItem>
                 <ListItem

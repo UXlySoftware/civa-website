@@ -7,69 +7,85 @@ import twitterIcon from "../assets/socialmedia/twitter.svg";
 import instagramIcon from "../assets/socialmedia/instagram.svg";
 import linkedinIcon from "../assets/socialmedia/linkedin.svg";
 import youtubeIcon from "../assets/socialmedia/youtube.svg";
+import { useNavigate } from "react-router-dom";
 
-const Footer = () => (
-  <Box sx={styles.footer}>
-    <Box sx={styles.footerWrapper}>
-      <Box sx={styles.footerLeft}>
-        <Box component="img" src={logo} alt="CIVA" sx={styles.footerLogo} />
-        <Box sx={styles.footerSocial}>
-          <Typography variant="body2" sx={styles.footerSocialLink}>
-            Follow Us
-          </Typography>
-          <Box sx={styles.socialIcons}>
-            <Box
-              component="img"
-              src={facebookIcon}
-              alt="Facebook"
-              sx={styles.socialIcon}
-            />
-            <Box
-              component="img"
-              src={twitterIcon}
-              alt="Twitter"
-              sx={styles.socialIcon}
-            />
-            <Box
-              component="img"
-              src={instagramIcon}
-              alt="Instagram"
-              sx={styles.socialIcon}
-            />
-            <Box
-              component="img"
-              src={linkedinIcon}
-              alt="LinkedIn"
-              sx={styles.socialIcon}
-            />
-            <Box
-              component="img"
-              src={youtubeIcon}
-              alt="Youtube"
-              sx={styles.socialIcon}
-            />
+const Footer = () => {
+  const navigate = useNavigate();
+  return (
+    <Box sx={styles.footer}>
+      <Box sx={styles.footerWrapper}>
+        <Box sx={styles.footerLeft}>
+          <Box component="img" src={logo} alt="CIVA" sx={styles.footerLogo} />
+          <Box sx={styles.footerSocial}>
+            <Typography variant="body2" sx={styles.footerSocialLink}>
+              Follow Us
+            </Typography>
+            <Box sx={styles.socialIcons}>
+              <Box
+                component="img"
+                src={facebookIcon}
+                alt="Facebook"
+                sx={styles.socialIcon}
+              />
+              <Box
+                component="img"
+                src={twitterIcon}
+                alt="Twitter"
+                sx={styles.socialIcon}
+              />
+              <Box
+                component="img"
+                src={instagramIcon}
+                alt="Instagram"
+                sx={styles.socialIcon}
+              />
+              <Box
+                component="img"
+                src={linkedinIcon}
+                alt="LinkedIn"
+                sx={styles.socialIcon}
+              />
+              <Box
+                component="img"
+                src={youtubeIcon}
+                alt="Youtube"
+                sx={styles.socialIcon}
+              />
+            </Box>
           </Box>
         </Box>
-      </Box>
-      <Box sx={styles.footerRight}>
-        <Box sx={styles.footerLinks}>
-          <Typography variant="body2" sx={styles.footerLink}>
-            About Us
-          </Typography>
-          <Typography variant="body2" sx={styles.footerLink}>
-            Product
-          </Typography>
-          <Typography variant="body2" sx={styles.footerLink}>
-            Contact
+        <Box sx={styles.footerRight}>
+          <Box sx={styles.footerLinks}>
+            <Typography
+              variant="body2"
+              sx={styles.footerLink}
+              onClick={() => navigate("/about")}
+            >
+              About Us
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={styles.footerLink}
+              onClick={() => navigate("/product")}
+            >
+              Product
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={styles.footerLink}
+              onClick={() => navigate("/contact")}
+            >
+              Contact
+            </Typography>
+          </Box>
+          <Typography variant="body2" sx={styles.footerEmail}>
+            civa@support.com
           </Typography>
         </Box>
-        <Typography variant="body2" sx={styles.footerEmail}>
-          civa@support.com
-        </Typography>
       </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 const styles = {
   footer: {
