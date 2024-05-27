@@ -63,12 +63,23 @@ const MissionAndBios = () => {
           variant="h4"
           sx={{
             marginTop: 5,
+            fontFamily: "Public Sans",
+            fontWeight: "900",
             fontSize: {
               xl: "52px",
               lg: "52px",
+              md: "42px",
+              sm: "28px",
+              xs: "28px",
             },
-            fontWeight: { xl: 900, lg: 900 },
-            lineHeight: { xl: "58px", lg: "58px" },
+            lineHeight: {
+              xl: "58px",
+              lg: "58px",
+              md: "46px",
+              sm: "46px",
+              xs: "46px",
+            },
+            color: "#fff",
           }}
         >
           Our Mission{" "}

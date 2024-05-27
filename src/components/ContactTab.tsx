@@ -1,4 +1,4 @@
-import React, { useState, FC, ReactNode } from "react";
+import React, { useState, ReactNode, ChangeEvent, FormEvent } from "react";
 import {
   Box,
   Typography,
@@ -9,10 +9,13 @@ import {
   Checkbox,
 } from "@mui/material";
 import { TabContext, TabPanel } from "@mui/lab";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
-// properties for the FormField component
+// Properties for the FormField
 interface FormFieldProps {
   label: ReactNode;
+  name: string;
   placeholder: string;
   isMultiline?: boolean;
   rows?: number;
@@ -20,14 +23,47 @@ interface FormFieldProps {
 }
 
 const ContactTab = () => {
-  // State to track the selected tab
+  // States
   const [tabValue, setTabValue] = useState("1");
+  // Form data state
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    organization: "",
+    title: "",
+    phone: "",
+    notes: "",
+    // subscribe: false,
+  });
 
   const handleChange = (newValue: string) => {
     setTabValue(newValue);
   };
 
-  // form fields for demo and support forms
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   setFormData({ ...formData, subscribe: e.target.checked });
+  // };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const docRef = await addDoc(collection(db, "contact-us"), formData);
+      console.log("Document written with ID: ", docRef.id);
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert("Error submitting form.");
+    }
+  };
+
+  // Form fields for demo and support forms
   const formFields: FormFieldProps[] = [
     {
       label: (
@@ -38,20 +74,20 @@ const ContactTab = () => {
           First Name
         </>
       ),
+      name: "firstName",
       placeholder: "Please enter your first name",
       order: { xs: 1, md: 1 },
     },
-
     {
       label: (
         <>
           <Typography component="span" color="red">
             *
           </Typography>{" "}
-          {""}
           Last Name
         </>
       ),
+      name: "lastName",
       placeholder: "Please enter your last name",
       order: { xs: 2, md: 3 },
     },
@@ -59,11 +95,12 @@ const ContactTab = () => {
       label: (
         <>
           <Typography component="span" color="red">
-            *{" "}
-          </Typography>
+            *
+          </Typography>{" "}
           Email
         </>
       ),
+      name: "email",
       placeholder: "abc@email.com",
       order: { xs: 3, md: 5 },
     },
@@ -71,21 +108,31 @@ const ContactTab = () => {
       label: (
         <>
           <Typography component="span" color="red">
-            *{" "}
-          </Typography>
+            *
+          </Typography>{" "}
           Organization
         </>
       ),
+      name: "organization",
       placeholder: "Please enter your organization",
       order: { xs: 4, md: 2 },
     },
     {
       label: "Title",
+      name: "title",
       placeholder: "Please enter your title",
       order: { xs: 5, md: 4 },
     },
     {
-      label: "* Phone",
+      label: (
+        <>
+          <Typography component="span" color="red">
+            *
+          </Typography>{" "}
+          Phone
+        </>
+      ),
+      name: "phone",
       placeholder: "+123 00 000 00",
       order: { xs: 6, md: 6 },
     },
@@ -118,120 +165,156 @@ const ContactTab = () => {
         <TabContext value={tabValue}>
           {/* Request a demo */}
           <TabPanel value="1" sx={styles.tabPanel}>
-            <Grid container spacing={2} sx={styles.formContainer}>
-              {formFields.map((field, index) => (
-                <Grid
-                  item
-                  xs={12}
-                  sm={field.order.md === 12 ? 12 : 6}
-                  order={field.order}
-                  key={index}
-                >
-                  <Typography sx={styles.label}>{field.label}</Typography>
+            <form onSubmit={handleSubmit}>
+              <Grid container spacing={2} sx={styles.formContainer}>
+                {formFields.map((field, index) => (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={field.order.md === 12 ? 12 : 6}
+                    order={field.order}
+                    key={index}
+                  >
+                    <Typography sx={styles.label}>{field.label}</Typography>
+                    <TextField
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                      multiline={field.isMultiline}
+                      rows={field.rows}
+                      value={formData[field.name as keyof typeof formData]}
+                      onChange={handleInputChange}
+                    />
+                  </Grid>
+                ))}
+                {/* Notes field */}
+                <Grid item xs={12} xl={12} order={{ xs: 7, md: 7 }}>
+                  <Typography sx={styles.label}>Notes</Typography>
                   <TextField
-                    placeholder={field.placeholder}
+                    name="notes"
+                    placeholder="Tell us about your needs"
                     variant="outlined"
                     fullWidth
-                    sx={styles.textField}
-                    multiline={field.isMultiline}
-                    rows={field.rows}
+                    multiline
+                    rows={4}
+                    sx={styles.textFieldNotes}
+                    value={formData.notes}
+                    onChange={handleInputChange}
                   />
                 </Grid>
-              ))}
-              {/* Notes field */}
-              <Grid item xs={12} xl={12} order={{ xs: 7, md: 7 }}>
-                <Typography sx={styles.label}>Notes</Typography>
-                <TextField
-                  placeholder="Tell us about your needs"
-                  variant="outlined"
-                  fullWidth
-                  multiline
-                  rows={4}
-                  sx={styles.textFieldNotes}
-                />
+                {/* Checkbox for signing up for news & updates */}
+                <Grid item xs={12} order={{ xs: 8, md: 8 }}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        color="primary"
+                        // checked={formData.subscribe}
+                        // onChange={handleCheckboxChange}
+                      />
+                    }
+                    label="Sign up for news & updates"
+                    sx={styles.checkbox}
+                  />
+                </Grid>
+                <Grid item xs={12} order={{ xs: 9, md: 9 }}>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    sx={styles.button}
+                  >
+                    Submit for Demo
+                  </Button>
+                </Grid>
               </Grid>
-              {/* Checkbox for signing up for news & updates */}
-              <Grid item xs={12} order={{ xs: 8, md: 8 }}>
-                <FormControlLabel
-                  control={<Checkbox color="primary" />}
-                  label="Sign up for news & updates"
-                  sx={styles.checkbox}
-                />
-              </Grid>
-              <Grid item xs={12} order={{ xs: 9, md: 9 }}>
-                <Button variant="contained" color="primary" sx={styles.button}>
-                  Submit for Demo
-                </Button>
-              </Grid>
-            </Grid>
+            </form>
           </TabPanel>
 
           {/* Get support  */}
           <TabPanel value="2" sx={styles.tabSupportPanel}>
-            <Grid container spacing={2} sx={styles.formContainer}>
-              {formFields.map((field, index) => (
-                <Grid
-                  item
-                  xs={12}
-                  sm={field.order.md === 12 ? 12 : 6}
-                  order={field.order}
-                  key={index}
-                >
-                  <Typography sx={styles.label}>{field.label}</Typography>
+            <form onSubmit={handleSubmit}>
+              <Grid container spacing={2} sx={styles.formContainer}>
+                {formFields.map((field, index) => (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={field.order.md === 12 ? 12 : 6}
+                    order={field.order}
+                    key={index}
+                  >
+                    <Typography sx={styles.label}>{field.label}</Typography>
+                    <TextField
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      variant="outlined"
+                      fullWidth
+                      sx={styles.textField}
+                      multiline={field.isMultiline}
+                      rows={field.rows}
+                      value={formData[field.name as keyof typeof formData]}
+                      onChange={handleInputChange}
+                    />
+                  </Grid>
+                ))}
+                {/* Notes field */}
+                <Grid item xs={12} order={{ xs: 7, md: 7 }}>
+                  <Typography sx={styles.label}>Notes</Typography>
                   <TextField
-                    placeholder={field.placeholder}
+                    name="notes"
+                    placeholder="Tell us about your needs"
                     variant="outlined"
                     fullWidth
-                    sx={styles.textField}
-                    multiline={field.isMultiline}
-                    rows={field.rows}
+                    multiline
+                    rows={4}
+                    sx={styles.textFieldNotes}
+                    value={formData.notes}
+                    onChange={handleInputChange}
                   />
                 </Grid>
-              ))}
-              {/* Notes field */}
-              <Grid item xs={12} order={{ xs: 7, md: 7 }}>
-                <Typography sx={styles.label}>Notes</Typography>
-                <TextField
-                  placeholder="Tell us about your needs"
-                  variant="outlined"
-                  fullWidth
-                  multiline
-                  rows={4}
-                  sx={styles.textFieldNotes}
-                />
+                <Grid item xs={12} order={{ xs: 8, md: 8 }}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        color="primary"
+                        // checked={formData.subscribe}
+                        // onChange={handleCheckboxChange}
+                      />
+                    }
+                    label="Sign up for news & updates"
+                    sx={styles.checkbox}
+                  />
+                </Grid>
+                <Grid item xs={12} order={{ xs: 9, md: 9 }}>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    sx={styles.button}
+                  >
+                    Submit for Support
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item xs={12} order={{ xs: 8, md: 8 }}>
-                <FormControlLabel
-                  control={<Checkbox color="primary" />}
-                  label="Sign up for news & updates"
-                  sx={styles.checkbox}
-                />
-              </Grid>
-              <Grid item xs={12} order={{ xs: 9, md: 9 }}>
-                <Button variant="contained" color="primary" sx={styles.button}>
-                  Submit for Support
-                </Button>
-              </Grid>
-            </Grid>
+            </form>
           </TabPanel>
         </TabContext>
       </Box>
     </Box>
   );
 };
+
 const styles = {
   rightSide: {
     position: "relative",
     top: "0px",
     display: "flex",
     flexDirection: "column",
-    // width: { xl: "1924px", lg: "784px", md: "100%", sm: "100%", xs: "100%" },
     width: { xl: "784px", lg: "784px", md: "702px", xs: "370px" },
-    // maxWidth: "100%",
     marginLeft: { xl: "0px", lg: "0px", md: "271px", sm: "0px", xs: "-15px" },
     marginBottom: "-184px",
     minHeight: "auto",
-    // padding: { xl: "20px", lg: "20px", md: "20px", sm: "10px", xs: "10px" },
     boxSizing: "border-box",
     zIndex: 1,
   },
@@ -295,9 +378,7 @@ const styles = {
     },
   },
   tabPanel: {
-    // paddingTop: "60px",
     backgroundColor: "#FFCC33",
-    // width: "100%",
   },
   formBox: {
     width: { xl: "784px", lg: "784px", md: "702px", xs: "370px" },
@@ -317,9 +398,7 @@ const styles = {
     overflow: "hidden",
   },
   tabSupportPanel: {
-    // padding: "30px",
     backgroundColor: "#74ADC7",
-    // width: "100%",
   },
   formContainer: {
     width: "100%",
@@ -329,7 +408,6 @@ const styles = {
   textField: {
     width: "100%",
     backgroundColor: "#fff",
-    border: "none",
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
         borderColor: "transparent",
@@ -357,7 +435,6 @@ const styles = {
       },
     },
   },
-
   checkbox: {
     marginBottom: "44px",
     fontFamily: "Public Sans",
