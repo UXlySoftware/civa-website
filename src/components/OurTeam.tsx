@@ -5,62 +5,13 @@ import mollyImage from "../assets/mollyImage.png";
 
 const TeamSection = () => {
   return (
-    <Box
-      sx={{
-        width: "120wv",
-        backgroundColor: "#5a91a1",
-        py: "44px",
-        display: "flex",
-        marginBottom: 5,
-        flexDirection: "column",
-      }}
-    >
-      <Typography
-        variant="h4"
-        sx={{
-          fontWeight: 900,
-          textAlign: "center",
-          mb: 0,
-          fontFamily: "Public Sans",
-          fontSize: {
-            xl: "52px",
-            lg: "52px",
-            md: "42px",
-            sm: "28px",
-            xs: "28px",
-          },
-          color: "#fff",
-        }}
-      >
+    <Box sx={styles.teamSectionContainer}>
+      <Typography variant="h4" sx={styles.sectionTitle}>
         OUR TEAM
       </Typography>
-      <Box
-        sx={{
-          width: {
-            xl: "519px",
-            lg: "519px",
-            md: "373px",
-            sm: "373px",
-            xs: "373px",
-          },
-          height: "16px",
-          backgroundColor: "#FFC000",
-          margin: "0 auto",
-          mb: 12,
-        }}
-      />
-      <Box
-        sx={{
-          //   marginTop: "90px"
-          margin: { xl: "120px auto 40px auto", lg: "120px 300px 40px auto" },
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          justifyContent: "center",
-          alignItems: "center",
-          gap: { xl: 65, lg: 30, md: 30 },
-        }}
-      >
-        <Box sx={{ position: "relative", textAlign: "center" }}>
+      <Box sx={styles.divider} />
+      <Box sx={styles.teamMembersContainer}>
+        <Box sx={styles.teamMemberBox}>
           {/* 1. foto sag ust */}
           <Box
             sx={{
@@ -86,32 +37,7 @@ const TeamSection = () => {
             component="img"
             src={horaceImage}
             alt="Horace Williams"
-            sx={{
-              width: {
-                xl: "300px",
-                lg: "300px",
-                md: "174px",
-                sm: "173px",
-                xs: "173px",
-              },
-              height: {
-                xl: "334px",
-                lg: "334px",
-                md: "194px",
-                sm: "193px",
-                xs: "193px",
-              },
-              zIndex: 2,
-              position: "relative",
-              left: {
-                xl: "-70px",
-                lg: "-195px",
-                md: "-105px",
-                sm: "30px",
-                xs: "-104px",
-              },
-              top: { xl: "-134px", lg: "-134px", md: "-75px", xs: "-77px" },
-            }}
+            sx={styles.horaceImage}
           />
           <Box sx={{ ...styles.blackSquareLeft, left: "24px" }} />
           {/* 1. foto sag alt */}
@@ -133,7 +59,7 @@ const TeamSection = () => {
                 xs: "10px",
               },
               width: {
-                xl: "250px",
+                xl: "340px",
                 lg: "250px",
                 md: "100px",
                 sm: "90px",
@@ -141,63 +67,16 @@ const TeamSection = () => {
               },
             }}
           />
-          <Box
-            sx={{
-              position: "absolute",
-              width: {
-                xl: "402px",
-                lg: "392px",
-                md: "250px",
-                sm: "231px",
-                xs: "231px",
-              },
-              height: {
-                xl: "154px",
-                lg: "154px",
-                md: "90px",
-                sm: "79px",
-                xs: "79px",
-              },
-              //   bottom: "-20px",
-              //   left: "45%",
-              transform: "translateY(-170%) translateX(0%)",
-              //   transform: "translateX(-170%)",
-              zIndex: 3,
-              backgroundColor: "#fff",
-              textAlign: "left",
-              alignItems: "left",
-              justifyContent: "center",
-              display: "flex",
-              paddingLeft: "30px",
-              flexDirection: "column",
-              gap: "12px",
-            }}
-          >
-            <Typography
-              variant="body1"
-              sx={{
-                fontWeight: 400,
-                fontFamily: "Public Sans",
-                fontSize: { xl: "23px", lg: "23px", md: "13.3px" },
-                lineHeight: { xl: "27px", lg: "27px", md: "15.63px" },
-              }}
-            >
+          <Box sx={styles.infoBoxHorace}>
+            <Typography variant="body1" sx={styles.positionText}>
               Chief Product Officer
             </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 800,
-                fontSize: { xl: "32px", lg: "32px", md: "18px" },
-                fontFamily: "Public Sans",
-                lineHeight: { xl: "37px", lg: "37px", md: "21px" },
-              }}
-            >
+            <Typography variant="h6" sx={styles.nameText}>
               HORACE WILLIAMS
             </Typography>
           </Box>
         </Box>
-        <Box sx={{ position: "relative", textAlign: "center" }}>
+        <Box sx={styles.teamMemberBox}>
           {/* 2. foto sol alt */}
           <Box
             sx={{
@@ -222,38 +101,7 @@ const TeamSection = () => {
             component="img"
             src={mollyImage}
             alt="Molly Sweet"
-            sx={{
-              width: {
-                xl: "300px",
-                lg: "300px",
-                md: "155px",
-                sm: "155px",
-                xs: "155px",
-              },
-              height: {
-                xl: "334px",
-                lg: "334px",
-                md: "194px",
-                sm: "194px",
-                xs: "194px",
-              },
-              zIndex: 2,
-              position: "relative",
-              left: {
-                xl: "-70px",
-                lg: "-70px",
-                md: "-45px",
-                sm: "-125px",
-                xs: "-125px",
-              },
-              top: {
-                xl: "-134px",
-                lg: "-134px",
-                md: "-75px",
-                sm: "-78px",
-                xs: "-78px",
-              },
-            }}
+            sx={styles.mollyImage}
           />
           <Box
             sx={{
@@ -261,7 +109,7 @@ const TeamSection = () => {
               left: { xl: "152px", lg: "150px", md: "80px", xs: "17px" },
             }}
           />
-          {/* 2. foto sag ust */}
+          {/* 2. foto sag alt */}
           <Box
             sx={{
               ...styles.yellowSquare,
@@ -273,67 +121,21 @@ const TeamSection = () => {
                 xs: "-50px",
               },
               right: {
-                xl: "155px",
+                xl: "115px",
                 lg: "-90px",
                 md: "80px",
                 sm: "125px",
                 xs: "-3px",
               },
-              width: { xs: "90px" },
+              width: { xl: "252px", md: "123px", xs: "90px" },
             }}
           />
-          <Box
-            sx={{
-              position: "absolute",
-              width: {
-                xl: "402px",
-                lg: "392px",
-                md: "250px",
-                sm: "231px",
-                xs: "231px",
-              },
-              height: {
-                xl: "154px",
-                lg: "154px",
-                md: "90px",
-                sm: "79px",
-                xs: "79px",
-              },
-              //   bottom: "-20px",
-              left: { xl: "45%", lg: "45%", md: "45%", sm: "-10%", xs: "-10%" },
-              transform: "translateY(-170%)",
-              zIndex: 3,
-              backgroundColor: "#fff",
-              textAlign: "left",
-              alignItems: "left",
-              justifyContent: "center",
-              display: "flex",
-              paddingLeft: "30px",
-              flexDirection: "column",
-              gap: "12px",
-            }}
-          >
-            <Typography
-              variant="body1"
-              sx={{
-                fontWeight: 400,
-                fontFamily: "Public Sans",
-                fontSize: { xl: "23px", lg: "23px", md: "13.3px" },
-                lineHeight: { xl: "27px", lg: "27px", md: "15.63px" },
-              }}
-            >
-              Chief Product Officer
+          <Box sx={styles.infoBoxMolly}>
+            <Typography variant="body1" sx={styles.positionText}>
+              Community Engagement Associate{" "}
             </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 800,
-                fontSize: { xl: "32px", lg: "32px", md: "18px" },
-                fontFamily: "Public Sans",
-                lineHeight: { xl: "37px", lg: "37px", md: "21px" },
-              }}
-            >
-              Emmy WILLIAMS
+            <Typography variant="h6" sx={styles.nameText}>
+              Molly Sweet{" "}
             </Typography>
           </Box>
         </Box>
@@ -343,6 +145,179 @@ const TeamSection = () => {
 };
 
 const styles = {
+  teamSectionContainer: {
+    width: "120wv",
+    backgroundColor: "#5a91a1",
+    py: "44px",
+    display: "flex",
+    marginBottom: 5,
+    flexDirection: "column",
+  },
+  sectionTitle: {
+    fontWeight: 900,
+    textAlign: "center",
+    mb: 0,
+    fontFamily: "Public Sans",
+    fontSize: {
+      xl: "52px",
+      lg: "52px",
+      md: "42px",
+      sm: "28px",
+      xs: "28px",
+    },
+    color: "#fff",
+  },
+  divider: {
+    width: {
+      xl: "519px",
+      lg: "519px",
+      md: "373px",
+      sm: "373px",
+      xs: "373px",
+    },
+    height: "16px",
+    backgroundColor: "#FFC000",
+    margin: "0 auto",
+    mb: 12,
+  },
+  teamMembersContainer: {
+    margin: { xl: "120px auto 40px auto", lg: "120px 300px 40px auto" },
+    display: "flex",
+    flexDirection: { xs: "column", md: "row" },
+    justifyContent: "center",
+    alignItems: "center",
+    gap: { xl: 65, lg: 30, md: 30 },
+  },
+  teamMemberBox: {
+    position: "relative",
+    textAlign: "center",
+  },
+  horaceImage: {
+    width: {
+      xl: "300px",
+      lg: "300px",
+      md: "174px",
+      sm: "173px",
+      xs: "173px",
+    },
+    height: {
+      xl: "334px",
+      lg: "334px",
+      md: "194px",
+      sm: "193px",
+      xs: "193px",
+    },
+    zIndex: 2,
+    position: "relative",
+    left: {
+      xl: "-195px",
+      lg: "-195px",
+      md: "-105px",
+      sm: "30px",
+      xs: "-104px",
+    },
+    top: { xl: "-134px", lg: "-134px", md: "-75px", xs: "-77px" },
+  },
+
+  infoBoxHorace: {
+    position: "absolute",
+    width: {
+      xl: "402px",
+      lg: "392px",
+      md: "250px",
+      sm: "231px",
+      xs: "231px",
+    },
+    height: {
+      xl: "154px",
+      lg: "154px",
+      md: "90px",
+      sm: "79px",
+      xs: "79px",
+    },
+    transform: "translateY(-170%) translateX(0%)",
+    zIndex: 3,
+    backgroundColor: "#fff",
+    textAlign: "left",
+    alignItems: "left",
+    justifyContent: "center",
+    display: "flex",
+    paddingLeft: "30px",
+    flexDirection: "column",
+    gap: "12px",
+  },
+  positionText: {
+    fontWeight: 400,
+    fontFamily: "Public Sans",
+    fontSize: { xl: "23px", lg: "23px", md: "13.3px" },
+    lineHeight: { xl: "27px", lg: "27px", md: "15.63px" },
+  },
+  nameText: {
+    fontWeight: 800,
+    fontSize: { xl: "32px", lg: "32px", md: "18px" },
+    fontFamily: "Public Sans",
+    lineHeight: { xl: "37px", lg: "37px", md: "21px" },
+  },
+  mollyImage: {
+    width: {
+      xl: "300px",
+      lg: "300px",
+      md: "155px",
+      sm: "155px",
+      xs: "155px",
+    },
+    height: {
+      xl: "334px",
+      lg: "334px",
+      md: "194px",
+      sm: "194px",
+      xs: "194px",
+    },
+    zIndex: 2,
+    position: "relative",
+    left: {
+      xl: "-70px",
+      lg: "-70px",
+      md: "-45px",
+      sm: "-125px",
+      xs: "-125px",
+    },
+    top: {
+      xl: "-134px",
+      lg: "-134px",
+      md: "-75px",
+      sm: "-78px",
+      xs: "-78px",
+    },
+  },
+  infoBoxMolly: {
+    position: "absolute",
+    width: {
+      xl: "402px",
+      lg: "392px",
+      md: "250px",
+      sm: "231px",
+      xs: "231px",
+    },
+    height: {
+      xl: "154px",
+      lg: "154px",
+      md: "90px",
+      sm: "79px",
+      xs: "79px",
+    },
+    transform: "translateY(-170%)",
+    zIndex: 3,
+    backgroundColor: "#fff",
+    textAlign: "left",
+    alignItems: "left",
+    justifyContent: "center",
+    display: "flex",
+    paddingLeft: "30px",
+    flexDirection: "column",
+    gap: "12px",
+    left: { xl: "45%", lg: "45%", md: "45%", sm: "-10%", xs: "-10%" },
+  },
   yellowSquare: {
     position: "absolute",
     width: {

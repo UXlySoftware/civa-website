@@ -15,7 +15,6 @@ import missionImage from "../assets/missionImage.png";
 import akeemImage from "../assets/akeemImage.png";
 import jermaineImage from "../assets/jermaineImage.png";
 import missionImageMobil from "../assets/missionImageMobil.png";
-import OurTeam from "./OurTeam";
 import SquareIcon from "@mui/icons-material/Square";
 
 const MissionAndBios = () => {
@@ -166,7 +165,7 @@ const styles = {
     },
     marginBottom: {
       xl: "-65%",
-      lg: "-95%",
+      lg: "-85%",
       md: "-95%",
       sm: "0%",
       xs: "-395%",
@@ -258,7 +257,6 @@ const styles = {
     color: "#fff",
   },
   foundersContainer: {
-    border: "1px solid red",
     display: "flex",
     flexDirection: {
       xl: "row",
