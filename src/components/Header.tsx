@@ -25,6 +25,7 @@ const Header = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  // Active button styling func
   const getButtonStyles = (path: string) => {
     return location.pathname === path
       ? { ...styles.button, ...styles.activeButton }

@@ -9,7 +9,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import Hero from "./Hero";
+import ProductHero from "./ProductHero";
 import { SecondImg, Third1Img, Third2Img, Third3Img } from "../assets/product";
 import CheckIcon from "@mui/icons-material/Check";
 import ProductTab from "./ProductTab";
@@ -38,14 +38,12 @@ const features = [
 const ProductPage: React.FC = () => {
   return (
     <>
-      {/* Hero */}
-      <Hero />
-
+      {/* Hero */} 
+      <ProductHero />
       {/* Second section */}
       <Box sx={styles.imageBox}>
         <Box component="img" src={SecondImg} alt="image" sx={styles.image} />
       </Box>
-
       {/* Third section */}
       <Container maxWidth="lg">
         {/* Connect */}
@@ -121,7 +119,6 @@ const ProductPage: React.FC = () => {
           </Grid>
         </Box>
       </Container>
-
       {/* Fourth section */}
       <Container sx={styles.fourthSection} maxWidth={false}>
         <Typography variant="h3" sx={styles.header}>
