@@ -5,7 +5,6 @@ import {
   Button,
   useMediaQuery,
   useTheme,
-  Container,
 } from "@mui/material";
 import heroBanner from "../assets/aboutHero.png";
 import heroBannerMobile from "../assets/aboutHeroMobile.png";
@@ -19,12 +18,7 @@ const AboutUs = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box
-      sx={{
-        height: "auto",
-        marginBottom: { xl: "0px", sm: "0px", xs: "700px" },
-      }}
-    >
+    <Box sx={styles.container}>
       {/* Hero */}
       <Box
         sx={{
@@ -39,7 +33,7 @@ const AboutUs = () => {
             <span style={{ color: "white" }}>
               {" "}
               <br />
-              CREATES IMPACT
+              CREATES IMPACT.
             </span>
           </Typography>
 
@@ -53,105 +47,23 @@ const AboutUs = () => {
           </Button>
         </Box>
       </Box>
-      <Box sx={{ my: 4 }}>
-        <Box
-          sx={{
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            margin: "0 auto 40px auto",
-          }}
-        >
-          <Box
-            sx={{
-              borderBottom: "16px solid #FFC000",
-              width: "500px",
-              marginBottom: "8px",
-            }}
-          >
-            <Typography
-              variant="h4"
-              sx={{
-                fontSize: {
-                  xl: "52px",
-                  lg: "52px",
-                },
-                fontWeight: { xl: 900, lg: 900 },
-                lineHeight: { xl: "58px", lg: "58px" },
-              }}
-            >
+      <Box sx={styles.contentBox}>
+        <Box sx={styles.titleContainer}>
+          <Box sx={styles.titleBorder}>
+            <Typography variant="h4" sx={styles.title}>
               THE CIVA STORY
             </Typography>
           </Box>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: "center",
-            position: "relative",
-            margin: "10px 10px",
-          }}
-        >
+        <Box sx={styles.storyContainer}>
           <Box
             component="img"
             src={storyImage}
             alt="Civa Story"
-            sx={{
-              width: { xs: "85%", md: "495px" },
-              height: "auto",
-              marginLeft: {
-                xl: "270px",
-                lg: "71px",
-                md: "24px",
-                sm: "0px",
-                xs: "0px",
-              },
-              zIndex: 1,
-            }}
+            sx={styles.storyImage}
           />
-          <Box
-            sx={{
-              backgroundColor: "#000",
-              color: "#fff",
-              padding: {
-                xl: "85px",
-                lg: "85px",
-                md: "35px 25px",
-                sm: "21px 21px",
-                xs: "160px 21px",
-              },
-              width: { xs: "95%", md: "802px", sm: "338px" },
-              height: {
-                xl: "483px",
-                lg: "483px",
-                md: "364px",
-                sm: "529px",
-                xs: "700px",
-              },
-              marginTop: { xs: "200px", md: "0px" }, // Move up on mobile screens
-              position: { xs: "absolute", md: "static" },
-              top: { xs: "50px", md: "auto" },
-              zIndex: { xs: 0, md: 0 },
-              boxSizing: "border-box",
-            }}
-          >
-            <Typography
-              variant="body1"
-              sx={{
-                fontFamily: "Inter",
-                fontWeight: 600,
-                fontSize: {
-                  xl: "20px",
-                  lg: "20px",
-                  md: "16px",
-                  sm: "16px",
-                  xs: "16px",
-                },
-                lineHeight: { xl: "25px", lg: "25px", md: "20px" },
-              }}
-            >
+          <Box sx={styles.storyTextBox}>
+            <Typography variant="body1" sx={styles.storyText}>
               Akeem Evans and Jermaine Hartsfield first met during their service
               in Peace Corps Albania. Working alongside foreign leaders,
               government officials, and NGOs, they saw firsthand the critical
@@ -178,6 +90,10 @@ const AboutUs = () => {
 };
 
 const styles = {
+  container: {
+    height: "auto",
+    marginBottom: { xl: "0px", sm: "0px", xs: "0px" },
+  },
   heroWrapper: {
     position: "relative",
     height: "38em",
@@ -243,6 +159,7 @@ const styles = {
     background: "#FFC000",
     borderRadius: "12px",
     padding: "12px 24px",
+    textTransform: "none",
   },
   sideBorder: {
     "&::before": {
@@ -264,6 +181,100 @@ const styles = {
       width: "16px",
       backgroundColor: "#FFC000",
     },
+  },
+  contentBox: {
+    my: 4,
+  },
+  titleContainer: {
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+    margin: "0 auto 40px auto",
+  },
+  titleBorder: {
+    borderBottom: "16px solid #FFC000",
+    width: {
+      xl: "710px",
+      lg: "710px",
+      md: "563px",
+      sm: "364px",
+      xs: "364px",
+    },
+    marginBottom: "8px",
+  },
+  title: {
+    fontFamily: "Public Sans",
+    fontSize: {
+      xl: "52px",
+      lg: "52px",
+      md: "42px",
+      sm: "28px",
+      xs: "28px",
+    },
+    fontWeight: 900,
+    lineHeight: {
+      xl: "58px",
+      lg: "58px",
+      md: "46px",
+      sm: "36px",
+      xs: "36px",
+    },
+  },
+  storyContainer: {
+    display: "flex",
+    flexDirection: { xs: "column", md: "row" },
+    alignItems: "center",
+    position: "relative",
+    margin: "10px 10px",
+  },
+  storyImage: {
+    width: { xs: "85%", md: "495px" },
+    height: "auto",
+    marginLeft: {
+      xl: "270px",
+      lg: "71px",
+      md: "24px",
+      sm: "0px",
+      xs: "0px",
+    },
+    zIndex: 1,
+  },
+  storyTextBox: {
+    backgroundColor: "#000",
+    color: "#fff",
+    padding: {
+      xl: "85px",
+      lg: "85px",
+      md: "35px 25px",
+      sm: "21px 21px",
+      xs: "160px 21px",
+    },
+    width: { xs: "95%", md: "802px", sm: "338px" },
+    height: {
+      xl: "483px",
+      lg: "483px",
+      md: "364px",
+      sm: "529px",
+      xs: "700px",
+    },
+    marginTop: { xs: "200px", md: "0px" }, // Move up on mobile screens
+    position: { xs: "absolute", md: "static" },
+    top: { xs: "50px", md: "auto" },
+    zIndex: { xs: 0, md: 0 },
+    boxSizing: "border-box",
+  },
+  storyText: {
+    fontFamily: "Inter",
+    fontWeight: 600,
+    fontSize: {
+      xl: "20px",
+      lg: "20px",
+      md: "16px",
+      sm: "16px",
+      xs: "16px",
+    },
+    lineHeight: { xl: "25px", lg: "25px", md: "20px" },
   },
 };
 
