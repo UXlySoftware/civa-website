@@ -14,13 +14,21 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import logo from "../assets/logo.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
+  };
+
+  const getButtonStyles = (path: string) => {
+    return location.pathname === path
+      ? { ...styles.button, ...styles.activeButton }
+      : styles.button;
   };
 
   return (
@@ -31,13 +39,22 @@ const Header = () => {
             <Box component="img" src={logo} alt="logo" />
           </Box>
           <Box sx={styles.menuBox}>
-            <Button sx={styles.button} onClick={() => navigate("/about")}>
+            <Button
+              sx={getButtonStyles("/about")}
+              onClick={() => navigate("/about")}
+            >
               About Us
             </Button>
-            <Button sx={styles.button} onClick={() => navigate("/product")}>
+            <Button
+              sx={getButtonStyles("/product")}
+              onClick={() => navigate("/product")}
+            >
               Product
             </Button>
-            <Button sx={styles.button} onClick={() => navigate("/contact")}>
+            <Button
+              sx={getButtonStyles("/contact")}
+              onClick={() => navigate("/contact")}
+            >
               Contact
             </Button>
           </Box>
@@ -130,6 +147,11 @@ const styles = {
     fontWeight: 700,
     marginRight: 5,
     textTransform: "none",
+    borderRadius: "0px",
+  },
+
+  activeButton: {
+    borderBottom: "3px solid #FFC000",
   },
   menuIcon: {
     display: {
