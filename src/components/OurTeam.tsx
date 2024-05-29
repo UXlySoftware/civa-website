@@ -132,10 +132,10 @@ const TeamSection = () => {
           />
           <Box sx={styles.infoBoxMolly}>
             <Typography variant="body1" sx={styles.positionText}>
-              Community Engagement Associate{" "}
+              Community Engagement Associate
             </Typography>
             <Typography variant="h6" sx={styles.nameText}>
-              Molly Sweet{" "}
+              MOLLY SWEET{" "}
             </Typography>
           </Box>
         </Box>
@@ -186,7 +186,7 @@ const styles = {
     flexDirection: { xs: "column", md: "row" },
     justifyContent: "center",
     alignItems: "center",
-    gap: { xl: 65, lg: 30, md: 30 },
+    gap: { xl: 65, lg: 30, md: 30, sm: 3, xs: 3 },
   },
   teamMemberBox: {
     position: "relative",
@@ -249,12 +249,12 @@ const styles = {
   positionText: {
     fontWeight: 400,
     fontFamily: "Public Sans",
-    fontSize: { xl: "23px", lg: "23px", md: "13.3px" },
-    lineHeight: { xl: "27px", lg: "27px", md: "15.63px" },
+    fontSize: { xl: "23px", lg: "23px", md: "13.3px", xs: "13px" },
+    lineHeight: { xl: "27px", lg: "27px", md: "13.63px" },
   },
   nameText: {
     fontWeight: 800,
-    fontSize: { xl: "32px", lg: "32px", md: "18px" },
+    fontSize: { xl: "32px", lg: "32px", md: "18px", xs: "18px" },
     fontFamily: "Public Sans",
     lineHeight: { xl: "37px", lg: "37px", md: "21px" },
   },

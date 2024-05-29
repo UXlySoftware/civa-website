@@ -69,18 +69,21 @@ const MissionAndBios = () => {
             <Typography variant="subtitle1" sx={styles.cardSubtitle}>
               Co-Founder and CEO
             </Typography>
-            <Typography variant="body1" sx={styles.cardBody}>
-              With an extensive background in public sector leadership as well
-              as program and grants management, Akeem is celebrated for his
-              global contributions to community development, notably with the
-              Peace Corps in Albania and with the Organization for Security and
-              Co-operation in Europe.
-            </Typography>
-            <Typography variant="body1" sx={styles.cardBody}>
-              As a leader, he is deeply committed to innovation and using
-              technology to spur social change.
-            </Typography>
-            <Typography variant="body1" sx={styles.cardBody}>
+
+            <Box sx={{ borderLeft: "12px solid #2E86AB" }}>
+              <Typography variant="body1" sx={styles.cardBody}>
+                With an extensive background in public sector leadership as well
+                as program and grants management, Akeem is celebrated for his
+                global contributions to community development, notably with the
+                Peace Corps in Albania and with the Organization for Security
+                and Co-operation in Europe.
+              </Typography>
+              <Typography variant="body1" sx={styles.cardBody}>
+                As a leader, he is deeply committed to innovation and using
+                technology to spur social change.
+              </Typography>
+            </Box>
+            <Typography variant="body1" sx={styles.listSubheading}>
               Akeem’s experience in this arena includes:
             </Typography>
             <List>
@@ -95,7 +98,7 @@ const MissionAndBios = () => {
                   <ListItemIcon sx={styles.listItemIcon}>
                     <SquareIcon />
                   </ListItemIcon>
-                  <ListItemText primary={text} />
+                  <ListItemText primary={text} sx={styles.listItemText} />
                 </ListItem>
               ))}
             </List>
@@ -116,17 +119,19 @@ const MissionAndBios = () => {
             <Typography variant="subtitle1" sx={styles.cardSubtitle}>
               Co-Founder and CEO
             </Typography>
-            <Typography variant="body1" sx={styles.cardBody}>
-              Jermaine brings a wealth of experience in organizational
-              development and technical analysis to CIVA. Leveraging his public
-              and private sector expertise, he is pivotal in shaping the
-              operational strategies that drive CIVA’s mission forward.
-            </Typography>
-            <Typography variant="body1" sx={styles.cardBody}>
+            <Box sx={{ borderLeft: "12px solid #2E86AB" }}>
+              <Typography variant="body1" sx={styles.cardBody}>
+                Jermaine brings a wealth of experience in organizational
+                development and technical analysis to CIVA. Leveraging his
+                public and private sector expertise, he is pivotal in shaping
+                the operational strategies that drive CIVA’s mission forward.{" "}
+              </Typography>
+            </Box>
+            <Typography variant="body1" sx={styles.listSubheading}>
+              <br />
+              <br />
               Jermaine’s experience bringing organizations and communities
               together includes:
-              <br />
-              <br />
             </Typography>
             <List>
               {[
@@ -156,7 +161,7 @@ const styles = {
     mt: { xl: 10, lg: 10, md: 7, xs: 75 },
     px: 2,
     height: {
-      xl: "400vh",
+      xl: "408vh",
       lg: "505vh",
       md: "230vh",
       sm: "175vh",
@@ -241,7 +246,7 @@ const styles = {
       lg: "270px auto 109px auto",
       md: "270px auto 49px auto",
       sm: "0 auto 45px auto",
-      xs: "200px auto 45px auto",
+      xs: "220px auto 45px auto",
     },
     textAlign: "center",
   },
@@ -273,7 +278,7 @@ const styles = {
       sm: "40px",
       xs: "40px",
     },
-    gap: { xl: 12, lg: 12, md: 12, sm: 11, xs: 124 },
+    gap: { xl: 12, lg: 12, md: 12, sm: 11, xs: 114 },
     marginTop: { sm: "200px", md: "0px", xs: 0 },
   },
   founderCard: {
@@ -314,6 +319,7 @@ const styles = {
     marginTop: "-70px", // Move the image upwards
     position: "relative",
     zIndex: 10,
+    marginBottom: "2px",
   },
   founderImageJermaine: {
     width: {
@@ -324,7 +330,7 @@ const styles = {
       xs: "272px",
     },
     height: {
-      xl: "537px",
+      xl: "539px",
       lg: "537px",
       md: "325px",
       sm: "325px",
@@ -333,6 +339,7 @@ const styles = {
     marginTop: "-70px", // Move the image upwards
     position: "relative",
     zIndex: 10,
+    marginBottom: "2px",
     marginLeft: { xl: 26, lg: 26, md: 14, sm: 12, xs: 12 },
   },
   cardContent: {
@@ -340,15 +347,55 @@ const styles = {
     pt: 8,
   },
   cardTitle: {
-    fontWeight: 700,
+    fontFamily: "Public Sans",
+    fontWeight: 900,
+    fontSize: { xl: "42px", lg: "42px", md: "24px", sm: "24px", xs: "24px" },
+    lineHeight: { xl: "41px", lg: "41px", md: "25px", sm: "25px", xs: "25px" },
     mt: 2,
   },
   cardSubtitle: {
     fontWeight: 400,
+    fontFamily: "Public Sans",
+    fontSize: { xl: "32px", lg: "32px", md: "32px", sm: "20px", xs: "20px" },
     mb: 2,
   },
   cardBody: {
+    fontFamily: "Inter",
+    fontWeight: 500,
+    fontSize: { xl: "20px", lg: "20px", md: "12px", sm: "12px", xs: "12px" },
+    marginLeft: 2.5,
     mb: 2,
+  },
+  listSubheading: {
+    fontFamily: "Inter",
+    fontWeight: 900,
+    fontSize: { xl: "20px", lg: "20px", md: "12px", sm: "12px" },
+  },
+  listItemText: {
+    fontFamily: "Inter",
+    fontWeight: 500,
+    fontSize: { xl: "20px", lg: "20px", md: "12px", sm: "12px", xs: "12px" },
+  },
+  sideBorder: {
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      left: {
+        xl: "27px",
+        lg: "0px",
+        md: "0px",
+        sm: "0px",
+        xs: "0px",
+      },
+      height: {
+        xl: "318px",
+        lg: "478px",
+        md: "318px",
+        xs: "116px",
+      },
+      width: "16px",
+      backgroundColor: "#FFC000",
+    },
   },
   listItemIcon: {
     color: "#FFC000",

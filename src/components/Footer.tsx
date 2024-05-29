@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+// @mui
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
+// assets
 import logo from "../assets/logoFooter.png";
 import facebookIcon from "../assets/socialmedia/facebook.svg";
 import twitterIcon from "../assets/socialmedia/twitter.svg";
 import instagramIcon from "../assets/socialmedia/instagram.svg";
 import linkedinIcon from "../assets/socialmedia/linkedin.svg";
 import youtubeIcon from "../assets/socialmedia/youtube.svg";
-import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const { pathname } = useLocation();
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <Box sx={styles.footer}>
       <Box sx={styles.footerWrapper}>

@@ -47,10 +47,21 @@ const ProductPage: React.FC = () => {
       {/* Third section */}
       <Container maxWidth="lg">
         {/* Connect */}
-        <Box sx={styles.section} id="connect">
+        <Box sx={{ ...styles.section, textAlign: "left" }} id="connect">
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} md={6} sx={styles.titleDescription}>
-              <Box sx={styles.connect}>
+              <Box
+                sx={{
+                  ...styles.connect,
+                  paddingLefT: {
+                    xl: "100px",
+                    lg: "100px",
+                    md: "100px",
+                    sm: "100px",
+                    xs: "0px",
+                  },
+                }}
+              >
                 <Typography variant="h5" sx={styles.sectionHeader}>
                   CONNECT
                 </Typography>
@@ -218,19 +229,24 @@ const styles = {
     },
   },
   sectionHeader: {
+    fontFamily: "Public Sans",
+    fontWeight: 800,
+    fontSize: { xl: "42px", lg: "42px", md: "24px", sm: "24px", xs: "24px" },
     color: "#FFF",
-    fontWeight: "bold",
   },
   sectionDescription: {
     padding: {
       xs: "10px",
       sm: "20px",
       md: "30px",
-      lg: "120px",
-      xl: "120px",
+      lg: "78px",
+      xl: "78px",
     },
     textAlign: "left",
-    fontWeight: "700",
+    fontFamily: "Inter",
+    fontWeight: 600,
+    fontSize: { xl: "24px", lg: "24px", md: "16px", sm: "16px", xs: "16px" },
+    lineHeight: { xl: "30px", lg: "30px", md: "20px", sm: "20px", xs: "20px" },
   },
   sectionContent: {
     padding: "10px",
@@ -296,14 +312,17 @@ const styles = {
   connect: {
     backgroundColor: "#FFC000",
     padding: "10px",
+    width: { xl: "100%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
   },
   communicate: {
     backgroundColor: "#76848A",
     padding: "10px",
+    width: { xl: "100%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
   },
   collaborate: {
     backgroundColor: "#2E86AB",
     padding: "10px",
+    width: { xl: "100%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
   },
   // Fourth section
   fourthSection: {
