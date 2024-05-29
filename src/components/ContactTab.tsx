@@ -191,7 +191,7 @@ const ContactTab = () => {
                 ))}
                 {/* Notes field */}
                 <Grid item xs={12} xl={12} order={{ xs: 7, md: 7 }}>
-                  <Typography sx={styles.label}>Notes</Typography>
+                  <Typography sx={styles.label}>Comments</Typography>
                   <TextField
                     name="notes"
                     placeholder="Tell us about your needs"
@@ -260,7 +260,7 @@ const ContactTab = () => {
                 ))}
                 {/* Notes field */}
                 <Grid item xs={12} order={{ xs: 7, md: 7 }}>
-                  <Typography sx={styles.label}>Notes</Typography>
+                  <Typography sx={styles.label}>Comments</Typography>
                   <TextField
                     name="notes"
                     placeholder="Tell us about your needs"

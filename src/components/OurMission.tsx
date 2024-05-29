@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import {
   Box,
   Typography,
@@ -34,9 +34,8 @@ const MissionAndBios = () => {
           <Box sx={styles.textBox}>
             <Typography variant="body1" sx={styles.text}>
               To connect and empower organizations, communities, and individuals
-              to take informed action, access funding, and
+              to take informed action, access funding, and{" "}
               <Typography sx={styles.spanBold}>
-                {" "}
                 create sustainable social impact.
               </Typography>
             </Typography>
@@ -255,6 +254,7 @@ const styles = {
     fontWeight: { xl: 900, lg: 900 },
     lineHeight: { xl: "58px", lg: "58px" },
     color: "#fff",
+    marginBottom: "7px",
   },
   foundersContainer: {
     display: "flex",
@@ -390,7 +390,7 @@ const styles = {
     backgroundColor: "#FFC000",
   },
   text: {
-    fontFamily: "Public Sans",
+    fontFamily: "Inter",
     fontWeight: 400,
     fontSize: { xl: "32px", lg: "32px", md: "20px", sm: "20px", xs: "20px" },
     textAlign: "left",
@@ -406,7 +406,8 @@ const styles = {
     fontFamily: "Public Sans",
     fontWeight: 900,
     fontSize: { xl: "32px", lg: "32px", md: "20px", sm: "20px", xs: "20px" },
-    lineHeight: "41px",
+    // lineHeight: "41px",
+    display: "inline",
   },
   divider: {
     width: { xl: "100%", lg: "100%", md: "100%", sm: "100%", xs: "100%" },

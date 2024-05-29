@@ -21,30 +21,54 @@ const Footer = () => {
               Follow Us
             </Typography>
             <Box sx={styles.socialIcons}>
-              <Box
-                component="img"
-                src={facebookIcon}
-                alt="Facebook"
-                sx={styles.socialIcon}
-              />
-              <Box
-                component="img"
-                src={twitterIcon}
-                alt="Twitter"
-                sx={styles.socialIcon}
-              />
-              <Box
-                component="img"
-                src={instagramIcon}
-                alt="Instagram"
-                sx={styles.socialIcon}
-              />
-              <Box
-                component="img"
-                src={linkedinIcon}
-                alt="LinkedIn"
-                sx={styles.socialIcon}
-              />
+              <a
+                href="https://www.facebook.com/CIVAapp/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Box
+                  component="img"
+                  src={facebookIcon}
+                  alt="Facebook"
+                  sx={styles.socialIcon}
+                />
+              </a>
+              <a
+                href="https://x.com/civa_app?s=11&t=1xfi2jdHe5RYZzS7hOt9CQ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Box
+                  component="img"
+                  src={twitterIcon}
+                  alt="Twitter"
+                  sx={styles.socialIcon}
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/civa.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Box
+                  component="img"
+                  src={instagramIcon}
+                  alt="Instagram"
+                  sx={styles.socialIcon}
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/yourcivaapp/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Box
+                  component="img"
+                  src={linkedinIcon}
+                  alt="LinkedIn"
+                  sx={styles.socialIcon}
+                />
+              </a>
               <Box
                 component="img"
                 src={youtubeIcon}

@@ -190,7 +190,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
-    margin: "0 auto 40px auto",
+    margin: "0 auto 68px auto",
   },
   titleBorder: {
     borderBottom: "16px solid #FFC000",

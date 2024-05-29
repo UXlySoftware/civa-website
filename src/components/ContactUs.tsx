@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Typography } from "@mui/material";
 import contactBg from "../assets/contactBg.png";
 import ContactTab from "../components/ContactTab";
 
 const ContactUs = () => {
-  const [tabValue, setTabValue] = useState("1");
-
-  const handleChange = (newValue: string) => {
-    setTabValue(newValue);
-  };
-
   return (
     <Box sx={styles.wrapper}>
       <Box sx={styles.leftSide}>
