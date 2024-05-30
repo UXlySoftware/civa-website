@@ -350,7 +350,7 @@ const styles = {
     fontFamily: "Public Sans",
     fontWeight: 900,
     fontSize: {
-      xs: "128px",
+      xs: "28px",
       sm: "28px",
       md: "52px",
       lg: "52px",
