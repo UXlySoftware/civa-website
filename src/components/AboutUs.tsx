@@ -227,13 +227,13 @@ const styles = {
   },
   storyContainer: {
     display: "flex",
-    flexDirection: { xs: "column", md: "row" },
+    flexDirection: { xs: "column", sm: "row", md: "row" },
     alignItems: "center",
     position: "relative",
     margin: "10px 10px",
   },
   storyImage: {
-    width: { xs: "85%", md: "495px" },
+    width: { xs: "85%", md: "495px", sm: "50%" },
     height: "auto",
     marginLeft: {
       xl: "270px",
@@ -245,6 +245,7 @@ const styles = {
     zIndex: 1,
   },
   storyTextBox: {
+    display: "flex",
     backgroundColor: "#2987AC",
     color: "#fff",
     padding: {
@@ -254,17 +255,17 @@ const styles = {
       sm: "21px 21px",
       xs: "160px 21px",
     },
-    width: { xs: "100%", md: "802px", sm: "338px" },
+    width: { xs: "100%", md: "802px", sm: "388px" },
     height: {
       xl: "483px",
       lg: "483px",
       md: "364px",
-      sm: "529px",
+      sm: "489px",
       xs: "700px",
     },
     marginTop: { xs: "200px", md: "0px" }, // Move up on mobile screens
-    position: { xs: "absolute", md: "static" },
-    top: { xs: "50px", md: "auto" },
+    position: { xs: "absolute", md: "relative", sm: "relative" },
+    top: { xs: "50px", md: "auto", sm: "-100px" },
     zIndex: { xs: 0, md: 0 },
     boxSizing: "border-box",
   },

@@ -25,7 +25,7 @@ const MissionAndBios = () => {
     <Box sx={styles.missionAndBiosContainer}>
       <Box sx={styles.missionTitleBox}>
         <Typography variant="h4" sx={styles.missionTitle}>
-          Our Mission{" "}
+          OUR MISSION{" "}
         </Typography>
       </Box>
       <Box sx={styles.missionContentBox}>
@@ -183,8 +183,8 @@ const styles = {
       xl: "500px",
       lg: "500px",
       md: "500px",
-      sm: "250px",
-      xs: "200px",
+      sm: "300px",
+      xs: "300px",
     },
     margin: {
       xl: "0 auto 109px auto",
@@ -196,7 +196,7 @@ const styles = {
     textAlign: "center",
   },
   missionTitle: {
-    marginTop: 5,
+    marginTop: 9,
     fontFamily: "Public Sans",
     fontWeight: 900,
     fontSize: {
