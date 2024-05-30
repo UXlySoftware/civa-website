@@ -10,7 +10,6 @@ interface ListItemProps {
 interface ImageSectionProps {
   src: string;
   alt: string;
-  button: ReactNode;
 }
 interface InfoSectionProps {
   imgSrc: string;
@@ -29,10 +28,9 @@ const ListItem: FC<ListItemProps> = ({ number, text }) => (
   </Box>
 );
 
-const ImageSection: FC<ImageSectionProps> = ({ src, alt, button }) => (
+const ImageSection: FC<ImageSectionProps> = ({ src, alt }) => (
   <Box sx={styles.imageBox}>
     <Box component="img" src={src} alt={alt} sx={styles.image} />
-    {button}
   </Box>
 );
 
@@ -57,7 +55,9 @@ const InfoSection: FC<InfoSectionProps> = ({ imgSrc, imgAlt, text }) => (
 const HowItWorks = () => {
   const listItems = [
     <>
-      Organization and community <br /> members join CIVA.
+      Organization and community
+      <br />
+      members join CIVA.
     </>,
     <>
       Organization and community members <br /> discover government resources.
@@ -98,25 +98,7 @@ const HowItWorks = () => {
             Learn More
           </Button>
         </Box>
-        <ImageSection
-          src={phoneImage}
-          alt="Phone showing CIVA app"
-          button={
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{
-                ...styles.button,
-                display: { xs: "flex", md: "none" },
-                position: "relative",
-                bottom: "50px",
-                width: "100%",
-              }}
-            >
-              Learn More
-            </Button>
-          }
-        />
+        <ImageSection src={phoneImage} alt="Phone showing CIVA app" />
       </Box>
       <InfoSection
         imgSrc={discussionImage}
@@ -177,7 +159,7 @@ const styles = {
   },
   contentBox: {
     display: "flex",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     alignItems: "center",
     flexDirection: { xs: "column", md: "row" },
   },
@@ -186,12 +168,12 @@ const styles = {
     padding: {
       xl: "0 20px",
       lg: "0 20px",
-      md: "0px 0px 30px 60px",
+      md: "0px 0px 30px 30px",
       sm: "0 20px",
       xs: "0 20px",
     },
     marginLeft: { xl: 42, lg: 12, md: 0 },
-    marginTop: { xl: "-250px", lg: "-220px", md: "-90px", xs: "41px" },
+    marginTop: { xl: "-40px", lg: "-40px", md: "-80px", xs: "41px" },
   },
   listItem: {
     display: "flex",
@@ -199,16 +181,18 @@ const styles = {
     marginBottom: "37px",
   },
   listNumber: {
+    width: "60px",
     fontFamily: "Public Sans",
-    fontWeight: "700",
+    fontWeight: 700,
     color: "#2E86AB",
+    display: "flex",
     marginRight: "20px",
     fontSize: { xl: "64px", lg: "64px", md: "52px", sm: "52px", xs: "52px" },
     lineHeight: { xl: "75px", lg: "75px", md: "61px", sm: "61px" },
   },
   listText: {
     fontFamily: "Inter",
-    fontSize: { xl: "20px", lg: "20px", md: "18px", sm: "18px", xs: "18px" },
+    fontSize: { xl: "23px", lg: "23px", md: "19px", sm: "20px", xs: "20px" },
     lineHeight: "24.2px",
     fontWeight: 700,
   },
@@ -225,11 +209,12 @@ const styles = {
     textTransform: "none",
   },
   imageBox: {
-    width: { xs: "90%", md: "55%", lg: "45%", xl: "40%" },
+    width: { xs: "90%", md: "50%", lg: "40%", xl: "30%" },
     height: "auto",
     display: "flex",
     position: "relative",
     top: { xl: "-55px", lg: "-55px", md: "-15px" },
+    left: { xl: "-70px", lg: "-20px", md: "0px" },
     justifyContent: "center",
     alignItems: "center",
     paddingBottom: "30px",
@@ -238,6 +223,7 @@ const styles = {
   image: {
     width: { xl: "80%", lg: "90%", md: "100%", sm: "100%", xs: "100%" },
     height: "auto",
+    marginTop: "40px",
   },
   infoSection: {
     display: "flex",

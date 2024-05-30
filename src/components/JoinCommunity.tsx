@@ -13,7 +13,7 @@ const JoinCommunity = () => {
         engagement platform. Schedule a demo today.
       </Typography>
       <Button variant="contained" color="primary" sx={styles.demoButton}>
-        Get A Demo
+        Get a Demo
       </Button>
     </Box>
   );

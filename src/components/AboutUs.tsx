@@ -43,7 +43,7 @@ const AboutUs = () => {
             ecosystem.
           </Typography>
           <Button variant="contained" color="warning" sx={styles.button}>
-            Sign Up for Early Access
+            Get a Demo{" "}
           </Button>
         </Box>
       </Box>
@@ -64,8 +64,8 @@ const AboutUs = () => {
           />
           <Box sx={styles.storyTextBox}>
             <Typography variant="body1" sx={styles.storyText}>
-              Akeem Evans and Jermaine Hartsfield first met during their service
-              in Peace Corps Albania. Working alongside foreign leaders,
+              Ackeem Evans and Jermaine Hartsfield first met during their
+              service in Peace Corps Albania. Working alongside foreign leaders,
               government officials, and NGOs, they saw firsthand the critical
               role civil society plays in maintaining trust and reciprocity
               within communities. <br />
@@ -160,6 +160,9 @@ const styles = {
     borderRadius: "12px",
     padding: "12px 24px",
     textTransform: "none",
+    "&:hover": {
+      backgroundColor: "#e8ae00",
+    },
   },
   sideBorder: {
     "&::before": {
@@ -220,6 +223,7 @@ const styles = {
       sm: "36px",
       xs: "36px",
     },
+    marginTop: "16px",
   },
   storyContainer: {
     display: "flex",

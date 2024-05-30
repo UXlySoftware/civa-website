@@ -58,7 +58,7 @@ const MissionAndBios = () => {
           <Box
             component="img"
             src={akeemImage}
-            alt="Akeem Evans"
+            alt="Ackeem Evans"
             sx={styles.founderImageAkeem}
           />
           <Box sx={styles.divider} />
@@ -84,7 +84,7 @@ const MissionAndBios = () => {
               </Typography>
             </Box>
             <Typography variant="body1" sx={styles.listSubheading}>
-              Akeem’s experience in this arena includes:
+              Ackeem’s experience in this arena includes:
             </Typography>
             <List>
               {[

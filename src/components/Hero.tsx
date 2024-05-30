@@ -30,7 +30,7 @@ const HeroSection = () => {
             civic engagement.
           </Typography>
           <Button variant="contained" color="secondary" sx={styles.button}>
-            Sign Up for Early Access
+            Get a Demo{" "}
           </Button>
         </Box>
         <Box
