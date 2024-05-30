@@ -181,7 +181,7 @@ const styles = {
     marginBottom: "37px",
   },
   listNumber: {
-    width: "60px",
+    width: { xl: "70px", lg: "70px", md: "70", sm: "40px", xs: "40px" },
     fontFamily: "Public Sans",
     fontWeight: 700,
     color: "#2E86AB",
