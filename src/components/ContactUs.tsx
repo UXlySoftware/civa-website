@@ -9,11 +9,7 @@ const ContactUs = () => {
       <Box sx={styles.leftSide}>
         <Box sx={styles.sideBorder} />
         <Typography variant="h3" sx={styles.heading}>
-          <Typography
-            sx={{ ...styles.heading, color: "#FFC000", display: "inline" }}
-          >
-            CONTACT{" "}
-          </Typography>
+          <span style={{ color: "#FFC000" }}>CONTACT </span>
           US
         </Typography>
         <Typography variant="h4" sx={styles.subHeading}>
