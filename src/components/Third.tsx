@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Button } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import venDiagram from "../assets/venDiagram.png";
 
 const ThirdSection = () => {
@@ -20,9 +20,9 @@ const ThirdSection = () => {
           stakeholders together to create <br /> meaningful programs with
           measurable <br /> impact.
         </Typography>
-        <Button variant="contained" sx={styles.button}>
+        {/* <Button variant="contained" sx={styles.button}>
           Get Demo
-        </Button>
+        </Button> */}
       </Box>
       <Box sx={styles.vennContainer}>
         <img
@@ -56,7 +56,13 @@ const styles = {
     flexDirection: "column",
     gap: { xl: "32px", lg: "32px", md: "22px", sm: "22px", xs: "22px" },
     marginRight: { xl: 10 },
-    marginTop: { xl: "0px", lg: "0px", md: "0px", sm: "0px", xs: "60px" },
+    marginTop: {
+      xl: "-150px",
+      lg: "-150px",
+      md: "-150px",
+      sm: "0px",
+      xs: "60px",
+    },
     // maxWidth: { xs: "100%", md: "50%" },
     paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
   },
@@ -74,7 +80,7 @@ const styles = {
       height: {
         xl: "368px",
         lg: "418px",
-        md: "418px",
+        md: "368px",
         sm: "360px",
         xs: "293px",
       },

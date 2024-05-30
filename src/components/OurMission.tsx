@@ -73,7 +73,7 @@ const MissionAndBios = () => {
             <Box sx={{ borderLeft: "12px solid #2E86AB" }}>
               <Typography variant="body1" sx={styles.cardBody}>
                 With an extensive background in public sector leadership as well
-                as program and grants management, Akeem is celebrated for his
+                as program and grants management, Ackeem is celebrated for his
                 global contributions to community development, notably with the
                 Peace Corps in Albania and with the Organization for Security
                 and Co-operation in Europe.
@@ -165,7 +165,7 @@ const styles = {
       lg: "505vh",
       md: "230vh",
       sm: "175vh",
-      xs: "650vh",
+      xs: "625vh",
     },
     marginBottom: {
       xl: "-65%",
@@ -214,6 +214,7 @@ const styles = {
       xs: "36px",
     },
     color: "#fff",
+    marginBottom: 1,
   },
   missionContentBox: {
     position: "relative",

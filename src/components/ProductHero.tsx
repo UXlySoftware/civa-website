@@ -1,20 +1,11 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import backgroundVideo from "../assets/backgroundVideo.mp4";
+import united from "../assets/united.png";
 
 const HeroSection = () => {
   return (
     <Box sx={styles.heroBox}>
-      <Box
-        component="video"
-        autoPlay
-        loop
-        muted
-        playsInline
-        sx={styles.videoBackground}
-      >
-        <source src={backgroundVideo} type="video/mp4" />
-      </Box>
+      <Box component="img" src={united} sx={styles.heroBackground} />
       <Box sx={styles.innerBox}>
         <Box sx={styles.sideBorder} />
         <Box sx={styles.innerLeft}>
@@ -28,7 +19,7 @@ const HeroSection = () => {
             Empower your community through <br /> engagement and insights.
           </Typography>
           <Button variant="contained" color="secondary" sx={styles.button}>
-            Sign Up for Early Access
+            Get a Demo{" "}
           </Button>
         </Box>
       </Box>
@@ -37,7 +28,7 @@ const HeroSection = () => {
 };
 
 const styles = {
-  videoBackground: {
+  heroBackground: {
     position: "absolute",
     top: 0,
     left: 0,
@@ -47,7 +38,7 @@ const styles = {
     zIndex: -1,
   },
   heroBox: {
-    position: "relative",
+    // position: "relative",
     display: "flex",
     justifyContent: "left",
     alignItems: "center",
@@ -55,21 +46,13 @@ const styles = {
     minWidth: "100%",
     height: "100%",
     minHeight: {
-      xl: "calc(100vh - 64px)",
+      xl: "100vh",
       lg: "100vh",
       md: "50vh",
       sm: "50vh",
       xs: "80vh",
     },
     overflow: "hidden",
-  },
-  container: {
-    paddingRight: { xs: 2, md: 3, lg: 14, xl: 20 },
-    paddingTop: { xs: 10, md: 15, lg: 20, xl: 23 },
-    zIndex: 1,
-    height: "65vh",
-    position: "relative",
-    // maxWidth: { xs: "100%", sm: "80%", md: "70%", lg: "70%", xl: "50%" },
   },
   innerBox: {
     display: "flex",

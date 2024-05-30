@@ -11,8 +11,8 @@ const ContactUs = () => {
         <Typography variant="h3" sx={styles.heading}>
           CONTACT US
         </Typography>
-        <Typography variant="h6" sx={styles.subHeading}>
-          CIVA's here to help.
+        <Typography variant="h4" sx={styles.subHeading}>
+          CIVA’s here to help.
         </Typography>
       </Box>
       <ContactTab />

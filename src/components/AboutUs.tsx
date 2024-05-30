@@ -245,7 +245,7 @@ const styles = {
     zIndex: 1,
   },
   storyTextBox: {
-    backgroundColor: "#000",
+    backgroundColor: "#2987AC",
     color: "#fff",
     padding: {
       xl: "85px",

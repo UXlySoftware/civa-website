@@ -68,11 +68,11 @@ const TeamSection = () => {
             }}
           />
           <Box sx={styles.infoBoxHorace}>
-            <Typography variant="body1" sx={styles.positionText}>
-              Chief Product Officer
-            </Typography>
             <Typography variant="h6" sx={styles.nameText}>
               HORACE WILLIAMS
+            </Typography>
+            <Typography variant="body1" sx={styles.positionText}>
+              Chief Product Officer
             </Typography>
           </Box>
         </Box>
@@ -131,11 +131,11 @@ const TeamSection = () => {
             }}
           />
           <Box sx={styles.infoBoxMolly}>
-            <Typography variant="body1" sx={styles.positionText}>
-              Community Engagement Associate
-            </Typography>
             <Typography variant="h6" sx={styles.nameText}>
               MOLLY SWEET{" "}
+            </Typography>
+            <Typography variant="body1" sx={styles.positionText}>
+              Community Engagement Associate
             </Typography>
           </Box>
         </Box>

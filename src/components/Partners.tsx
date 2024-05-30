@@ -6,7 +6,6 @@ import mtiLogo from "../assets/mtiLogo.png";
 import resurgensLogo from "../assets/resurgensLogo.png";
 import urbanLeagueLogo from "../assets/urbanLeague.png";
 import atlantaLogo from "../assets/atlantaLogo.png";
-import JoinCommunity from "./JoinCommunity";
 
 const PartnersSection = () => (
   <Box sx={styles.partnersSection}>
@@ -66,7 +65,7 @@ const PartnersSection = () => (
         item
         xs={6}
         md={3}
-        sx={{ marginRight: { xl: "0px", lg: "-55px", md: "0px" } }}
+        sx={{ marginRight: { xl: "-24px", lg: "-55px", md: "0px" } }}
       >
         <Box sx={styles.logoWrapper}>
           <img src={mtiLogo} alt="MTI" style={styles.logo} />
