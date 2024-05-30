@@ -254,7 +254,7 @@ const styles = {
       sm: "21px 21px",
       xs: "160px 21px",
     },
-    width: { xs: "95%", md: "802px", sm: "338px" },
+    width: { xs: "100%", md: "802px", sm: "338px" },
     height: {
       xl: "483px",
       lg: "483px",
