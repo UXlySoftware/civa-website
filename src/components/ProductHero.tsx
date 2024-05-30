@@ -66,7 +66,6 @@ const styles = {
     },
   },
   innerLeft: {
-    border: "1px solid red",
     marginTop: { xs: "-60px", sm: 0, md: 0, lg: 0, xl: 0 },
     width: { xl: "100%", g: "100%", md: "75%", sm: "100%" },
     alignItems: "left",
@@ -87,11 +86,11 @@ const styles = {
       height: {
         xl: "428px",
         lg: "478px",
-        md: "438px",
+        md: "368px",
         sm: "320px",
         xs: "300px",
       },
-      marginTop: { xl: "8px", xs: "-65px" },
+      marginTop: { xl: "8px", sm: 0, xs: "-65px" },
       width: "16px",
       backgroundColor: "#FFC000",
     },
