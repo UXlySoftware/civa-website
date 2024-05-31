@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Container,
@@ -38,23 +39,24 @@ const features = [
 const ProductPage: React.FC = () => {
   return (
     <>
-      {/* Hero */} 
       <ProductHero />
-      {/* Second section */}
+
       <Box sx={styles.imageBox}>
         <Box component="img" src={SecondImg} alt="image" sx={styles.image} />
       </Box>
-      {/* Third section */}
-      <Container maxWidth="lg">
-        {/* Connect */}
-        <Box sx={{ ...styles.section, textAlign: "left" }} id="connect">
+
+      <Box sx={{ maxWidth: { xs: "97vw", sm: "100%" } }}>
+        <Box
+          sx={{ ...styles.section, textAlign: "left", marginTop: "120px" }}
+          id="connect"
+        >
           <Grid container spacing={2} alignItems="center">
-            <Grid item xs={12} md={6} sx={styles.titleDescription}>
+            <Grid item xs={12} sm={6} md={6} sx={styles.titleDescription}>
               <Box
                 sx={{
                   ...styles.connect,
-                  paddingLefT: {
-                    xl: "100px",
+                  paddingLeft: {
+                    xl: "280px",
                     lg: "100px",
                     md: "100px",
                     sm: "100px",
@@ -67,70 +69,139 @@ const ProductPage: React.FC = () => {
                 </Typography>
               </Box>
               <Typography sx={styles.sectionDescription}>
-                CIVA connects organizations and community members, and provides
-                up-to-date information on relevant government resources.
+                CIVA connects organizations <br />
+                and community members,
+                <br /> and provides up-to-date <br /> information on relevant{" "}
+                <br />
+                government resources.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6} sx={styles.imageContainer1}>
-              <img src={Third1Img} alt="Connect" style={styles.image1} />
+            <Grid item xs={12} sm={6} md={6} sx={styles.imageContainer1}>
+              <Box
+                component="img"
+                src={Third1Img}
+                alt="Connect"
+                sx={styles.image1}
+              />
             </Grid>
           </Grid>
         </Box>
 
-        {/* Communicate */}
-        <Box sx={styles.section} id="communicate">
-          <Grid container spacing={2} alignItems="center">
-            <Grid
-              item
-              xs={12}
-              md={6}
-              order={{ xs: 2, md: 1 }}
-              sx={styles.imageContainerReverse}
-            >
-              <img src={Third2Img} alt="Communicate" style={styles.image1} />
+        <Box
+          sx={{
+            ...styles.section,
+            textAlign: "left",
+            marginTop: {
+              xl: "120px",
+              lg: "120px",
+              md: "120px",
+              sm: "120px",
+              xs: "-100px",
+            },
+          }}
+          id="communicate"
+        >
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6} sx={styles.imageContainer2}>
+              <Box
+                component="img"
+                src={Third2Img}
+                alt="communicate"
+                sx={styles.image2}
+              />
             </Grid>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              order={{ xs: 1, md: 2 }}
-              sx={styles.titleDescription}
-            >
-              <Box sx={styles.communicate}>
-                <Typography variant="h5" sx={styles.sectionHeader}>
-                  COMMUNICATE
-                </Typography>
-              </Box>
-              <Typography sx={styles.sectionDescription}>
-                CIVA provides an integrated platform and suite of tools for
-                communication, government outreach, and community engagement.
+            <Grid item xs={12} md={6} sx={styles.titleDescription2}>
+              <Typography
+                sx={{
+                  ...styles.sectionDescription2,
+                  paddingLeft: 0,
+                  textAlign: {
+                    xl: "right",
+                    lg: "right",
+                    md: "right",
+                    sm: "right",
+                    xs: "left",
+                  },
+                }}
+              >
+                CIVA provides an integrated <br /> platform and suite of tools
+                <br />
+                for communication,
+                <br /> government outreach, and <br /> community engagement.
               </Typography>
             </Grid>
           </Grid>
+
+          <Box
+            sx={{
+              ...styles.communicate,
+              paddingLeft: { lg: "100px", md: "100px", xs: "0px" },
+              textAlign: "right",
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                ...styles.sectionHeader,
+                marginLeft: {
+                  xl: "295px",
+                  lg: "295px",
+                  md: "295px",
+                  sm: "295px",
+                  xs: "20px",
+                },
+              }}
+            >
+              COMMUNICATE
+            </Typography>
+          </Box>
         </Box>
 
-        {/* Collaborate */}
-        <Box sx={styles.section} id="collaborate">
+        <Box
+          sx={{
+            ...styles.section,
+            textAlign: "left",
+            marginTop: { xl: "10px", lg: "10px", md: "10px", sm: "-100px" },
+          }}
+          id="collaborate"
+        >
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} md={6} sx={styles.titleDescription}>
-              <Box sx={styles.collaborate}>
+              <Box
+                sx={{
+                  ...styles.collaborate,
+                  paddingLeft: {
+                    xl: "280px",
+                    lg: "100px",
+                    md: "100px",
+                    xs: "0px",
+                  },
+                }}
+              >
                 <Typography variant="h5" sx={styles.sectionHeader}>
                   COLLABORATE
                 </Typography>
               </Box>
               <Typography sx={styles.sectionDescription}>
-                CIVA provides a single source for feedback, data, and measurable
-                insights to assess program results and provide metrics for
-                future grant proposals.
+                CIVA provides a single
+                <br /> source for feedback, data, <br /> and measurable insights
+                to <br />
+                assess program results and <br />
+                provide metrics for future <br /> grant proposals.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6} sx={styles.imageContainer2}>
-              <img src={Third3Img} alt="Collaborate" style={styles.image1} />
+            <Grid item xs={12} md={6} sx={styles.imageContainer3}>
+              <Box
+                component="img"
+                src={Third3Img}
+                alt="Collaborate"
+                sx={styles.image1}
+              />
             </Grid>
           </Grid>
         </Box>
-      </Container>
-      {/* Fourth section */}
+      </Box>
+
       <Container sx={styles.fourthSection} maxWidth={false}>
         <Typography variant="h3" sx={styles.header}>
           CIVA STANDS ALONE
@@ -177,22 +248,15 @@ const ProductPage: React.FC = () => {
           </Typography>
         </Paper>
 
-        {/* Fifth section */}
         <Typography variant="h3" sx={styles.header}>
           HOW IT WORKS
         </Typography>
         <Box sx={styles.divider} />
 
-        <Box
-          sx={{
-            width: "100%",
-            margin: "auto",
-          }}
-        >
+        <Box sx={{ width: "100%", margin: "auto" }}>
           <ProductTab />
         </Box>
 
-        {/* Sixth section */}
         <JoinCommunity />
       </Container>
     </>
@@ -205,7 +269,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    mt: "-82px",
+    mt: { xs: "-75px" },
     mb: "50px",
     width: "100%",
     maxWith: "100%",
@@ -230,20 +294,28 @@ const styles = {
       lg: "center",
       xl: "center",
     },
+    display: "flex",
+    position: "relative",
+    marginBottom: "160px",
   },
   sectionHeader: {
     fontFamily: "Public Sans",
     fontWeight: 800,
     fontSize: { xl: "42px", lg: "42px", md: "24px", sm: "24px", xs: "24px" },
     color: "#FFF",
+    marginLeft: { sm: 3, xs: "20px" },
   },
   sectionDescription: {
-    padding: {
-      xs: "10px",
+    paddingLeft: {
+      xs: "20px",
       sm: "20px",
       md: "30px",
       lg: "78px",
-      xl: "78px",
+      xl: "280px",
+    },
+    paddingTop: {
+      xl: "52px",
+      xs: "15px",
     },
     textAlign: "left",
     fontFamily: "Inter",
@@ -251,81 +323,118 @@ const styles = {
     fontSize: { xl: "24px", lg: "24px", md: "16px", sm: "16px", xs: "16px" },
     lineHeight: { xl: "30px", lg: "30px", md: "20px", sm: "20px", xs: "20px" },
   },
-  sectionContent: {
-    padding: "10px",
+  sectionDescription2: {
+    paddingLeft: {
+      xs: "20px",
+      sm: "20px",
+      md: "30px",
+      lg: "78px",
+      xl: "280px",
+    },
+    paddingTop: {
+      xl: "52px",
+      xs: "15px",
+    },
+    textAlign: "left",
+    fontFamily: "Inter",
+    fontWeight: 600,
+    fontSize: { xl: "24px", lg: "24px", md: "16px", sm: "16px", xs: "16px" },
+    lineHeight: { xl: "30px", lg: "30px", md: "20px", sm: "20px", xs: "20px" },
   },
   titleDescription: {
     alignSelf: "flex-start",
+  },
+  titleDescription2: {
+    position: "relative",
+    right: {
+      xl: "-730px",
+      lg: "-580px",
+      md: "-450px",
+      sm: "-200px",
+      xs: "-10px",
+    },
+    top: { xl: "100px", lg: "120px", md: "120px", sm: "-150px", xs: "80px" },
   },
   imageContainer1: {
     position: "relative",
     top: {
       xs: "0px",
-      sm: "0px",
-      md: "-30px",
-      lg: "-10px",
-      xl: "-10px",
+      sm: "70px",
+      md: "70px",
+      lg: "70px",
+      xl: "70px",
     },
     left: {
-      xs: "0px",
-      sm: "0px",
-      md: "-80px",
-      lg: "-70px",
-      xl: "-70px",
+      xs: "10px",
+      sm: "-110px",
+      md: "-160px",
+      lg: "-160px",
+      xl: "-160px",
     },
   },
   imageContainer2: {
     position: "relative",
     top: {
-      xs: "0px",
-      sm: "0px",
-      md: "-30px",
-      lg: "-10px",
-      xl: "-10px",
+      xs: "100px",
+      sm: "65px",
+      md: "65px",
+      lg: "65px",
+      xl: "65px",
     },
     left: {
-      xs: "0px",
-      sm: "0px",
-      md: "-80px",
-      lg: "-70px",
-      xl: "-70px",
+      xs: "10px",
+      sm: "70px",
+      md: "70px",
+      lg: "70px",
+      xl: "270px",
     },
   },
-  imageContainerReverse: {
+  imageContainer3: {
     position: "relative",
     top: {
       xs: "0px",
-      sm: "0px",
-      md: "-10px",
-      lg: "-10px",
-      xl: "-10px",
+      sm: "-200px",
+      md: "70px",
+      lg: "70px",
+      xl: "70px",
     },
-    right: {
-      xs: "0px",
-      sm: "0px",
-      md: "-50px",
-      lg: "-70px",
-      xl: "-70px",
+    left: {
+      xs: "10px",
+      sm: "310px",
+      md: "-160px",
+      lg: "-160px",
+      xl: "-160px",
     },
   },
   image1: {
-    width: "100%",
+    width: { xl: "818px", lg: "818px", md: "474px", sm: "474px", xs: "364px" },
+    height: "auto",
+  },
+  image2: {
+    width: { xl: "818px", lg: "818px", md: "474px", sm: "474px", xs: "364px" },
     height: "auto",
   },
   connect: {
     backgroundColor: "#FFC000",
-    padding: "10px",
-    width: { xl: "100%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
+    width: { xl: "90%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
+    height: { xl: "109px", lg: "109px", md: "109px", sm: "109px", xs: "64px" },
+    alignItems: "center",
+    display: "flex",
   },
   communicate: {
     backgroundColor: "#76848A",
-    padding: "10px",
     width: { xl: "100%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
+    height: { xl: "109px", lg: "109px", md: "109px", sm: "109px", xs: "64px" },
+    marginLeft: { xs: "-389px", sm: "-300px", md: "-150px" },
+    alignItems: "center",
+    display: "flex",
   },
   collaborate: {
     backgroundColor: "#2E86AB",
-    padding: "10px",
-    width: { xl: "100%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
+    width: { xl: "90%", lg: "100%", md: "95%", sm: "65%", xs: "90%" },
+    height: { xl: "109px", lg: "109px", md: "109px", sm: "109px", xs: "64px" },
+    alignItems: "center",
+    display: "flex",
   },
   // Fourth section
   fourthSection: {
