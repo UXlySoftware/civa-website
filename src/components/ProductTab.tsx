@@ -1,9 +1,9 @@
-import React from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import React, { SyntheticEvent, useState } from "react";
+import { Box, Typography, Grid, Tab, Tabs } from "@mui/material";
 import { TabContext, TabPanel } from "@mui/lab";
 import { iPhoneImg } from "../assets/product";
 
-const tempData = [
+const firstTabList = [
   {
     id: 1,
     title: "Organizations join CIVA.",
@@ -33,35 +33,116 @@ const tempData = [
   },
 ];
 
+const secondTabList = [
+  {
+    id: 1,
+    title: "Associations join CIVA.",
+  },
+  {
+    id: 2,
+    title: "Discover and link to relevant government resources.",
+  },
+  {
+    id: 3,
+    title:
+      "Find and partner with affinity organizations based on shared interests.",
+  },
+  {
+    id: 4,
+    title:
+      "Communicate with members: get feedback and suggestions, answer questions, etc.",
+  },
+  {
+    id: 5,
+    title: "Advocate directly with relevant government officials.",
+  },
+  {
+    id: 6,
+    title:
+      "Community associations gain a stronger voice, influence, and metrics to ensure effective, sustainable programs.",
+  },
+];
+
+const thirdTabList = [
+  {
+    id: 1,
+    title: "Individuals download the CIVA mobile app.",
+  },
+  {
+    id: 2,
+    title:
+      "Discover community associations and organizations based on interests.",
+  },
+  {
+    id: 3,
+    title: "Discover appropriate government-funded programs in the community.",
+  },
+  {
+    id: 4,
+    title:
+      "Discover, communicate and advocate with relevant elected officials.",
+  },
+  {
+    id: 5,
+    title:
+      "Provide feedback, ask questions, and suggest improvements to organizations and community associations.",
+  },
+  {
+    id: 6,
+    title:
+      "Communicate and collaborate with other like-minded citizens — build profile and become civic influencer.",
+  },
+];
 const ProductTab = () => {
+  const [value, setValue] = useState("1");
+
+  const handleChange = (event: SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
+
   return (
     <Box sx={styles.container}>
-      {/* Tabs for a demo or get support */}
-      <Box sx={styles.tabs}>
-        {/* AFFINITY ORGANIZATIONS */}
-        <Box sx={styles.tabBox1}>
-          <Typography sx={styles.selectedTab1}>
-            AFFINITY ORGANIZATIONS
-          </Typography>
-        </Box>
-
-        {/* COMMUNITY ASSOCIATIONS */}
-        <Box sx={styles.tabBox2}>
-          <Typography sx={styles.selectedTab2}>
-            COMMUNITY ASSOCIATIONS
-          </Typography>
-        </Box>
-
-        {/* INDIVIDUALS */}
-        <Box sx={styles.tabBox3}>
-          <Typography sx={styles.selectedTab3}>INDIVIDUALS</Typography>
-        </Box>
-      </Box>
-
-      {/* Form content based on selected tab */}
-      <Box sx={styles.formBox}>
-        <TabContext value="1">
-          {/* Request a demo */}
+      <Tabs value={value} onChange={handleChange} sx={styles.tabs}>
+        <Tab
+          label={
+            <Typography sx={styles.tabText}>
+              AFFINITY <br /> ORGANIZATIONS
+            </Typography>
+          }
+          value="1"
+          sx={{
+            ...styles.tab,
+            ...styles.tab1,
+            ...(value === "1" && styles.selectedTab),
+          }}
+        />
+        <Tab
+          label={
+            <Typography sx={styles.tabText}>
+              COMMUNITY
+              <br />
+              ASSOCIATIONS
+            </Typography>
+          }
+          value="2"
+          sx={{
+            ...styles.tab,
+            ...styles.tab2,
+            ...(value === "2" && styles.selectedTab),
+          }}
+        />
+        <Tab
+          label="INDIVIDUALS"
+          value="3"
+          sx={{
+            ...styles.tab,
+            ...styles.tab3,
+            ...(value === "3" && styles.selectedTab),
+          }}
+        />
+      </Tabs>
+      <TabContext value={value}>
+        <Box sx={styles.formBox}>
           <TabPanel value="1" sx={styles.tabPanel}>
             <Grid container spacing={2} sx={styles.formContainer}>
               <Grid item xs={12} sm={12} md={6} lg={6}>
@@ -70,14 +151,8 @@ const ProductTab = () => {
                   Translational Science Institutes and Awardees, Nonprofits and
                   Foundations, Universities, and more
                 </Typography>
-
-                {/* Add your content here */}
-                <Box
-                  sx={{
-                    marginTop: "50px",
-                  }}
-                >
-                  {tempData.map((item) => (
+                <Box sx={{ marginTop: "50px" }}>
+                  {firstTabList.map((item) => (
                     <Box
                       key={item.id}
                       sx={{
@@ -94,8 +169,6 @@ const ProductTab = () => {
                   ))}
                 </Box>
               </Grid>
-
-              {/* Add more content here */}
               <Grid item xs={12} sm={12} md={6} lg={6}>
                 <Box
                   sx={{
@@ -117,12 +190,115 @@ const ProductTab = () => {
               </Grid>
             </Grid>
           </TabPanel>
-        </TabContext>
-      </Box>
+          <TabPanel value="2" sx={styles.tabPanel}>
+            <Grid container spacing={2} sx={styles.formContainer}>
+              <Grid item xs={12} sm={12} md={6} lg={6}>
+                <Typography sx={styles.label}>
+                  Examples of Community Associations include: Neighborhood
+                  Associations/HOAS, Business/
+                  <br />
+                  Special Improvement Districts, Chambers of Commerce, Historic
+                  Preservation Commissions, Environmental Advisory Boards,
+                  Community Development Corporations, and more
+                </Typography>
+                <Box sx={{ marginTop: "50px" }}>
+                  {secondTabList.map((item) => (
+                    <Box
+                      key={item.id}
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        padding: "10px 0",
+                      }}
+                    >
+                      <Typography sx={styles.itemID}>{item.id}.</Typography>
+                      <Typography sx={styles.itemTitle}>
+                        {item.title}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6} lg={6}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    marginTop: {
+                      xl: "30px",
+                      lg: "30px",
+                      md: "30px",
+                      sm: "10px",
+                      xs: "10px",
+                    },
+                  }}
+                >
+                  <img src={iPhoneImg} alt="iPhone" />
+                </Box>
+              </Grid>
+            </Grid>
+          </TabPanel>
+          <TabPanel value="3" sx={styles.tabPanel}>
+            <Grid container spacing={2} sx={styles.formContainer}>
+              <Grid item xs={12} sm={12} md={6} lg={6}>
+                <Typography sx={styles.label}>
+                  For citizens who want to get involved and make a difference
+                </Typography>
+                <Box sx={{ marginTop: "50px" }}>
+                  {thirdTabList.map((item) => (
+                    <Box
+                      key={item.id}
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        padding: "10px 0",
+                      }}
+                    >
+                      <Typography sx={styles.itemID}>{item.id}.</Typography>
+                      <Typography sx={styles.itemTitle}>
+                        {item.title}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6} lg={6}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    marginTop: {
+                      xl: "30px",
+                      lg: "30px",
+                      md: "30px",
+                      sm: "10px",
+                      xs: "10px",
+                    },
+                  }}
+                >
+                  <img src={iPhoneImg} alt="iPhone" />
+                </Box>
+              </Grid>
+            </Grid>
+          </TabPanel>
+        </Box>
+      </TabContext>
     </Box>
   );
 };
+
 const styles = {
+  tabText: {
+    whiteSpace: "pre-wrap",
+    textAlign: "center",
+    fontFamily: "Inter",
+    fontWeight: 900,
+    fontSize: { xl: "32px", lg: "32px", md: "32px", sm: "28px", xs: "12px" },
+  },
   container: {
     marginTop: "50px",
     display: "flex",
@@ -132,96 +308,31 @@ const styles = {
   },
   tabs: {
     display: "flex",
-    flexDirection: "row",
+    // flexDirection: "row/,
     alignItems: "flex-end",
-    justifyContent: "space-between",
-    maxWidth: "100%",
+    // justifyContent: "space-between",
     width: {
-      xl: "1100px",
-      lg: "1100px",
-      md: "900px",
-      sm: "500px",
-      xs: "500px",
+      xl: "1296px",
+      lg: "1296px",
+      md: "786px",
+      sm: "786px",
+      xs: "380px",
     },
-  },
-  tabBox1: {
-    flex: 1,
-    height: {
-      xl: "80px",
-      lg: "80px",
-      md: "70px",
-      sm: "60px",
-      xs: "60px",
+    ".MuiTabs-flexContainer": {
+      alignItems: "end",
     },
-    background: "#fff",
-    color: "black",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    boxSizing: "border-box",
-    borderRadius: "12px 12px 0 0",
-  },
-  tabBox2: {
-    flex: 1,
-    height: { xl: "65px", lg: "65px", md: "55px", sm: "50px", xs: "50px" },
-    color: "black",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    boxSizing: "border-box",
-    backgroundColor: "#BFD9E5",
-    borderRadius: "12px 12px 0 0",
-  },
-  tabBox3: {
-    flex: 1,
-    height: { xl: "50px", lg: "50px", md: "45px", sm: "40px", xs: "40px" },
-    background: "#A3ABB2",
-    color: "black",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    boxSizing: "border-box",
-    borderRadius: "12px 12px 0 0",
-  },
-  selectedTab1: {
-    fontFamily: "Inter",
-    fontWeight: 900,
-    fontSize: { xl: "26px", lg: "26px", md: "18px", sm: "14px", xs: "14px" },
-    color: "#000000 !important",
-    textAlign: "center",
-    margin: "0 20px",
-    borderBottom: {
-      xl: "7px solid black",
-      lg: "7px solid black",
-      md: "7px solid black",
-      sm: "3px solid black",
-      xs: "3px solid black",
+    ".MuiTabs-indicator": {
+      borderBottom: "none",
+      zIndex: -1,
     },
-  },
-  selectedTab2: {
-    fontFamily: "Inter",
-    fontWeight: 900,
-    fontSize: { xl: "18px", lg: "18px", md: "16px", sm: "13px", xs: "13px" },
-    color: "#000000 !important",
-    textAlign: "center",
-  },
-  selectedTab3: {
-    fontFamily: "Inter",
-    fontWeight: 900,
-    fontSize: { xl: "17px", lg: "17px", md: "16px", sm: "13px", xs: "13px" },
-    color: "#000000 !important",
-    textAlign: "center",
-  },
-  tabPanel: {
-    backgroundColor: "#F9FCFF",
   },
   formBox: {
     width: {
-      xl: "1100px",
-      lg: "1100px",
-      md: "900px",
-      sm: "500px",
-      xs: "500px",
+      xl: "1296px",
+      lg: "1296px",
+      md: "786px",
+      sm: "786px",
+      xs: "380px",
     },
     maxWidth: { xl: "100%", lg: "100%", md: "100%", sm: "100%", xs: "100%" },
     height: "auto",
@@ -234,7 +345,63 @@ const styles = {
     width: "100%",
     boxSizing: "border-box",
     marginTop: "10px",
+    padding: { xl: "20px", lg: "20px", md: "20px", sm: "20px", xs: "4px" },
   },
+  tab: {
+    minWidth: {
+      xl: "433px",
+      lg: "433px",
+      md: "194px",
+      sm: "175px",
+      xs: "123px",
+    },
+    // flex: 1,
+    height: { xl: "80px", lg: "80px", md: "70px", sm: "60px", xs: "60px" },
+    color: "black",
+    display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
+    // boxSizing: "border-box",
+    borderRadius: "12px 12px 0 0",
+    fontFamily: "Inter",
+    fontWeight: 900,
+    fontSize: { xl: "26px", lg: "26px", md: "18px", sm: "14px", xs: "14px" },
+  },
+  tab1: {
+    height: { xl: "110px", lg: "110px", md: "94px", sm: "94px", xs: "74px" },
+    width: { xs: "140px" },
+    background: "#FFE28A",
+  },
+  tab2: {
+    width: { xs: "110px" },
+    height: { xl: "94px", lg: "94px", md: "80px", sm: "94px", xs: "64px" },
+    background: "#BFD9E5",
+  },
+  tab3: {
+    width: { xs: "100px" },
+    height: { xl: "64px", lg: "64px", md: "73px", sm: "94px", xs: "54px" },
+    background: "#A3ABB2",
+  },
+  selectedTab: {
+    height: { xl: "115px", lg: "115px", md: "115px", sm: "115px", xs: "74px" },
+    background: "#FFFFFF !important",
+    borderBottom: "7px solid black",
+    minHeight: "94px",
+    display: "flex",
+    color: "#000 !important",
+    fontSize: {
+      xl: "34px !important",
+      lg: "34px !important",
+      md: "34px !important",
+      sm: "32px !important",
+      xs: "16px !important",
+    },
+  },
+  tabPanel: {
+    backgroundColor: "#F9FCFF",
+    paddingTop: -10,
+  },
+
   textField: {
     width: "100%",
     backgroundColor: "#fff",
@@ -248,37 +415,39 @@ const styles = {
     color: "#000",
   },
   label: {
-    fontFamily: "Public Sans",
+    width: { xl: "782px", lg: "762px", md: "762px", xs: "282px" },
+    fontFamily: "Inter",
     fontWeight: 600,
-    fontSize: "14px",
-    lineHeight: "15px",
+    fontSize: { xl: "16px", lg: "16px", md: "16px", xs: "12px" },
+    lineHeight: "20px",
     marginBottom: "8px",
     color: "#010101",
     fontStyle: "italic",
   },
   itemID: {
     fontFamily: "Public Sans",
-    fontWeight: 600,
+    width: { xl: "60px", lg: "60px", md: "60px", sm: "40px", xs: "30px" },
+    fontWeight: 700,
     fontSize: {
-      xl: "50px",
-      lg: "50px",
+      xl: "64px",
+      lg: "64px",
       md: "40px",
-      sm: "30px",
-      xs: "30px",
+      sm: "38px",
+      xs: "38px",
     },
-    lineHeight: "55px",
+    lineHeight: { xl: "75px", lg: "75px", xs: "15px" },
     color: "#2E86AB",
     marginRight: "20px",
   },
   itemTitle: {
-    fontFamily: "Public Sans",
+    fontFamily: "Inter",
     fontWeight: 600,
     fontSize: {
       xl: "20px",
       lg: "20px",
       md: "16px",
       sm: "15px",
-      xs: "15px",
+      xs: "12px",
     },
     lineHeight: "21px",
     color: "#000",
