@@ -586,7 +586,6 @@ const styles = {
     height: "16px",
   },
   featureBox: {
-    border: "1px solid red",
     margin: "0 auto 40px auto",
     width: {
       xl: "1283px",
