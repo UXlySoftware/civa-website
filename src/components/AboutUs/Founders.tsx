@@ -19,7 +19,7 @@ const Founders = () => {
       sx={{
         backgroundColor: "#374957",
         minHeight: "100vh",
-        paddingBottom: { xl: 100, lg: 120, md: 10, sm: 50, xs: 105 },
+        paddingBottom: { xl: 100, lg: 130, md: 20, sm: 40, xs: 105 },
         border: "1px solid #374957",
       }}
     >
