@@ -41,9 +41,24 @@ const ProductPage: React.FC = () => {
     <>
       <ProductHero />
       <CommunitiesTogether />
-      <Box sx={{ maxWidth: { xs: "97vw", sm: "100%" } }}>
+      <Box
+        sx={{
+          maxWidth: { xs: "97vw", sm: "100%" },
+          marginBottom: { xl: 30, lg: 30, xs: -13 },
+        }}
+      >
         <Box
-          sx={{ ...styles.section, textAlign: "left", marginTop: "120px" }}
+          sx={{
+            ...styles.section,
+            textAlign: "left",
+            marginTop: {
+              xl: "120px",
+              lg: "120px",
+              md: "70px",
+              sm: "70px",
+              xs: "50px",
+            },
+          }}
           id="connect"
         >
           <Grid container spacing={2} alignItems="center">
@@ -55,7 +70,7 @@ const ProductPage: React.FC = () => {
                     xl: "280px",
                     lg: "100px",
                     md: "100px",
-                    sm: "100px",
+                    sm: "0px",
                     xs: "0px",
                   },
                 }}
@@ -110,7 +125,7 @@ const ProductPage: React.FC = () => {
               <Typography
                 sx={{
                   ...styles.sectionDescription2,
-                  paddingLeft: 0,
+                  paddingLeft: 1,
                   textAlign: {
                     xl: "right",
                     lg: "right",
@@ -144,7 +159,7 @@ const ProductPage: React.FC = () => {
                   lg: "295px",
                   md: "295px",
                   sm: "295px",
-                  xs: "20px",
+                  xs: "29px",
                 },
               }}
             >
@@ -155,30 +170,40 @@ const ProductPage: React.FC = () => {
 
         <Box
           sx={{
-            ...styles.section,
+            ...styles.sectionCollaborate,
             textAlign: "left",
             marginTop: { xl: "10px", lg: "10px", md: "10px", sm: "-100px" },
           }}
           id="collaborate"
         >
           <Grid container spacing={2} alignItems="center">
-            <Grid item xs={12} md={6} sx={styles.titleDescription}>
+            <Grid item xs={12} md={6} sx={styles.titleDescription3}>
               <Box
                 sx={{
                   ...styles.collaborate,
                   paddingLeft: {
-                    xl: "280px",
-                    lg: "100px",
-                    md: "100px",
+                    xl: "250px",
+                    lg: "75px",
+                    md: "60px",
                     xs: "0px",
                   },
                 }}
               >
-                <Typography variant="h5" sx={styles.sectionHeader}>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    ...styles.sectionHeader,
+                  }}
+                >
                   COLLABORATE
                 </Typography>
               </Box>
-              <Typography sx={styles.sectionDescription}>
+              <Typography
+                sx={{
+                  ...styles.sectionDescription,
+                  paddingLeft: { xl: 34, lg: 12, md: 10, sm: 3, xs: 2.5 },
+                }}
+              >
                 CIVA provides a single
                 <br /> source for feedback, data, <br /> and measurable insights
                 to <br />
@@ -346,7 +371,6 @@ const ProductPage: React.FC = () => {
             </Typography>
           </Typography>
         </Paper>
-
         <Typography variant="h3" sx={styles.header}>
           HOW IT WORKS
         </Typography>
@@ -396,6 +420,18 @@ const styles = {
     position: "relative",
     marginBottom: "160px",
   },
+  sectionCollaborate: {
+    textAlign: {
+      xs: "left",
+      sm: "left",
+      md: "center",
+      lg: "center",
+      xl: "center",
+    },
+    display: "flex",
+    position: "relative",
+    marginBottom: "160px",
+  },
   sectionHeader: {
     fontFamily: "Public Sans",
     fontWeight: 800,
@@ -406,10 +442,10 @@ const styles = {
   sectionDescription: {
     paddingLeft: {
       xs: "20px",
-      sm: "20px",
-      md: "30px",
-      lg: "78px",
-      xl: "280px",
+      sm: "25px",
+      md: "130px",
+      lg: "105px",
+      xl: "275px",
     },
     paddingTop: {
       xl: "52px",
@@ -425,7 +461,7 @@ const styles = {
     paddingLeft: {
       xs: "20px",
       sm: "20px",
-      md: "30px",
+      md: "33px",
       lg: "78px",
       xl: "280px",
     },
@@ -453,6 +489,9 @@ const styles = {
     },
     top: { xl: "100px", lg: "120px", md: "120px", sm: "-150px", xs: "80px" },
   },
+  titleDescription3: {
+    position: "relative",
+  },
   imageContainer1: {
     position: "relative",
     top: {
@@ -465,7 +504,7 @@ const styles = {
     left: {
       xs: "10px",
       sm: "-110px",
-      md: "-160px",
+      md: "-35px",
       lg: "-160px",
       xl: "-160px",
     },
@@ -493,13 +532,13 @@ const styles = {
       xs: "0px",
       sm: "-200px",
       md: "70px",
-      lg: "70px",
-      xl: "70px",
+      lg: "130px",
+      xl: "110px",
     },
     left: {
       xs: "10px",
       sm: "310px",
-      md: "-160px",
+      md: "-50px",
       lg: "-160px",
       xl: "-160px",
     },
@@ -514,7 +553,7 @@ const styles = {
   },
   connect: {
     backgroundColor: "#FFC000",
-    width: { xl: "90%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
+    width: { xl: "90%", lg: "100%", md: "115%", sm: "120%", xs: "90%" },
     height: { xl: "109px", lg: "109px", md: "109px", sm: "109px", xs: "64px" },
     alignItems: "center",
     display: "flex",
@@ -523,13 +562,20 @@ const styles = {
     backgroundColor: "#76848A",
     width: { xl: "100%", lg: "100%", md: "95%", sm: "85%", xs: "90%" },
     height: { xl: "109px", lg: "109px", md: "109px", sm: "109px", xs: "64px" },
-    marginLeft: { xs: "-389px", sm: "-300px", md: "-150px" },
+    marginLeft: {
+      xs: "-389px",
+      sm: "-300px",
+      md: "-150px",
+      lg: "-150px",
+      xl: "0px",
+    },
+    paddingRight: { lg: 0, md: 10, sm: 0, xs: 0 },
     alignItems: "center",
     display: "flex",
   },
   collaborate: {
     backgroundColor: "#2E86AB",
-    width: { xl: "90%", lg: "100%", md: "95%", sm: "65%", xs: "90%" },
+    width: { xl: "90%", lg: "100%", md: "105%", sm: "65%", xs: "90%" },
     height: { xl: "109px", lg: "109px", md: "109px", sm: "109px", xs: "64px" },
     alignItems: "center",
     display: "flex",
@@ -568,7 +614,7 @@ const styles = {
   },
   divider: {
     textAlign: "center",
-    marginBottom: { xl: "20px" },
+    marginBottom: { xl: "0px" },
     width: {
       xs: "349px",
       sm: "379px",

@@ -93,7 +93,13 @@ const HowItWorks = () => {
           <Button
             variant="contained"
             color="primary"
-            sx={{ ...styles.button, display: { xs: "none", md: "flex" } }}
+            sx={{
+              ...styles.button,
+              display: { xs: "none", md: "flex" },
+              "&:hover": {
+                backgroundColor: "#e8ae00",
+              },
+            }}
           >
             Learn More
           </Button>

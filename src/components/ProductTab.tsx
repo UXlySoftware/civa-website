@@ -297,7 +297,7 @@ const styles = {
     textAlign: "center",
     fontFamily: "Inter",
     fontWeight: 900,
-    fontSize: { xl: "32px", lg: "32px", md: "28px", sm: "28px", xs: "12px" },
+    fontSize: { xl: "24px", lg: "24px", md: "24px", sm: "24px", xs: "12px" },
   },
   container: {
     marginTop: "50px",
@@ -365,7 +365,7 @@ const styles = {
     borderRadius: "12px 12px 0 0",
     fontFamily: "Inter",
     fontWeight: 900,
-    fontSize: { xl: "26px", lg: "26px", md: "26px", sm: "26px", xs: "14px" },
+    fontSize: { xl: "24px", lg: "24px", md: "24px", sm: "26px", xs: "14px" },
   },
   tab1: {
     height: { xl: "110px", lg: "110px", md: "94px", sm: "94px", xs: "74px" },
@@ -389,13 +389,6 @@ const styles = {
     minHeight: "94px",
     display: "flex",
     color: "#000 !important",
-    fontSize: {
-      xl: "34px !important",
-      lg: "34px !important",
-      md: "34px !important",
-      sm: "32px !important",
-      xs: "16px !important",
-    },
   },
   tabPanel: {
     backgroundColor: "#F9FCFF",
