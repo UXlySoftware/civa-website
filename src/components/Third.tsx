@@ -20,9 +20,6 @@ const ThirdSection = () => {
           stakeholders together to create <br /> meaningful programs with
           measurable <br /> impact.
         </Typography>
-        {/* <Button variant="contained" sx={styles.button}>
-          Get Demo
-        </Button> */}
       </Box>
       <Box sx={styles.vennContainer}>
         <img
@@ -44,8 +41,7 @@ const styles = {
     flexDirection: { xs: "column-reverse", md: "row" },
     justifyContent: "space-between",
     alignItems: "center",
-
-    marginBottom: 20,
+    marginBottom: { xs: 10, sm: 20 },
   },
   textContainer: {
     justifyContent: "center",
@@ -57,7 +53,7 @@ const styles = {
     gap: { xl: "32px", lg: "32px", md: "22px", sm: "22px", xs: "22px" },
     marginRight: { xl: 10 },
     marginTop: {
-      xl: "-150px",
+      xl: "-100px",
       lg: "-150px",
       md: "-150px",
       sm: "0px",
@@ -78,13 +74,13 @@ const styles = {
         xs: "0px",
       },
       height: {
-        xl: "368px",
+        xl: "388px",
         lg: "418px",
         md: "368px",
         sm: "360px",
-        xs: "293px",
+        xs: "223px",
       },
-      marginTop: { xl: 4, lg: 4, md: 3, sm: 2, xs: 3 },
+      marginTop: { xl: 0, lg: 4, md: 3, sm: 2, xs: 3 },
       width: "16px",
       backgroundColor: "black",
     },

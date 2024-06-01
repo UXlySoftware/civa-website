@@ -55,7 +55,7 @@ const styles = {
       lg: "0px 250px",
       md: "0px 140px",
       sm: "0px 140px",
-      xs: "0px 35px",
+      xs: "0px 22px",
     },
     fontSize: { xl: "24px", lg: "24px", md: "16px", sm: "16px", xs: "16px" },
     lineHeight: { xl: "30px", lg: "30px", md: "30px", sm: "20px", xs: "20px" },

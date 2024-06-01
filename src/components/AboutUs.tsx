@@ -12,6 +12,7 @@ import storyImage from "../assets/storyImage.png";
 import OurMission from "../components/OurMission";
 import OurTeam from "../components/OurTeam";
 import JoinCommunity from "./JoinCommunity";
+import GetDemoButton from "../components/GetDemoButton";
 
 const AboutUs = () => {
   const theme = useTheme();
@@ -42,9 +43,12 @@ const AboutUs = () => {
             engagement by activating its potential as a<br /> collaborative
             ecosystem.
           </Typography>
-          <Button variant="contained" color="warning" sx={styles.button}>
+          {/* <Button variant="contained" color="warning" sx={styles.button}>
             Get a Demo{" "}
-          </Button>
+          </Button> */}
+          <Box sx={{ marginLeft: "55px", marginTop: "20px" }}>
+            <GetDemoButton />
+          </Box>
         </Box>
       </Box>
       <Box sx={styles.contentBox}>

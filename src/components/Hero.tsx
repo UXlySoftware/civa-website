@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import mobileApp from "../assets/mobileApp.png";
 import backgroundVideo from "../assets/backgroundVideo.mp4";
-
+import GetDemoButton from "../components/GetDemoButton";
 const HeroSection = () => {
   return (
     <Box sx={styles.heroBox}>
@@ -30,9 +30,8 @@ const HeroSection = () => {
             and communities together to create sustainable social impact through
             civic engagement.
           </Typography>
-          <Button variant="contained" color="secondary" sx={styles.button}>
-            Get a Demo{" "}
-          </Button>
+
+          <GetDemoButton />
         </Box>
         <Box
           sx={{
@@ -116,7 +115,7 @@ const styles = {
     padding: "0 !important",
     minWidth: "100%",
     maxWidth: "100%",
-    width: { xl: "600px", lg: "500px", md: "500px" },
+    width: { xl: "650px", lg: "500px", md: "500px" },
     display: { xs: "none", sm: "none", md: "none", lg: "flex" },
   },
   sideBorder: {
@@ -159,6 +158,7 @@ const styles = {
     // marginLeft: { xs: 4, md: 0 },
   },
   subHeading: {
+    width: { xl: "90%", lg: "90%", md: "60%", xs: "95%" },
     lineHeight: {
       xl: "29px",
       lg: "29px",

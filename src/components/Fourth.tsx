@@ -24,7 +24,7 @@ const FourthSection = () => {
       <Box
         sx={{
           width: { xl: "35%", lg: "40%", md: "45%", xs: "100%" },
-          margin: 10,
+          margin: { xs: 4, sm: 10 },
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -108,9 +108,9 @@ const FourthSection = () => {
             component="img"
             src={eclipse}
             alt="Eclipse"
-            width={{ xl: 375, md: 345, xs: 250 }}
+            width={{ xl: 395, md: 345, xs: 250 }}
             sx={{ maxWidth: "100%", maxHeight: "100%" }}
-            height={{ xl: 375, md: 345, xs: 250 }}
+            height={{ xl: 395, md: 345, xs: 250 }}
           />
         </Box>
         <Box>
@@ -261,11 +261,11 @@ const styles = {
   backgroundSection: {
     width: "100vw",
     minHeight: {
-      xl: "180vh",
+      xl: "190vh",
       lg: "220vh",
       md: "110vh",
       sm: "160vh",
-      xs: "210vh",
+      xs: "190vh",
     },
     background: "#374957",
   },

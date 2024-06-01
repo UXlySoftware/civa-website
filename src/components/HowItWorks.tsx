@@ -99,6 +99,19 @@ const HowItWorks = () => {
           </Button>
         </Box>
         <ImageSection src={phoneImage} alt="Phone showing CIVA app" />
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            ...styles.button,
+            width: "90%",
+            marginTop: "-80px",
+            marginBottom: "25px",
+            display: { xs: "flex", md: "none" },
+          }}
+        >
+          Learn More
+        </Button>
       </Box>
       <InfoSection
         imgSrc={discussionImage}
@@ -200,7 +213,7 @@ const styles = {
     fontFamily: "Inter",
     fontWeight: 700,
     borderRadius: "12px",
-    fontSize: "18px",
+    fontSize: { xl: "22px", lg: "22px", md: "22px", sm: "18px", xs: "18px" },
     backgroundColor: "#FFC000",
     color: "#000",
     padding: "24px 12px",

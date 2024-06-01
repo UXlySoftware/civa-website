@@ -208,7 +208,7 @@ const ProductPage: React.FC = () => {
         </Typography>
         <Box sx={styles.divider} />
 
-        <Box sx={styles.topBox}></Box>
+        <Box sx={styles.topBox} />
         <Box sx={styles.featureBox}>
           <Typography variant="h5" sx={styles.featureHeader}>
             CIVA OFFERS GOVERNMENT +<br /> COMMUNITY ENGAGEMENT — AND MORE.
@@ -219,7 +219,7 @@ const ProductPage: React.FC = () => {
               width: {
                 xs: "290px !important",
                 sm: "379px",
-                md: "1160px !important",
+                md: "870px !important",
                 lg: "1160px !important",
                 xl: "1160px !important",
               },
@@ -590,11 +590,11 @@ const styles = {
     width: {
       xl: "1283px",
       lg: "1283px",
-      md: "736px",
+      md: "970px",
       sm: "736px",
       xs: "349px",
     },
-    height: { xl: "530px", lg: "530px", md: "322px", sm: "322px", xs: "auto" },
+    height: { xl: "530px", lg: "530px", md: "490px", sm: "322px", xs: "auto" },
     backgroundColor: "#000000",
     color: "#FFFFFF",
     borderRadius: "5px",
@@ -625,14 +625,15 @@ const styles = {
     width: {
       xs: "100%",
       sm: "100%",
-      md: "80%",
+      md: "90%",
       lg: "90%",
       xl: "90%",
     },
     padding: {
       xs: "0px",
       sm: "0px",
-      md: "10px",
+      md: "0px",
+      lg: "10px",
     },
   },
   checkIconContainer: {
@@ -649,22 +650,22 @@ const styles = {
     width: {
       xs: "226px",
       sm: "45%",
-      md: "30%",
+      md: "329px",
       lg: "429px",
       xl: "439px",
     },
-    height: { xl: "305px", lg: "305px", md: "305px", sm: "305px", xs: "185px" },
+    height: { xl: "305px", lg: "305px", md: "235px", sm: "305px", xs: "185px" },
     alignContent: "flex-end",
     position: "absolute",
     zIndex: 1,
     right: {
       xs: "5px",
       sm: "20px",
-      md: "40px",
+      md: "10px",
       lg: "35px",
       xl: "270px",
     },
-    marginTop: { xl: "55px", lg: "85px", xs: "40px" },
+    marginTop: { xl: "55px", lg: "85px", md: "60px", xs: "40px" },
   },
   bottomBox: {
     textAlign: "left",
@@ -675,14 +676,14 @@ const styles = {
     width: {
       xs: "374px",
       sm: "80%",
-      md: "60%",
+      md: "750px",
       lg: "1102px",
       xl: "1102px",
     },
     height: {
       xs: "302px",
       sm: "180px",
-      md: "300px",
+      md: "360px",
       lg: "580px",
       xl: "585px",
     },
@@ -690,7 +691,7 @@ const styles = {
     top: {
       xs: "-140px",
       sm: "-100px",
-      md: "-150px",
+      md: "-190px",
       lg: "-375px",
       xl: "-400px",
     },
@@ -699,7 +700,7 @@ const styles = {
     marginLeft: {
       xs: "2%",
       sm: "5%",
-      md: "2%",
+      md: "-10px",
       lg: "-20px",
       xl: "200px",
     },

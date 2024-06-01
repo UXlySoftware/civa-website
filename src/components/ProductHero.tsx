@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import united from "../assets/united.png";
+import GetDemoButton from "../components/GetDemoButton";
 
 const HeroSection = () => {
   return (
@@ -18,9 +19,9 @@ const HeroSection = () => {
           <Typography variant="h5" component="p" sx={styles.subHeading}>
             Empower your community through <br /> engagement and insights.
           </Typography>
-          <Button variant="contained" color="secondary" sx={styles.button}>
-            Get a Demo{" "}
-          </Button>
+          <Box sx={{ width: "50%" }}>
+            <GetDemoButton />
+          </Box>
         </Box>
       </Box>
     </Box>
