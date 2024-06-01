@@ -15,7 +15,7 @@ import { SecondImg, Third1Img, Third2Img, Third3Img } from "../assets/product";
 import CheckIcon from "@mui/icons-material/Check";
 import ProductTab from "./ProductTab";
 import JoinCommunity from "./JoinCommunity";
-
+import CommunitiesTogether from "./CommunitiesTogether";
 const features = [
   {
     left: "Government Contact Database",
@@ -40,11 +40,7 @@ const ProductPage: React.FC = () => {
   return (
     <>
       <ProductHero />
-
-      <Box sx={styles.imageBox}>
-        <Box component="img" src={SecondImg} alt="image" sx={styles.image} />
-      </Box>
-
+      <CommunitiesTogether />
       <Box sx={{ maxWidth: { xs: "97vw", sm: "100%" } }}>
         <Box
           sx={{ ...styles.section, textAlign: "left", marginTop: "120px" }}
@@ -386,7 +382,6 @@ const styles = {
       md: "100%",
       lg: "100%",
     },
-    height: "auto",
   },
   // Third section
   section: {

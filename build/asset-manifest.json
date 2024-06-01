@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.34505ea6.js",
+    "main.js": "/static/js/main.24a6ff4b.js",
     "static/media/backgroundVideo.mp4": "/static/media/backgroundVideo.2ca8bbbe7f174337fa5f.mp4",
     "static/media/third-2.png": "/static/media/third-2.eab45ec581fa3ee2ef63.png",
     "static/media/third-1.png": "/static/media/third-1.c70e74d56bd544a9d6b6.png",
     "static/media/third-3.png": "/static/media/third-3.0ac0158e2334c943dbba.png",
+    "static/media/mobileApp.png": "/static/media/mobileApp.624dcc834344d371c341.png",
     "static/media/united.png": "/static/media/united.3483afff9b6e01eb6605.png",
     "static/media/contactBg.png": "/static/media/contactBg.62acff9c84fb3ca392bd.png",
     "static/media/aboutHero.png": "/static/media/aboutHero.fd3927ba2f36d716eb1f.png",
@@ -14,7 +15,6 @@
     "static/media/phone.png": "/static/media/phone.ef4145653e183521c185.png",
     "static/media/iPhone.png": "/static/media/iPhone.063adfeac8fd0d851f80.png",
     "static/media/discussion.png": "/static/media/discussion.0a000fdea38c90f6680c.png",
-    "static/media/mobileApp.png": "/static/media/mobileApp.06a07a5c53b8ce8999a2.png",
     "static/media/storyImage.png": "/static/media/storyImage.c123ab3bda3d3979dddd.png",
     "static/media/jermaineImage.png": "/static/media/jermaineImage.8bc04e7e78d066804743.png",
     "static/media/akeemImage.png": "/static/media/akeemImage.a8b6e685e7b3c598b15d.png",
@@ -32,6 +32,7 @@
     "static/media/atlantaLogo.png": "/static/media/atlantaLogo.c9837f27b186a4343cbc.png",
     "static/media/eclipse.png": "/static/media/eclipse.b706527bcebe024f722b.png",
     "static/media/mhirLogo.png": "/static/media/mhirLogo.a7f06f30bd5c634d7878.png",
+    "static/media/logo1.svg": "/static/media/logo1.ab1213a1dd67f48934dc602901c326a1.svg",
     "static/media/Community.svg": "/static/media/Community.3fb194d6581e32e925582d92d11a80d7.svg",
     "static/media/instagram.svg": "/static/media/instagram.3c242ba786fc8b88bf479a67c79a306c.svg",
     "static/media/Government.svg": "/static/media/Government.facfa0eba19ebb8089852c75af2a12d4.svg",
@@ -41,10 +42,10 @@
     "static/media/linkedin.svg": "/static/media/linkedin.6eab64320009b550d176507d38f41b6e.svg",
     "static/media/facebook.svg": "/static/media/facebook.3e5f1573ce30a3acb3e477982bd0f6ec.svg",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.34505ea6.js.map": "/static/js/main.34505ea6.js.map"
+    "main.24a6ff4b.js.map": "/static/js/main.24a6ff4b.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.34505ea6.js"
+    "static/js/main.24a6ff4b.js"
   ]
 }
