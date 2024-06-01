@@ -371,12 +371,23 @@ const ProductPage: React.FC = () => {
             </Typography>
           </Typography>
         </Paper>
-        <Typography variant="h3" sx={styles.header}>
-          HOW IT WORKS
-        </Typography>
-        <Box sx={styles.divider} />
 
-        <Box sx={{ width: "100%", margin: "auto" }}>
+        <Box
+          sx={{
+            width: "100%",
+            marginTop: {
+              xl: "-260px",
+              lg: "-260px",
+              md: "-100px",
+              sm: "0px",
+              xs: "-50px",
+            },
+          }}
+        >
+          <Typography variant="h3" sx={styles.header}>
+            HOW IT WORKS
+          </Typography>
+          <Box sx={styles.divider} />
           <ProductTab />
         </Box>
 
