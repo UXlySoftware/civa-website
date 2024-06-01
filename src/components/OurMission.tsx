@@ -187,8 +187,8 @@ const styles = {
     mt: { xl: 10, lg: 10, md: 7, xs: 75 },
     px: 2,
     height: {
-      xl: "438vh",
-      lg: "505vh",
+      xl: "468vh",
+      lg: "525vh",
       md: "250vh",
       sm: "175vh",
       xs: "625vh",
