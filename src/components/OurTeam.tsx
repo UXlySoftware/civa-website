@@ -29,7 +29,7 @@ const TeamSection = () => {
                 lg: "45px",
                 md: "107px",
                 sm: "125px",
-                xs: "7px",
+                xs: "105px",
               },
             }}
           />
@@ -41,7 +41,7 @@ const TeamSection = () => {
             sx={styles.horaceImage}
           />
           <Box sx={{ ...styles.blackSquareLeft, left: "24px" }} />
-          {/* 1. foto sag alt */}
+          {/* 1. foto sag ust */}
           <Box
             sx={{
               ...styles.yellowSquare,
@@ -149,9 +149,9 @@ const styles = {
   teamSectionContainer: {
     width: "120wv",
     backgroundColor: "#5a91a1",
-    py: "44px",
+    pt: "44px",
     display: "flex",
-    marginBottom: 5,
+
     flexDirection: "column",
   },
   sectionTitle: {
@@ -179,10 +179,15 @@ const styles = {
     height: "16px",
     backgroundColor: "#FFC000",
     margin: "0 auto",
-    mb: 12,
+    mb: 6,
   },
   teamMembersContainer: {
-    margin: { xl: "120px auto 40px auto", lg: "120px 300px 40px auto" },
+    margin: {
+      xl: "120px auto 160px auto",
+      lg: "120px 300px 140px auto",
+      md: "120px 300px 110px auto",
+      xs: "0px 0px 80px 0px",
+    },
     display: "flex",
     flexDirection: { xs: "column", md: "row" },
     justifyContent: "center",

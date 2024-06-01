@@ -39,6 +39,13 @@ const styles = {
     backgroundColor: "#FFC000",
     textAlign: "center",
     padding: { sm: 0, xs: "30px 0px" },
+    marginTop: {
+      xl: "-270px",
+      lg: "-268px",
+      md: "-107px",
+      sm: "0px",
+      xs: "-132px",
+    },
   },
   joinHeading: {
     fontFamily: "Public Sans",
