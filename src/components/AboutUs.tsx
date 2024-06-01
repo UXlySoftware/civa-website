@@ -43,9 +43,7 @@ const AboutUs = () => {
             engagement by activating its potential as a<br /> collaborative
             ecosystem.
           </Typography>
-          {/* <Button variant="contained" color="warning" sx={styles.button}>
-            Get a Demo{" "}
-          </Button> */}
+
           <Box sx={{ marginLeft: "55px", marginTop: "20px" }}>
             <GetDemoButton />
           </Box>
@@ -147,6 +145,7 @@ const styles = {
       xs: "16px",
       sm: "16px",
       md: "16px",
+      lg: "24px",
       xl: "24px",
     },
     lineHeight: "29px",
@@ -197,9 +196,16 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
-    margin: "0 auto 68px auto",
+    margin: {
+      xl: "0 auto 68px auto",
+      lg: "0 auto 68px auto",
+      md: "0 auto 68px auto",
+      sm: "0 auto 0px auto",
+      xs: "0 auto 68px auto",
+    },
   },
   titleBorder: {
+    paddingBottom: "10px",
     borderBottom: "16px solid #FFC000",
     width: {
       xl: "710px",
@@ -277,8 +283,8 @@ const styles = {
     fontFamily: "Inter",
     fontWeight: 600,
     fontSize: {
-      xl: "20px",
-      lg: "20px",
+      xl: "22px",
+      lg: "22px",
       md: "16px",
       sm: "16px",
       xs: "16px",

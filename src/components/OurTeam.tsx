@@ -16,17 +16,18 @@ const TeamSection = () => {
           <Box
             sx={{
               ...styles.yellowSquare,
+              width: "170px",
               top: {
-                xl: "78px",
-                lg: "-85px",
+                xl: "-75px",
+                lg: "-75px",
                 md: "50px",
                 sm: "65px",
                 xs: "65px",
               },
               right: {
-                xl: "-85px",
-                lg: "30px",
-                md: "155px",
+                xl: "45px",
+                lg: "45px",
+                md: "107px",
                 sm: "125px",
                 xs: "7px",
               },
@@ -47,14 +48,14 @@ const TeamSection = () => {
               top: {
                 xl: "78px",
                 lg: "78px",
-                md: "-50px",
+                md: "-45px",
                 sm: "160px",
                 xs: "-50px",
               },
               right: {
                 xl: "155px",
                 lg: "245px",
-                md: "5px",
+                md: "15px",
                 sm: "125px",
                 xs: "10px",
               },
@@ -77,21 +78,21 @@ const TeamSection = () => {
           </Box>
         </Box>
         <Box sx={styles.teamMemberBox}>
-          {/* 2. foto sol alt */}
+          {/* 2. foto sag ust */}
           <Box
             sx={{
               ...styles.yellowSquare,
               top: {
                 xl: "-76px",
                 lg: "80px",
-                md: "-50px",
+                md: "-45px",
                 sm: "160px",
                 xs: "65px",
               },
               right: {
-                xl: "-85px",
-                lg: "156px",
-                md: "-65px",
+                xl: "-114px",
+                lg: "124px",
+                md: "-60px",
                 sm: "125px",
                 xs: "-5px",
               },
@@ -109,25 +110,25 @@ const TeamSection = () => {
               left: { xl: "152px", lg: "150px", md: "80px", xs: "17px" },
             }}
           />
-          {/* 2. foto sag alt */}
+          {/* 2. foto sol alt */}
           <Box
             sx={{
               ...styles.yellowSquare,
               top: {
                 xl: "78px",
-                lg: "-83px",
+                lg: "-75px",
                 md: "50px",
                 sm: "160px",
                 xs: "-50px",
               },
               right: {
-                xl: "115px",
-                lg: "-90px",
-                md: "80px",
+                xl: "84px",
+                lg: "-115px",
+                md: "30px",
                 sm: "125px",
                 xs: "-3px",
               },
-              width: { xl: "252px", md: "123px", xs: "90px" },
+              width: { xl: "252px", md: "173px", xs: "90px" },
             }}
           />
           <Box sx={styles.infoBoxMolly}>
@@ -260,9 +261,9 @@ const styles = {
   },
   mollyImage: {
     width: {
-      xl: "300px",
-      lg: "300px",
-      md: "155px",
+      xl: "268px",
+      lg: "268px",
+      md: "268",
       sm: "155px",
       xs: "155px",
     },

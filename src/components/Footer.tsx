@@ -4,7 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 // assets
-import logo from "../assets/logoFooter.png";
+
+import logo1 from "../assets/logo1.svg";
 import facebookIcon from "../assets/socialmedia/facebook.svg";
 import twitterIcon from "../assets/socialmedia/twitter.svg";
 import instagramIcon from "../assets/socialmedia/instagram.svg";
@@ -22,7 +23,7 @@ const Footer = () => {
     <Box sx={styles.footer}>
       <Box sx={styles.footerWrapper}>
         <Box sx={styles.footerLeft}>
-          <Box component="img" src={logo} alt="CIVA" sx={styles.footerLogo} />
+          <Box component="img" src={logo1} alt="CIVA" sx={styles.footerLogo} />
           <Box sx={styles.footerSocial}>
             <Typography variant="body2" sx={styles.footerSocialLink}>
               Follow Us

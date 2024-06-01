@@ -70,7 +70,7 @@ const MissionAndBios = () => {
               Co-Founder and CEO
             </Typography>
 
-            <Box sx={{ borderLeft: "12px solid #2E86AB" }}>
+            <Box sx={{ borderLeft: "0px solid #2E86AB" }}>
               <Typography variant="body1" sx={styles.cardBody}>
                 With an extensive background in public sector leadership as well
                 as program and grants management, Ackeem is celebrated for his
@@ -98,7 +98,20 @@ const MissionAndBios = () => {
                   <ListItemIcon sx={styles.listItemIcon}>
                     <SquareIcon />
                   </ListItemIcon>
-                  <ListItemText primary={text} sx={styles.listItemText} />
+                  <ListItemText
+                    primary={text}
+                    primaryTypographyProps={{
+                      fontSize: {
+                        xl: "22px",
+                        lg: "22px",
+                        md: "16px",
+                        sm: "16px",
+                        xs: "16px",
+                      },
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                    }}
+                  />
                 </ListItem>
               ))}
             </List>
@@ -117,9 +130,9 @@ const MissionAndBios = () => {
               JERMAINE HARTSFIELD
             </Typography>
             <Typography variant="subtitle1" sx={styles.cardSubtitle}>
-              Co-Founder and CEO
+              Co-Founder and COO
             </Typography>
-            <Box sx={{ borderLeft: "12px solid #2E86AB" }}>
+            <Box sx={{ borderLeft: "0px solid #2E86AB" }}>
               <Typography variant="body1" sx={styles.cardBody}>
                 Jermaine brings a wealth of experience in organizational
                 development and technical analysis to CIVA. Leveraging his
@@ -145,7 +158,20 @@ const MissionAndBios = () => {
                   <ListItemIcon sx={styles.listItemIcon}>
                     <SquareIcon />
                   </ListItemIcon>
-                  <ListItemText primary={text} />
+                  <ListItemText
+                    primary={text}
+                    primaryTypographyProps={{
+                      fontSize: {
+                        xl: "22px",
+                        lg: "22px",
+                        md: "18px",
+                        sm: "16px",
+                        xs: "16px",
+                      },
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                    }}
+                  />
                 </ListItem>
               ))}
             </List>
@@ -161,9 +187,9 @@ const styles = {
     mt: { xl: 10, lg: 10, md: 7, xs: 75 },
     px: 2,
     height: {
-      xl: "408vh",
+      xl: "438vh",
       lg: "505vh",
-      md: "230vh",
+      md: "250vh",
       sm: "175vh",
       xs: "625vh",
     },
@@ -243,11 +269,11 @@ const styles = {
       xs: "340px",
     },
     margin: {
-      xl: "270px auto 109px auto",
-      lg: "270px auto 109px auto",
-      md: "270px auto 49px auto",
+      xl: "320px auto 109px auto",
+      lg: "310px auto 109px auto",
+      md: "310px auto 49px auto",
       sm: "0 auto 45px auto",
-      xs: "220px auto 45px auto",
+      xs: "280px auto 45px auto",
     },
     textAlign: "center",
   },
@@ -256,8 +282,11 @@ const styles = {
     fontSize: {
       xl: "52px",
       lg: "52px",
+      md: "42px",
+      sm: "42px",
+      xs: "28px",
     },
-    fontWeight: { xl: 900, lg: 900 },
+    fontWeight: 900,
     lineHeight: { xl: "58px", lg: "58px" },
     color: "#fff",
     marginBottom: "7px",
@@ -279,14 +308,14 @@ const styles = {
       sm: "40px",
       xs: "40px",
     },
-    gap: { xl: 12, lg: 12, md: 12, sm: 11, xs: 114 },
+    gap: { xl: 12, lg: 12, md: 8, sm: 11, xs: 114 },
     marginTop: { sm: "200px", md: "0px", xs: 0 },
   },
   founderCard: {
     width: {
       xl: "600px",
       lg: "600px",
-      md: "365px",
+      md: "450px",
       sm: "365px",
       xs: "365px",
     },
@@ -345,32 +374,38 @@ const styles = {
   },
   cardContent: {
     background: "#fff",
-    pt: 8,
+    // pt: 8,
+    height: { xl: "900px", lg: "900px", md: "800px", sm: "800px", xs: "720px" },
+    padding: {
+      xl: "45px 40px 60px 40px",
+      lg: "45px 40px 60px 40px",
+      md: "45px 10px 60px 20px",
+    },
   },
   cardTitle: {
     fontFamily: "Public Sans",
     fontWeight: 900,
     fontSize: { xl: "42px", lg: "42px", md: "24px", sm: "24px", xs: "24px" },
     lineHeight: { xl: "41px", lg: "41px", md: "25px", sm: "25px", xs: "25px" },
-    mt: 2,
   },
   cardSubtitle: {
     fontWeight: 400,
     fontFamily: "Public Sans",
-    fontSize: { xl: "32px", lg: "32px", md: "32px", sm: "20px", xs: "20px" },
+    fontSize: { xl: "32px", lg: "32px", md: "20px", sm: "20px", xs: "20px" },
     mb: 2,
   },
   cardBody: {
     fontFamily: "Inter",
     fontWeight: 500,
-    fontSize: { xl: "20px", lg: "20px", md: "12px", sm: "12px", xs: "12px" },
-    marginLeft: 2.5,
+    fontSize: { xl: "22px", lg: "22px", md: "16px", sm: "16px", xs: "16px" },
+    // marginLeft: 2.5,S
     mb: 2,
   },
   listSubheading: {
     fontFamily: "Inter",
     fontWeight: 900,
-    fontSize: { xl: "20px", lg: "20px", md: "12px", sm: "12px" },
+    fontSize: { xl: "20px", lg: "20px", md: "18px", sm: "12px" },
+    marginTop: "30px",
   },
   listItemText: {
     fontFamily: "Inter",
@@ -444,9 +479,10 @@ const styles = {
     textAlign: "left",
     lineHeight: { xl: "41px", lg: "41px", xs: "28px" },
     color: "#000",
+    marginTop: "20px",
   },
   textBox: {
-    paddingLeft: { xl: "40px", sm: "38px", xs: "16px" },
+    paddingLeft: { xl: "48px", sm: "38px", xs: "16px" },
     paddingBottom: { sm: "56px", xs: "25px" },
     backgroundColor: "#FFC000",
   },
