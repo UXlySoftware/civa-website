@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import { Third1Img, Third2Img, Third3Img } from "../assets/product";
+import { Third1Img, Third2Img, Third3Img } from "../../assets/product";
 
 const ProductLayers = () => {
   return (

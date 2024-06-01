@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import united from "../assets/united.png";
-import GetDemoButton from "../components/GetDemoButton";
+import united from "../../assets/united.png";
+import GetDemoButton from "../GetDemoButton";
 
 const HeroSection = () => {
   return (

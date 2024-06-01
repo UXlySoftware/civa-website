@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import { Box, Typography, Grid, Tab, Tabs } from "@mui/material";
 import { TabContext, TabPanel } from "@mui/lab";
-import { iPhoneImg } from "../assets/product";
+import { iPhoneImg } from "../../assets/product";
 
 const firstTabList = [
   {
