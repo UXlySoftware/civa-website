@@ -300,7 +300,13 @@ const styles = {
     fontSize: { xl: "24px", lg: "24px", md: "24px", sm: "24px", xs: "12px" },
   },
   container: {
-    marginTop: "50px",
+    marginTop: {
+      xl: "100px",
+      lg: "100px",
+      md: "90px",
+      sm: "90px",
+      xs: "70px",
+    },
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
