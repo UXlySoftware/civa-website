@@ -79,7 +79,12 @@ const ProductPage: React.FC = () => {
                   CONNECT
                 </Typography>
               </Box>
-              <Typography sx={styles.sectionDescription}>
+              <Typography
+                sx={{
+                  ...styles.sectionDescription,
+                  paddingLeft: { xl: 37, lg: 13, md: 16, sm: 3, xs: 3 },
+                }}
+              >
                 CIVA connects organizations <br />
                 and community members,
                 <br /> and provides up-to-date <br /> information on relevant{" "}
@@ -201,7 +206,7 @@ const ProductPage: React.FC = () => {
               <Typography
                 sx={{
                   ...styles.sectionDescription,
-                  paddingLeft: { xl: 34, lg: 12, md: 10, sm: 3, xs: 2.5 },
+                  paddingLeft: { xl: 34, lg: 10, md: 10, sm: 3, xs: 2.5 },
                 }}
               >
                 CIVA provides a single
@@ -448,7 +453,7 @@ const styles = {
     fontWeight: 800,
     fontSize: { xl: "42px", lg: "42px", md: "24px", sm: "24px", xs: "24px" },
     color: "#FFF",
-    marginLeft: { sm: 3, xs: "20px" },
+    marginLeft: { xl: 2, lg: 0, sm: 3, xs: "20px" },
   },
   sectionDescription: {
     paddingLeft: {
