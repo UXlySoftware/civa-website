@@ -171,6 +171,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     maxWidth: "100%",
+    marginBottom: { xl: 45, lg: 45, md: 45, sm: 45, xs: 0 },
   },
 
   outerContainer: {
@@ -226,7 +227,7 @@ const styles = {
     maxWidth: "100%",
   },
   textBox: {
-    paddingLeft: { sm: "38px", xs: "16px" },
+    paddingLeft: { sm: "41px", xs: "16px" },
     paddingBottom: { sm: "56px", xs: "25px" },
     backgroundColor: "#FFC000",
   },

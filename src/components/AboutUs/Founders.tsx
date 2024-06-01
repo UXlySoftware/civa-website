@@ -19,7 +19,7 @@ const Founders = () => {
       sx={{
         backgroundColor: "#374957",
         minHeight: "100vh",
-        paddingBottom: { xl: 100, lg: 130, md: 20, sm: 40, xs: 105 },
+        paddingBottom: { xl: 100, lg: 120, md: 20, sm: 40, xs: 105 },
         border: "1px solid #374957",
       }}
     >
@@ -246,8 +246,8 @@ const styles = {
     margin: {
       xl: "0px auto 109px auto",
       lg: "0px auto 109px auto",
-      md: "15px auto 49px auto",
-      sm: "0 auto 45px auto",
+      md: "130px auto 50px auto",
+      sm: "120px auto -60px auto",
       xs: "0px auto 45px auto",
     },
     textAlign: "center",

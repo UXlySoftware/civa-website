@@ -2,6 +2,7 @@ import React, { FC, ReactNode } from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
 import phoneImage from "../assets/phone.png";
 import discussionImage from "../assets/discussion.png";
+import { useNavigate } from "react-router-dom";
 
 interface ListItemProps {
   number: number;
@@ -53,6 +54,11 @@ const InfoSection: FC<InfoSectionProps> = ({ imgSrc, imgAlt, text }) => (
 );
 
 const HowItWorks = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/contact");
+  };
   const listItems = [
     <>
       Organization and community
@@ -100,6 +106,7 @@ const HowItWorks = () => {
                 backgroundColor: "#e8ae00",
               },
             }}
+            onClick={handleClick}
           >
             Learn More
           </Button>
@@ -114,7 +121,11 @@ const HowItWorks = () => {
             marginTop: "-80px",
             marginBottom: "25px",
             display: { xs: "flex", md: "none" },
+            "&:hover": {
+              backgroundColor: "#e8ae00",
+            },
           }}
+          onClick={handleClick}
         >
           Learn More
         </Button>

@@ -179,7 +179,7 @@ const styles = {
     height: "16px",
     backgroundColor: "#FFC000",
     margin: "0 auto",
-    mb: 6,
+    mb: { xl: 8, lg: 8, md: 8, sm: 8, xs: 11 },
   },
   teamMembersContainer: {
     margin: {
