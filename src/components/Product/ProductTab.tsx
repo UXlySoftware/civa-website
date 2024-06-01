@@ -305,6 +305,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: { xl: 45, lg: 45, md: 25, sm: 20, xs: 25 },
   },
   tabs: {
     display: "flex",
