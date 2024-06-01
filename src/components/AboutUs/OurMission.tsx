@@ -1,8 +1,7 @@
 import React from "react";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import missionImage from "../assets/missionImage.png";
-import missionImageMobil from "../assets/missionImageMobil.png";
-import Founders from "./Founders";
+import missionImage from "../../assets/missionImage.png";
+import missionImageMobil from "../../assets/missionImageMobil.png";
 
 const MissionAndBios = () => {
   const theme = useTheme();

@@ -8,14 +8,9 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  useMediaQuery,
-  useTheme,
-  Container,
 } from "@mui/material";
-import missionImage from "../assets/missionImage.png";
-import akeemImage from "../assets/akeemImage.png";
-import jermaineImage from "../assets/jermaineImage.png";
-import missionImageMobil from "../assets/missionImageMobil.png";
+import akeemImage from "../../assets/akeemImage.png";
+import jermaineImage from "../../assets/jermaineImage.png";
 import SquareIcon from "@mui/icons-material/Square";
 
 const Founders = () => {

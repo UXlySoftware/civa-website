@@ -1,16 +1,14 @@
 import React from "react";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 
-import OurMission from "../components/OurMission";
-import OurTeam from "../components/OurTeam";
-import JoinCommunity from "./JoinCommunity";
+import OurMission from "../AboutUs/OurMission";
+import OurTeam from "../AboutUs/OurTeam";
+import JoinCommunity from "../../components/JoinCommunity";
 import CivaStory from "./CivaStory";
 import AboutUsHero from "./AboutUsHero";
 import Founders from "./Founders";
 
 const AboutUs = () => {
-  const theme = useTheme();
-
   return (
     <Box sx={styles.container}>
       <AboutUsHero />

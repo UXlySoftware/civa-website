@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import horaceImage from "../assets/horaceImage.png";
-import mollyImage from "../assets/mollyImage.png";
+import horaceImage from "../../assets/horaceImage.png";
+import mollyImage from "../../assets/mollyImage.png";
 
 const TeamSection = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-import storyImage from "../assets/storyImage.png";
+import storyImage from "../../assets/storyImage.png";
 
 const CivaStory = () => {
   return (

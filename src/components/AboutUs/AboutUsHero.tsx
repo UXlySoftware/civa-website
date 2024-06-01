@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import heroBanner from "../assets/aboutHero.png";
-import heroBannerMobile from "../assets/aboutHeroMobile.png";
+import heroBanner from "../../assets/aboutHero.png";
+import heroBannerMobile from "../../assets/aboutHeroMobile.png";
 
-import GetDemoButton from "../components/GetDemoButton";
+import GetDemoButton from "../GetDemoButton";
 
 const AboutUsHero = () => {
   const theme = useTheme();
