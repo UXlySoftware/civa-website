@@ -106,6 +106,7 @@ const styles = {
     width: "100%",
     textAlign: "center",
     backgroundColor: "#fff",
+    marginBottom: { xl: 35, lg: 35, md: 20, sm: 30, xs: 25 },
   },
   partnersHeading: {
     fontFamily: "Public Sans",
