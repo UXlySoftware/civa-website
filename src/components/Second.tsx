@@ -31,13 +31,15 @@ const SecondSection = () => {
 
 const styles = {
   container: {
+    border: "1px solid red",
     display: { xs: "none", md: "block" },
     textAlign: "center",
     marginTop: 9,
     marginBottom: 14,
-    marginLeft: { xl: 51, lg: 20 },
+    marginLeft: { xl: 42, lg: 12 },
   },
   circleContainer: {
+    border: "1px solid red",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
