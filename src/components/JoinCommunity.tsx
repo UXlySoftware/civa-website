@@ -1,8 +1,15 @@
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const JoinCommunity = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/contact");
+  };
+
   return (
     <Box sx={styles.joinCommunitySection}>
       <Typography variant="h4" sx={styles.joinHeading}>
@@ -12,7 +19,12 @@ const JoinCommunity = () => {
         Transform your organization or community with CIVA’s data-driven
         engagement platform. Schedule a demo today.
       </Typography>
-      <Button variant="contained" color="primary" sx={styles.demoButton}>
+      <Button
+        variant="contained"
+        color="primary"
+        sx={styles.demoButton}
+        onClick={handleClick}
+      >
         Get a Demo
       </Button>
     </Box>

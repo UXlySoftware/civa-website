@@ -1,10 +1,20 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const getAdemoButton = () => {
+const GetAdemoButton = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/contact");
+  };
   return (
     <>
-      <Button variant="contained" color="secondary" sx={styles.button}>
+      <Button
+        variant="contained"
+        color="secondary"
+        sx={styles.button}
+        onClick={handleClick}
+      >
         Get a Demo{" "}
       </Button>
     </>
@@ -42,4 +52,4 @@ const styles = {
   },
 };
 
-export default getAdemoButton;
+export default GetAdemoButton;
