@@ -38,15 +38,15 @@ const styles = {
     display: "flex",
     justfiyContent: "center",
     justifyItems: "center",
-    flexDirection: { xs: "column-reverse", md: "row" },
+    flexDirection: { xs: "column-reverse", sm: "row", md: "row" },
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: { xs: 10, sm: 20 },
+    marginBottom: { xs: 10, sm: 15 },
   },
   textContainer: {
     justifyContent: "center",
     textAlign: "left",
-    maxWidth: { xl: "40%", lg: "50%", md: "50%", sm: "75%", xs: "356px" },
+    maxWidth: { xl: "40%", lg: "50%", md: "50%", sm: "50%", xs: "356px" },
     width: "100%",
     display: "flex",
     flexDirection: "column",
@@ -60,7 +60,7 @@ const styles = {
       xs: "60px",
     },
     // maxWidth: { xs: "100%", md: "50%" },
-    paddingLeft: { xl: 0, lg: 0, md: 5, sm: 13, xs: 5 },
+    paddingLeft: { xl: 0, lg: 0, md: 5, sm: 7, xs: 5 },
   },
   sideBorder: {
     "&::before": {
@@ -88,13 +88,13 @@ const styles = {
   heading: {
     fontFamily: "Public Sans",
     fontWeight: "900",
-    fontSize: { xs: "3s6px", sm: "52px" },
+    fontSize: { xs: "36px", sm: "44px", md: "52px" },
     lineHeight: { xs: "42px", sm: "58px" },
   },
   subHeading: {
     color: "#010101",
     fontWeight: 700,
-    fontSize: { sm: "23px", xs: "18px" },
+    fontSize: { md: "23px", sm: "20px", xs: "18px" },
     lineHeight: "29px",
     fontFamily: "Inter",
   },
@@ -124,7 +124,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: { xs: 4, md: 0 },
+    marginTop: { xs: 4, sm: 0, md: 0 },
     paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
   },
   circle: {

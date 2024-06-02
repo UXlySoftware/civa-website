@@ -31,7 +31,7 @@ const SecondSection = () => {
 
 const styles = {
   container: {
-    display: { xs: "none", md: "block" },
+    display: { xs: "none", sm: "block", md: "block" },
     textAlign: "center",
     marginTop: 9,
     marginBottom: 14,
@@ -44,8 +44,8 @@ const styles = {
     gap: 3,
   },
   circle: {
-    width: { xl: 410, lg: 350, md: 279 },
-    height: { xl: 410, lg: 350, md: 279 },
+    width: { xl: 410, lg: 350, md: 279, sm: 249 },
+    height: { xl: 410, lg: 350, md: 279, sm: 249 },
     borderRadius: "50%",
     border: "5px dashed",
     display: "flex",
@@ -64,8 +64,8 @@ const styles = {
     fontFamily: "Public Sans",
   },
   innerCircle: {
-    width: { xl: 253, lg: 253, md: 173 },
-    height: { xl: 253, lg: 253, md: 173 },
+    width: { xl: 253, lg: 253, md: 173, sm: 163 },
+    height: { xl: 253, lg: 253, md: 173, sm: 163 },
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",

@@ -101,7 +101,7 @@ const HowItWorks = () => {
             color="primary"
             sx={{
               ...styles.button,
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none", sm: "flex" },
               "&:hover": {
                 backgroundColor: "#e8ae00",
               },
@@ -120,7 +120,7 @@ const HowItWorks = () => {
             width: "90%",
             marginTop: "-80px",
             marginBottom: "25px",
-            display: { xs: "flex", md: "none" },
+            display: { xs: "flex", sm: "none" },
             "&:hover": {
               backgroundColor: "#e8ae00",
             },
@@ -191,7 +191,7 @@ const styles = {
     display: "flex",
     // justifyContent: "space-between",
     alignItems: "center",
-    flexDirection: { xs: "column", md: "row" },
+    flexDirection: { xs: "column", sm: "row", md: "row" },
   },
   listBox: {
     width: { xs: "90%", md: "56%", lg: "45%", xl: "40%" },
