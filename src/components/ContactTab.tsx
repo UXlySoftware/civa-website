@@ -318,8 +318,8 @@ const styles = {
     top: "0px",
     display: "flex",
     flexDirection: "column",
-    width: { xl: "784px", lg: "784px", md: "702px", sm: "570px", xs: "370px" },
-    marginLeft: { xl: "0px", lg: "0px", md: "271px", sm: "210px", xs: "-15px" },
+    width: { xl: "784px", lg: "784px", md: "702px", xs: "370px" },
+    marginLeft: { xl: "0px", lg: "0px", md: "271px", sm: "0px", xs: "-15px" },
     marginBottom: "-184px",
     minHeight: "auto",
     boxSizing: "border-box",
@@ -331,7 +331,7 @@ const styles = {
     alignItems: "flex-end",
     justifyContent: "space-between",
     maxWidth: "100%",
-    width: { xl: "784px", lg: "784px", md: "702px", sm: "570px", xs: "370px" },
+    width: { xl: "784px", lg: "784px", md: "702px" },
   },
   tabBox: {
     flex: 1,
@@ -388,7 +388,7 @@ const styles = {
     backgroundColor: "#FFCC33",
   },
   formBox: {
-    width: { xl: "784px", lg: "784px", md: "702px", sm: "570px", xs: "370px" },
+    width: { xl: "784px", lg: "784px", md: "702px", xs: "370px" },
     maxWidth: { xl: "100%", lg: "100%", md: "100%", sm: "100%", xs: "100%" },
     height: "auto",
     borderBottomLeftRadius: "12px",
