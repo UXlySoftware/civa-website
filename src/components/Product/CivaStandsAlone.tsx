@@ -64,7 +64,7 @@ const CivaStandsAlone = () => {
           container
           sx={{
             width: "92%",
-            // margin: "0 auto 40px auto",
+            margin: "0 auto 40px auto",
           }}
         >
           <Grid item xs={12} sm={6} marginTop="10px">
@@ -149,7 +149,6 @@ const CivaStandsAlone = () => {
           </Grid>
         </Grid>
       </Box>
-
       <Paper elevation={3} sx={styles.bottomBox}>
         <Typography sx={styles.bottomText}>
           <Typography
@@ -287,7 +286,7 @@ const styles = {
       sm: "736px",
       xs: "349px",
     },
-    height: { xl: "530px", lg: "530px", md: "490px", sm: "490px", xs: "auto" },
+    height: { xl: "530px", lg: "530px", md: "490px", sm: "322px", xs: "auto" },
     backgroundColor: "#000000",
     color: "#FFFFFF",
     borderRadius: "5px",
@@ -347,7 +346,7 @@ const styles = {
     },
     height: {
       xs: "302px",
-      sm: "500px",
+      sm: "180px",
       md: "360px",
       lg: "580px",
       xl: "585px",
@@ -355,7 +354,7 @@ const styles = {
     alignContent: "flex-end",
     top: {
       xs: "-140px",
-      sm: "-290px",
+      sm: "-100px",
       md: "-190px",
       lg: "-375px",
       xl: "-400px",
@@ -364,7 +363,7 @@ const styles = {
     zIndex: 1,
     marginLeft: {
       xs: "2%",
-      sm: "2%",
+      sm: "5%",
       md: "-10px",
       lg: "-20px",
       xl: "200px",
@@ -372,7 +371,7 @@ const styles = {
   },
   bottomText: {
     width: { xl: "70%", lg: "70%", md: "80%", sm: "80%", xs: "94%" },
-    marginLeft: { xl: "65px", lg: "65px", md: "35px", sm: "25px", xs: "17px" },
+    marginLeft: { xl: "65px", lg: "65px", md: "65px", sm: "65px", xs: "17px" },
     marginBottom: "55px",
     marginTop: { xs: "120px", sm: 0 },
     color: "#000000",
