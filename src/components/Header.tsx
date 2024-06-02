@@ -77,21 +77,6 @@ const Header = () => {
                   sx={styles.listItem}
                 >
                   <ListItemText
-                    primary="Product"
-                    primaryTypographyProps={{
-                      fontWeight: 700,
-                      fontSize: "20px",
-                      fontFamily: "Inter",
-                    }}
-                    onClick={() => navigate("/product")}
-                  />
-                </ListItem>
-                <ListItem
-                  button
-                  onClick={handleDrawerToggle}
-                  sx={styles.listItem}
-                >
-                  <ListItemText
                     primary="About Us"
                     primaryTypographyProps={{
                       fontWeight: 700,
@@ -101,6 +86,22 @@ const Header = () => {
                     onClick={() => navigate("/about")}
                   />
                 </ListItem>
+                <ListItem
+                  button
+                  onClick={handleDrawerToggle}
+                  sx={styles.listItem}
+                >
+                  <ListItemText
+                    primary="Product"
+                    primaryTypographyProps={{
+                      fontWeight: 700,
+                      fontSize: "20px",
+                      fontFamily: "Inter",
+                    }}
+                    onClick={() => navigate("/product")}
+                  />
+                </ListItem>
+
                 <ListItem
                   button
                   onClick={handleDrawerToggle}
@@ -139,7 +140,7 @@ const styles = {
     justifyContent: "space-between",
   },
   menuBox: {
-    display: { xs: "none", md: "flex" },
+    display: { xs: "none", sm: "flex", md: "flex" },
   },
   button: {
     color: "#000",
@@ -157,7 +158,7 @@ const styles = {
   menuIcon: {
     display: {
       xs: "block",
-      sm: "block",
+      sm: "none",
       md: "none",
       lg: "none",
       xl: "none",
@@ -169,7 +170,7 @@ const styles = {
   drawer: {
     "& .MuiDrawer-paper": {
       width: "100vw",
-      height: "25vh",
+      height: { xl: "25vh", lg: "25vh", md: "25vh", sm: "15vh", xs: "25vh" },
       backgroundColor: "#FFD454",
       borderBottomLeftRadius: "12px",
       borderBottomRightRadius: "12px",

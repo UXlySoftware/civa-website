@@ -21,7 +21,6 @@ const AboutUsHero = () => {
         <Typography variant="h4" sx={styles.heading}>
           COLLABORATION{" "}
           <span style={{ color: "white" }}>
-            {" "}
             <br />
             CREATES IMPACT.
           </span>
@@ -33,7 +32,18 @@ const AboutUsHero = () => {
           ecosystem.
         </Typography>
 
-        <Box sx={{ marginLeft: "55px", marginTop: "20px" }}>
+        <Box
+          sx={{
+            marginLeft: {
+              xl: "55px",
+              lg: "55px",
+              md: "100px",
+              sm: "100px",
+              xs: "55px",
+            },
+            marginTop: "20px",
+          }}
+        >
           <GetDemoButton />
         </Box>
       </Box>
@@ -48,8 +58,9 @@ const styles = {
   },
   heroWrapper: {
     position: "relative",
-    height: "38em",
+    height: { xs: "60vh", sm: "50vh", md: "60vh", lg: "70vh", xl: "80vh" },
     backgroundSize: "cover",
+    backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     display: "flex",
     justifyContent: "center",
@@ -58,7 +69,7 @@ const styles = {
   textOverlay: {
     width: { xl: "40%", lg: "60%" },
     position: "absolute",
-    top: { xl: "15%", lg: "8%", md: "0%", sm: "0%", xs: "20%" },
+    top: { xl: "15%", lg: "8%", md: "20%", sm: "20%", xs: "8%" },
     left: { xl: "12%", lg: "0%", md: "0%", sm: "0%", xs: "0%" },
     textAlign: "left",
     color: "#fff",
@@ -72,7 +83,7 @@ const styles = {
     fontWeight: 900,
     color: "#FFC000",
     fontSize: {
-      xs: "39px",
+      xs: "38px",
       sm: "42px",
       md: "52px",
       lg: "72px",
@@ -85,7 +96,13 @@ const styles = {
       sm: "50px",
       xs: "50px",
     },
-    marginLeft: { xl: "57px", lg: "57px", md: "57px", sm: "10px", xs: "30px" },
+    marginLeft: {
+      xl: "57px",
+      lg: "57px",
+      md: "100px",
+      sm: "100px",
+      xs: "30px",
+    },
   },
   description: {
     fontFamily: "Inter",
@@ -93,13 +110,19 @@ const styles = {
     color: "#fff",
     fontSize: {
       xs: "16px",
-      sm: "16px",
+      sm: "17px",
       md: "16px",
       lg: "24px",
       xl: "24px",
     },
     lineHeight: "29px",
-    marginLeft: { xl: "57px", lg: "57px", md: "57px", sm: "10px", xs: "30px" },
+    marginLeft: {
+      xl: "57px",
+      lg: "57px",
+      md: "100px",
+      sm: "103px",
+      xs: "30px",
+    },
   },
   button: {
     marginLeft: { xl: "57px", lg: "57px", md: "57px", sm: "10px", xs: "30px" },
@@ -130,10 +153,11 @@ const styles = {
       height: {
         xl: "420px",
         lg: "420px",
-        md: "318px",
-        xs: "283px",
+        md: "398px",
+        sm: "318px",
+        xs: "300px",
       },
-      marginTop: { xl: "18px", lg: "13px", md: "20px", xs: "30px" },
+      marginTop: { xl: "18px", lg: "13px", md: "20px", sm: "20px", xs: "30px" },
       width: "16px",
       backgroundColor: "#FFC000",
     },

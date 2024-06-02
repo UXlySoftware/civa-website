@@ -145,13 +145,17 @@ const ProductTab = () => {
         <Box sx={styles.formBox}>
           <TabPanel value="1" sx={styles.tabPanel}>
             <Grid container spacing={2} sx={styles.formContainer}>
-              <Grid item xs={12} sm={12} md={6} lg={6}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Typography sx={styles.label}>
                   Examples of Affinity Organizations include: Clinical
                   Translational Science Institutes and Awardees, Nonprofits and
                   Foundations, Universities, and more
                 </Typography>
-                <Box sx={{ marginTop: "50px" }}>
+                <Box
+                  sx={{
+                    marginTop: "50px",
+                  }}
+                >
                   {firstTabList.map((item) => (
                     <Box
                       key={item.id}
@@ -169,7 +173,7 @@ const ProductTab = () => {
                   ))}
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={6}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Box
                   sx={{
                     display: "flex",
@@ -192,7 +196,7 @@ const ProductTab = () => {
           </TabPanel>
           <TabPanel value="2" sx={styles.tabPanel}>
             <Grid container spacing={2} sx={styles.formContainer}>
-              <Grid item xs={12} sm={12} md={6} lg={6}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Typography sx={styles.label}>
                   Examples of Community Associations include: Neighborhood
                   Associations/HOAS, Business/
@@ -219,7 +223,7 @@ const ProductTab = () => {
                   ))}
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={6}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Box
                   sx={{
                     display: "flex",
@@ -242,7 +246,7 @@ const ProductTab = () => {
           </TabPanel>
           <TabPanel value="3" sx={styles.tabPanel}>
             <Grid container spacing={2} sx={styles.formContainer}>
-              <Grid item xs={12} sm={12} md={6} lg={6}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Typography sx={styles.label}>
                   For citizens who want to get involved and make a difference
                 </Typography>
@@ -264,7 +268,7 @@ const ProductTab = () => {
                   ))}
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={6}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Box
                   sx={{
                     display: "flex",
@@ -321,7 +325,7 @@ const styles = {
     width: {
       xl: "1296px",
       lg: "1296px",
-      md: "786px",
+      md: "976px",
       sm: "786px",
       xs: "380px",
     },
@@ -337,7 +341,7 @@ const styles = {
     width: {
       xl: "1296px",
       lg: "1296px",
-      md: "786px",
+      md: "976px",
       sm: "786px",
       xs: "380px",
     },
@@ -349,26 +353,22 @@ const styles = {
     boxSizing: "border-box",
   },
   formContainer: {
-    width: "100%",
+    // width: "100%",
     boxSizing: "border-box",
     marginTop: "10px",
-    padding: { xl: "20px", lg: "20px", md: "20px", sm: "20px", xs: "4px" },
+    padding: { xl: "20px", lg: "20px", md: "20px", sm: "0px", xs: "4px" },
   },
   tab: {
     minWidth: {
       xl: "433px",
       lg: "433px",
-      md: "262px",
+      md: "325px",
       sm: "262px",
       xs: "123px",
     },
-    // flex: 1,
     height: { xl: "80px", lg: "80px", md: "70px", sm: "60px", xs: "60px" },
     color: "black",
     display: "flex",
-    // justifyContent: "center",
-    // alignItems: "center",
-    // boxSizing: "border-box",
     borderRadius: "12px 12px 0 0",
     fontFamily: "Inter",
     fontWeight: 900,
@@ -426,7 +426,7 @@ const styles = {
   },
   itemID: {
     fontFamily: "Public Sans",
-    width: { xl: "60px", lg: "60px", md: "60px", sm: "40px", xs: "30px" },
+    width: { xl: "60px", lg: "60px", md: "30px", sm: "40px", xs: "30px" },
     fontWeight: 700,
     fontSize: {
       xl: "64px",
@@ -435,7 +435,7 @@ const styles = {
       sm: "38px",
       xs: "38px",
     },
-    lineHeight: { xl: "75px", lg: "75px", xs: "15px" },
+    lineHeight: { xl: "75px", lg: "75px", md: "75px", xs: "15px" },
     color: "#2E86AB",
     marginRight: "20px",
   },
@@ -449,7 +449,7 @@ const styles = {
       sm: "15px",
       xs: "12px",
     },
-    lineHeight: "21px",
+    lineHeight: { xl: "21px", lg: "21px", md: "21px", sm: "26px", xs: "21px" },
     color: "#000",
   },
 };

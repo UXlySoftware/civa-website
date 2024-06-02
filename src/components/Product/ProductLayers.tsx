@@ -116,7 +116,13 @@ const ProductLayers = () => {
               grant proposals.
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6} sx={collaborateStyles.imageContainer}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={6}
+            sx={collaborateStyles.imageContainer}
+          >
             <Box
               component="img"
               src={Third3Img}
@@ -293,6 +299,7 @@ const collaborateStyles = {
     position: "relative",
     top: { xs: "0px", sm: "-200px", md: "60px", lg: "70px", xl: "70px" },
     left: { xs: "10px", sm: "310px", md: "-50px", lg: "-160px", xl: "-160px" },
+    marginBottom: { xl: 0, lg: 0, md: 7, sm: -10, xs: 0 },
   },
   image: {
     width: { xl: "818px", lg: "818px", md: "474px", sm: "474px", xs: "364px" },

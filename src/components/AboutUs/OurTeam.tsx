@@ -15,20 +15,19 @@ const TeamSection = () => {
           {/* 1. foto sag ust */}
           <Box
             sx={{
-              ...styles.yellowSquare,
-              width: "170px",
+              ...styles.horaceYellowSquare,
               top: {
                 xl: "-75px",
                 lg: "-75px",
                 md: "50px",
-                sm: "65px",
+                sm: "-50px",
                 xs: "65px",
               },
               right: {
                 xl: "45px",
                 lg: "45px",
                 md: "107px",
-                sm: "125px",
+                sm: "10px",
                 xs: "105px",
               },
             }}
@@ -41,29 +40,29 @@ const TeamSection = () => {
             sx={styles.horaceImage}
           />
           <Box sx={{ ...styles.blackSquareLeft, left: "24px" }} />
-          {/* 1. foto sag ust */}
+          {/* 1. foto sol alt */}
           <Box
             sx={{
-              ...styles.yellowSquare,
+              ...styles.horaceYellowSquare,
               top: {
                 xl: "78px",
                 lg: "78px",
                 md: "-45px",
-                sm: "160px",
+                sm: "18px",
                 xs: "-50px",
               },
               right: {
                 xl: "155px",
                 lg: "245px",
                 md: "15px",
-                sm: "125px",
+                sm: "165px",
                 xs: "10px",
               },
               width: {
                 xl: "340px",
                 lg: "250px",
                 md: "100px",
-                sm: "90px",
+                sm: "110px",
                 xs: "90px",
               },
             }}
@@ -81,19 +80,19 @@ const TeamSection = () => {
           {/* 2. foto sag ust */}
           <Box
             sx={{
-              ...styles.yellowSquare,
+              ...styles.MollyYellowSquare,
               top: {
                 xl: "-76px",
                 lg: "80px",
                 md: "-45px",
-                sm: "160px",
+                sm: "-50px",
                 xs: "65px",
               },
               right: {
                 xl: "-114px",
                 lg: "124px",
                 md: "-60px",
-                sm: "125px",
+                sm: "-2px",
                 xs: "-5px",
               },
             }}
@@ -113,22 +112,22 @@ const TeamSection = () => {
           {/* 2. foto sol alt */}
           <Box
             sx={{
-              ...styles.yellowSquare,
+              ...styles.MollyYellowSquare,
               top: {
                 xl: "78px",
                 lg: "-75px",
                 md: "50px",
-                sm: "160px",
+                sm: "20px",
                 xs: "-50px",
               },
               right: {
                 xl: "84px",
                 lg: "-115px",
                 md: "30px",
-                sm: "125px",
+                sm: "165px",
                 xs: "-3px",
               },
-              width: { xl: "252px", md: "173px", xs: "90px" },
+              width: { xl: "252px", md: "173px", sm: "100px", xs: "90px" },
             }}
           />
           <Box sx={styles.infoBoxMolly}>
@@ -150,9 +149,10 @@ const styles = {
     width: "120wv",
     backgroundColor: "#5a91a1",
     pt: "44px",
+    pb: { xl: "0px", lg: "0px", md: "0px", sm: "144px", xs: "50px" },
     display: "flex",
-
     flexDirection: "column",
+    marginBottom: -20,
   },
   sectionTitle: {
     fontWeight: 900,
@@ -186,13 +186,14 @@ const styles = {
       xl: "120px auto 160px auto",
       lg: "120px 300px 140px auto",
       md: "120px 300px 110px auto",
+      sm: "40px auto 30px auto",
       xs: "0px 0px 80px 0px",
     },
     display: "flex",
-    flexDirection: { xs: "column", md: "row" },
+    flexDirection: { xs: "column", sm: "row", md: "row" },
     justifyContent: "center",
     alignItems: "center",
-    gap: { xl: 65, lg: 30, md: 30, sm: 3, xs: 3 },
+    gap: { xl: 65, lg: 30, md: 30, sm: 33, xs: 3 },
   },
   teamMemberBox: {
     position: "relative",
@@ -219,7 +220,7 @@ const styles = {
       xl: "-195px",
       lg: "-195px",
       md: "-105px",
-      sm: "30px",
+      sm: "-104px",
       xs: "-104px",
     },
     top: { xl: "-134px", lg: "-134px", md: "-75px", xs: "-77px" },
@@ -324,13 +325,27 @@ const styles = {
     gap: "12px",
     left: { xl: "45%", lg: "45%", md: "45%", sm: "-10%", xs: "-10%" },
   },
-  yellowSquare: {
+
+  horaceYellowSquare: {
+    position: "absolute",
+    width: {
+      xl: "213px",
+      lg: "213px",
+      md: "171px",
+      sm: "120px",
+      xs: "270px",
+    },
+    height: { xl: "136px", lg: "136px", md: "78px", sm: "110px", xs: "60px" },
+    backgroundColor: "#FFC000",
+  },
+
+  MollyYellowSquare: {
     position: "absolute",
     width: {
       xl: "213px",
       lg: "213px",
       md: "123px",
-      sm: "662px",
+      sm: "130px",
       xs: "270px",
     },
     height: { xl: "136px", lg: "136px", md: "78px", sm: "110px", xs: "60px" },

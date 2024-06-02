@@ -258,7 +258,7 @@ const styles = {
       xl: "52px",
       lg: "52px",
       md: "42px",
-      sm: "42px",
+      sm: "36px",
       xs: "28px",
     },
     fontWeight: 900,

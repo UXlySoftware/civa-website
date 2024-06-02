@@ -41,7 +41,7 @@ const MissionAndBios = () => {
 const styles = {
   missionAndBiosContainer: {
     position: "relative",
-    mt: { xl: 10, lg: 10, md: 7, xs: 75 },
+    mt: { xl: 10, lg: 10, md: 7, sm: 13, xs: 75 },
     px: 2,
     minHeight: {
       xl: "100vh",
