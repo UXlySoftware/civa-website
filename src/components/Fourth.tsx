@@ -19,11 +19,11 @@ const FourthSection = () => {
   const thirdLayerColors = ["#BFD9E5", "#D5D9DB"];
 
   return (
-    <Container sx={styles.container}>
+    <Container sx={styles.container} maxWidth={false}>
       {/* Engagement Empower section begins */}
       <Box
         sx={{
-          width: { xl: "35%", lg: "40%", md: "45%", xs: "100%" },
+          width: { xl: "100%", lg: "100%", md: "45%", xs: "100%" },
           margin: { xs: 4, sm: 10 },
           display: "flex",
           flexDirection: "column",
@@ -32,14 +32,20 @@ const FourthSection = () => {
         }}
       >
         <Typography variant="h4" sx={styles.heading}>
-          CIVIC ENGAGEMENT EMPOWERS
+          CIVIC ENGAGEMENT <br /> EMPOWERS
         </Typography>
         <Box sx={styles.divider} />
       </Box>
       {/* Platforms begin */}
       <Box sx={styles.backgroundSection}>
         <Box sx={styles.platformSection}>
-          <Box sx={{ ...styles.platform, gap: 7, background: "#2E86AB" }}>
+          <Box
+            sx={{
+              ...styles.platform,
+              gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
+              background: "#2E86AB",
+            }}
+          >
             <Typography variant="body1" sx={styles.platformText}>
               EXISTING GOVERNMENT
               <br /> ENGAGEMENT PLATFORMS
@@ -55,7 +61,13 @@ const FourthSection = () => {
               sx={styles.plusSign}
             />
           </Box>
-          <Box sx={{ ...styles.platform, gap: 6, background: "#76848A" }}>
+          <Box
+            sx={{
+              ...styles.platform,
+              gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
+              background: "#76848A",
+            }}
+          >
             <img src={Community} alt="Community Icon" style={styles.icon} />
             <Typography variant="body1" sx={styles.platformText}>
               EXISTING COMMUNITY <br />
@@ -170,28 +182,30 @@ const styles = {
     marginTop: 15,
     display: "flex",
     justifyContent: "center",
-    maxWidth: "100%",
-    marginBottom: { xl: 45, lg: 45, md: 45, sm: 45, xs: 0 },
+    Width: "100vw",
+    marginBottom: { xl: 45, lg: 45, md: 45, sm: 20, xs: 0 },
   },
 
   outerContainer: {
-    minHeight: "400px",
     position: "relative",
-    maxWidth: { xl: "1210px", md: "1210px", sm: "100%", xs: "342px" },
+    display: "flex",
+    justifyContent: "center",
   },
 
   topRightRectangle: {
     position: "absolute",
+    display: "flex",
     top: { sm: "-42px", xs: "-15px" },
-    right: { md: "-42px", sm: "-15px", xs: "-15px" },
+    right: { md: "-42px", sm: "-50px", xs: "-15px" },
     width: { xl: "409px", lg: "409px", md: "269px", sm: "269px", xs: "226px" },
     height: { xl: "305px", lg: "305px", md: "185px", sm: "185px", xs: "185px" },
     backgroundColor: "#2E86AB",
   },
   bottomLeftRectangle: {
     position: "absolute",
-    top: { xl: "210px", lg: "400px", md: "290px", sm: "160px", xs: "205px" },
-    right: { xl: "251px", lg: "251px", md: "170px", sm: "125px", xs: "-14px" },
+    display: "flex",
+    top: { xl: "210px", lg: "400px", md: "290px", sm: "130px", xs: "205px" },
+    right: { xl: "251px", lg: "251px", md: "170px", sm: "40px", xs: "-14px" },
     width: {
       xl: "1003px",
       lg: "1003px",
@@ -199,7 +213,7 @@ const styles = {
       sm: "662px",
       xs: "370px",
     },
-    height: { xl: "194px", lg: "160px", md: "150px", sm: "150px", xs: "40%" },
+    height: { xl: "194px", lg: "160px", md: "150px", sm: "150px", xs: "200px" },
     paddingTop: {
       xl: "386px",
       lg: "180px",
@@ -211,6 +225,7 @@ const styles = {
   },
   imageContainer: {
     position: "relative",
+    display: "flex",
     width: "100%",
     height: "auto",
   },
@@ -223,8 +238,6 @@ const styles = {
       xs: "342px",
     },
     height: "auto",
-    display: "flex",
-    maxWidth: "100%",
   },
   textBox: {
     paddingLeft: { sm: "41px", xs: "16px" },
@@ -245,7 +258,7 @@ const styles = {
     fontSize: { xl: "32px", lg: "32px", md: "20px", sm: "20px", xs: "20px" },
   },
   container: {
-    minWidth: "100%",
+    width: "100%",
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
@@ -265,7 +278,7 @@ const styles = {
       xl: "190vh",
       lg: "220vh",
       md: "110vh",
-      sm: "160vh",
+      sm: "110vh",
       xs: "190vh",
     },
     background: "#374957",
@@ -305,7 +318,7 @@ const styles = {
   },
   heading: {
     fontFamily: "Public Sans",
-    fontWeight: "900",
+    fontWeight: 900,
     fontSize: { xl: "52px", xs: "32px", sm: "36px" },
     lineHeight: { xl: "58px", xs: "38px", sm: "42px" },
     marginBottom: "10px",
@@ -317,12 +330,12 @@ const styles = {
     alignItems: "center",
     display: "flex",
     backgroundColor: "#FFC000",
-    width: { xs: "49px", sm: "79px", xl: "79px" },
-    height: { xs: "49px", sm: "79px", xl: "79px" },
+    width: { xs: "49px", sm: "69px", md: "79px", xl: "79px" },
+    height: { xs: "49px", sm: "69px", md: "79px", xl: "79px" },
     borderRadius: "50%",
     margin: "0 10px",
-    left: { xl: "47.5%", lg: "46.5%", md: "45%", sm: "45%", xs: "40%" },
-    top: { xl: "20%", lg: "20%", md: "20%", sm: "41%", xs: "41%" },
+    left: { xl: "47.5%", lg: "46.5%", md: "45%", sm: "44.5%", xs: "40%" },
+    top: { xl: "20%", lg: "20%", md: "20%", sm: "30%", xs: "41%" },
   },
   plusSign: {
     width: "100%",
@@ -344,9 +357,9 @@ const styles = {
     marginTop: "25px",
   },
   DragHandleIcon: {
-    width: "100%", // Ensure the image fits within the container
-    height: "auto", // Maintain aspect ratio
-    maxWidth: "50%", // Optionally, control the maximum size of the image
+    width: "100%",
+    height: "auto",
+    maxWidth: "50%",
     maxHeight: "80%",
   },
   divider: {
@@ -355,9 +368,7 @@ const styles = {
     height: "16px",
     backgroundColor: "#FFC000",
   },
-  icon: {
-    fontSize: "30px",
-  },
+  icon: {},
   platformText: {
     fontFamily: "Public Sans",
     fontWeight: "800",

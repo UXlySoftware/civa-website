@@ -60,7 +60,7 @@ const styles = {
       xs: "60px",
     },
     // maxWidth: { xs: "100%", md: "50%" },
-    paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
+    paddingLeft: { xl: 0, lg: 0, md: 5, sm: 13, xs: 5 },
   },
   sideBorder: {
     "&::before": {
@@ -77,10 +77,10 @@ const styles = {
         xl: "388px",
         lg: "418px",
         md: "368px",
-        sm: "360px",
+        sm: "300px",
         xs: "223px",
       },
-      marginTop: { xl: 0, lg: 4, md: 3, sm: 2, xs: 3 },
+      marginTop: { xl: 0, lg: 4, md: 3, sm: 0, xs: 3 },
       width: "16px",
       backgroundColor: "black",
     },
