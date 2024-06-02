@@ -53,6 +53,13 @@ const ContactTab = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
+    // Check if required fields are empty
+    const { firstName, lastName, email, organization, phone } = formData;
+    if (!firstName || !lastName || !email || !organization || !phone) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
     try {
       const docRef = await addDoc(collection(db, "contact-us"), formData);
       console.log("Document written with ID: ", docRef.id);
