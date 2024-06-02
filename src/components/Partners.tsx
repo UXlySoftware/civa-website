@@ -17,6 +17,7 @@ const PartnersSection = () => (
       <Grid
         item
         xs={12}
+        sm={12}
         md={4}
         sx={{
           margin: { xl: "0px 90px", lg: "0px 90px", md: "0px 30px" },
@@ -42,6 +43,7 @@ const PartnersSection = () => (
       <Grid
         item
         xs={6}
+        sm={3}
         md={3}
         sx={{
           margin: {
@@ -64,6 +66,7 @@ const PartnersSection = () => (
       <Grid
         item
         xs={6}
+        sm={3}
         md={3}
         sx={{ marginRight: { xl: "-24px", lg: "-55px", md: "0px" } }}
       >
@@ -74,6 +77,7 @@ const PartnersSection = () => (
       <Grid
         item
         xs={6}
+        sm={3}
         md={3}
         sx={{
           marginRight: { xl: "0px", lg: "0px", md: "0px" },
@@ -87,6 +91,7 @@ const PartnersSection = () => (
       <Grid
         item
         xs={6}
+        sm={3}
         md={3}
         sx={{
           marginRight: { xl: "-55px", lg: "-55px", md: "-40px" },
@@ -97,7 +102,6 @@ const PartnersSection = () => (
         </Box>
       </Grid>
     </Grid>
-    {/* <JoinCommunity /> */}
   </Box>
 );
 
@@ -106,7 +110,7 @@ const styles = {
     width: "100%",
     textAlign: "center",
     backgroundColor: "#fff",
-    marginBottom: { xl: 35, lg: 35, md: 20, sm: 30, xs: 25 },
+    marginBottom: { xl: 35, lg: 35, md: 20, sm: 15, xs: 25 },
   },
   partnersHeading: {
     fontFamily: "Public Sans",
@@ -128,7 +132,7 @@ const styles = {
     },
   },
   logosContainer: {
-    width: { xl: "60%", lg: "100%", md: "90%", xs: "90%" },
+    width: { xl: "60%", lg: "100%", md: "90%", sm: "90%", xs: "90%" },
     padding: { sm: "0px", xs: "10px" },
     display: "flex",
     flexWrap: "wrap",
