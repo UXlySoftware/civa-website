@@ -35,6 +35,7 @@ const ContactTab = () => {
     phone: "",
     notes: "",
     // subscribe: false,
+    createdAt: new Date(),
   });
 
   const handleChange = (newValue: string) => {
@@ -75,7 +76,11 @@ const ContactTab = () => {
     }
 
     try {
-      const docRef = await addDoc(collection(db, "contact-us"), formData);
+      formData.createdAt = new Date();
+      const docRef = await addDoc(
+        collection(db, tabValue === "1" ? "request-a-demo" : "get-support"),
+        formData
+      );
       console.log("Document written with ID: ", docRef.id);
       alert("Form submitted successfully!");
     } catch (error) {
