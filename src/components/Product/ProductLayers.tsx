@@ -79,10 +79,8 @@ const ProductLayers = () => {
           </Grid>
           <Grid item xs={12} md={6} sx={communicateStyles.textContainer}>
             <Typography sx={communicateStyles.sectionDescription}>
-              CIVA provides an integrated <br /> platform and suite of tools
-              <br />
-              for communication,
-              <br /> government outreach, and <br /> community engagement.
+              CIVA provides an integrated platform and suite of tools for
+              communication, government outreach, and community engagement.
             </Typography>
           </Grid>
         </Grid>
@@ -110,11 +108,8 @@ const ProductLayers = () => {
               </Typography>
             </Box>
             <Typography sx={collaborateStyles.sectionDescription}>
-              CIVA provides a single <br />
-              source for feedback, data, <br />
-              and measurable insights to <br />
-              assess program results and <br />
-              provide metrics for future <br />
+              CIVA provides a single source for feedback, data, and measurable
+              insights to assess program results and provide metrics for future
               grant proposals.
             </Typography>
           </Grid>
@@ -168,11 +163,11 @@ const connectStyles = {
     fontWeight: 800,
     fontSize: { xl: "42px", lg: "42px", md: "24px", sm: "24px", xs: "24px" },
     color: "#FFF",
-    marginLeft: { xl: 2, lg: 0, sm: 3, xs: "20px" },
+    marginLeft: { xl: 2, lg: 0, md: -1, sm: 3, xs: "20px" },
   },
   sectionDescription: {
     width: { xs: "80%", xl: "36%", lg: "50%", md: "40%", sm: "50%" },
-    paddingLeft: { xl: 37, lg: 13, md: 16, sm: 3, xs: 3 },
+    paddingLeft: { xl: 37, lg: 13, md: 12, sm: 3, xs: 3 },
     paddingTop: { xl: "52px", xs: "30px" },
     fontFamily: "Inter",
     fontWeight: 600,
@@ -203,7 +198,7 @@ const communicateStyles = {
     right: {
       xl: "-730px",
       lg: "-580px",
-      md: "-450px",
+      md: "-405px",
       sm: "-200px",
       xs: "-10px",
     },
@@ -232,14 +227,17 @@ const communicateStyles = {
     color: "#FFF",
     marginLeft: {
       xl: "295px",
-      lg: "295px",
-      md: "295px",
+      lg: "285px",
+      md: "265px",
       sm: "295px",
       xs: "29px",
     },
   },
   sectionDescription: {
-    paddingLeft: 1,
+    paddingLeft: { xl: 13, lg: 5, md: 0 },
+    width: { xs: "79%", xl: "76%", lg: "86%", md: "100%", sm: "50%" },
+
+    marginRight: { xl: 0, lg: 0, md: 0, sm: 0, xs: 0 },
     textAlign: {
       xl: "right",
       lg: "right",
@@ -256,7 +254,7 @@ const communicateStyles = {
   imageContainer: {
     position: "relative",
     top: { xs: "100px", sm: "65px", md: "65px", lg: "65px", xl: "65px" },
-    left: { xs: "10px", sm: "70px", md: "70px", lg: "70px", xl: "270px" },
+    left: { xs: "10px", sm: "30px", md: "70px", lg: "70px", xl: "270px" },
   },
   image: {
     width: { xl: "818px", lg: "818px", md: "474px", sm: "474px", xs: "364px" },
@@ -291,6 +289,7 @@ const collaborateStyles = {
     marginLeft: { xl: 2, lg: 0, sm: 3, xs: "20px" },
   },
   sectionDescription: {
+    width: { xs: "85%", xl: "36%", lg: "47%", md: "40%", sm: "25%" },
     paddingLeft: { xl: 34, lg: 10, md: 10, sm: 3, xs: 2.5 },
     paddingTop: { xl: "52px", xs: "35px" },
     fontFamily: "Inter",

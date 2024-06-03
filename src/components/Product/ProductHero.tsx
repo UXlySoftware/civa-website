@@ -19,7 +19,11 @@ const HeroSection = () => {
           <Typography variant="h5" component="p" sx={styles.subHeading}>
             Empower your community through <br /> engagement and insights.
           </Typography>
-          <Box sx={{ width: "50%" }}>
+          <Box
+            sx={{
+              width: { xl: "50%", lg: "50%", md: "50%", sm: "50%", xs: "100%" },
+            }}
+          >
             <GetDemoButton />
           </Box>
         </Box>

@@ -13,7 +13,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-black.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {

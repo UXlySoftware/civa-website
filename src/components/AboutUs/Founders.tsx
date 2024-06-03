@@ -20,8 +20,8 @@ const Founders = () => {
         backgroundColor: "#374957",
         minHeight: {
           xl: "100vh",
-          lg: "100vh",
-          md: "100vh",
+          lg: "110vh",
+          md: "110vh",
           sm: "115vh",
           xs: "115vh",
         },
@@ -29,7 +29,7 @@ const Founders = () => {
           xl: 100,
           lg: 120,
           md: 20,
-          sm: 40,
+          sm: 25,
           xs: 105,
         },
         border: "1px solid #374957",
@@ -192,12 +192,13 @@ const Founders = () => {
 
 const styles = {
   founderTitleBox: {
+    border: "1px solid red",
     borderBottom: "16px solid #FFC000",
     width: {
       xl: "519px",
       lg: "519px",
       md: "571px",
-      sm: "290px",
+      sm: "420px",
       xs: "340px",
     },
     margin: {

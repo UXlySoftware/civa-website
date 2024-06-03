@@ -207,7 +207,7 @@ const CivaStandsAlone = () => {
             xl: "-260px",
             lg: "-260px",
             md: "-100px",
-            sm: "0px",
+            sm: "-150px",
             xs: "-50px",
           },
         }}
