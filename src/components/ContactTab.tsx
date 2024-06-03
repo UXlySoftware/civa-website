@@ -371,6 +371,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     boxSizing: "border-box",
+    cursor: "pointer",
   },
   selectedTabBoxDemo: {
     flex: 1,
@@ -382,6 +383,7 @@ const styles = {
     borderTopRightRadius: "12px",
     borderTopLeftRadius: "12px",
     boxSizing: "border-box",
+    cursor: "pointer",
   },
   selectedTabBoxSupport: {
     flex: 1,
@@ -393,6 +395,7 @@ const styles = {
     borderTopRightRadius: "12px",
     borderTopLeftRadius: "12px",
     boxSizing: "border-box",
+    cursor: "pointer",
   },
   tab: {
     fontFamily: "Inter",
