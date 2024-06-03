@@ -79,7 +79,7 @@ const Founders = () => {
                 "10+ Years of Experience in Politics & Government",
                 "U.S. Congressional Staffer",
                 "Lead Allocation of $139M in Federal Funding",
-                "M.S. Public Policy c/o '24",
+                "M.S. Public Policy",
               ].map((text, index) => (
                 <ListItem key={index} disableGutters>
                   <ListItemIcon sx={styles.listItemIcon}>

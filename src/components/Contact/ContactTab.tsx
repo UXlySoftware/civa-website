@@ -347,12 +347,19 @@ const styles = {
     top: "0px",
     display: "flex",
     flexDirection: "column",
-    // width: { xl: "784px", lg: "784px", md: "702px", sm: "570px", xs: "370px" },
-    marginLeft: { xl: "0px", lg: "0px", md: "271px", sm: "210px", xs: "-15px" },
+    // width: { xl: "784px", lg:s"784px", md: "702px", sm: "570px", xs: "370px" },
+    marginLeft: {
+      xl: "0px",
+      lg: "0px",
+      md: "271px",
+      sm: "210px",
+      xs: "-15px",
+    },
     marginBottom: "-184px",
     minHeight: "auto",
     boxSizing: "border-box",
     zIndex: 1,
+    marginRight: { xl: "175px", lg: "0px", md: "0px", sm: "0px", xs: "0px" },
   },
   tabs: {
     display: "flex",
@@ -493,7 +500,7 @@ const styles = {
     borderRadius: "12px",
     textTransform: "none",
     "&:hover": {
-      backgroundColor: "#e8ae00",
+      backgroundColor: "#333",
     },
   },
   label: {
