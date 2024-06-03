@@ -69,7 +69,17 @@ const Founders = () => {
                 As a leader, he is deeply committed to innovation and using
                 technology to spur social change.
               </Typography>
+              {/* <hr style={{ height: "5px", visibility: "hidden" }} /> */}
             </Box>
+            <Box
+              sx={{
+                ...styles.divider,
+                marginTop: 3,
+                width: "50%",
+                // margin: "auto",
+                background: "#2E86AB",
+              }}
+            />
             <Typography variant="body1" sx={styles.listSubheading}>
               Ackeem’s experience in this arena includes:
             </Typography>
@@ -127,8 +137,19 @@ const Founders = () => {
                 the operational strategies that drive CIVA’s mission forward.{" "}
               </Typography>
             </Box>
+
             <Typography variant="body1" sx={styles.listSubheading}>
-              <br />
+              {/* <br /> */}
+              {/* <hr style={{ height: "5px", visibility: "hidden" }} /> */}
+              <Box
+                sx={{
+                  ...styles.divider,
+                  marginTop: 3,
+                  width: "50%",
+                  // margin: "auto",
+                  background: "#2E86AB",
+                }}
+              />{" "}
               <br />
               Jermaine’s experience bringing organizations and communities
               together includes:

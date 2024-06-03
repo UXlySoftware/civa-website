@@ -3,7 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 
 import Government from "../assets/Government.svg";
 import Community from "../assets/Community.svg";
-import eclipse from "../assets/eclipse.png";
+import eClipse from "../assets/eClipse.svg";
 import social from "../assets/social.png";
 import socialMobile from "../assets/socialMobile.png";
 import plusIcon from "../assets/plus.png";
@@ -117,7 +117,7 @@ const FourthSection = () => {
         >
           <Box
             component="img"
-            src={eclipse}
+            src={eClipse}
             alt="Eclipse"
             width={{ xl: 395, md: 345, xs: 250 }}
             sx={{ maxWidth: "100%", maxHeight: "100%" }}

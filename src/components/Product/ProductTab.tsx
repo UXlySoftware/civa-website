@@ -317,6 +317,7 @@ const styles = {
     fontFamily: "Inter",
     fontWeight: 900,
     fontSize: { xl: "24px", lg: "24px", md: "24px", sm: "24px", xs: "12px" },
+    lineHeight: { xl: "29px", lg: "29px", md: "29px", sm: "29px", xs: "19px" },
   },
   container: {
     marginTop: {
@@ -339,10 +340,12 @@ const styles = {
     fontSize: { xl: "24px", lg: "24px", md: "24px", sm: "24px", xs: "12px" },
     position: "relative",
     width: { xl: "80%", lg: "80%", md: "80%", sm: "80%" },
+    lineHeight: { xl: "29px", lg: "29px", md: "29px", sm: "29px", xs: "19px" },
+
     "&::after": {
       content: '""',
       position: "absolute",
-      bottom: -10,
+      bottom: -20,
       left: 0,
       right: 0,
       height: "7px",
