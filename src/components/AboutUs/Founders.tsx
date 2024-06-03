@@ -18,8 +18,20 @@ const Founders = () => {
     <Box
       sx={{
         backgroundColor: "#374957",
-        minHeight: "100vh",
-        paddingBottom: { xl: 100, lg: 120, md: 20, sm: 40, xs: 105 },
+        minHeight: {
+          xl: "100vh",
+          lg: "100vh",
+          md: "100vh",
+          sm: "115vh",
+          xs: "115vh",
+        },
+        paddingBottom: {
+          xl: 100,
+          lg: 120,
+          md: 20,
+          sm: 40,
+          xs: 105,
+        },
         border: "1px solid #374957",
       }}
     >
@@ -158,82 +170,6 @@ const Founders = () => {
 };
 
 const styles = {
-  missionAndBiosContainer: {
-    mt: { xl: 10, lg: 10, md: 7, xs: 75 },
-    px: 2,
-    height: {
-      xl: "468vh",
-      lg: "525vh",
-      md: "250vh",
-      sm: "175vh",
-      xs: "625vh",
-    },
-    marginBottom: {
-      xl: "-65%",
-      lg: "-85%",
-      md: "-95%",
-      sm: "0%",
-      xs: "-395%",
-    },
-    backgroundColor: "#374957",
-    paddingTop: "6px",
-  },
-  missionTitleBox: {
-    borderBottom: "16px solid #FFC000",
-    width: {
-      xl: "500px",
-      lg: "500px",
-      md: "500px",
-      sm: "300px",
-      xs: "300px",
-    },
-    margin: {
-      xl: "0 auto 109px auto",
-      lg: "0 auto 109px auto",
-      md: "0 auto 49px auto",
-      sm: "0 auto 45px auto",
-      xs: "0 auto 45px auto",
-    },
-    textAlign: "center",
-  },
-  missionTitle: {
-    marginTop: 9,
-    fontFamily: "Public Sans",
-    fontWeight: 900,
-    fontSize: {
-      xl: "52px",
-      lg: "52px",
-      md: "42px",
-      sm: "28px",
-      xs: "28px",
-    },
-    lineHeight: {
-      xl: "58px",
-      lg: "58px",
-      md: "46px",
-      sm: "36px",
-      xs: "36px",
-    },
-    color: "#fff",
-    marginBottom: 1,
-  },
-  missionContentBox: {
-    position: "relative",
-    textAlign: "center",
-  },
-  missionImage: {
-    width: "100%",
-    maxWidth: {
-      xl: "1209px",
-      lg: "1209px",
-      md: "736px",
-      sm: "640px",
-      xs: "340px",
-    },
-    mt: "25px",
-    zIndex: 2,
-    position: "relative",
-  },
   founderTitleBox: {
     borderBottom: "16px solid #FFC000",
     width: {

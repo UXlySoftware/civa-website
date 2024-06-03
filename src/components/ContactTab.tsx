@@ -35,6 +35,7 @@ const ContactTab = () => {
     phone: "",
     notes: "",
     // subscribe: false,
+    createdAt: new Date(),
   });
 
   const handleChange = (newValue: string) => {
@@ -60,8 +61,26 @@ const ContactTab = () => {
       return;
     }
 
+    // email check regex
+    const emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailCheck.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // phone number check regex 1231231234
+    const phoneCheck = /^\+?\d{1,3}?\s?\d{3}?\s?\d{3}?\s?\d{4}$/;
+    if (!phoneCheck.test(phone)) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
+
     try {
-      const docRef = await addDoc(collection(db, "contact-us"), formData);
+      formData.createdAt = new Date();
+      const docRef = await addDoc(
+        collection(db, tabValue === "1" ? "request-a-demo" : "get-support"),
+        formData
+      );
       console.log("Document written with ID: ", docRef.id);
       alert("Form submitted successfully!");
     } catch (error) {
@@ -352,6 +371,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     boxSizing: "border-box",
+    cursor: "pointer",
   },
   selectedTabBoxDemo: {
     flex: 1,
@@ -363,6 +383,7 @@ const styles = {
     borderTopRightRadius: "12px",
     borderTopLeftRadius: "12px",
     boxSizing: "border-box",
+    cursor: "pointer",
   },
   selectedTabBoxSupport: {
     flex: 1,
@@ -374,6 +395,7 @@ const styles = {
     borderTopRightRadius: "12px",
     borderTopLeftRadius: "12px",
     boxSizing: "border-box",
+    cursor: "pointer",
   },
   tab: {
     fontFamily: "Inter",
