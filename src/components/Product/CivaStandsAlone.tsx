@@ -51,11 +51,11 @@ const CivaStandsAlone = () => {
           sx={{
             ...styles.divider,
             width: {
-              xs: "290px !important",
-              sm: "700px !important",
+              xs: "320px !important",
+              sm: "680px !important",
               md: "900px !important",
-              lg: "1160px !important",
-              xl: "1160px !important",
+              lg: "1210px !important",
+              xl: "1210px !important",
             },
             height: "10px !important",
           }}
@@ -71,7 +71,13 @@ const CivaStandsAlone = () => {
           <Grid item xs={12} sm={6} marginTop="10px">
             <List
               sx={{
-                marginLeft: "35px",
+                marginLeft: {
+                  xl: "35px",
+                  lg: "35px",
+                  md: "35px",
+                  sm: "35px",
+                  xs: "15px",
+                },
                 width: {
                   xl: "100%",
                   lg: "100%",
@@ -93,7 +99,6 @@ const CivaStandsAlone = () => {
                         sm: "16px",
                         xs: "13px",
                       },
-
                       fontFamily: "Inter",
                       fontWeight: 600,
                       marginTop: "12px",
@@ -294,11 +299,11 @@ const styles = {
   featureHeader: {
     width: { xl: "100%", xs: "75%" },
     padding: {
-      xl: "30px 60px",
-      lg: "30px 60px",
-      md: "30px 60px",
-      sm: "30px 60px",
-      xs: "30px 30px 12px 30px",
+      xl: "30px 40px",
+      lg: "30px 40px",
+      md: "30px 40px",
+      sm: "30px 40px",
+      xs: "30px 30px 12px 15px",
     },
     lineHeight: { xl: "30px", lg: "36px", xs: "22px" },
     fontFamily: "Public Sans",
@@ -307,6 +312,7 @@ const styles = {
   },
   listItem: {
     borderBottom: "1px solid #FFFFFF",
+
     width: {
       xs: "100%",
       sm: "100%",
