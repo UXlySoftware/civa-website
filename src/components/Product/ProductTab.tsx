@@ -448,7 +448,7 @@ const styles = {
   },
   itemID: {
     fontFamily: "Public Sans",
-    width: { xl: "60px", lg: "60px", md: "30px", sm: "40px", xs: "30px" },
+    width: { xl: "60px", lg: "60px", md: "30px", sm: "30px", xs: "30px" },
     fontWeight: 700,
     fontSize: {
       xl: "64px",

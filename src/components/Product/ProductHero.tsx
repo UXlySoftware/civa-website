@@ -39,7 +39,6 @@ const styles = {
     zIndex: -1,
   },
   heroBox: {
-    // position: "relative",
     display: "flex",
     justifyContent: "left",
     alignItems: "center",
@@ -67,10 +66,9 @@ const styles = {
     },
   },
   innerLeft: {
-    marginTop: { xs: "-60px", sm: 0, md: 0, lg: 0, xl: 0 },
-    width: { xl: "100%", g: "100%", md: "75%", sm: "100%" },
+    marginTop: { xs: "-60px", sm: 0, md: -10, lg: 0, xl: 0 },
+    width: { xl: "100%", lg: "100%", md: "100%", sm: "100%" },
     alignItems: "left",
-    // marginLeft: { xl: "50px", lg: "0px", md: "0px", sm: "0px", xs: "32px" },
   },
 
   sideBorder: {
@@ -83,7 +81,6 @@ const styles = {
         md: "0px",
         xs: "0px",
       },
-
       height: {
         xl: "428px",
         lg: "478px",
@@ -91,7 +88,7 @@ const styles = {
         sm: "320px",
         xs: "300px",
       },
-      marginTop: { xl: "8px", sm: 0, xs: "-65px" },
+      marginTop: { xl: "8px", lg: "0px", md: -10, sm: 0, xs: "-65px" },
       width: "16px",
       backgroundColor: "#FFC000",
     },
@@ -107,12 +104,8 @@ const styles = {
       lg: "72px",
       xl: "72px",
     },
-
-    // maxWidth: "100%",
     letterSpacing: "-0.02em",
     marginBottom: 4,
-    // marginTop: { xs: 0, sm: 2, md: 5, lg: 0, xl: 0 },
-    // marginLeft: { xs: 4, md: 0 },
   },
   subHeading: {
     lineHeight: {
@@ -127,7 +120,6 @@ const styles = {
     color: "#fff",
     marginBottom: { xl: 4, lg: 4, md: 4, sm: 4, xs: 3 },
 
-    // marginLeft: { xs: 4, md: 0 },
     fontSize: {
       xs: "16px",
       sm: "16px",

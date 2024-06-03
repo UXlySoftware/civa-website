@@ -33,11 +33,13 @@ const ProductLayers = () => {
               </Typography>
             </Box>
             <Typography sx={connectStyles.sectionDescription}>
-              CIVA connects organizations <br />
+              {/* CIVA connects organizations <br />
               and community members, <br />
               and provides up-to-date <br />
               information on relevant <br />
-              government resources.
+              government resources. */}
+              CIVA connects organizations and community members, and provides
+              up-to-date information on relevant government resources.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={6} sx={connectStyles.imageContainer}>
@@ -169,6 +171,7 @@ const connectStyles = {
     marginLeft: { xl: 2, lg: 0, sm: 3, xs: "20px" },
   },
   sectionDescription: {
+    width: { xs: "80%", xl: "36%", lg: "50%", md: "40%", sm: "50%" },
     paddingLeft: { xl: 37, lg: 13, md: 16, sm: 3, xs: 3 },
     paddingTop: { xl: "52px", xs: "30px" },
     fontFamily: "Inter",

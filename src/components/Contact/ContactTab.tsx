@@ -9,7 +9,7 @@ import {
   Checkbox,
 } from "@mui/material";
 import { TabContext, TabPanel } from "@mui/lab";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 // Properties for the FormField
@@ -493,7 +493,7 @@ const styles = {
     borderRadius: "12px",
     textTransform: "none",
     "&:hover": {
-      backgroundColor: "#E8AE00",
+      backgroundColor: "#e8ae00",
     },
   },
   label: {

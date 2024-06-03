@@ -11,7 +11,7 @@ import facebookIcon from "../assets/socialmedia/facebook.svg";
 import instagramIcon from "../assets/socialmedia/instagram.svg";
 import linkedinIcon from "../assets/socialmedia/linkedin.svg";
 import youtubeIcon from "../assets/socialmedia/youtube.svg";
-import XIcon from "@mui/icons-material/X";
+import Xicon from "../assets/socialmedia/Xicon.svg";
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -47,15 +47,12 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* <Box
+                <Box
                   component="img"
-                  src={twitterIcon}
+                  src={Xicon}
                   alt="Twitter"
                   sx={styles.socialIcon}
-                /> */}
-                <Box sx={{ color: "#FFC000", borderRadius: "12px", mt: "2px" }}>
-                  <XIcon />
-                </Box>{" "}
+                />
               </a>
               <a
                 href="https://www.instagram.com/civa.app/"

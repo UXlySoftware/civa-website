@@ -57,7 +57,7 @@ const HowItWorks = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/contact");
+    navigate("/product");
   };
   const listItems = [
     <>

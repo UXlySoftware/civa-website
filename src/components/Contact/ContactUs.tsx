@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import contactBg from "../assets/contactBg.png";
-import ContactTab from "../components/ContactTab";
+import contactBg from "../../assets/contactBg.png";
+import ContactTab from "../Contact/ContactTab";
 
 const ContactUs = () => {
   return (

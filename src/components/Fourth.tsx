@@ -177,12 +177,10 @@ const FourthSection = () => {
 
 const styles = {
   wrapper: {
-    // padding: 8,
     marginTop: 15,
     display: "flex",
     justifyContent: "center",
-    Width: "100vw",
-    marginBottom: { xl: 45, lg: 45, md: 45, sm: 20, xs: 0 },
+    marginBottom: { xl: 45, lg: 45, md: 45, sm: 45, xs: 35 },
   },
 
   outerContainer: {
@@ -273,13 +271,14 @@ const styles = {
   },
   backgroundSection: {
     width: "100vw",
-    minHeight: {
-      xl: "190vh",
-      lg: "220vh",
-      md: "110vh",
-      sm: "110vh",
-      xs: "190vh",
-    },
+    // minHeight: {
+    //   xl: "190vh",
+    //   lg: "220vh",
+    //   md: "110vh",
+    //   sm: "110vh",
+    //   xs: "190vh",
+    // },
+    height: "100%",
     background: "#374957",
   },
   shortenedPlatformSection: {

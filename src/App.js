@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ContactUs from "./components/ContactUs";
+import ContactUs from "./components/Contact/ContactUs";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ProductPage from "./components/Product/ProductPage";
 

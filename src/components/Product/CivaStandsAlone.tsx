@@ -52,8 +52,8 @@ const CivaStandsAlone = () => {
             ...styles.divider,
             width: {
               xs: "290px !important",
-              sm: "379px",
-              md: "870px !important",
+              sm: "700px !important",
+              md: "900px !important",
               lg: "1160px !important",
               xl: "1160px !important",
             },
@@ -63,19 +63,20 @@ const CivaStandsAlone = () => {
         <Grid
           container
           sx={{
-            width: "92%",
+            // width: "95%",
             // margin: "0 auto 40px auto",
+            padding: "0px 0px 30px 0px",
           }}
         >
           <Grid item xs={12} sm={6} marginTop="10px">
             <List
               sx={{
-                marginLeft: "15px",
+                marginLeft: "35px",
                 width: {
                   xl: "100%",
                   lg: "100%",
                   md: "100%",
-                  sm: "100%",
+                  sm: "90%",
                   xs: "90%",
                 },
               }}
@@ -88,10 +89,11 @@ const CivaStandsAlone = () => {
                       fontSize: {
                         xl: "19px",
                         lg: "19px",
-                        md: "19px",
-                        sm: "19px",
+                        md: "16px",
+                        sm: "16px",
                         xs: "13px",
                       },
+
                       fontFamily: "Inter",
                       fontWeight: 600,
                       marginTop: "12px",
@@ -104,21 +106,15 @@ const CivaStandsAlone = () => {
               ))}
             </List>
           </Grid>
-          <Grid item xs={12} sm={6} marginTop="22px">
+          <Grid item xs={12} sm={6} marginTop="10px">
             <List
               sx={{
-                marginLeft: {
-                  xl: "45px",
-                  lg: "45px",
-                  md: "45px",
-                  sm: "45px",
-                  xs: "13px",
-                },
+                marginLeft: "15px",
                 width: {
                   xl: "100%",
                   lg: "100%",
                   md: "100%",
-                  sm: "100%",
+                  sm: "90%",
                   xs: "90%",
                 },
               }}
@@ -131,13 +127,14 @@ const CivaStandsAlone = () => {
                       fontSize: {
                         xl: "19px",
                         lg: "19px",
-                        md: "19px",
-                        sm: "19px",
+                        md: "16px",
+                        sm: "16px",
                         xs: "13px",
                       },
+
                       fontFamily: "Inter",
                       fontWeight: 600,
-                      marginBottom: "7px",
+                      marginTop: "12px",
                     }}
                   />
                   <ListItemIcon sx={styles.checkIconContainer}>
@@ -243,7 +240,6 @@ const styles = {
     marginBottom: "12px",
   },
   divider: {
-    textAlign: "center",
     marginBottom: { xl: "0px" },
     width: {
       xs: "349px",
@@ -260,7 +256,7 @@ const styles = {
     backgroundColor: "#2E86AB",
     width: {
       xs: "226px",
-      sm: "45%",
+      sm: "329px",
       md: "329px",
       lg: "429px",
       xl: "439px",
@@ -271,12 +267,12 @@ const styles = {
     zIndex: 1,
     right: {
       xs: "5px",
-      sm: "20px",
+      sm: "10px",
       md: "10px",
       lg: "35px",
       xl: "270px",
     },
-    marginTop: { xl: "55px", lg: "85px", md: "60px", xs: "40px" },
+    marginTop: { xl: "55px", lg: "85px", md: "60px", sm: "60px", xs: "40px" },
   },
   featureBox: {
     margin: "0 auto 40px auto",
@@ -284,10 +280,10 @@ const styles = {
       xl: "1283px",
       lg: "1283px",
       md: "970px",
-      sm: "736px",
+      sm: "756px",
       xs: "349px",
     },
-    height: { xl: "530px", lg: "530px", md: "490px", sm: "490px", xs: "auto" },
+    // height: { xl: "530px", lg: "530px", md: "490px", sm: "490px", xs: "auto" },
     backgroundColor: "#000000",
     color: "#FFFFFF",
     borderRadius: "5px",

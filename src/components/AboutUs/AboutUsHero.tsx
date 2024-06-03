@@ -39,7 +39,7 @@ const AboutUsHero = () => {
               lg: "55px",
               md: "100px",
               sm: "100px",
-              xs: "55px",
+              xs: "30px",
             },
             marginTop: "20px",
           }}

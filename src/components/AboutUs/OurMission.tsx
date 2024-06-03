@@ -77,7 +77,7 @@ const styles = {
     textAlign: "center",
   },
   missionTitle: {
-    marginTop: 9,
+    marginTop: { xl: 9, lg: 9, md: 9, sm: 9, xs: 6 },
     fontFamily: "Public Sans",
     fontWeight: 900,
     fontSize: {
