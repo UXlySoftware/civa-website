@@ -192,7 +192,6 @@ const Founders = () => {
 
 const styles = {
   founderTitleBox: {
-    border: "1px solid red",
     borderBottom: "16px solid #FFC000",
     width: {
       xl: "519px",
