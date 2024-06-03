@@ -66,13 +66,15 @@ const HowItWorks = () => {
       members join CIVA.
     </>,
     <>
-      Organization and community members <br /> discover government resources.
+      Community members and organizations
+      <br /> discover government resources.
     </>,
     <>
       Organizations and communities <br /> find each other.
     </>,
     <>
-      Organizations and community members <br />
+      Community members and organizations
+      <br />
       communicate and collaborate through CIVA.
     </>,
     <>
@@ -223,7 +225,7 @@ const styles = {
   listText: {
     fontFamily: "Inter",
     fontSize: { xl: "23px", lg: "23px", md: "19px", sm: "20px", xs: "20px" },
-    lineHeight: "24.2px",
+    lineHeight: "28.2px",
     fontWeight: 700,
   },
   button: {

@@ -156,7 +156,13 @@ const CivaStandsAlone = () => {
         <Typography sx={styles.bottomText}>
           <Typography
             sx={{
-              fontSize: { xl: "28px", lg: "28px", xs: "20px" },
+              fontSize: {
+                xl: "28px",
+                lg: "28px",
+                sm: "22px",
+                md: "22px",
+                xs: "20px",
+              },
               fontWeight: 900,
               display: "inline",
               fontFamily: "Public Sans",
@@ -178,7 +184,13 @@ const CivaStandsAlone = () => {
           <Typography
             sx={{
               fontWeight: 900,
-              fontSize: { xs: "20px", sm: "28px" },
+              fontSize: {
+                xs: "20px",
+                sm: "22px",
+                md: "22px",
+                lg: "28px",
+                xl: "28px",
+              },
               display: "inline",
               fontFamily: "Public Sans",
             }}
