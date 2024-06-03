@@ -60,6 +60,20 @@ const ContactTab = () => {
       return;
     }
 
+    // email check regex
+    const emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailCheck.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // phone number check regex 1231231234
+    const phoneCheck = /^\+?\d{1,3}?\s?\d{3}?\s?\d{3}?\s?\d{4}$/;
+    if (!phoneCheck.test(phone)) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
+
     try {
       const docRef = await addDoc(collection(db, "contact-us"), formData);
       console.log("Document written with ID: ", docRef.id);
