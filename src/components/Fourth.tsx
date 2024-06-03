@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import DragHandleIcon from "@mui/icons-material/DragHandle";
+
 import Government from "../assets/Government.svg";
 import Community from "../assets/Community.svg";
 import eclipse from "../assets/eclipse.png";

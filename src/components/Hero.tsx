@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import mobileApp from "../assets/mobileApp.png";
 import backgroundVideo from "../assets/backgroundVideo.mp4";
 import GetDemoButton from "../components/GetDemoButton";

@@ -217,6 +217,11 @@ const ContactTab = () => {
                     control={
                       <Checkbox
                         color="primary"
+                        sx={{
+                          "&.Mui-checked": {
+                            color: "#000",
+                          },
+                        }}
                         // checked={formData.subscribe}
                         // onChange={handleCheckboxChange}
                       />
@@ -287,6 +292,11 @@ const ContactTab = () => {
                         color="primary"
                         // checked={formData.subscribe}
                         // onChange={handleCheckboxChange}
+                        sx={{
+                          "&.Mui-checked": {
+                            color: "#000",
+                          },
+                        }}
                       />
                     }
                     label="Sign up for news & updates"
@@ -314,11 +324,11 @@ const ContactTab = () => {
 
 const styles = {
   rightSide: {
-    position: "relative",
+    // position: "relative",
     top: "0px",
     display: "flex",
     flexDirection: "column",
-    width: { xl: "784px", lg: "784px", md: "702px", sm: "570px", xs: "370px" },
+    // width: { xl: "784px", lg: "784px", md: "702px", sm: "570px", xs: "370px" },
     marginLeft: { xl: "0px", lg: "0px", md: "271px", sm: "210px", xs: "-15px" },
     marginBottom: "-184px",
     minHeight: "auto",
@@ -331,7 +341,7 @@ const styles = {
     alignItems: "flex-end",
     justifyContent: "space-between",
     maxWidth: "100%",
-    width: { xl: "784px", lg: "784px", md: "702px", sm: "570px", xs: "370px" },
+    width: { xl: "784px", lg: "644px", md: "702px", sm: "570px", xs: "370px" },
   },
   tabBox: {
     flex: 1,
@@ -374,7 +384,7 @@ const styles = {
   selectedTab: {
     fontFamily: "Inter",
     fontWeight: 900,
-    fontSize: { xl: "36px", lg: "36px", md: "32px", sm: "19px", xs: "19px" },
+    fontSize: { xl: "36px", lg: "34px", md: "32px", sm: "19px", xs: "19px" },
     color: "#000000 !important",
     borderBottom: {
       xl: "7px solid black",
@@ -388,7 +398,7 @@ const styles = {
     backgroundColor: "#FFCC33",
   },
   formBox: {
-    width: { xl: "784px", lg: "784px", md: "702px", sm: "570px", xs: "370px" },
+    width: { xl: "784px", lg: "644px", md: "702px", sm: "570px", xs: "370px" },
     maxWidth: { xl: "100%", lg: "100%", md: "100%", sm: "100%", xs: "100%" },
     height: "auto",
     borderBottomLeftRadius: "12px",

@@ -5,10 +5,8 @@ import HowItWorks from "./HowItWorks";
 import JoinCommunity from "./JoinCommunity";
 import Partners from "./Partners";
 import Second from "./Second";
-import Third from "./Third";
 import Fourth from "./Fourth";
 import ThirdSection from "./Third";
-import Footer from "./Footer";
 
 const HomePage = () => {
   return (

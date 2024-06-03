@@ -102,10 +102,17 @@ const ProductTab = () => {
 
   return (
     <Box sx={styles.container}>
-      <Tabs value={value} onChange={handleChange} sx={styles.tabs}>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        sx={styles.tabs}
+        variant="fullWidth"
+      >
         <Tab
           label={
-            <Typography sx={styles.tabText}>
+            <Typography
+              sx={value === "1" ? styles.selectedTabText : styles.tabText}
+            >
               AFFINITY <br /> ORGANIZATIONS
             </Typography>
           }
@@ -118,7 +125,9 @@ const ProductTab = () => {
         />
         <Tab
           label={
-            <Typography sx={styles.tabText}>
+            <Typography
+              sx={value === "2" ? styles.selectedTabText : styles.tabText}
+            >
               COMMUNITY
               <br />
               ASSOCIATIONS
@@ -132,7 +141,14 @@ const ProductTab = () => {
           }}
         />
         <Tab
-          label="INDIVIDUALS"
+          // label="INDIVIDUALS"
+          label={
+            <Typography
+              sx={value === "3" ? styles.selectedTabText : styles.tabText}
+            >
+              INDIVIDUALS
+            </Typography>
+          }
           value="3"
           sx={{
             ...styles.tab,
@@ -297,7 +313,6 @@ const ProductTab = () => {
 
 const styles = {
   tabText: {
-    // whiteSpace: "pre-wrap",
     textAlign: "center",
     fontFamily: "Inter",
     fontWeight: 900,
@@ -317,11 +332,26 @@ const styles = {
     justifyContent: "center",
     marginBottom: { xl: 45, lg: 45, md: 25, sm: 20, xs: 25 },
   },
+  selectedTabText: {
+    textAlign: "center",
+    fontFamily: "Inter",
+    fontWeight: 900,
+    fontSize: { xl: "24px", lg: "24px", md: "24px", sm: "24px", xs: "12px" },
+    position: "relative",
+    width: { xl: "80%", lg: "80%", md: "80%", sm: "80%" },
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: -10,
+      left: 0,
+      right: 0,
+      height: "7px",
+      backgroundColor: "black",
+    },
+  },
   tabs: {
     display: "flex",
-    // flexDirection: "row/,
     alignItems: "flex-end",
-    // justifyContent: "space-between",
     width: {
       xl: "1296px",
       lg: "1296px",
@@ -329,12 +359,12 @@ const styles = {
       sm: "786px",
       xs: "380px",
     },
+    maxWidth: { xl: "100%", lg: "100%", md: "100%", sm: "100%", xs: "100%" },
     ".MuiTabs-flexContainer": {
       alignItems: "end",
     },
     ".MuiTabs-indicator": {
-      borderBottom: "none",
-      zIndex: -1,
+      display: "none",
     },
   },
   formBox: {
@@ -353,19 +383,14 @@ const styles = {
     boxSizing: "border-box",
   },
   formContainer: {
-    // width: "100%",
     boxSizing: "border-box",
     marginTop: "10px",
     padding: { xl: "20px", lg: "20px", md: "20px", sm: "0px", xs: "4px" },
   },
   tab: {
-    minWidth: {
-      xl: "433px",
-      lg: "433px",
-      md: "325px",
-      sm: "262px",
-      xs: "123px",
-    },
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: "1",
     height: { xl: "80px", lg: "80px", md: "70px", sm: "60px", xs: "60px" },
     color: "black",
     display: "flex",
@@ -376,23 +401,20 @@ const styles = {
   },
   tab1: {
     height: { xl: "110px", lg: "110px", md: "94px", sm: "94px", xs: "74px" },
-    width: { xs: "140px" },
     background: "#FFE28A",
   },
   tab2: {
-    width: { xs: "110px" },
     height: { xl: "94px", lg: "94px", md: "80px", sm: "94px", xs: "64px" },
     background: "#BFD9E5",
   },
   tab3: {
-    width: { xs: "100px" },
     height: { xl: "64px", lg: "64px", md: "68px", sm: "74px", xs: "54px" },
     background: "#A3ABB2",
   },
   selectedTab: {
     height: { xl: "115px", lg: "115px", md: "115px", sm: "115px", xs: "74px" },
     background: "#FFFFFF !important",
-    borderBottom: "7px solid black",
+    borderBottom: "none",
     minHeight: "94px",
     display: "flex",
     color: "#000 !important",

@@ -14,10 +14,12 @@ const MissionAndBios = () => {
           OUR MISSION{" "}
         </Typography>
       </Box>
+
       <Box sx={styles.missionContentBox}>
-        <Box sx={styles.topRightRectangle} />
-        <Box sx={styles.bottomLeftRectangle}>
-          <Box sx={styles.textBox}>
+        <Box sx={styles.relativeContainer}>
+          <Box sx={styles.topRightRectangle} />
+          <Box sx={styles.bottomLeftRectangle}>
+            {/* <Box sx={styles.textBox}> */}
             <Typography variant="body1" sx={styles.text}>
               To connect and empower organizations, communities, and individuals
               to take informed action, access funding, and{" "}
@@ -25,6 +27,7 @@ const MissionAndBios = () => {
                 create sustainable social impact.
               </Typography>
             </Typography>
+            {/* </Box> */}
           </Box>
         </Box>
         <Box
@@ -96,6 +99,16 @@ const styles = {
   },
   missionContentBox: {
     position: "relative",
+    width: "100%",
+    maxWidth: {
+      xl: "1209px",
+      lg: "1209px",
+      md: "736px",
+      sm: "640px",
+      xs: "340px",
+    },
+    margin: "0 auto",
+    // position: "relative",
     textAlign: "center",
     minHeight: "100%", // Ensure it expands with content
     display: "flex",
@@ -118,52 +131,60 @@ const styles = {
   topRightRectangle: {
     position: "absolute",
     zIndex: 1,
-    top: { xl: "-30px", lg: "-47px", md: "0px" },
-    right: { xl: "293px", lg: "55px", md: "100px", sm: "45px", xs: "-8px" },
+    top: { xl: "-20px", lg: "-17px", md: "-5px", sm: "-5px" },
+    right: { xl: "-40px", lg: "-40px", md: "-34px", sm: "-34px", xs: "-20px" },
     width: { xl: "613px", lg: "613px", md: "269px", sm: "269px", xs: "226px" },
-    height: { xl: "318px", lg: "318px", md: "185px", sm: "185px", xs: "185px" },
+    height: { xl: "318px", lg: "318px", md: "205px", sm: "190px", xs: "145px" },
     backgroundColor: "#2E86AB",
   },
   bottomLeftRectangle: {
     position: "absolute",
-    top: { xl: "190px", lg: "350px", md: "230px", sm: "130px", xs: "205px" },
+    top: { xl: "240px", lg: "240px", md: "150px", sm: "150px", xs: "225px" },
     right: {
-      xl: "595px",
-      lg: "350px",
-      md: "240px",
-      sm: "140px",
-      xs: "-5px",
+      xl: "255px",
+      lg: "240px",
+      md: "150px",
+      sm: "50px",
+      xs: "-20px",
     },
     width: {
       xl: "1003px",
       lg: "1003px",
-      md: "662px",
-      sm: "602px",
-      xs: "370px",
+      md: "622px",
+      sm: "622px",
+      xs: "380px",
     },
-    height: { xl: "133px", lg: "133px", md: "150px", sm: "100px", xs: "40%" },
+    height: { xl: "200px", lg: "163px", md: "220px", sm: "180px", xs: "230px" },
     paddingTop: {
       xl: "386px",
-      lg: "220px",
+      lg: "386px",
       md: "150px",
-      sm: "205px",
-      xs: "76px",
+      sm: "150px",
+      xs: "50px",
     },
     backgroundColor: "#FFC000",
   },
-  textBox: {
-    paddingLeft: { xl: "48px", sm: "38px", xs: "22px" },
-    paddingBottom: { sm: "56px", xs: "25px" },
-    backgroundColor: "#FFC000",
-  },
+  // textBox: {
+  //   paddingLeft: { xl: "48px", sm: "38px", xs: "22px" },
+  //   paddingBottom: { sm: "56px", xs: "25px" },
+  //   backgroundColor: "#FFC000",
+  // },
   text: {
+    position: "absolute",
     fontFamily: "Inter",
     fontWeight: 400,
     fontSize: { xl: "32px", lg: "32px", md: "20px", sm: "20px", xs: "20px" },
     textAlign: "left",
     lineHeight: { xl: "41px", lg: "41px", xs: "28px" },
     color: "#000",
-    marginTop: "20px",
+    marginTop: {
+      xl: "-10px",
+      lg: "-20px",
+      md: "80px",
+      sm: "40px",
+      xs: "20px",
+    },
+    marginLeft: { xl: "50px", lg: "35px", md: "35px", sm: "35px", xs: "20px" },
   },
   spanBold: {
     fontFamily: "Public Sans",
@@ -177,6 +198,17 @@ const styles = {
     height: "16px",
     backgroundColor: "#FFC000",
     marginTop: "-5px",
+  },
+  relativeContainer: {
+    position: "relative",
+    width: "100%",
+    maxWidth: {
+      xl: "1209px",
+      lg: "1209px",
+      md: "736px",
+      sm: "640px",
+      xs: "340px",
+    },
   },
 };
 

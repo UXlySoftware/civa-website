@@ -45,25 +45,20 @@ const styles = {
       xs: "78px",
     },
     paddingLeft: {
-      xl: "311px",
+      xl: "291px",
       lg: "50px",
       md: "48px",
       sm: "42px",
       xs: "24px",
     },
-    gap: { xl: "65px", lg: "120px", md: "67px", xs: "64px" },
+    gap: { xl: "5px", lg: "0px", md: "67px", xs: "64px" },
     height: "auto",
     boxSizing: "border-box",
   },
   leftSide: {
+    display: "flex",
+    flexDirection: "column",
     width: "100%",
-    maxWidth: {
-      xl: "35%",
-      lg: "35%",
-      md: "100%",
-      sm: "100%",
-      xs: "100%",
-    },
   },
   sideBorder: {
     "&::before": {

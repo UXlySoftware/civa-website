@@ -28,7 +28,7 @@ const TeamSection = () => {
                 lg: "45px",
                 md: "107px",
                 sm: "10px",
-                xs: "105px",
+                xs: "6px",
               },
             }}
           />
