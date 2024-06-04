@@ -19,7 +19,6 @@ const MissionAndBios = () => {
         <Box sx={styles.relativeContainer}>
           <Box sx={styles.topRightRectangle} />
           <Box sx={styles.bottomLeftRectangle}>
-            {/* <Box sx={styles.textBox}> */}
             <Typography variant="body1" sx={styles.text}>
               To connect and empower organizations, communities, and individuals
               to take informed action, access funding, and{" "}
@@ -27,7 +26,6 @@ const MissionAndBios = () => {
                 create sustainable social impact.
               </Typography>
             </Typography>
-            {/* </Box> */}
           </Box>
         </Box>
         <Box
@@ -110,7 +108,7 @@ const styles = {
     margin: "0 auto",
     // position: "relative",
     textAlign: "center",
-    minHeight: "100%", // Ensure it expands with content
+    minHeight: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -164,11 +162,7 @@ const styles = {
     },
     backgroundColor: "#FFC000",
   },
-  // textBox: {
-  //   paddingLeft: { xl: "48px", sm: "38px", xs: "22px" },
-  //   paddingBottom: { sm: "56px", xs: "25px" },
-  //   backgroundColor: "#FFC000",
-  // },
+
   text: {
     position: "absolute",
     fontFamily: "Inter",

@@ -413,7 +413,7 @@ const styles = {
   selectedTab: {
     fontFamily: "Inter",
     fontWeight: 900,
-    fontSize: { xl: "36px", lg: "34px", md: "32px", sm: "19px", xs: "19px" },
+    fontSize: { xl: "34px", lg: "32px", md: "32px", sm: "19px", xs: "19px" },
     color: "#000000 !important",
     borderBottom: {
       xl: "7px solid black",
