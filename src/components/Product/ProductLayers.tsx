@@ -76,8 +76,8 @@ const ProductLayers = () => {
           ...communicateStyles.section,
           textAlign: "left",
           marginTop: {
-            xl: "200px",
-            lg: "200px",
+            xl: "290px",
+            lg: "300px",
             md: "120px",
             sm: "120px",
             xs: "-100px",
@@ -156,7 +156,7 @@ const connectStyles = {
     textAlign: "left",
     display: "flex",
     position: "relative",
-    marginBottom: "160px",
+    marginBottom: "200px",
   },
   textContainer: {
     alignSelf: "left",

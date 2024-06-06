@@ -16,7 +16,7 @@ const CommunitySection = () => {
 const styles = {
   container: {
     marginTop: "-64px",
-    backgroundColor: "#599DBC", // Match the blue background color
+    backgroundColor: "#599DBC",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -47,6 +47,9 @@ const styles = {
     height: "16px",
     backgroundColor: "#FFC000", // Yellow underline
     marginTop: "10px",
+    display: "flex",
+    // flex: 2,
+    maxWidth: "100%",
   },
 };
 
