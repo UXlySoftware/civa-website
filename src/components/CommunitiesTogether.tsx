@@ -32,7 +32,7 @@ const styles = {
   text: {
     fontFamily: "Public Sans",
     fontWeight: 900,
-    color: "#FFFFFF", // White text color
+    color: "#FFFFFF",
     textAlign: "center",
     fontSize: {
       xl: "52px",
@@ -45,7 +45,7 @@ const styles = {
   underline: {
     width: { xl: "700px", lg: "700px", md: "580px", sm: "580px", xs: "350px" },
     height: "16px",
-    backgroundColor: "#FFC000", // Yellow underline
+    backgroundColor: "#FFC000",
     marginTop: "10px",
     display: "flex",
     // flex: 2,
