@@ -194,8 +194,8 @@ const connectStyles = {
   },
   imageContainer: {
     position: "relative",
-    top: { xs: "0px", sm: "70px", md: "70px", lg: "70px", xl: "70px" },
-    left: { xs: "0px", sm: "-110px", md: "-60px", lg: "-150px", xl: "-295px" },
+    top: { xs: "0px", sm: "70px", md: "70px", lg: "140px", xl: "120px" },
+    left: { xs: "0px", sm: "-110px", md: "-60px", lg: "-150px", xl: "-255px" },
   },
   image: {
     width: { xl: "818px", lg: "818px", md: "474px", sm: "474px", xs: "364px" },
@@ -319,7 +319,7 @@ const collaborateStyles = {
   imageContainer: {
     position: "relative",
     top: { xs: "0px", sm: "-240px", md: "60px", lg: "70px", xl: "70px" },
-    left: { xs: "10px", sm: "310px", md: "-50px", lg: "-160px", xl: "-160px" },
+    left: { xs: "10px", sm: "310px", md: "-50px", lg: "-160px", xl: "-140px" },
     marginBottom: { xl: 0, lg: 0, md: 7, sm: -10, xs: 0 },
   },
   image: {
