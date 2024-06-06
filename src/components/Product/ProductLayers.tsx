@@ -14,7 +14,7 @@ const ProductLayers = () => {
       <Box
         sx={{
           ...connectStyles.section,
-          textAlign: "left",
+          // marginLeft: "15px",
           marginTop: {
             xl: "120px",
             lg: "120px",
@@ -22,38 +22,55 @@ const ProductLayers = () => {
             sm: "70px",
             xs: "50px",
           },
+          width: "100vw",
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "row",
+          },
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
         id="connect"
       >
-        <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} sm={6} md={6} sx={connectStyles.textContainer}>
-            <Box sx={connectStyles.headerContainer}>
-              <Typography variant="h5" sx={connectStyles.sectionHeader}>
-                CONNECT
-              </Typography>
-            </Box>
-            <Typography sx={connectStyles.sectionDescription}>
-              {/* CIVA connects organizations <br />
-              and community members, <br />
-              and provides up-to-date <br />
-              information on relevant <br />
-              government resources. */}
-              CIVA connects organizations and community members, and provides
-              up-to-date information on relevant government resources.
+        <Box
+          sx={{
+            ...connectStyles.textContainer,
+            flex: 1,
+            marginBottom: { xs: "20px", sm: 0 },
+            maxWidth: { xs: "100%", sm: "50%" },
+          }}
+        >
+          <Box sx={connectStyles.headerContainer}>
+            <Typography variant="h5" sx={connectStyles.sectionHeader}>
+              CONNECT
             </Typography>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6} sx={connectStyles.imageContainer}>
-            <Box
-              component="img"
-              src={Third1Img}
-              alt="Connect"
-              sx={connectStyles.image}
-            />
-          </Grid>
-        </Grid>
+          </Box>
+          <Typography sx={connectStyles.sectionDescription}>
+            CIVA connects organizations and community members, and provides
+            up-to-date information on relevant government resources.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            ...connectStyles.imageContainer,
+            flex: 1,
+            textAlign: { xs: "center", sm: "right" },
+            maxWidth: { xs: "100%", sm: "50%" },
+            marginTop: { xs: "0px", sm: 0 },
+          }}
+        >
+          <Box
+            component="img"
+            src={Third1Img}
+            alt="Connect"
+            sx={connectStyles.image}
+          />
+        </Box>
       </Box>
 
       {/* Communicate Section */}
+
       <Box
         sx={{
           ...communicateStyles.section,
@@ -142,11 +159,12 @@ const connectStyles = {
     marginBottom: "160px",
   },
   textContainer: {
-    alignSelf: "flex-start",
+    alignSelf: "left",
+    width: { xl: "90%", lg: "90%", md: "90%", sm: "90%", xs: "100%" },
   },
   headerContainer: {
     backgroundColor: "#FFC000",
-    width: { xl: "90%", lg: "100%", md: "115%", sm: "120%", xs: "90%" },
+    width: { xl: "90%", lg: "100%", md: "115%", sm: "120%", xs: "92%" },
     height: { xl: "109px", lg: "109px", md: "109px", sm: "109px", xs: "64px" },
     alignItems: "center",
     display: "flex",
@@ -163,11 +181,11 @@ const connectStyles = {
     fontWeight: 800,
     fontSize: { xl: "42px", lg: "42px", md: "24px", sm: "24px", xs: "24px" },
     color: "#FFF",
-    marginLeft: { xl: 2, lg: 0, md: -1, sm: 3, xs: "20px" },
+    marginLeft: { xl: 2, lg: 0, md: -1, sm: 3, xs: "15px" },
   },
   sectionDescription: {
     width: { xs: "80%", xl: "36%", lg: "50%", md: "40%", sm: "50%" },
-    paddingLeft: { xl: 37, lg: 13, md: 12, sm: 3, xs: 3 },
+    paddingLeft: { xl: 37, lg: 13, md: 12, sm: 3, xs: 2 },
     paddingTop: { xl: "52px", xs: "30px" },
     fontFamily: "Inter",
     fontWeight: 600,
@@ -177,7 +195,7 @@ const connectStyles = {
   imageContainer: {
     position: "relative",
     top: { xs: "0px", sm: "70px", md: "70px", lg: "70px", xl: "70px" },
-    left: { xs: "10px", sm: "-110px", md: "-35px", lg: "-160px", xl: "-160px" },
+    left: { xs: "0px", sm: "-110px", md: "-60px", lg: "-150px", xl: "-295px" },
   },
   image: {
     width: { xl: "818px", lg: "818px", md: "474px", sm: "474px", xs: "364px" },
@@ -191,7 +209,8 @@ const communicateStyles = {
     textAlign: "left",
     display: "flex",
     position: "relative",
-    marginBottom: "160px",
+    marginBottom: "155px",
+    maxWidth: "100vw",
   },
   textContainer: {
     position: "relative",
@@ -199,10 +218,10 @@ const communicateStyles = {
       xl: "-730px",
       lg: "-580px",
       md: "-405px",
-      sm: "-200px",
+      sm: "-180px",
       xs: "-10px",
     },
-    top: { xl: "100px", lg: "120px", md: "120px", sm: "-150px", xs: "80px" },
+    top: { xl: "100px", lg: "120px", md: "120px", sm: "-160px", xs: "80px" },
   },
   headerContainer: {
     backgroundColor: "#76848A",
@@ -234,8 +253,8 @@ const communicateStyles = {
     },
   },
   sectionDescription: {
-    paddingLeft: { xl: 13, lg: 5, md: 0 },
-    width: { xs: "79%", xl: "76%", lg: "86%", md: "100%", sm: "50%" },
+    paddingLeft: { xl: 13, lg: 5, md: 0, sm: 45 },
+    width: { xs: "79%", xl: "76%", lg: "86%", md: "100%", sm: "40%" },
 
     marginRight: { xl: 0, lg: 0, md: 0, sm: 0, xs: 0 },
     textAlign: {
@@ -254,7 +273,7 @@ const communicateStyles = {
   imageContainer: {
     position: "relative",
     top: { xs: "100px", sm: "65px", md: "65px", lg: "65px", xl: "65px" },
-    left: { xs: "10px", sm: "30px", md: "70px", lg: "70px", xl: "270px" },
+    left: { xs: "10px", sm: "15px", md: "70px", lg: "70px", xl: "270px" },
   },
   image: {
     width: { xl: "818px", lg: "818px", md: "474px", sm: "474px", xs: "364px" },
@@ -299,7 +318,7 @@ const collaborateStyles = {
   },
   imageContainer: {
     position: "relative",
-    top: { xs: "0px", sm: "-200px", md: "60px", lg: "70px", xl: "70px" },
+    top: { xs: "0px", sm: "-240px", md: "60px", lg: "70px", xl: "70px" },
     left: { xs: "10px", sm: "310px", md: "-50px", lg: "-160px", xl: "-160px" },
     marginBottom: { xl: 0, lg: 0, md: 7, sm: -10, xs: 0 },
   },

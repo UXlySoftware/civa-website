@@ -111,9 +111,16 @@ const Footer = () => {
               Contact
             </Typography>
           </Box>
-          <Typography variant="body2" sx={styles.footerEmail}>
-            civa@support.com
-          </Typography>
+          <a
+            href="mailto:info@civa.app"
+            style={{
+              textDecoration: "none",
+            }}
+          >
+            <Typography variant="body2" sx={styles.footerEmail}>
+              info@civa.app
+            </Typography>
+          </a>
         </Box>
       </Box>
     </Box>

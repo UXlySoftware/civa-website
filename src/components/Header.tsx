@@ -58,6 +58,14 @@ const Header = () => {
             >
               Contact
             </Button>
+            <Button
+              sx={styles.loginButton}
+              onClick={() =>
+                window.open("https://app.civa.app/login", "_blank")
+              }
+            >
+              Log In
+            </Button>
           </Box>
           <Stack sx={styles.menuIcon}>
             <IconButton onClick={handleDrawerToggle}>
@@ -117,6 +125,20 @@ const Header = () => {
                     onClick={() => navigate("/contact")}
                   />
                 </ListItem>
+                <ListItem
+                  button
+                  onClick={handleDrawerToggle}
+                  sx={styles.listItem}
+                >
+                  <Button
+                    sx={styles.loginButton}
+                    onClick={() =>
+                      window.open("https://app.civa.app/login", "_blank")
+                    }
+                  >
+                    Log In
+                  </Button>
+                </ListItem>
               </List>
             </Drawer>
           </Stack>
@@ -155,6 +177,20 @@ const styles = {
   activeButton: {
     borderBottom: "3px solid #FFC000",
   },
+  loginButton: {
+    padding: "0px 20px",
+    fontFamily: "Inter",
+    color: "#000",
+    fontSize: "18px",
+    fontWeight: 700,
+    borderRadius: "12px",
+    textTransform: "none",
+    backgroundColor: "#FFC000",
+
+    "&:hover": {
+      backgroundColor: "#e8ae00",
+    },
+  },
   menuIcon: {
     display: {
       xs: "block",
@@ -170,7 +206,7 @@ const styles = {
   drawer: {
     "& .MuiDrawer-paper": {
       width: "100vw",
-      height: { xl: "25vh", lg: "25vh", md: "25vh", sm: "15vh", xs: "25vh" },
+      height: { xl: "25vh", lg: "25vh", md: "25vh", sm: "15vh", xs: "35vh" },
       backgroundColor: "#FFD454",
       borderBottomLeftRadius: "12px",
       borderBottomRightRadius: "12px",

@@ -4,6 +4,7 @@ import ProductHero from "./ProductHero";
 import CommunitiesTogether from "../CommunitiesTogether";
 import ProductLayers from "./ProductLayers";
 import CivaStandsAlone from "./CivaStandsAlone";
+import JoinCommunity from "../JoinCommunity";
 
 const ProductPage: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const ProductPage: React.FC = () => {
       <CommunitiesTogether />
       <ProductLayers />
       <CivaStandsAlone />
+      <JoinCommunity />
     </>
   );
 };
