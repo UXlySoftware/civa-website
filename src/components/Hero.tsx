@@ -16,7 +16,7 @@ const HeroSection = () => {
       >
         <source src={backgroundVideo} type="video/mp4" />
       </Box>
-      <Box sx={styles.overlay}></Box>
+      <Box sx={styles.overlay} />
 
       <Box sx={styles.innerBox}>
         <Box sx={styles.sideBorder} />
@@ -100,7 +100,7 @@ const styles = {
     flexDirection: "row",
     width: "100%",
     margin: {
-      xl: "0px 300px",
+      xl: "0px 10% 0% 20%",
       lg: "0px 100px",
       md: "0px 0px",
       sm: "0px 90px",
@@ -123,13 +123,13 @@ const styles = {
       content: '""',
       position: "absolute",
       left: {
-        xl: "230px",
+        xl: "15%",
         lg: "0px",
         md: "0px",
       },
 
       height: {
-        xl: "478px",
+        xl: "60%",
         lg: "478px",
         md: "438px",
         xs: "410px",
@@ -170,7 +170,7 @@ const styles = {
     fontWeight: "700",
     color: "#fff",
     marginBottom: { xl: 4, lg: 4, md: 4, sm: 4, xs: 3 },
-    // marginLeft: { xs: 4, md: 0 },
+
     fontSize: {
       xs: "16px",
       sm: "16px",

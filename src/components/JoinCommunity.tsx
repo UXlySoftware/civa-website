@@ -34,12 +34,13 @@ const JoinCommunity = () => {
 const styles = {
   joinCommunitySection: {
     width: {
-      xl: "1296px",
-      lg: "1296px",
+      xl: "70%",
+      lg: "90%",
       md: "785px",
       sm: "700px",
       xs: "375px",
     },
+    maxWidth: "100%",
     top: { xl: "104px", lg: "104px", md: "78px", sm: "40px", xs: "49px" },
     position: "relative",
     display: "flex",

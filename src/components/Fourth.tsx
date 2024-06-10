@@ -23,6 +23,7 @@ const FourthSection = () => {
       <Box
         sx={{
           width: { xl: "100%", lg: "100%", md: "45%", xs: "100%" },
+          maxWidth: "100%",
           margin: { xs: 4, sm: 10 },
           display: "flex",
           flexDirection: "column",
@@ -234,6 +235,7 @@ const styles = {
       sm: "650px",
       xs: "342px",
     },
+
     height: "auto",
   },
   textBox: {

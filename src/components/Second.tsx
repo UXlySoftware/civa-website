@@ -35,7 +35,7 @@ const styles = {
     textAlign: "center",
     marginTop: 9,
     marginBottom: 14,
-    marginLeft: { xl: 42, lg: 12 },
+    marginLeft: { xl: "20%", lg: "5%" },
   },
   circleContainer: {
     display: "flex",
@@ -52,8 +52,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    marginLeft: { xl: -2, lg: -3, md: -4 },
-    marginRight: -5,
+    marginLeft: { xl: "-7%", lg: "-5%", md: "-6%", sm: "-6%" },
   },
   circleText: {
     fontSize: { xl: 24, lg: 24, md: 16 },

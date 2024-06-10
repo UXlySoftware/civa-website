@@ -51,7 +51,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: { xl: "32px", lg: "32px", md: "22px", sm: "22px", xs: "22px" },
-    marginRight: { xl: 10 },
+
     marginTop: {
       xl: "-100px",
       lg: "-150px",
@@ -59,7 +59,8 @@ const styles = {
       sm: "0px",
       xs: "60px",
     },
-    // maxWidth: { xs: "100%", md: "50%" },
+    marginLeft: { xl: "3%" },
+
     paddingLeft: { xl: 0, lg: 0, md: 5, sm: 7, xs: 5 },
   },
   sideBorder: {
@@ -67,7 +68,7 @@ const styles = {
       content: '""',
       position: "absolute",
       left: {
-        xl: "230px",
+        xl: "12%",
         lg: "0px",
         md: "0px",
         sm: "0px",
