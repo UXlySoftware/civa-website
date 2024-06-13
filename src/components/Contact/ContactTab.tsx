@@ -34,7 +34,7 @@ const ContactTab = () => {
     title: "",
     phone: "",
     notes: "",
-    // subscribe: false,
+    subscribe: false,
     createdAt: new Date(),
   });
 
@@ -47,9 +47,9 @@ const ContactTab = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setFormData({ ...formData, subscribe: e.target.checked });
-  // };
+  const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, subscribe: e.target.checked });
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -241,8 +241,8 @@ const ContactTab = () => {
                             color: "#000",
                           },
                         }}
-                        // checked={formData.subscribe}
-                        // onChange={handleCheckboxChange}
+                        checked={formData.subscribe}
+                        onChange={handleCheckboxChange}
                       />
                     }
                     label="Sign up for news & updates"
