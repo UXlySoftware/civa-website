@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Box, Typography } from "@mui/material";
 import united from "../../assets/united.png";
 import GetDemoButton from "../GetDemoButton";
 
 const HeroSection = () => {
   // Split words for color change loop
-  const words = ["CONNECT.", "COMMUNICATE.", "COLLABORATE."];
-  const [currentWord, setCurrentWord] = useState(0);
-  // Interval
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prevWord) => (prevWord + 1) % words.length);
-    }, 3000);
+  // const words = ["CONNECT.", "COMMUNICATE.", "COLLABORATE."];
+  // const [currentWord, setCurrentWord] = useState(0);
+  // // Interval
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentWord((prevWord) => (prevWord + 1) % words.length);
+  //   }, 3000);
 
-    return () => clearInterval(interval);
-  });
-
+  //   return () => clearInterval(interval);
+  // });
   return (
     <Box sx={styles.heroBox}>
       <Box component="img" src={united} sx={styles.heroBackground} />
@@ -23,17 +22,10 @@ const HeroSection = () => {
         <Box sx={styles.sideBorder} />
         <Box sx={styles.innerLeft}>
           <Typography variant="h3" component="h1" sx={styles.mainHeading}>
-            <span style={{ color: currentWord === 0 ? "white" : "#FFC000 " }}>
-              {words[0]}
-            </span>
+            CONNECT. <br />
+            COMMUNICATE.
             <br />
-            <span style={{ color: currentWord === 1 ? "white" : "#FFC000 " }}>
-              {words[1]}
-            </span>
-            <br />
-            <span style={{ color: currentWord === 2 ? "white" : "#FFC000 " }}>
-              {words[2]}
-            </span>
+            <span style={{ color: "white" }}> COLLABORATE.</span>
           </Typography>
           <Typography variant="h5" component="p" sx={styles.subHeading}>
             Empower your community through <br /> engagement and insights.
