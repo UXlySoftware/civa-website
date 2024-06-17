@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
+import venDiagram from "../assets/venDiagram.png";
 
 const SecondSection = () => {
   const [circleOpacity, setCircleOpacity] = useState(1);
@@ -21,7 +22,8 @@ const SecondSection = () => {
         setCircleOpacity(0.8); // Set to semi-transparent
         setAnimation(true);
         if (vennContainerRef.current) {
-          vennContainerRef.current.style.transform = "translateY(-50px)";
+          vennContainerRef.current.style.transform =
+            "translateY(calc(100vw*-50/1920))";
           vennContainerRef.current.style.transition =
             "transform 0.6s ease-in-out";
         }
@@ -45,7 +47,7 @@ const SecondSection = () => {
         }
         if (circleContainerRef.current) {
           circleContainerRef.current.style.transform =
-            "translate(400px, 350px)";
+            "translate(calc(100vw*400/1920), calc(100vw*350/1920))";
           circleContainerRef.current.style.transition =
             "transform 0.6s ease-in-out";
           // Adjust left and right circles
@@ -53,35 +55,38 @@ const SecondSection = () => {
           if (circles.length === 3) {
             // COMMUNITY ASSOCIATION - move 50px left, 50px bottom
             circles[0].firstChild.firstChild.style.transform =
-              "translate(-50px, 50px)";
+              "translate(calc(100vw*-50/1920), calc(100vw*50/1920))";
             circles[0].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // GOVERNMENT - move 50px top
             circles[1].firstChild.firstChild.style.transform =
-              "translate(0px, -50px)";
+              "translate(calc(100vw*0/1920), calc(100vw*-50/1920))";
             circles[1].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // AFFINITY ORGANIZATION - move 50px right, 50px bottom
             circles[2].firstChild.firstChild.style.transform =
-              "translate(50px, 50px)";
+              "translate(calc(100vw*50/1920), calc(100vw*50/1920))";
             circles[2].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // Left circle
-            circles[0].style.transform = "translate(300px,100px)";
+            circles[0].style.transform =
+              "translate(calc(100vw*300/1920),calc(100vw*100/1920))";
             circles[0].style.transition = "transform 0.6s ease-in-out";
             // Center circle
-            circles[1].style.transform = "translate(0px,-50px)";
+            circles[1].style.transform =
+              "translate(calc(100vw*0/1920), calc(100vw*-50/1920))";
             circles[1].style.transition = "transform 0.6s ease-in-out";
             // Right circle
-            circles[2].style.transform = "translate(-300px,100px)";
+            circles[2].style.transform =
+              "translate(calc(100vw*-300/1920),calc(100vw*100/1920))";
             circles[2].style.transition = "transform 0.6s ease-in-out";
             // Increase inner circle size
-            circles[0].firstChild.style.width = "313px";
-            circles[0].firstChild.style.height = "313px";
-            circles[1].firstChild.style.width = "313px";
-            circles[1].firstChild.style.height = "313px";
-            circles[2].firstChild.style.width = "313px";
-            circles[2].firstChild.style.height = "313px";
+            circles[0].firstChild.style.width = "calc(100vw*313/1920)";
+            circles[0].firstChild.style.height = "calc(100vw*313/1920)";
+            circles[1].firstChild.style.width = "calc(100vw*313/1920)";
+            circles[1].firstChild.style.height = "calc(100vw*313/1920)";
+            circles[2].firstChild.style.width = "calc(100vw*313/1920)";
+            circles[2].firstChild.style.height = "calc(100vw*313/1920)";
             circles[0].firstChild.style.transition =
               "width 0.6s ease-in-out, height 0.6s ease-in-out";
             circles[1].firstChild.style.transition =
@@ -90,12 +95,18 @@ const SecondSection = () => {
               "width 0.6s ease-in-out, height 0.6s ease-in-out";
 
             // Change font size to 16px and max width to 100px
-            circles[0].firstChild.firstChild.style.fontSize = "16px";
-            circles[1].firstChild.firstChild.style.fontSize = "16px";
-            circles[2].firstChild.firstChild.style.fontSize = "16px";
-            circles[0].firstChild.firstChild.style.maxWidth = "100px";
-            circles[1].firstChild.firstChild.style.maxWidth = "100px";
-            circles[2].firstChild.firstChild.style.maxWidth = "100px";
+            circles[0].firstChild.firstChild.style.fontSize =
+              "calc(100vw*16/1920)";
+            circles[1].firstChild.firstChild.style.fontSize =
+              "calc(100vw*16/1920)";
+            circles[2].firstChild.firstChild.style.fontSize =
+              "calc(100vw*16/1920)";
+            circles[0].firstChild.firstChild.style.maxWidth =
+              "calc(100vw*100/1920)";
+            circles[1].firstChild.firstChild.style.maxWidth =
+              "calc(100vw*100/1920)";
+            circles[2].firstChild.firstChild.style.maxWidth =
+              "calc(100vw*100/1920)";
 
             // Make GOVERNMENT circle zIndex lowest
             circles[0].style.zIndex = 3; // COMMUNITY ASSOCIATION
@@ -108,10 +119,12 @@ const SecondSection = () => {
         setCircleOpacity(1); // Set back to fully opaque
 
         if (vennContainerRef.current) {
-          vennContainerRef.current.style.transform = "translateY(0px)";
+          vennContainerRef.current.style.transform =
+            "translateY(calc(100vw*0/1920))";
         }
         if (circleContainerRef.current) {
-          circleContainerRef.current.style.transform = "translate(0px, 0px)";
+          circleContainerRef.current.style.transform =
+            "translate(calc(100vw*0/1920), calc(100vw*0/1920))";
           // Reset left and right circles
           const circles: any = circleContainerRef.current.children;
           if (circles.length === 3) {
@@ -123,16 +136,16 @@ const SecondSection = () => {
             circles[2].firstChild.firstChild.style.transform =
               "translate(0px, 0px)";
             // Reset circle position
-            circles[0].style.transform = "translateX(0px)";
-            circles[1].style.transform = "translateX(0px)";
-            circles[2].style.transform = "translateX(0px)";
+            circles[0].style.transform = "translateX(calc(100vw*0/1920))";
+            circles[1].style.transform = "translateX(calc(100vw*0/1920))";
+            circles[2].style.transform = "translateX(calc(100vw*0/1920))";
             // Reset inner circle size
-            circles[0].firstChild.style.width = "253px";
-            circles[0].firstChild.style.height = "253px";
-            circles[1].firstChild.style.width = "253px";
-            circles[1].firstChild.style.height = "253px";
-            circles[2].firstChild.style.width = "253px";
-            circles[2].firstChild.style.height = "253px";
+            circles[0].firstChild.style.width = "calc(100vw*253/1920)";
+            circles[0].firstChild.style.height = "calc(100vw*253/1920)";
+            circles[1].firstChild.style.width = "calc(100vw*253/1920)";
+            circles[1].firstChild.style.height = "calc(100vw*253/1920)";
+            circles[2].firstChild.style.width = "calc(100vw*253/1920)";
+            circles[2].firstChild.style.height = "calc(100vw*253/1920)";
 
             // Reset font size and max width
             circles[0].firstChild.firstChild.style.fontSize = "";
@@ -188,7 +201,7 @@ const SecondSection = () => {
 
   return (
     <>
-      <Container sx={styles.container}>
+      <Container sx={[styles.container]}>
         <Box sx={styles.circleContainer} ref={circleContainerRef}>
           <Box
             sx={{
@@ -273,12 +286,25 @@ const SecondSection = () => {
             measurable <br /> impact.
           </Typography>
         </Box>
-        <Box sx={thirdstyles.vennContainer} ref={vennContainerRef}>
-          {/*   <img
+        <Box
+          sx={[
+            thirdstyles.vennContainer,
+            {
+              display: {
+                xl: "none",
+                lg: "none",
+                md: "block",
+                sm: "block",
+                xs: "block",
+              },
+            },
+          ]}
+        >
+          <img
             src={venDiagram}
             alt="CIVA Venn Diagram"
             style={thirdstyles.vennImage}
-          /> */}
+          />
         </Box>
       </Container>
     </>
@@ -287,11 +313,11 @@ const SecondSection = () => {
 
 const styles = {
   container: {
-    display: { xs: "none", sm: "block", md: "block" },
+    display: { xs: "none", sm: "none", md: "none", lg: "block", xl: "block" },
     textAlign: "center",
     marginTop: 9,
     marginBottom: 14,
-    marginLeft: { xl: 42, lg: 12 },
+    marginLeft: { xl: 42, lg: 12, md: 0, sm: 0, xs: 0 },
   },
   circleContainer: {
     display: "flex",
@@ -313,7 +339,7 @@ const styles = {
     transition: "border 2s ease, opacity 0.6s ease-in-out",
   },
   circleText: {
-    fontSize: { xl: 24, lg: 24, md: 16 },
+    fontSize: { xl: 24, lg: 16, md: 12 },
     fontWeight: 900,
     textAlign: "center",
     lineHeight: { xl: "28px", lg: "28px", md: "19px" },
@@ -365,6 +391,7 @@ const thirdstyles = {
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: { xs: 10, sm: 15 },
+    marginTop: { xs: 10, sm: 15 },
   },
   textContainer: {
     justifyContent: "center",
@@ -382,12 +409,18 @@ const thirdstyles = {
       sm: "0px",
       xs: "60px",
     },
-    paddingLeft: { xl: 0, lg: 0, md: 5, sm: 7, xs: 5 },
+    paddingLeft: { xl: 5, lg: 5, md: 5, sm: 7, xs: 5 },
   },
   sideBorder: {
     "&::before": {
       content: '""',
-      position: "absolute",
+      position: {
+        xs: "relative",
+        sm: "relative",
+        md: "relative",
+        lg: "absolute",
+        xl: "absolute",
+      },
       left: {
         xl: "230px",
         lg: "0px",
@@ -451,7 +484,13 @@ const thirdstyles = {
     transition: "transform 0.6s ease-in-out", // Added smooth transition
   },
   circle: {
-    position: "absolute",
+    position: {
+      xs: "relative",
+      sm: "relative",
+      md: "relative",
+      lg: "absolute",
+      xl: "absolute",
+    },
     width: 140,
     height: 140,
     borderRadius: "50%",
