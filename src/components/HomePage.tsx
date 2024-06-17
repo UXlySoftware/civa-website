@@ -6,7 +6,6 @@ import JoinCommunity from "./JoinCommunity";
 import Partners from "./Partners";
 import Second from "./Second";
 import Fourth from "./Fourth";
-import ThirdSection from "./Third";
 
 const HomePage = () => {
   return (
@@ -16,7 +15,7 @@ const HomePage = () => {
       {/* Second Section */}
       <Second />
       {/* Third Section */}
-      <ThirdSection />
+      {/* <ThirdSection /> */}
       {/* How it works section */}
       <Fourth />
       <HowItWorks />

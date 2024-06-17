@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 
 import Government from "../assets/Government.svg";
@@ -14,11 +14,44 @@ const Platform = ({ customStyles = {} }) => (
 );
 
 const FourthSection = () => {
+  const containerRef = useRef(null);
+  const [slideEffect, setSlideEffect] = useState(false);
+  const [plusIconEffect, setPlusIconEffect] = useState(false);
+  const [equalIconEffect, setEqualIconEffect] = useState(false);
   const secondLayerColors = ["#74ADC7", "#A4ACB1"];
   const thirdLayerColors = ["#BFD9E5", "#D5D9DB"];
 
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const container: any = containerRef.current;
+      const containerBottom = container.getBoundingClientRect().bottom;
+      const windowHeight = window.innerHeight;
+
+      if (containerBottom <= windowHeight) {
+        setSlideEffect(true);
+        setTimeout(() => {
+          setPlusIconEffect(true);
+          setTimeout(() => {
+            setEqualIconEffect(true);
+          }, 500);
+        }, 1000);
+      } else {
+        setSlideEffect(false);
+        setPlusIconEffect(false);
+        setEqualIconEffect(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Container sx={styles.container} maxWidth={false}>
+    <Container sx={[styles.container, { overflow: "hidden" }]} maxWidth={false}>
       {/* Engagement Empower section begins */}
       <Box
         sx={{
@@ -43,6 +76,8 @@ const FourthSection = () => {
               ...styles.platform,
               gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
               background: "#2E86AB",
+              transform: slideEffect ? "translateX(0)" : "translateX(-100%)",
+              transition: "transform 1s ease-in-out",
             }}
           >
             <Typography variant="body1" sx={styles.platformText}>
@@ -52,12 +87,20 @@ const FourthSection = () => {
             <img src={Government} alt="Government Icon" style={styles.icon} />
             {/* Plus sign */}
           </Box>
-          <Box sx={styles.plusSignContainer}>
+          <Box
+            sx={{
+              ...styles.plusSignContainer,
+              opacity: plusIconEffect ? 1 : 0,
+              transition: "opacity 0.5s ease-in-out",
+            }}
+            zIndex={9999}
+          >
             <Box
               component="img"
               src={plusIcon}
               alt="Plus"
               sx={styles.plusSign}
+              ref={containerRef}
             />
           </Box>
           <Box
@@ -65,6 +108,8 @@ const FourthSection = () => {
               ...styles.platform,
               gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
               background: "#76848A",
+              transform: slideEffect ? "translateX(0)" : "translateX(100%)",
+              transition: "transform 1s ease-in-out",
             }}
           >
             <img src={Community} alt="Community Icon" style={styles.icon} />
@@ -75,12 +120,20 @@ const FourthSection = () => {
           </Box>
         </Box>
         {/* Equal sign */}
-        <Box sx={styles.dragHandleSignContainer}>
+        <Box
+          sx={[
+            styles.dragHandleSignContainer,
+            {
+              opacity: equalIconEffect ? 1 : 0,
+              transition: "opacity 0.5s ease-in-out",
+            },
+          ]}
+        >
           <Box
             component="img"
             alt="equal"
             src={equalIcon}
-            sx={styles.DragHandleIcon}
+            sx={[styles.DragHandleIcon]}
           />
         </Box>
         {/*2nd and 3rd Platforms*/}
@@ -91,6 +144,12 @@ const FourthSection = () => {
               customStyles={{
                 ...styles.shortenedPlatform,
                 backgroundColor: bgColor,
+                transform: slideEffect
+                  ? "translateX(0)"
+                  : index === 0
+                  ? "translateX(-100%)"
+                  : "translateX(100%)",
+                transition: "transform 1s ease-in-out",
               }}
             />
           ))}
@@ -102,6 +161,12 @@ const FourthSection = () => {
               customStyles={{
                 ...styles.shortenedPlatform,
                 backgroundColor: bgColor,
+                transform: slideEffect
+                  ? "translateX(0)"
+                  : index === 0
+                  ? "translateX(-100%)"
+                  : "translateX(100%)",
+                transition: "transform 1s ease-in-out",
               }}
             />
           ))}

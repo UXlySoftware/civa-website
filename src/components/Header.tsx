@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="sticky" sx={styles.appBar}>
+    <AppBar position="sticky" sx={[styles.appBar, { zIndex: 99999 }]}>
       <Container maxWidth={false} sx={styles.container}>
         <Toolbar disableGutters sx={styles.toolbar}>
           <Box onClick={() => navigate("/")} sx={{ cursor: "pointer" }}>
