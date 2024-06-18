@@ -18,6 +18,7 @@ const FourthSection = () => {
   const [slideEffect, setSlideEffect] = useState(false);
   const [plusIconEffect, setPlusIconEffect] = useState(false);
   const [equalIconEffect, setEqualIconEffect] = useState(false);
+  const [eClipseIconEffect, setEClipseIconEffect] = useState(false);
   const secondLayerColors = ["#74ADC7", "#A4ACB1"];
   const thirdLayerColors = ["#BFD9E5", "#D5D9DB"];
 
@@ -33,12 +34,16 @@ const FourthSection = () => {
           setPlusIconEffect(true);
           setTimeout(() => {
             setEqualIconEffect(true);
+            setTimeout(() => {
+              setEClipseIconEffect(true);
+            }, 1000);
           }, 500);
         }, 1000);
       } else {
         setSlideEffect(false);
         setPlusIconEffect(false);
         setEqualIconEffect(false);
+        setEClipseIconEffect(false);
       }
     }
   };
@@ -178,6 +183,9 @@ const FourthSection = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+
+            opacity: eClipseIconEffect ? 1 : 0,
+            transition: "opacity 0.5s ease-in-out",
           }}
         >
           <Box

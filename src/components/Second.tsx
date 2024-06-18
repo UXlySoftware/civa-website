@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import venDiagram from "../assets/venDiagram.png";
+import logo from "../assets/civalogo.png";
 
 const SecondSection = () => {
   const [circleOpacity, setCircleOpacity] = useState(1);
+  const [logoOpacity, setLogoOpacity] = useState(0);
   const [animation, setAnimation] = useState(false);
   const containerRef = useRef(null);
   const vennContainerRef = useRef<HTMLDivElement | null>(null);
@@ -11,6 +13,7 @@ const SecondSection = () => {
   const outerfirstCircleContainerRef = useRef<HTMLDivElement | null>(null);
   const outersecondCircleContainerRef = useRef<HTMLDivElement | null>(null);
   const outerthirdCircleContainerRef = useRef<HTMLDivElement | null>(null);
+  const timeoutRef = useRef<number | null>(null);
 
   const handleScroll = () => {
     if (containerRef.current) {
@@ -20,6 +23,7 @@ const SecondSection = () => {
 
       if (containerBottom <= windowHeight) {
         setCircleOpacity(0.8); // Set to semi-transparent
+
         setAnimation(true);
         if (vennContainerRef.current) {
           vennContainerRef.current.style.transform =
@@ -113,10 +117,17 @@ const SecondSection = () => {
             circles[1].style.zIndex = 1; // GOVERNMENT
             circles[2].style.zIndex = 2; // AFFINITY ORGANIZATION
           }
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
+          timeoutRef.current = window.setTimeout(() => {
+            setLogoOpacity(1);
+          }, 1000);
         }
       } else {
         setAnimation(false);
         setCircleOpacity(1); // Set back to fully opaque
+        setLogoOpacity(0);
 
         if (vennContainerRef.current) {
           vennContainerRef.current.style.transform =
@@ -161,9 +172,23 @@ const SecondSection = () => {
             circles[2].style.zIndex = 1; // AFFINITY ORGANIZATION
           }
         }
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
       }
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (!animation) {
@@ -262,6 +287,28 @@ const SecondSection = () => {
             </Box>
           </Box>
         </Box>
+        <Box
+          sx={[
+            thirdstyles.logo,
+            {
+              display: {
+                xl: "flex",
+                lg: "flex",
+                md: "none",
+                sm: "none",
+                xs: "none",
+              },
+              justifyContent: "center",
+              alignItems: "center",
+              opacity: logoOpacity,
+            },
+          ]}
+          position="absolute"
+          left={925}
+          top={530}
+        >
+          <img src={logo} alt="CIVA Logo" style={thirdstyles.logoImage} />
+        </Box>
       </Container>
       <Container
         sx={{
@@ -318,6 +365,7 @@ const styles = {
     marginTop: 9,
     marginBottom: 14,
     marginLeft: { xl: 42, lg: 12, md: 0, sm: 0, xs: 0 },
+    position: "relative",
   },
   circleContainer: {
     display: "flex",
@@ -483,6 +531,13 @@ const thirdstyles = {
     paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
     transition: "transform 0.6s ease-in-out", // Added smooth transition
   },
+  logo: {
+    width: { xl: 163, lg: 163 },
+    height: { xl: 163, lg: 163 },
+    borderRadius: 100,
+    backgroundColor: "#000000",
+    transition: "all 0.4s ease-in-out",
+  },
   circle: {
     position: {
       xs: "relative",
@@ -511,6 +566,12 @@ const thirdstyles = {
     maxWidth: "100%",
     height: "auto",
     width: "100%",
+  },
+
+  logoImage: {
+    maxWidth: "50%",
+    height: "50%",
+    width: "50%",
   },
 };
 
