@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import venDiagram from "../assets/venDiagram.png";
 import logo from "../assets/civalogo.png";
+import zIndex from "@mui/material/styles/zIndex";
 
 const SecondSection = () => {
   const [circleOpacity, setCircleOpacity] = useState(1);
@@ -14,77 +15,6 @@ const SecondSection = () => {
   const outersecondCircleContainerRef = useRef<HTMLDivElement | null>(null);
   const outerthirdCircleContainerRef = useRef<HTMLDivElement | null>(null);
   const timeoutRef = useRef<number | null>(null);
-  const [logoLeft, setLogoLeft] = useState(925);
-  const [logoTop, setLogoTop] = useState(530);
-
-  const [firstCircleLeft, setFirstCircleLeft] = useState<number>();
-  const [firstCircleTop, setFirstCircleTop] = useState<number>();
-
-  const [secondCircleLeft, setSecondCircleLeft] = useState<number>();
-  const [secondCircleTop, setSecondCircleTop] = useState<number>();
-
-  const [thirdCircleLeft, setThirdCircleLeft] = useState<number>();
-  const [thirdCircleTop, setThirdCircleTop] = useState<number>();
-
-  const updateCirclePosition = () => {
-    const width = window.innerWidth;
-    if (width <= 1280) {
-      setFirstCircleLeft(235);
-      setFirstCircleTop(75);
-      setSecondCircleLeft(0);
-      setSecondCircleTop(-50);
-      setThirdCircleLeft(-235);
-      setThirdCircleTop(75);
-    } else if (1280 < width && width <= 1366) {
-      setFirstCircleLeft(250);
-      setFirstCircleTop(100);
-      setSecondCircleLeft(0);
-      setSecondCircleTop(-50);
-      setThirdCircleLeft(-250);
-      setThirdCircleTop(100);
-    } else if (1366 < width && width <= 1440) {
-      setFirstCircleLeft(225);
-      setFirstCircleTop(100);
-      setSecondCircleLeft(0);
-      setSecondCircleTop(-50);
-      setThirdCircleLeft(-225);
-      setThirdCircleTop(100);
-    } else if (1440 < width && width <= 1680) {
-      setFirstCircleLeft(300);
-      setFirstCircleTop(100);
-      setSecondCircleLeft(0);
-      setSecondCircleTop(-50);
-      setThirdCircleLeft(-300);
-      setThirdCircleTop(100);
-    } else {
-      setFirstCircleLeft(300);
-      setFirstCircleTop(100);
-      setSecondCircleLeft(0);
-      setSecondCircleTop(-50);
-      setThirdCircleLeft(-300);
-      setThirdCircleTop(100);
-    }
-  };
-
-  const updateLogoPosition = () => {
-    const width = window.innerWidth;
-    if (width <= 1280) {
-      setLogoLeft(1185);
-      setLogoTop(550);
-    } else if (width <= 1366) {
-      setLogoLeft(1135);
-      setLogoTop(550);
-    } else if (width <= 1440) {
-      setLogoLeft(1100);
-      setLogoTop(550);
-    } else if (width <= 1680) {
-      setLogoLeft(1000);
-      setLogoTop(550);
-    } else if (width >= 1920) {
-      setLogoLeft(925);
-      setLogoTop(530);
-    }
-  };
 
   const handleScroll = () => {
     if (containerRef.current) {
@@ -98,7 +28,7 @@ const SecondSection = () => {
         setAnimation(true);
         if (vennContainerRef.current) {
           vennContainerRef.current.style.transform =
-            "translateY(calc(100vw*-50/1920))";
+            "translateY(calc(100vw * -50 / 1920))";
           vennContainerRef.current.style.transition =
             "transform 0.6s ease-in-out";
         }
@@ -122,45 +52,50 @@ const SecondSection = () => {
         }
         if (circleContainerRef.current) {
           circleContainerRef.current.style.transform =
-            "translate(calc(100vw*400/1920), calc(100vw*350/1920))";
+            "translate(calc(100vw * 400 / 1920), calc(100vw * 350 / 1920))";
           circleContainerRef.current.style.transition =
             "transform 0.6s ease-in-out";
           // Adjust left and right circles
           const circles: any = circleContainerRef.current.children;
-          if (circles.length === 3) {
+          if (circles.length === 4) {
             // COMMUNITY ASSOCIATION - move 50px left, 50px bottom
             circles[0].firstChild.firstChild.style.transform =
-              "translate(calc(100vw*-85/1920), calc(100vw*20/1920))";
+              "translate(calc(100vw * -85 / 1920), calc(100vw * 20 / 1920))";
             //COMMUNITY ASSOCIATION text color
             circles[0].firstChild.firstChild.style.color = "#010101";
             circles[0].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // GOVERNMENT - move 50px top
             circles[1].firstChild.firstChild.style.transform =
-              "translate(calc(100vw*-20/1920), calc(100vw*-50/1920))";
+              "translate(calc(100vw * -20 / 1920), calc(100vw * -50 / 1920))";
             circles[1].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // AFFINITY ORGANIZATION - move 50px right, 50px bottom
             circles[2].firstChild.firstChild.style.transform =
-              "translate(calc(100vw*35/1920), calc(100vw*20/1920))";
+              "translate(calc(100vw * 35 / 1920), calc(100vw * 20 / 1920))";
             circles[2].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // Left circle
-            circles[0].style.transform = `translate(${firstCircleLeft}px,${firstCircleTop}px)`;
+            circles[0].style.transform =
+              "translate(calc(100vw * 300 / 1920), calc(100vw * 100 / 1920))";
             circles[0].style.transition = "transform 0.6s ease-in-out";
             // Center circle
-            circles[1].style.transform = `translate(${secondCircleLeft}px,${secondCircleTop}px)`;
+            circles[1].style.transform =
+              "translate(calc(100vw * 0 / 1920), calc(100vw * -50 / 1920))";
             circles[1].style.transition = "transform 0.6s ease-in-out";
             // Right circle
-            circles[2].style.transform = `translate(${thirdCircleLeft}px,${thirdCircleTop}px)`;
+            circles[2].style.transform =
+              "translate(calc(100vw * -300 / 1920), calc(100vw * 100 / 1920))";
             circles[2].style.transition = "transform 0.6s ease-in-out";
+            circles[3].style.transform =
+              "translate(calc(100vw * 0 / 1920), calc(100vw * 50 / 1920))";
             // Increase inner circle size
-            circles[0].firstChild.style.width = "calc(100vw*313/1920)";
-            circles[0].firstChild.style.height = "calc(100vw*313/1920)";
-            circles[1].firstChild.style.width = "calc(100vw*313/1920)";
-            circles[1].firstChild.style.height = "calc(100vw*313/1920)";
-            circles[2].firstChild.style.width = "calc(100vw*313/1920)";
-            circles[2].firstChild.style.height = "calc(100vw*313/1920)";
+            circles[0].firstChild.style.width = "calc(100vw * 313 / 1920)";
+            circles[0].firstChild.style.height = "calc(100vw * 313 / 1920)";
+            circles[1].firstChild.style.width = "calc(100vw * 313 / 1920)";
+            circles[1].firstChild.style.height = "calc(100vw * 313 / 1920)";
+            circles[2].firstChild.style.width = "calc(100vw * 313 / 1920)";
+            circles[2].firstChild.style.height = "calc(100vw * 313 / 1920)";
             circles[0].firstChild.style.transition =
               "width 0.6s ease-in-out, height 0.6s ease-in-out";
             circles[1].firstChild.style.transition =
@@ -170,17 +105,17 @@ const SecondSection = () => {
 
             // Change font size to 16px and max width to 100px
             circles[0].firstChild.firstChild.style.fontSize =
-              "calc(100vw*20/1920)";
+              "calc(100vw * 20 / 1920)";
             circles[1].firstChild.firstChild.style.fontSize =
-              "calc(100vw*20/1920)";
+              "calc(100vw * 20 / 1920)";
             circles[2].firstChild.firstChild.style.fontSize =
-              "calc(100vw*20/1920)";
+              "calc(100vw * 20 / 1920)";
             circles[0].firstChild.firstChild.style.maxWidth =
-              "calc(100vw*100/1920)";
+              "calc(100vw * 100 / 1920)";
             circles[1].firstChild.firstChild.style.maxWidth =
-              "calc(100vw*100/1920)";
+              "calc(100vw * 100 / 1920)";
             circles[2].firstChild.firstChild.style.maxWidth =
-              "calc(100vw*100/1920)";
+              "calc(100vw * 100 / 1920)";
 
             // Make GOVERNMENT circle zIndex lowest
             circles[0].style.zIndex = 3; // COMMUNITY ASSOCIATION
@@ -201,14 +136,14 @@ const SecondSection = () => {
 
         if (vennContainerRef.current) {
           vennContainerRef.current.style.transform =
-            "translateY(calc(100vw*0/1920))";
+            "translateY(calc(100vw * 0 / 1920))";
         }
         if (circleContainerRef.current) {
           circleContainerRef.current.style.transform =
-            "translate(calc(100vw*0/1920), calc(100vw*0/1920))";
+            "translate(calc(100vw * 0 / 1920), calc(100vw * 0 / 1920))";
           // Reset left and right circles
           const circles: any = circleContainerRef.current.children;
-          if (circles.length === 3) {
+          if (circles.length === 4) {
             // Reset text position
             circles[0].firstChild.firstChild.style.transform =
               "translate(0px, 0px)";
@@ -217,16 +152,17 @@ const SecondSection = () => {
             circles[2].firstChild.firstChild.style.transform =
               "translate(0px, 0px)";
             // Reset circle position
-            circles[0].style.transform = "translateX(calc(100vw*0/1920))";
-            circles[1].style.transform = "translateX(calc(100vw*0/1920))";
-            circles[2].style.transform = "translateX(calc(100vw*0/1920))";
+            circles[0].style.transform = "translateX(calc(100vw * 0 / 1920))";
+            circles[1].style.transform = "translateX(calc(100vw * 0 / 1920))";
+            circles[2].style.transform = "translateX(calc(100vw * 0 / 1920))";
+            circles[3].style.transform = "translateX(calc(100vw * 0 / 1920))";
             // Reset inner circle size
-            circles[0].firstChild.style.width = "calc(100vw*253/1920)";
-            circles[0].firstChild.style.height = "calc(100vw*253/1920)";
-            circles[1].firstChild.style.width = "calc(100vw*253/1920)";
-            circles[1].firstChild.style.height = "calc(100vw*253/1920)";
-            circles[2].firstChild.style.width = "calc(100vw*253/1920)";
-            circles[2].firstChild.style.height = "calc(100vw*253/1920)";
+            circles[0].firstChild.style.width = "calc(100vw * 253 / 1920)";
+            circles[0].firstChild.style.height = "calc(100vw * 253 / 1920)";
+            circles[1].firstChild.style.width = "calc(100vw * 253 / 1920)";
+            circles[1].firstChild.style.height = "calc(100vw * 253 / 1920)";
+            circles[2].firstChild.style.width = "calc(100vw * 253 / 1920)";
+            circles[2].firstChild.style.height = "calc(100vw * 253 / 1920)";
 
             // Reset font size and max width
             circles[0].firstChild.firstChild.style.fontSize = "";
@@ -255,19 +191,10 @@ const SecondSection = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    updateLogoPosition(); // Initial calculation
-    updateCirclePosition();
-    window.addEventListener("resize", updateLogoPosition); // Update on resize
-    window.addEventListener("resize", updateCirclePosition);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", updateLogoPosition);
-      window.addEventListener("resize", updateCirclePosition);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
     };
-  }, [updateLogoPosition]);
+  }, []);
 
   useEffect(() => {
     if (!animation) {
@@ -296,16 +223,16 @@ const SecondSection = () => {
     }
   }, [animation]);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <Box sx={{ overflow: "hidden" }}>
-      <Container sx={[styles.container]}>
+      <Container
+        sx={{
+          position: "relative",
+          textAlign: "center",
+          marginTop: 9,
+          marginBottom: 14,
+        }}
+      >
         <Box sx={styles.circleContainer} ref={circleContainerRef}>
           <Box
             sx={{
@@ -365,28 +292,28 @@ const SecondSection = () => {
               </Typography>
             </Box>
           </Box>
-        </Box>
-        <Box
-          sx={[
-            thirdstyles.logo,
-            {
-              display: {
-                xl: "flex",
-                lg: "flex",
-                md: "none",
-                sm: "none",
-                xs: "none",
+          <Box
+            sx={[
+              thirdstyles.logo,
+              {
+                display: {
+                  xl: "flex",
+                  lg: "flex",
+                  md: "none",
+                  sm: "none",
+                  xs: "none",
+                },
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                height: "100%",
+                opacity: logoOpacity,
               },
-              justifyContent: "center",
-              alignItems: "center",
-              opacity: logoOpacity,
-            },
-          ]}
-          position="absolute"
-          left={`calc(100vw * ${logoLeft} / 1920)`}
-          top={`calc(100vw * ${logoTop} / 1920)`}
-        >
-          <img src={logo} alt="CIVA Logo" style={thirdstyles.logoImage} />
+            ]}
+            position="absolute"
+          >
+            <img src={logo} alt="CIVA Logo" style={thirdstyles.logoImage} />
+          </Box>
         </Box>
       </Container>
       <Container
@@ -616,6 +543,7 @@ const thirdstyles = {
     borderRadius: 100,
     backgroundColor: "#000000",
     transition: "all 0.2s ease-in-out",
+    zIndex: 3,
   },
   circle: {
     position: {
