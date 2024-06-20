@@ -157,12 +157,12 @@ const SecondSection = () => {
             circles[2].style.transform = "translateX(calc(100vw * 0 / 1920))";
             circles[3].style.transform = "translateX(calc(100vw * 0 / 1920))";
             // Reset inner circle size
-            circles[0].firstChild.style.width = "calc(100vw * 253 / 1920)";
-            circles[0].firstChild.style.height = "calc(100vw * 253 / 1920)";
-            circles[1].firstChild.style.width = "calc(100vw * 253 / 1920)";
-            circles[1].firstChild.style.height = "calc(100vw * 253 / 1920)";
-            circles[2].firstChild.style.width = "calc(100vw * 253 / 1920)";
-            circles[2].firstChild.style.height = "calc(100vw * 253 / 1920)";
+            circles[0].firstChild.style.width = 253;
+            circles[0].firstChild.style.height = 253;
+            circles[1].firstChild.style.width = 253;
+            circles[1].firstChild.style.height = 253;
+            circles[2].firstChild.style.width = 253;
+            circles[2].firstChild.style.height = 253;
 
             // Reset font size and max width
             circles[0].firstChild.firstChild.style.fontSize = "";
@@ -227,10 +227,10 @@ const SecondSection = () => {
     <Box sx={{ overflow: "hidden" }}>
       <Container
         sx={{
+          width: "100%",
+          justifyContent: "center",
           position: "relative",
           textAlign: "center",
-          marginTop: 9,
-          marginBottom: 14,
           display: {
             xl: "flex",
             lg: "flex",
@@ -238,6 +238,7 @@ const SecondSection = () => {
             sm: "none",
             xs: "none",
           },
+          minHeight: "500px",
         }}
       >
         <Box sx={styles.circleContainer} ref={circleContainerRef}>
@@ -400,7 +401,7 @@ const styles = {
     transition: "border 2s ease, opacity 0.6s ease-in-out",
   },
   circleText: {
-    fontSize: { xl: 24, lg: 16, md: 12 },
+    fontSize: { xl: 24, lg: 24, md: 24 },
     fontWeight: 900,
     textAlign: "center",
     lineHeight: { xl: "28px", lg: "28px", md: "19px" },
