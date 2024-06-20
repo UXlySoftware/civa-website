@@ -4,6 +4,17 @@ import united from "../../assets/united.png";
 import GetDemoButton from "../GetDemoButton";
 
 const HeroSection = () => {
+  // Split words for color change loop
+  // const words = ["CONNECT.", "COMMUNICATE.", "COLLABORATE."];
+  // const [currentWord, setCurrentWord] = useState(0);
+  // // Interval
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentWord((prevWord) => (prevWord + 1) % words.length);
+  //   }, 3000);
+
+  //   return () => clearInterval(interval);
+  // });
   return (
     <Box sx={styles.heroBox}>
       <Box component="img" src={united} sx={styles.heroBackground} />

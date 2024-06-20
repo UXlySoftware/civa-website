@@ -185,13 +185,14 @@ const styles = {
   },
   divider: {
     margin: { xl: "0px", lg: "0px", md: "0px", sm: "0px 0px", xs: "0px 25px" },
+    marginBottom: { xl: "2%", lg: "2%", md: "3%" },
     maxWidth: { xl: "704px", lg: "475px", md: "360px", sm: "380px" },
     background: "#FFC000",
     height: "16px",
   },
   contentBox: {
     display: "flex",
-    // justifyContent: "space-between",
+
     alignItems: "center",
     flexDirection: { xs: "column", sm: "row", md: "row" },
   },
