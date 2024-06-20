@@ -231,6 +231,13 @@ const SecondSection = () => {
           textAlign: "center",
           marginTop: 9,
           marginBottom: 14,
+          display: {
+            xl: "flex",
+            lg: "flex",
+            md: "none",
+            sm: "none",
+            xs: "none",
+          },
         }}
       >
         <Box sx={styles.circleContainer} ref={circleContainerRef}>
