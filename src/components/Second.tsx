@@ -29,12 +29,12 @@ const SecondSection = () => {
   const updateCirclePosition = () => {
     const width = window.innerWidth;
     if (width <= 1280) {
-      setFirstCircleLeft(200);
-      setFirstCircleTop(100);
+      setFirstCircleLeft(235);
+      setFirstCircleTop(75);
       setSecondCircleLeft(0);
       setSecondCircleTop(-50);
-      setThirdCircleLeft(-200);
-      setThirdCircleTop(100);
+      setThirdCircleLeft(-235);
+      setThirdCircleTop(75);
     } else if (1280 < width && width <= 1366) {
       setFirstCircleLeft(250);
       setFirstCircleTop(100);
@@ -69,10 +69,10 @@ const SecondSection = () => {
   const updateLogoPosition = () => {
     const width = window.innerWidth;
     if (width <= 1280) {
-      setLogoLeft(1175);
+      setLogoLeft(1185);
       setLogoTop(550);
     } else if (width <= 1366) {
-      setLogoLeft(1125);
+      setLogoLeft(1135);
       setLogoTop(550);
     } else if (width <= 1440) {
       setLogoLeft(1100);
