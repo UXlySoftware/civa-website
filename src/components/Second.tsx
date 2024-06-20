@@ -14,6 +14,77 @@ const SecondSection = () => {
   const outersecondCircleContainerRef = useRef<HTMLDivElement | null>(null);
   const outerthirdCircleContainerRef = useRef<HTMLDivElement | null>(null);
   const timeoutRef = useRef<number | null>(null);
+  const [logoLeft, setLogoLeft] = useState(925);
+  const [logoTop, setLogoTop] = useState(530);
+
+  const [firstCircleLeft, setFirstCircleLeft] = useState<number>();
+  const [firstCircleTop, setFirstCircleTop] = useState<number>();
+
+  const [secondCircleLeft, setSecondCircleLeft] = useState<number>();
+  const [secondCircleTop, setSecondCircleTop] = useState<number>();
+
+  const [thirdCircleLeft, setThirdCircleLeft] = useState<number>();
+  const [thirdCircleTop, setThirdCircleTop] = useState<number>();
+
+  const updateCirclePosition = () => {
+    const width = window.innerWidth;
+    if (width <= 1280) {
+      setFirstCircleLeft(200);
+      setFirstCircleTop(100);
+      setSecondCircleLeft(0);
+      setSecondCircleTop(-50);
+      setThirdCircleLeft(-200);
+      setThirdCircleTop(100);
+    } else if (1280 < width && width <= 1366) {
+      setFirstCircleLeft(250);
+      setFirstCircleTop(100);
+      setSecondCircleLeft(0);
+      setSecondCircleTop(-50);
+      setThirdCircleLeft(-250);
+      setThirdCircleTop(100);
+    } else if (1366 < width && width <= 1440) {
+      setFirstCircleLeft(225);
+      setFirstCircleTop(100);
+      setSecondCircleLeft(0);
+      setSecondCircleTop(-50);
+      setThirdCircleLeft(-225);
+      setThirdCircleTop(100);
+    } else if (1440 < width && width <= 1680) {
+      setFirstCircleLeft(300);
+      setFirstCircleTop(100);
+      setSecondCircleLeft(0);
+      setSecondCircleTop(-50);
+      setThirdCircleLeft(-300);
+      setThirdCircleTop(100);
+    } else {
+      setFirstCircleLeft(300);
+      setFirstCircleTop(100);
+      setSecondCircleLeft(0);
+      setSecondCircleTop(-50);
+      setThirdCircleLeft(-300);
+      setThirdCircleTop(100);
+    }
+  };
+
+  const updateLogoPosition = () => {
+    const width = window.innerWidth;
+    if (width <= 1280) {
+      setLogoLeft(1175);
+      setLogoTop(550);
+    } else if (width <= 1366) {
+      setLogoLeft(1125);
+      setLogoTop(550);
+    } else if (width <= 1440) {
+      setLogoLeft(1100);
+      setLogoTop(550);
+    } else if (width <= 1680) {
+      setLogoLeft(1000);
+      setLogoTop(550);
+    } else if (width >= 1920) {
+      setLogoLeft(925);
+      setLogoTop(530);
+    }
+  };
 
   const handleScroll = () => {
     if (containerRef.current) {
@@ -59,30 +130,29 @@ const SecondSection = () => {
           if (circles.length === 3) {
             // COMMUNITY ASSOCIATION - move 50px left, 50px bottom
             circles[0].firstChild.firstChild.style.transform =
-              "translate(calc(100vw*-50/1920), calc(100vw*50/1920))";
+              "translate(calc(100vw*-85/1920), calc(100vw*20/1920))";
+            //COMMUNITY ASSOCIATION text color
+            circles[0].firstChild.firstChild.style.color = "#010101";
             circles[0].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // GOVERNMENT - move 50px top
             circles[1].firstChild.firstChild.style.transform =
-              "translate(calc(100vw*0/1920), calc(100vw*-50/1920))";
+              "translate(calc(100vw*-20/1920), calc(100vw*-50/1920))";
             circles[1].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // AFFINITY ORGANIZATION - move 50px right, 50px bottom
             circles[2].firstChild.firstChild.style.transform =
-              "translate(calc(100vw*50/1920), calc(100vw*50/1920))";
+              "translate(calc(100vw*35/1920), calc(100vw*20/1920))";
             circles[2].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // Left circle
-            circles[0].style.transform =
-              "translate(calc(100vw*300/1920),calc(100vw*100/1920))";
+            circles[0].style.transform = `translate(${firstCircleLeft}px,${firstCircleTop}px)`;
             circles[0].style.transition = "transform 0.6s ease-in-out";
             // Center circle
-            circles[1].style.transform =
-              "translate(calc(100vw*0/1920), calc(100vw*-50/1920))";
+            circles[1].style.transform = `translate(${secondCircleLeft}px,${secondCircleTop}px)`;
             circles[1].style.transition = "transform 0.6s ease-in-out";
             // Right circle
-            circles[2].style.transform =
-              "translate(calc(100vw*-300/1920),calc(100vw*100/1920))";
+            circles[2].style.transform = `translate(${thirdCircleLeft}px,${thirdCircleTop}px)`;
             circles[2].style.transition = "transform 0.6s ease-in-out";
             // Increase inner circle size
             circles[0].firstChild.style.width = "calc(100vw*313/1920)";
@@ -100,11 +170,11 @@ const SecondSection = () => {
 
             // Change font size to 16px and max width to 100px
             circles[0].firstChild.firstChild.style.fontSize =
-              "calc(100vw*16/1920)";
+              "calc(100vw*20/1920)";
             circles[1].firstChild.firstChild.style.fontSize =
-              "calc(100vw*16/1920)";
+              "calc(100vw*20/1920)";
             circles[2].firstChild.firstChild.style.fontSize =
-              "calc(100vw*16/1920)";
+              "calc(100vw*20/1920)";
             circles[0].firstChild.firstChild.style.maxWidth =
               "calc(100vw*100/1920)";
             circles[1].firstChild.firstChild.style.maxWidth =
@@ -122,7 +192,7 @@ const SecondSection = () => {
           }
           timeoutRef.current = window.setTimeout(() => {
             setLogoOpacity(1);
-          }, 1000);
+          }, 200);
         }
       } else {
         setAnimation(false);
@@ -166,6 +236,9 @@ const SecondSection = () => {
             circles[1].firstChild.firstChild.style.maxWidth = "";
             circles[2].firstChild.firstChild.style.maxWidth = "";
 
+            //Reset COMMUNITY ASSOCIATION text color
+            circles[0].firstChild.firstChild.style.color = "#fff";
+
             // Reset zIndex
             circles[0].style.zIndex = 3; // COMMUNITY ASSOCIATION
             circles[1].style.zIndex = 2; // GOVERNMENT
@@ -182,13 +255,19 @@ const SecondSection = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    updateLogoPosition(); // Initial calculation
+    updateCirclePosition();
+    window.addEventListener("resize", updateLogoPosition); // Update on resize
+    window.addEventListener("resize", updateCirclePosition);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateLogoPosition);
+      window.addEventListener("resize", updateCirclePosition);
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, []);
+  }, [updateLogoPosition]);
 
   useEffect(() => {
     if (!animation) {
@@ -225,7 +304,7 @@ const SecondSection = () => {
   }, []);
 
   return (
-    <>
+    <Box sx={{ overflow: "hidden" }}>
       <Container sx={[styles.container]}>
         <Box sx={styles.circleContainer} ref={circleContainerRef}>
           <Box
@@ -304,8 +383,8 @@ const SecondSection = () => {
             },
           ]}
           position="absolute"
-          left={925}
-          top={530}
+          left={`calc(100vw * ${logoLeft} / 1920)`}
+          top={`calc(100vw * ${logoTop} / 1920)`}
         >
           <img src={logo} alt="CIVA Logo" style={thirdstyles.logoImage} />
         </Box>
@@ -354,7 +433,7 @@ const SecondSection = () => {
           />
         </Box>
       </Container>
-    </>
+    </Box>
   );
 };
 
@@ -536,7 +615,7 @@ const thirdstyles = {
     height: { xl: 163, lg: 163 },
     borderRadius: 100,
     backgroundColor: "#000000",
-    transition: "all 0.4s ease-in-out",
+    transition: "all 0.2s ease-in-out",
   },
   circle: {
     position: {
@@ -570,8 +649,8 @@ const thirdstyles = {
 
   logoImage: {
     maxWidth: "50%",
-    height: "50%",
-    width: "50%",
+    height: "70%",
+    width: "70%",
   },
 };
 

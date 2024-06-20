@@ -36,7 +36,7 @@ const FourthSection = () => {
             setEqualIconEffect(true);
             setTimeout(() => {
               setEClipseIconEffect(true);
-            }, 1000);
+            }, 500);
           }, 500);
         }, 1000);
       } else {
