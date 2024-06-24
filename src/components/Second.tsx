@@ -585,8 +585,8 @@ const thirdstyles = {
 
   logoImage: {
     maxWidth: "50%",
-    height: "70%",
-    width: "70%",
+    height: "93.5px",
+    width: "70px",
   },
 };
 
