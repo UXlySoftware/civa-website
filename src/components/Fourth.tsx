@@ -38,7 +38,7 @@ const FourthSection = () => {
               setEClipseIconEffect(true);
             }, 500);
           }, 500);
-        }, 1000);
+        }, 1500);
       } else {
         setSlideEffect(false);
         setPlusIconEffect(false);
@@ -83,7 +83,7 @@ const FourthSection = () => {
               gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
               background: "#2E86AB",
               transform: slideEffect ? "translateX(0)" : "translateX(-100%)",
-              transition: "transform 1s ease-in-out",
+              transition: "transform 1.5s ease-in-out",
             }}
           >
             <Typography variant="body1" sx={styles.platformText}>
@@ -115,7 +115,7 @@ const FourthSection = () => {
               gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
               background: "#76848A",
               transform: slideEffect ? "translateX(0)" : "translateX(100%)",
-              transition: "transform 1s ease-in-out",
+              transition: "transform 1.5s ease-in-out",
             }}
           >
             <img src={Community} alt="Community Icon" style={styles.icon} />
@@ -155,7 +155,7 @@ const FourthSection = () => {
                   : index === 0
                   ? "translateX(-100%)"
                   : "translateX(100%)",
-                transition: "transform 1s ease-in-out",
+                transition: "transform 1.5s ease-in-out",
               }}
             />
           ))}
@@ -172,7 +172,7 @@ const FourthSection = () => {
                   : index === 0
                   ? "translateX(-100%)"
                   : "translateX(100%)",
-                transition: "transform 1s ease-in-out",
+                transition: "transform 1.5s ease-in-out",
               }}
             />
           ))}

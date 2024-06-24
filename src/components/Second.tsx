@@ -404,7 +404,7 @@ const styles = {
     fontSize: { xl: 24, lg: 24, md: 24 },
     fontWeight: 900,
     textAlign: "center",
-    lineHeight: { xl: "28px", lg: "28px", md: "19px" },
+    lineHeight: { xl: "28px", lg: "22px", md: "19px", sm: "19px", xs: "19px" },
     color: "#fff",
     fontFamily: "Public Sans",
     transition: "transform 0.6s ease-in-out",
