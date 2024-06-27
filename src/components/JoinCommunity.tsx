@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 const JoinCommunity = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/contact");
+  const handleClick = (tab: string) => {
+    navigate(`/contact?tab=${tab}`);
   };
 
   return (
@@ -17,16 +17,27 @@ const JoinCommunity = () => {
       </Typography>
       <Typography variant="body1" sx={styles.joinText}>
         Transform your organization or community with CIVA’s data-driven
-        engagement platform. Schedule a demo today.
+        engagement platform. Schedule a demo or sign up for CIVAlerts to learn
+        about resources in your community today.
       </Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        sx={styles.demoButton}
-        onClick={handleClick}
-      >
-        Get a Demo
-      </Button>
+      <Box sx={{ display: "flex", flexDirection: "row", gap: "36px" }}>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={styles.demoButton}
+          onClick={() => handleClick("1")}
+        >
+          Get a Demo
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={styles.demoButton}
+          onClick={() => handleClick("2")}
+        >
+          Get CIVAlerts
+        </Button>
+      </Box>
     </Box>
   );
 };
@@ -92,7 +103,7 @@ const styles = {
     color: "#fff",
     padding: "10px 20px",
     display: "flex",
-    width: { xl: "155px", lg: "155px", md: "155px", sm: "155px", xs: "327px" },
+    width: { xl: "170px", lg: "170px", md: "170px", sm: "170px", xs: "327px" },
     height: { xl: "51px" },
     fontWeight: 700,
     fontSize: "18px",

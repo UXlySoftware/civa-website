@@ -1,4 +1,6 @@
 import React, { useState, ReactNode, ChangeEvent, FormEvent } from "react";
+import { useLocation } from "react-router-dom";
+
 import {
   Box,
   Typography,
@@ -23,8 +25,15 @@ interface FormFieldProps {
 }
 
 const ContactTab = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const tab = queryParams.get("tab");
+  console.log(tab);
+
   // States
-  const [tabValue, setTabValue] = useState("1");
+  const initialTab = tab === "2" ? "2" : "1";
+  const [tabValue, setTabValue] = useState(initialTab);
+
   // Form data state
   const [formData, setFormData] = useState({
     firstName: "",
@@ -181,7 +190,7 @@ const ContactTab = () => {
           sx={tabValue === "2" ? styles.selectedTabBoxSupport : styles.tabBox}
         >
           <Typography sx={tabValue === "2" ? styles.selectedTab : styles.tab}>
-            GET SUPPORT
+            CIVAlerts
           </Typography>
         </Box>
       </Box>
@@ -309,8 +318,8 @@ const ContactTab = () => {
                     control={
                       <Checkbox
                         color="primary"
-                        // checked={formData.subscribe}
-                        // onChange={handleCheckboxChange}
+                        checked={formData.subscribe}
+                        onChange={handleCheckboxChange}
                         sx={{
                           "&.Mui-checked": {
                             color: "#000",
@@ -329,7 +338,7 @@ const ContactTab = () => {
                     color="primary"
                     sx={styles.button}
                   >
-                    Submit for Support
+                    Submit for CIVAlerts
                   </Button>
                 </Grid>
               </Grid>
