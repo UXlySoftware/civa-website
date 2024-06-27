@@ -20,7 +20,19 @@ const JoinCommunity = () => {
         engagement platform. Schedule a demo or sign up for CIVAlerts to learn
         about resources in your community today.
       </Typography>
-      <Box sx={{ display: "flex", flexDirection: "row", gap: "36px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "row",
+            md: "row",
+            lg: "row",
+            xl: "row",
+          },
+          gap: "36px",
+        }}
+      >
         <Button
           variant="contained"
           color="primary"
