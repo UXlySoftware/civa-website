@@ -60,7 +60,7 @@ const SecondSection = () => {
           if (circles.length === 4) {
             // COMMUNITY ASSOCIATION - move 50px left, 50px bottom
             circles[0].firstChild.firstChild.style.transform =
-              "translate(calc(100vw * -55 / 1920), calc(100vw * 20 / 1920))";
+              "translate(calc(100vw * -70 / 1920), calc(100vw * 20 / 1920))";
             //COMMUNITY ASSOCIATION text color
             circles[0].firstChild.firstChild.style.color = "#010101";
             circles[0].firstChild.firstChild.style.transition =
