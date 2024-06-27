@@ -30,7 +30,7 @@ const JoinCommunity = () => {
             lg: "row",
             xl: "row",
           },
-          gap: "36px",
+          gap: { xs: "20px", sm: "36px", md: "36px", lg: "36px", xl: "36px" },
         }}
       >
         <Button
