@@ -37,7 +37,7 @@ const FourthSection = () => {
             setTimeout(() => {
               setEClipseIconEffect(true);
             }, 500);
-          }, 500);
+          }, 1000);
         }, 1500);
       } else {
         setSlideEffect(false);
@@ -155,7 +155,7 @@ const FourthSection = () => {
                   : index === 0
                   ? "translateX(-100%)"
                   : "translateX(100%)",
-                transition: "transform 1.5s ease-in-out",
+                transition: "transform 2s ease-in-out",
               }}
             />
           ))}
@@ -172,7 +172,7 @@ const FourthSection = () => {
                   : index === 0
                   ? "translateX(-100%)"
                   : "translateX(100%)",
-                transition: "transform 1.5s ease-in-out",
+                transition: "transform 2s ease-in-out",
               }}
             />
           ))}
@@ -407,8 +407,9 @@ const styles = {
     height: { xs: "49px", sm: "69px", md: "79px", xl: "79px" },
     borderRadius: "50%",
     margin: "0 10px",
-    left: { xl: "47.5%", lg: "46.5%", md: "45%", sm: "44.5%", xs: "40%" },
     top: { xl: "20%", lg: "20%", md: "20%", sm: "30%", xs: "41%" },
+    left: "50%",
+    transform: "translate(-65%, 0%)",
   },
   plusSign: {
     width: "100%",

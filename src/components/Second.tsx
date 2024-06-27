@@ -60,19 +60,19 @@ const SecondSection = () => {
           if (circles.length === 4) {
             // COMMUNITY ASSOCIATION - move 50px left, 50px bottom
             circles[0].firstChild.firstChild.style.transform =
-              "translate(calc(100vw * -85 / 1920), calc(100vw * 20 / 1920))";
+              "translate(calc(100vw * -55 / 1920), calc(100vw * 20 / 1920))";
             //COMMUNITY ASSOCIATION text color
             circles[0].firstChild.firstChild.style.color = "#010101";
             circles[0].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // GOVERNMENT - move 50px top
             circles[1].firstChild.firstChild.style.transform =
-              "translate(calc(100vw * -20 / 1920), calc(100vw * -50 / 1920))";
+              "translate(calc(100vw * 0 / 1920), calc(100vw * -50 / 1920))";
             circles[1].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // AFFINITY ORGANIZATION - move 50px right, 50px bottom
             circles[2].firstChild.firstChild.style.transform =
-              "translate(calc(100vw * 35 / 1920), calc(100vw * 20 / 1920))";
+              "translate(calc(100vw * 55 / 1920), calc(100vw * 20 / 1920))";
             circles[2].firstChild.firstChild.style.transition =
               "transform 0.6s ease-in-out";
             // Left circle
@@ -111,11 +111,11 @@ const SecondSection = () => {
             circles[2].firstChild.firstChild.style.fontSize =
               "calc(100vw * 20 / 1920)";
             circles[0].firstChild.firstChild.style.maxWidth =
-              "calc(100vw * 100 / 1920)";
+              "calc(100vw * 150 / 1920)";
             circles[1].firstChild.firstChild.style.maxWidth =
-              "calc(100vw * 100 / 1920)";
+              "calc(100vw * 150 / 1920)";
             circles[2].firstChild.firstChild.style.maxWidth =
-              "calc(100vw * 100 / 1920)";
+              "calc(100vw * 150 / 1920)";
 
             // Make GOVERNMENT circle zIndex lowest
             circles[0].style.zIndex = 3; // COMMUNITY ASSOCIATION
@@ -404,7 +404,7 @@ const styles = {
     fontSize: { xl: 24, lg: 24, md: 24 },
     fontWeight: 900,
     textAlign: "center",
-    lineHeight: { xl: "28px", lg: "22px", md: "19px", sm: "19px", xs: "19px" },
+    lineHeight: { xl: "22px", lg: "22px", md: "19px", sm: "19px", xs: "19px" },
     color: "#fff",
     fontFamily: "Public Sans",
     transition: "transform 0.6s ease-in-out",
