@@ -35,7 +35,10 @@ const styles = {
     textAlign: "center",
     marginTop: 9,
     marginBottom: 14,
-    marginLeft: { xl: "20%", lg: "5%" },
+    maxWidth: "1400px",
+    marginLeft: "auto",
+    marginRight: "auto",
+
   },
   circleContainer: {
     display: "flex",

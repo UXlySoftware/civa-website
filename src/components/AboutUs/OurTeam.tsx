@@ -149,10 +149,12 @@ const styles = {
     width: "120wv",
     backgroundColor: "#5a91a1",
     pt: "44px",
-    pb: { xl: "0px", lg: "0px", md: "0px", sm: "144px", xs: "50px" },
+    pb: { xl: "0px", lg: "0px", md: "0px", sm: "144px", xs: "100px" },
     display: "flex",
     flexDirection: "column",
-    marginBottom: -20,
+    marginBottom: -30,
+
+
   },
   sectionTitle: {
     fontWeight: 900,

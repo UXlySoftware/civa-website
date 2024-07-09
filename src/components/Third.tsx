@@ -1,16 +1,12 @@
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import venDiagram from "../assets/venDiagram.png";
 
 const ThirdSection = () => {
   return (
-    <Container
-      sx={{
-        ...styles.container,
-        paddingLeft: "0 !important",
-      }}
+    <Grid container sx={styles.container}
     >
-      <Box sx={styles.textContainer}>
+      <Grid item>
         <Box sx={styles.sideBorder} />
         <Typography variant="h4" sx={styles.heading}>
           CIVA CONNECTS
@@ -20,77 +16,49 @@ const ThirdSection = () => {
           stakeholders together to create <br /> meaningful programs with
           measurable <br /> impact.
         </Typography>
-      </Box>
-      <Box sx={styles.vennContainer}>
+      </Grid>
+      <Grid item sx={styles.vennContainer}>
         <img
           src={venDiagram}
           alt="CIVA Venn Diagram"
           style={styles.vennImage}
         />
-      </Box>
-    </Container>
+      
+      </Grid >
+    </Grid>
   );
-};
+}; 
 
 const styles = {
   container: {
-    textAlign: "center",
+    maxWidth: "1440px",
+    margin: "auto",
     display: "flex",
-    justfiyContent: "center",
-    justifyItems: "center",
-    flexDirection: { xs: "column-reverse", sm: "row", md: "row" },
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: { xs: 10, sm: 15 },
-  },
-  textContainer: {
-    justifyContent: "center",
-    textAlign: "left",
-    maxWidth: { xl: "40%", lg: "50%", md: "50%", sm: "50%", xs: "356px" },
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    gap: { xl: "32px", lg: "32px", md: "22px", sm: "22px", xs: "22px" },
-
-    marginTop: {
-      xl: "-100px",
-      lg: "-150px",
-      md: "-150px",
-      sm: "0px",
-      xs: "60px",
-    },
-    marginLeft: { xl: "3%" },
-
-    paddingLeft: { xl: 0, lg: 0, md: 5, sm: 7, xs: 5 },
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginBottom: 10,
   },
   sideBorder: {
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      left: {
-        xl: "12%",
-        lg: "0px",
-        md: "0px",
-        sm: "0px",
-        xs: "0px",
-      },
-      height: {
-        xl: "298px",
-        lg: "298px",
-        md: "298px",
-        sm: "268px",
-        xs: "233px",
-      },
-      marginTop: { xl: 0, lg: 0, md: 0, sm: 0, xs: 0 },
-      width: "16px",
-      backgroundColor: "black",
+    position: "absolute",
+    margin: {xl: -21, lg: -17.3, md: -6.9, sm: -4.7, xs: -3},
+    height: {
+      xl: "298px",
+      lg: "298px",
+      md: "298px",
+      sm: "268px",
+      xs: "233px",
     },
+    marginTop: { xl: 5, lg: 5, md: 5, sm: 5, xs: 5 },
+    width: "16px",
+    backgroundColor: "black",
   },
   heading: {
     fontFamily: "Public Sans",
     fontWeight: "900",
     fontSize: { xs: "36px", sm: "44px", md: "52px" },
     lineHeight: { xs: "42px", sm: "58px" },
+    paddingTop: 8,
+    marginBottom: 5
   },
   subHeading: {
     color: "#010101",
@@ -121,12 +89,8 @@ const styles = {
     },
   },
   vennContainer: {
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: { xs: 4, sm: 0, md: 0 },
-    paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
+    display: {xs: "none", sm: "flex"},
+    width: "40%"
   },
   circle: {
     position: "absolute",
@@ -147,7 +111,6 @@ const styles = {
   },
 
   vennImage: {
-    maxWidth: "100%",
     height: "auto",
     width: "100%",
   },

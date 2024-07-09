@@ -43,7 +43,7 @@ const styles = {
   missionAndBiosContainer: {
     position: "relative",
     mt: { xl: 10, lg: 10, md: 7, sm: 13, xs: 75 },
-    px: 2,
+    // px: 2,
     minHeight: {
       xl: "100vh",
       lg: "100vh",
@@ -53,7 +53,7 @@ const styles = {
     },
     backgroundColor: "#374957",
     paddingTop: "6px",
-    paddingBottom: { xl: 30, lg: 45, md: 1.2, sm: 1, xs: 0 },
+    paddingBottom: { xl: 30, lg: 45, md: 30, sm: 30, xs: 0 },
     border: "1px solid #374957",
   },
   missionTitleBox: {
