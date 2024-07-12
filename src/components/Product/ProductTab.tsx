@@ -379,11 +379,12 @@ const styles = {
       xs: "380px",
     },
     maxWidth: { xl: "100%", lg: "100%", md: "100%", sm: "100%", xs: "100%" },
-    height: "auto",
+    // height: "auto",
     borderBottomLeftRadius: "12px",
     borderBottomRightRadius: "12px",
     overflow: "hidden",
     boxSizing: "border-box",
+    marginBottom: { sm: 8, xs: 10 },
   },
   formContainer: {
     boxSizing: "border-box",
