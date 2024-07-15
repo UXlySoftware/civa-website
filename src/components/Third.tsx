@@ -22,11 +22,11 @@ const ThirdSection = () => {
         </Typography>
       </Box>
       <Box sx={styles.vennContainer}>
-        <img
+        {/* <img
           src={venDiagram}
           alt="CIVA Venn Diagram"
           style={styles.vennImage}
-        />
+        /> */}
       </Box>
     </Container>
   );
@@ -41,7 +41,7 @@ const styles = {
     flexDirection: { xs: "column-reverse", sm: "row", md: "row" },
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: { xs: 10, sm: 15 },
+    marginBottom: { xs: 30, sm: 40   },
   },
   textContainer: {
     justifyContent: "center",

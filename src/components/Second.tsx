@@ -1,28 +1,158 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
+import civalogoImage from "../assets/Civa-logo-image.svg";
 
 const SecondSection = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [imageVisible, setImageVisible] = useState(false); // New state for image visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const extraScroll = 80; // İstediğiniz ekstra scroll mesafesini buraya yazabilirsiniz
+
+      if (scrollPosition > windowHeight + extraScroll) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+        setImageVisible(false); // Reset image visibility when scrolling up
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+    useEffect(() => {
+    if (scrolled) {
+      const timeout = setTimeout(() => {
+        setImageVisible(true);
+      }, 100); // Adjust the delay as needed
+      return () => clearTimeout(timeout);
+    }
+  }, [scrolled]);
+
+  // Calculate dynamic translations based on circle size
+  const circleTranslations = [
+    { translateX: 210, translateY: 58 }, // Placeholder for initial circle
+    { translateX: 78, translateY: 85 }, // Adjust as needed for each circle
+    { translateX: 20, translateY: 85 }, // Adjust as needed for each circle
+    { translateX: 370, translateY: 375 }, // logo as needed for each circle
+
+  ];
+
   return (
     <Container sx={styles.container}>
       <Box sx={styles.circleContainer}>
-        <Box sx={{ ...styles.circle, borderColor: "#FFC000", zIndex: 3 }}>
+        <Box
+          sx={{
+            ...styles.circle,
+            ...(scrolled && {
+              transform: `translate(${circleTranslations[0].translateX}%, ${circleTranslations[0].translateY}%) scale(1.2)`,
+              opacity: 0.8,
+              width: { xl: 500, lg: 450, md: 379, sm: 349 },
+              height: { xl: 500, lg: 450, md: 379, sm: 349 },
+            }),
+            borderColor: scrolled ? "transparent" : "#FFC000",
+            zIndex: 3,
+          }}
+        >
           <Box sx={{ ...styles.innerCircle, background: "#FFC000" }}>
-            <Typography sx={styles.circleText}>
+            <Typography
+              sx={{
+                ...styles.circleText,
+                ...(scrolled && {
+                  position: "relative",
+                  top: -50, // Adjust the value as needed for top offset
+                  fontSize: { xl: 18, lg: 18, md: 14 },
+                }),
+              }}
+            >
               COMMUNITY ASSOCIATION
             </Typography>
           </Box>
         </Box>
-        <Box sx={{ ...styles.circle, borderColor: "#2887AC", zIndex: 2 }}>
+        <Box
+          sx={{
+            ...styles.circle,
+            ...(scrolled && {
+              transform: `translate(${circleTranslations[1].translateX}%, ${circleTranslations[1].translateY}%) scale(1.2)`,
+              width: { xl: 500, lg: 450, md: 379, sm: 349 },
+              height: { xl: 500, lg: 450, md: 379, sm: 349 },
+            }),
+            borderColor: scrolled ? "transparent" : "#2887AC",
+            zIndex: 2,
+          }}
+        >
           <Box sx={{ ...styles.innerCircle, background: "#2887AC" }}>
-            <Typography sx={styles.circleText}>GOVERNMENT </Typography>
+            <Typography
+              sx={{
+                ...styles.circleText,
+                ...(scrolled && {
+                  position: "relative",
+                  top:10,
+                  right: 50, // Adjust the value as needed for left offset
+                  fontSize: { xl: 18, lg: 18, md: 14 },
+                }),
+              }}
+            >
+              GOVERNMENT
+            </Typography>
           </Box>
         </Box>
-        <Box sx={{ ...styles.circle, borderColor: "#76848A", zIndex: 1 }}>
+        <Box
+          sx={{
+            ...styles.circle,
+            ...(scrolled && {
+              transform: `translate(${circleTranslations[2].translateX}%, ${circleTranslations[2].translateY}%) scale(1.2)`,
+              opacity: 0.8,
+              width: { xl: 500, lg: 450, md: 379, sm: 349 },
+              height: { xl: 500, lg: 450, md: 379, sm: 349 },
+            }),
+            borderColor: scrolled ? "transparent" : "#76848A",
+            zIndex: 3,
+          }}
+        >
           <Box sx={{ ...styles.innerCircle, background: "#76848A" }}>
-            <Typography sx={styles.circleText}>
+            <Typography
+              sx={{
+                ...styles.circleText,
+                ...(scrolled && {
+                  position: "relative",
+                  
+                  left: 40, // Adjust the value as needed for left offset
+                  fontSize: { xl: 18, lg: 18, md: 14 },
+                  whiteSpace: "normal",
+                  wordBreak: "break-word",
+                  width: "80%", // Adjust the width as needed
+                }),
+              }}
+            >
               AFFINITY ORGANIZATION
             </Typography>
           </Box>
+           {/* New Image Box */}
+       
+        </Box>
+        <Box
+          sx={{
+            ...styles.imageBox,
+            ...(imageVisible  && {
+              visibility: "visible",
+              opacity: 1,
+              transform: `translate(${circleTranslations[3].translateX}%, ${circleTranslations[3].translateY}%) scale(1.5)`,
+              
+            }),
+          }}
+        >
+          <img
+          src={civalogoImage}
+          alt="CIVA Venn Diagram"
+          style={{ ...styles.image, transform: "scale(0.6)" }}
+        />
         </Box>
       </Box>
     </Container>
@@ -42,6 +172,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     gap: 3,
+    transition: "all 1s ease",
   },
   circle: {
     width: { xl: 410, lg: 350, md: 279, sm: 249 },
@@ -52,7 +183,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    marginLeft: { xl: "-7%", lg: "-5%", md: "-6%", sm: "-6%" },
+    transition: "transform 1s ease, width 1s ease, height 1s ease", // Updated transitions
   },
   circleText: {
     fontSize: { xl: 24, lg: 24, md: 16 },
@@ -74,24 +205,21 @@ const styles = {
     marginRight: -20,
     zIndex: 3,
   },
-  textContainer: {
-    textAlign: "center",
-    marginBottom: 4,
+  imageBox: {
+    position: "absolute",
+    visibility: "hidden",
+    transform: "translate(100%, 150%)",
+    opacity: 1,
+    transition: "opacity 1s ease, transform 1s ease",
+    zIndex: 4, // Ensure it's above other elements
+    borderRadius: "50%",
+    backgroundColor: "black",
+   
   },
-  heading: {
-    fontWeight: "bold",
-    marginBottom: 2,
-  },
-  subHeading: {
-    color: "#555",
-    marginBottom: 3,
-  },
-  button: {
-    backgroundColor: "#FFC000",
-    color: "black",
-    "&:hover": {
-      backgroundColor: "#e6ac00",
-    },
+  image: {
+    width: 100, // Adjust the size as needed
+    height: 100,
+    
   },
 };
 

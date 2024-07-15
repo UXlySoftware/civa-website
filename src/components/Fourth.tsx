@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 
 import Government from "../assets/Government.svg";
@@ -14,8 +14,119 @@ const Platform = ({ customStyles = {} }) => (
 );
 
 const FourthSection = () => {
-  const secondLayerColors = ["#74ADC7", "#A4ACB1"];
-  const thirdLayerColors = ["#BFD9E5", "#D5D9DB"];
+  // const secondLayerColors = ["#74ADC7", "#A4ACB1"];
+  // const thirdLayerColors = ["#BFD9E5", "#D5D9DB"];
+
+  const [scrolled, setScrolled] = useState(false);
+  const [platform0Visible, setPlatform0Visible] = useState(false);
+  const [platform1Visible, setPlatform1Visible] = useState(false);
+  const [platform2Visible, setPlatform2Visible] = useState(false);
+  const [platform3Visible, setPlatform3Visible] = useState(false);
+  const [platform4Visible, setPlatform4Visible] = useState(false);
+  const [platform5Visible, setPlatform5Visible] = useState(false);
+  const [platform6Visible, setPlatform6Visible] = useState(false);
+  const [platform7Visible, setPlatform7Visible] = useState(false);
+  const [platform8Visible, setPlatform8Visible] = useState(false);
+
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("animatedBox");
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Elementin görünürlüğünü kontrol et
+        if (rect.top < windowHeight && rect.bottom >= 0) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+          setPlatform0Visible(false);
+          setPlatform1Visible(false);
+          setPlatform2Visible(false); // Reset platform visibility when scrolling up
+          setPlatform3Visible(false);
+          setPlatform4Visible(false);
+          setPlatform5Visible(false);
+          setPlatform6Visible(false);
+          setPlatform7Visible(false);
+          setPlatform8Visible(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (scrolled) {
+      const timeout0 = setTimeout(() => {
+        setPlatform0Visible(true);
+      }, 500); // Adjust the delay as needed
+      const timeout1 = setTimeout(() => {
+        setPlatform1Visible(true);
+      }, 500); // Adjust the delay as needed
+      const timeout2 = setTimeout(() => {
+        setPlatform2Visible(true);
+      }, 1500); // Adjust the delay as needed
+
+      const timeout3 = setTimeout(() => {
+        setPlatform3Visible(true);
+      }, 1500); // Adjust the delay as needed
+      const timeout4 = setTimeout(() => {
+        setPlatform4Visible(true);
+      }, 2500); // Adjust the delay as needed
+      const timeout5 = setTimeout(() => {
+        setPlatform5Visible(true);
+      }, 2500); // Adjust the delay as needed
+      const timeout6 = setTimeout(() => {
+        setPlatform6Visible(true);
+      }, 3500); // Adjust the delay as needed
+      const timeout7 = setTimeout(() => {
+        setPlatform7Visible(true);
+      }, 4000); // Adjust the delay as needed
+      const timeout8 = setTimeout(() => {
+        setPlatform8Visible(true);
+      }, 4500); // Adjust the delay as needed
+
+      return () => {
+        clearTimeout(timeout0);
+        clearTimeout(timeout1);
+        clearTimeout(timeout2);
+        clearTimeout(timeout3);
+        clearTimeout(timeout4);
+        clearTimeout(timeout5);
+        clearTimeout(timeout6);
+        clearTimeout(timeout7);
+        clearTimeout(timeout8);
+      };
+    }
+  }, [scrolled]);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("animatedBox");
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Elementin görünürlüğünü kontrol et
+        if (rect.top < windowHeight && rect.bottom >= 0) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Container sx={styles.container} maxWidth={false}>
@@ -40,10 +151,12 @@ const FourthSection = () => {
       <Box sx={styles.backgroundSection}>
         <Box sx={styles.platformSection}>
           <Box
+            id="animatedBox"
             sx={{
-              ...styles.platform,
+              ...styles.platform0,
               gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
               background: "#2E86AB",
+              transform: platform0Visible ? "translateX(0)" : "translateX(-50vw)",
             }}
           >
             <Typography variant="body1" sx={styles.platformText}>
@@ -53,7 +166,15 @@ const FourthSection = () => {
             <img src={Government} alt="Government Icon" style={styles.icon} />
             {/* Plus sign */}
           </Box>
-          <Box sx={styles.plusSignContainer}>
+
+          <Box 
+           id="animatedBox"
+          sx={{
+            ...styles.plusSignContainer,
+            ...(platform6Visible && {
+              visibility: "visible",
+            })
+            }}>
             <Box
               component="img"
               src={plusIcon}
@@ -61,11 +182,14 @@ const FourthSection = () => {
               sx={styles.plusSign}
             />
           </Box>
+
           <Box
+            id="animatedBox"
             sx={{
-              ...styles.platform,
+              ...styles.platform1,
               gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
               background: "#76848A",
+              transform: platform1Visible ? "translateX(0)" : "translateX(50vw)",
             }}
           >
             <img src={Community} alt="Community Icon" style={styles.icon} />
@@ -75,18 +199,56 @@ const FourthSection = () => {
             </Typography>
           </Box>
         </Box>
+
         {/* Equal sign */}
-        <Box sx={styles.dragHandleSignContainer}>
+        <Box
+            id="animatedBox"
+         sx={{
+          ...styles.dragHandleSignContainer,
+          ...(platform7Visible && {
+            visibility: "visible",
+          })
+          
+          }}>
           <Box
             component="img"
             alt="equal"
             src={equalIcon}
-            sx={styles.DragHandleIcon}
+            sx={{
+              ...styles.DragHandleIcon,
+            }}
           />
         </Box>
         {/*2nd and 3rd Platforms*/}
-        <Box sx={styles.shortenedPlatformSection}>
-          {secondLayerColors.map((bgColor, index) => (
+        <Box id="animatedBox" sx={styles.shortenedPlatformSection}>
+          <Box sx={styles.platformSection}>
+            <Box
+              id="animatedBox"
+              sx={{
+                ...styles.platform2,
+                ...(scrolled && {
+                gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
+                background: "#74ADC7",
+                
+                transform: platform2Visible ? "translateX(-25%)" : "translateX(-55vw)",
+              })
+
+              }}
+            ></Box>
+
+            <Box
+              id="animatedBox"
+              sx={{
+                ...styles.platform3,
+                ...(scrolled && {
+                gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
+                background: "#A4ACB1",
+                transform: platform3Visible ? "translateX(25%)" : "translateX(55vw)",
+              })
+              }}
+            ></Box>
+          </Box>
+          {/* {secondLayerColors.map((bgColor, index) => (
             <Platform
               key={index}
               customStyles={{
@@ -94,10 +256,32 @@ const FourthSection = () => {
                 backgroundColor: bgColor,
               }}
             />
-          ))}
+          ))} */}
         </Box>
-        <Box sx={styles.shortestPlatformSection}>
-          {thirdLayerColors.map((bgColor, index) => (
+
+        <Box id="animatedBox" sx={styles.shortestPlatformSection}>
+          <Box sx={styles.platformSection}>
+            <Box
+              id="animatedBox"
+              sx={{
+                ...styles.platform4,
+                gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
+                background: "#BFD9E5",
+                transform: platform4Visible ? "translateX(-55%)" : "translateX(-55vw)",
+              }}
+            ></Box>
+
+            <Box
+              id="animatedBox"
+              sx={{
+                ...styles.platform5,
+                gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
+                background: "#D5D9DB",
+                transform: platform5Visible ? "translateX(55%)" : "translateX(55vw)",
+              }}
+            ></Box>
+          </Box>
+          {/* {thirdLayerColors.map((bgColor, index) => (
             <Platform
               key={index}
               customStyles={{
@@ -105,15 +289,15 @@ const FourthSection = () => {
                 backgroundColor: bgColor,
               }}
             />
-          ))}
+          ))} */}
         </Box>
         {/* eClipse  */}
         <Box
-          sx={{
-            marginTop: { xl: 10, sm: 5, xs: 20 },
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+        id="animatedBox"
+          sx={{ ...styles.eClipseCss,
+            ...(platform8Visible && {
+              visibility: "visible",
+            })
           }}
         >
           <Box
@@ -177,6 +361,125 @@ const FourthSection = () => {
 };
 
 const styles = {
+  eClipseCss:{
+    
+    marginTop: { xl: 10, sm: 5, xs: 20 },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    visibility: "hidden",
+  },
+  platform0: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    padding: "20px",
+    height: { xl: "90px", lg: "90px", xs: "100px" },
+    maxHeight: "10%",
+    color: "#fff",
+    transition: "transform 1s ease",
+    transform: "translateX(-50vw)", // Başlangıç pozisyonu
+  },
+  platform1: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    padding: "20px",
+    height: { xl: "90px", lg: "90px", xs: "100px" },
+    maxHeight: "10%",
+    color: "#fff",
+    transition: "transform 1s ease",
+    transform: "translateX(50vw)", // Başlangıç pozisyonu
+  },
+  platform2: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    padding: "20px",
+    height: { xl: "50px", lg: "50px", xs: "55px" },
+    maxHeight: "10%",
+    color: "#74ADC7",
+    transition: "transform 1s ease",
+    transform: "translateX(-50vw)", // Başlangıç pozisyonu
+    borderBottomLeftRadius: "8px",
+    borderBottomRightRadius: "8px",
+  },
+  platform3: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    padding: "20px",
+    height: { xl: "50px", lg: "50px", xs: "550px" },
+    maxHeight: "10%",
+    color: "#A4ACB1",
+    transition: "transform 1s ease",
+    transform: "translateX(50vw)", // Başlangıç pozisyonu
+    borderBottomLeftRadius: "8px",
+    borderBottomRightRadius: "8px",
+  },
+  platform4: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    padding: "20px",
+    height: { xl: "50px", lg: "50px", xs: "55px" },
+    maxHeight: "10%",
+    color: "#BFD9E5",
+    transition: "transform 1s ease",
+    transform: "translateX(-50vw)", // Başlangıç pozisyonu
+    borderBottomLeftRadius: "8px",
+    borderBottomRightRadius: "8px",
+  },
+  platform5: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    padding: "20px",
+    height: { xl: "50px", lg: "50px", xs: "550px" },
+    maxHeight: "10%",
+    color: "#D5D9DB",
+    transition: "transform 1s ease",
+    transform: "translateX(50vw)", // Başlangıç pozisyonu
+    borderBottomLeftRadius: "8px",
+    borderBottomRightRadius: "8px",
+  },
+
+  platform: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    padding: "20px",
+    height: { xl: "90px", lg: "90px", xs: "100px" },
+    maxHeight: "10%",
+    color: "#fff",
+  },
+
+  shortenedPlatform: {
+    height: "50px",
+    borderBottomLeftRadius: "8px",
+    borderBottomRightRadius: "8px",
+  },
   wrapper: {
     marginTop: 15,
     display: "flex",
@@ -291,6 +594,25 @@ const styles = {
     position: "relative",
     display: { xs: "none", sm: "flex" },
   },
+  shortestPlatformSection0: {
+    alignItems: "center",
+    gap: "55%",
+    maxWidth: "100%",
+    width: "100%",
+    position: "relative",
+    display: { xs: "none", sm: "flex" },
+    transform: "translateX(-50vw)", // Başlangıç pozisyonu
+    
+  },
+  shortestPlatformSection1: {
+    alignItems: "center",
+    gap: "55%",
+    maxWidth: "100%",
+    width: "100%",
+    position: "relative",
+    display: { xs: "none", sm: "flex" },
+    
+  },
   shortestPlatformSection: {
     alignItems: "center",
     gap: "55%",
@@ -298,24 +620,9 @@ const styles = {
     width: "100%",
     position: "relative",
     display: { xs: "none", sm: "flex" },
+    
   },
-  platform: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 10,
-    padding: "20px",
-    height: { xl: "90px", lg: "90px", xs: "100px" },
-    maxHeight: "10%",
-    color: "#fff",
-  },
-  shortenedPlatform: {
-    height: "50px",
-    borderBottomLeftRadius: "8px",
-    borderBottomRightRadius: "8px",
-  },
+
   heading: {
     fontFamily: "Public Sans",
     fontWeight: 900,
@@ -336,6 +643,8 @@ const styles = {
     margin: "0 10px",
     left: { xl: "47.5%", lg: "46.5%", md: "45%", sm: "44.5%", xs: "40%" },
     top: { xl: "20%", lg: "20%", md: "20%", sm: "30%", xs: "41%" },
+    zIndex: 1,
+    visibility: "hidden",
   },
   plusSign: {
     width: "100%",
@@ -355,6 +664,8 @@ const styles = {
     left: "50%",
     transform: "translateX(-50%)",
     marginTop: "25px",
+    visibility: "hidden",
+
   },
   DragHandleIcon: {
     width: "100%",

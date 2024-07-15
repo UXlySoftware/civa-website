@@ -15,7 +15,7 @@ const HomePage = () => {
       <Hero />
       {/* Second Section */}
       <Second />
-      {/* Third Section */}
+      {/* Third Section düzenleniyor açıklama çevrildi */}
       <ThirdSection />
       {/* How it works section */}
       <Fourth />
