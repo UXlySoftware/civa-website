@@ -79,8 +79,8 @@ const styles = {
       xl: "-270px",
       lg: "-268px",
       md: "-107px",
-      sm: "-20px",
-      xs: "-132px",
+      sm: "-160px",
+      xs: "-242px",
     },
   },
   joinHeading: {

@@ -26,10 +26,10 @@ const Founders = () => {
           xs: "115vh",
         },
         paddingBottom: {
-          xl: 100,
+          xl: 130,
           lg: 120,
-          md: 20,
-          sm: 25,
+          md: 60,
+          sm: 50,
           xs: 105,
         },
         border: "1px solid #374957",
@@ -201,7 +201,7 @@ const styles = {
       xs: "340px",
     },
     margin: {
-      xl: "0px auto 109px auto",
+      xl: "30px auto 109px auto",
       lg: "0px auto 109px auto",
       md: "130px auto 50px auto",
       sm: "120px auto -60px auto",
