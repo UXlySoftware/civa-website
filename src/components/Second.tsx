@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
-import civalogoImage from "../assets/Civa-logo-image.svg";
+import civalogoImage from "../assets/civa-logo-white.png";
 
 const SecondSection = () => {
   const [scrolled, setScrolled] = useState(false);
