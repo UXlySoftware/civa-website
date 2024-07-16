@@ -71,7 +71,7 @@ const SecondSection = () => {
                 }),
               }}
             >
-              COMMUNITY ASSOCIATION
+              GOVERNMENT
             </Typography>
           </Box>
         </Box>
@@ -93,13 +93,14 @@ const SecondSection = () => {
                 ...styles.circleText,
                 ...(scrolled && {
                   position: "relative",
-                  top:10,
+                  top:20,
+                  color:"black",
                   right: 50, // Adjust the value as needed for left offset
                   fontSize: { xl: 18, lg: 18, md: 14 },
                 }),
               }}
             >
-              GOVERNMENT
+              COMMUNITY ASSOCIATION
             </Typography>
           </Box>
         </Box>
@@ -122,7 +123,7 @@ const SecondSection = () => {
                 ...styles.circleText,
                 ...(scrolled && {
                   position: "relative",
-                  
+                  top:20,
                   left: 40, // Adjust the value as needed for left offset
                   fontSize: { xl: 18, lg: 18, md: 14 },
                   whiteSpace: "normal",

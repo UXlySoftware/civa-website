@@ -44,6 +44,7 @@ const styles = {
     marginBottom: { xs: 30, sm: 40   },
   },
   textContainer: {
+
     justifyContent: "center",
     textAlign: "left",
     maxWidth: { xl: "40%", lg: "50%", md: "50%", sm: "50%", xs: "356px" },
@@ -53,11 +54,11 @@ const styles = {
     gap: { xl: "32px", lg: "32px", md: "22px", sm: "22px", xs: "22px" },
 
     marginTop: {
-      xl: "-100px",
-      lg: "-150px",
-      md: "-150px",
-      sm: "0px",
-      xs: "60px",
+      xl: "-20px",
+      lg: "-20px",
+      md: "-20px",
+      sm: "20px",
+      xs: "80px",
     },
     marginLeft: { xl: "3%" },
 
