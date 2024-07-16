@@ -162,6 +162,7 @@ const SecondSection = () => {
 
 const styles = {
   container: {
+    widtwidth: "100%",
     display: { xs: "none", sm: "block", md: "block" },
     textAlign: "center",
     marginTop: 9,

@@ -1,0 +1,11 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Yatay taşmayı engelle */
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+    max-width: 100vw; /* Genişliği ekranın genişliği ile sınırlayın */
+    overflow-x: hidden; /* Yatay taşmayı engelle */
+}
