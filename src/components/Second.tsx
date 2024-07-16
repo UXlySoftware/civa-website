@@ -1,15 +1,93 @@
 import React, { useEffect, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import civalogoImage from "../assets/civa-logo-white.png";
+import { useMediaQuery } from "@mui/material";
 
 const SecondSection = () => {
   const [scrolled, setScrolled] = useState(false);
   const [imageVisible, setImageVisible] = useState(false); // New state for image visibility
+  const isXLargeScreen = useMediaQuery("(min-width:1920px)");
+  const isLargeScreen = useMediaQuery(
+    "(min-width:1280px) and (max-width:1919px)"
+  );
+  const isMediumScreen = useMediaQuery(
+    "(min-width:960px) and (max-width:1279px)"
+  );
+  const isSmallScreen = useMediaQuery(
+    "(min-width:600px) and (max-width:959px)"
+  );
+  const isXSmallScreen = useMediaQuery("(max-width:599px)");
+
+  const getCircleTranslations = () => {
+    if (isXLargeScreen) {
+      return [
+        { translateX: 210, translateY: 58 },
+        { translateX: 78, translateY: 85 },
+        { translateX: 20, translateY: 85 },
+        { translateX: 370, translateY: 375 },
+      ];
+    } else if (isLargeScreen) {
+      return [
+        { translateX: 210, translateY: 58 },
+        { translateX: 78, translateY: 85 },
+        { translateX: 20, translateY: 85 },
+        { translateX: 370, translateY: 375 },
+      ];
+    } else if (isMediumScreen) {
+      //1366x1024
+      return [
+        { translateX: 190, translateY: 90 },
+        { translateX: 55, translateY: 120 },
+        { translateX: 0, translateY: 120 },
+        { translateX: 300, translateY: 480 },
+      ];
+    } else if (isSmallScreen) {
+      return [
+        { translateX: 120, translateY: 40 },
+        { translateX: 45, translateY: 50 },
+        { translateX: 5, translateY: 50 },
+        { translateX: 220, translateY: 225 },
+      ];
+    } else if (isXSmallScreen) {
+      return [
+        { translateX: 90, translateY: 35 },
+        { translateX: 35, translateY: 40 },
+        { translateX: 0, translateY: 40 },
+        { translateX: 170, translateY: 175 },
+      ];
+    }
+    return [
+      { translateX: 210, translateY: 58 },
+      { translateX: 78, translateY: 85 },
+      { translateX: 20, translateY: 85 },
+      { translateX: 370, translateY: 375 },
+    ];
+  };
+
+  const circleTranslations = getCircleTranslations();
+
+  const getScaleValue = () => {
+    if (isXLargeScreen) {
+      return 1.4;
+    } else if (isLargeScreen) {
+      return 1.5;
+    } else if (isMediumScreen) {
+      return 1.3;
+    } else if (isSmallScreen) {
+      return 1.2;
+    } else if (isXSmallScreen) {
+      return 1;
+    }
+    return 1.4; // Default value
+  };
+
+  const scaleValue = getScaleValue();
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const extraScroll = 80; // İstediğiniz ekstra scroll mesafesini buraya yazabilirsiniz
+      const extraScroll = 30; // İstediğiniz ekstra scroll mesafesini buraya yazabilirsiniz
 
       if (scrollPosition > windowHeight + extraScroll) {
         setScrolled(true);
@@ -26,7 +104,7 @@ const SecondSection = () => {
     };
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     if (scrolled) {
       const timeout = setTimeout(() => {
         setImageVisible(true);
@@ -34,15 +112,6 @@ const SecondSection = () => {
       return () => clearTimeout(timeout);
     }
   }, [scrolled]);
-
-  // Calculate dynamic translations based on circle size
-  const circleTranslations = [
-    { translateX: 210, translateY: 58 }, // Placeholder for initial circle
-    { translateX: 78, translateY: 85 }, // Adjust as needed for each circle
-    { translateX: 20, translateY: 85 }, // Adjust as needed for each circle
-    { translateX: 370, translateY: 375 }, // logo as needed for each circle
-
-  ];
 
   return (
     <Container sx={styles.container}>
@@ -93,8 +162,8 @@ const SecondSection = () => {
                 ...styles.circleText,
                 ...(scrolled && {
                   position: "relative",
-                  top:20,
-                  color:"black",
+                  top: 20,
+                  color: "black",
                   right: 50, // Adjust the value as needed for left offset
                   fontSize: { xl: 18, lg: 18, md: 14 },
                 }),
@@ -123,7 +192,7 @@ const SecondSection = () => {
                 ...styles.circleText,
                 ...(scrolled && {
                   position: "relative",
-                  top:20,
+                  top: 20,
                   left: 40, // Adjust the value as needed for left offset
                   fontSize: { xl: 18, lg: 18, md: 14 },
                   whiteSpace: "normal",
@@ -135,25 +204,23 @@ const SecondSection = () => {
               AFFINITY ORGANIZATION
             </Typography>
           </Box>
-           {/* New Image Box */}
-       
+          {/* New Image Box */}
         </Box>
         <Box
           sx={{
             ...styles.imageBox,
-            ...(imageVisible  && {
+            ...(imageVisible && {
               visibility: "visible",
               opacity: 1,
-              transform: `translate(${circleTranslations[3].translateX}%, ${circleTranslations[3].translateY}%) scale(1.5)`,
-              
+              transform: `translate(${circleTranslations[3].translateX}%, ${circleTranslations[3].translateY}%) scale(${scaleValue})`,
             }),
           }}
         >
           <img
-          src={civalogoImage}
-          alt="CIVA Venn Diagram"
-          style={{ ...styles.image, transform: "scale(0.6)" }}
-        />
+            src={civalogoImage}
+            alt="CIVA Venn Diagram"
+            style={{ ...styles.image, transform: "scale(0.6)" }}
+          />
         </Box>
       </Box>
     </Container>
@@ -167,7 +234,7 @@ const styles = {
     textAlign: "center",
     marginTop: 9,
     marginBottom: 14,
-    marginLeft: { xl: "20%", lg: "5%" },
+    marginLeft: { xl: "20%", lg: "5%", md: "0" }, // Adjust for responsiveness
   },
   circleContainer: {
     display: "flex",
@@ -216,12 +283,10 @@ const styles = {
     zIndex: 4, // Ensure it's above other elements
     borderRadius: "50%",
     backgroundColor: "black",
-   
   },
   image: {
     width: 100, // Adjust the size as needed
     height: 100,
-    
   },
 };
 
