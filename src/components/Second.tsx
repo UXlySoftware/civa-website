@@ -83,6 +83,22 @@ const SecondSection = () => {
 
   const scaleValue = getScaleValue();
 
+  const getFontSizeValue = () => {
+    if (isXLargeScreen) {
+      return { xl: 18, lg: 18, md: 14 };
+    } else if (isLargeScreen) {
+      return { xl: 18, lg: 18, md: 14 };
+    } else if (isMediumScreen) {
+      return { xl: 16, lg: 12, md: 10 };
+    } else if (isSmallScreen) {
+      return { xl: 14, lg: 12, md: 10 };
+    } else if (isXSmallScreen) {
+      return { xl: 12, lg: 12, md: 10 };
+    }
+    return { xl: 18, lg: 18, md: 14 }; // Default value
+  };
+  const fontSizeValue = getFontSizeValue();
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -136,7 +152,7 @@ const SecondSection = () => {
                 ...(scrolled && {
                   position: "relative",
                   top: -50, // Adjust the value as needed for top offset
-                  fontSize: { xl: 18, lg: 18, md: 14 },
+                  fontSize: fontSizeValue,
                 }),
               }}
             >
@@ -165,11 +181,13 @@ const SecondSection = () => {
                   top: 20,
                   color: "black",
                   right: 50, // Adjust the value as needed for left offset
-                  fontSize: { xl: 18, lg: 18, md: 14 },
+                  fontSize: fontSizeValue,
                 }),
               }}
             >
-              COMMUNITY ASSOCIATION
+              <span>COMMUNITY</span>
+               
+              <span>ASSOCIATION</span>
             </Typography>
           </Box>
         </Box>
@@ -201,7 +219,9 @@ const SecondSection = () => {
                 }),
               }}
             >
-              AFFINITY ORGANIZATION
+              <span>AFFINITY</span>
+              <span>ORGANIZATION</span>
+               
             </Typography>
           </Box>
           {/* New Image Box */}
@@ -261,6 +281,9 @@ const styles = {
     lineHeight: { xl: "28px", lg: "28px", md: "19px" },
     color: "#fff",
     fontFamily: "Public Sans",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
   innerCircle: {
     width: { xl: 253, lg: 253, md: 173, sm: 163 },
