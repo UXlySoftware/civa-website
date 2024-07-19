@@ -1,289 +1,413 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
-import civalogoImage from "../assets/civa-logo-white.png";
-import { useMediaQuery } from "@mui/material";
+import venDiagram from "../assets/venDiagram.png";
+import logo from "../assets/civalogo.png";
+import zIndex from "@mui/material/styles/zIndex";
 
 const SecondSection = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [imageVisible, setImageVisible] = useState(false); // New state for image visibility
-  const isXLargeScreen = useMediaQuery("(min-width:1920px)");
-  const isLargeScreen = useMediaQuery(
-    "(min-width:1280px) and (max-width:1919px)"
-  );
-  const isMediumScreen = useMediaQuery(
-    "(min-width:960px) and (max-width:1279px)"
-  );
-  const isSmallScreen = useMediaQuery(
-    "(min-width:600px) and (max-width:959px)"
-  );
-  const isXSmallScreen = useMediaQuery("(max-width:599px)");
+  const [circleOpacity, setCircleOpacity] = useState(1);
+  const [logoOpacity, setLogoOpacity] = useState(0);
+  const [animation, setAnimation] = useState(false);
+  const containerRef = useRef(null);
+  const vennContainerRef = useRef<HTMLDivElement | null>(null);
+  const circleContainerRef = useRef<HTMLDivElement | null>(null);
+  const outerfirstCircleContainerRef = useRef<HTMLDivElement | null>(null);
+  const outersecondCircleContainerRef = useRef<HTMLDivElement | null>(null);
+  const outerthirdCircleContainerRef = useRef<HTMLDivElement | null>(null);
+  const timeoutRef = useRef<number | null>(null);
 
-  const getCircleTranslations = () => {
-    if (isXLargeScreen) {
-      return [
-        { translateX: 210, translateY: 58 },
-        { translateX: 78, translateY: 85 },
-        { translateX: 20, translateY: 85 },
-        { translateX: 370, translateY: 375 },
-      ];
-    } else if (isLargeScreen) {
-      return [
-        { translateX: 210, translateY: 58 },
-        { translateX: 78, translateY: 85 },
-        { translateX: 20, translateY: 85 },
-        { translateX: 370, translateY: 375 },
-      ];
-    } else if (isMediumScreen) {
-      //1366x1024
-      return [
-        { translateX: 190, translateY: 90 },
-        { translateX: 55, translateY: 120 },
-        { translateX: 0, translateY: 120 },
-        { translateX: 300, translateY: 480 },
-      ];
-    } else if (isSmallScreen) {
-      return [
-        { translateX: 120, translateY: 40 },
-        { translateX: 45, translateY: 50 },
-        { translateX: 5, translateY: 50 },
-        { translateX: 220, translateY: 225 },
-      ];
-    } else if (isXSmallScreen) {
-      return [
-        { translateX: 90, translateY: 35 },
-        { translateX: 35, translateY: 40 },
-        { translateX: 0, translateY: 40 },
-        { translateX: 170, translateY: 175 },
-      ];
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const container: any = containerRef.current;
+      const containerBottom = container.getBoundingClientRect().bottom;
+      const windowHeight = window.innerHeight;
+
+      if (containerBottom <= windowHeight) {
+        setCircleOpacity(0.8); // Set to semi-transparent
+
+        setAnimation(true);
+        if (vennContainerRef.current) {
+          vennContainerRef.current.style.transform =
+            "translateY(calc(100vw * -50 / 1920))";
+          vennContainerRef.current.style.transition =
+            "transform 0.6s ease-in-out";
+        }
+        if (outerfirstCircleContainerRef.current) {
+          outerfirstCircleContainerRef.current.style.border =
+            "5px dashed transparent";
+          outerfirstCircleContainerRef.current.style.transition =
+            "border 0.4s ease";
+        }
+        if (outersecondCircleContainerRef.current) {
+          outersecondCircleContainerRef.current.style.border =
+            "5px dashed transparent";
+          outersecondCircleContainerRef.current.style.transition =
+            "border 0.4s ease";
+        }
+        if (outerthirdCircleContainerRef.current) {
+          outerthirdCircleContainerRef.current.style.border =
+            "5px dashed transparent";
+          outerthirdCircleContainerRef.current.style.transition =
+            "border 0.4s ease";
+        }
+        if (circleContainerRef.current) {
+          circleContainerRef.current.style.transform =
+            "translate(calc(100vw * 400 / 1920), calc(100vw * 350 / 1920))";
+          circleContainerRef.current.style.transition =
+            "transform 0.6s ease-in-out";
+          // Adjust left and right circles
+          const circles: any = circleContainerRef.current.children;
+          if (circles.length === 4) {
+            // COMMUNITY ASSOCIATION - move 50px left, 50px bottom
+            circles[0].firstChild.firstChild.style.transform =
+              "translate(calc(100vw * -70 / 1920), calc(100vw * 20 / 1920))";
+            //COMMUNITY ASSOCIATION text color
+            circles[0].firstChild.firstChild.style.color = "#010101";
+            circles[0].firstChild.firstChild.style.transition =
+              "transform 0.6s ease-in-out";
+            // GOVERNMENT - move 50px top
+            circles[1].firstChild.firstChild.style.transform =
+              "translate(calc(100vw * 0 / 1920), calc(100vw * -50 / 1920))";
+            circles[1].firstChild.firstChild.style.transition =
+              "transform 0.6s ease-in-out";
+            // AFFINITY ORGANIZATION - move 50px right, 50px bottom
+            circles[2].firstChild.firstChild.style.transform =
+              "translate(calc(100vw * 55 / 1920), calc(100vw * 20 / 1920))";
+            circles[2].firstChild.firstChild.style.transition =
+              "transform 0.6s ease-in-out";
+            // Left circle
+            circles[0].style.transform =
+              "translate(calc(100vw * 300 / 1920), calc(100vw * 100 / 1920))";
+            circles[0].style.transition = "transform 0.6s ease-in-out";
+            // Center circle
+            circles[1].style.transform =
+              "translate(calc(100vw * 0 / 1920), calc(100vw * -50 / 1920))";
+            circles[1].style.transition = "transform 0.6s ease-in-out";
+            // Right circle
+            circles[2].style.transform =
+              "translate(calc(100vw * -300 / 1920), calc(100vw * 100 / 1920))";
+            circles[2].style.transition = "transform 0.6s ease-in-out";
+            circles[3].style.transform =
+              "translate(calc(100vw * 0 / 1920), calc(100vw * 50 / 1920))";
+            // Increase inner circle size
+            circles[0].firstChild.style.width = "calc(100vw * 313 / 1920)";
+            circles[0].firstChild.style.height = "calc(100vw * 313 / 1920)";
+            circles[1].firstChild.style.width = "calc(100vw * 313 / 1920)";
+            circles[1].firstChild.style.height = "calc(100vw * 313 / 1920)";
+            circles[2].firstChild.style.width = "calc(100vw * 313 / 1920)";
+            circles[2].firstChild.style.height = "calc(100vw * 313 / 1920)";
+            circles[0].firstChild.style.transition =
+              "width 0.6s ease-in-out, height 0.6s ease-in-out";
+            circles[1].firstChild.style.transition =
+              "width 0.6s ease-in-out, height 0.6s ease-in-out";
+            circles[2].firstChild.style.transition =
+              "width 0.6s ease-in-out, height 0.6s ease-in-out";
+
+            // Change font size to 16px and max width to 100px
+            circles[0].firstChild.firstChild.style.fontSize =
+              "calc(100vw * 20 / 1920)";
+            circles[1].firstChild.firstChild.style.fontSize =
+              "calc(100vw * 20 / 1920)";
+            circles[2].firstChild.firstChild.style.fontSize =
+              "calc(100vw * 20 / 1920)";
+            circles[0].firstChild.firstChild.style.maxWidth =
+              "calc(100vw * 150 / 1920)";
+            circles[1].firstChild.firstChild.style.maxWidth =
+              "calc(100vw * 150 / 1920)";
+            circles[2].firstChild.firstChild.style.maxWidth =
+              "calc(100vw * 150 / 1920)";
+
+            // Make GOVERNMENT circle zIndex lowest
+            circles[0].style.zIndex = 3; // COMMUNITY ASSOCIATION
+            circles[1].style.zIndex = 1; // GOVERNMENT
+            circles[2].style.zIndex = 2; // AFFINITY ORGANIZATION
+          }
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
+          timeoutRef.current = window.setTimeout(() => {
+            setLogoOpacity(1);
+          }, 200);
+        }
+      } else {
+        setAnimation(false);
+        setCircleOpacity(1); // Set back to fully opaque
+        setLogoOpacity(0);
+
+        if (vennContainerRef.current) {
+          vennContainerRef.current.style.transform =
+            "translateY(calc(100vw * 0 / 1920))";
+        }
+        if (circleContainerRef.current) {
+          circleContainerRef.current.style.transform =
+            "translate(calc(100vw * 0 / 1920), calc(100vw * 0 / 1920))";
+          // Reset left and right circles
+          const circles: any = circleContainerRef.current.children;
+          if (circles.length === 4) {
+            // Reset text position
+            circles[0].firstChild.firstChild.style.transform =
+              "translate(0px, 0px)";
+            circles[1].firstChild.firstChild.style.transform =
+              "translate(0px, 0px)";
+            circles[2].firstChild.firstChild.style.transform =
+              "translate(0px, 0px)";
+            // Reset circle position
+            circles[0].style.transform = "translateX(calc(100vw * 0 / 1920))";
+            circles[1].style.transform = "translateX(calc(100vw * 0 / 1920))";
+            circles[2].style.transform = "translateX(calc(100vw * 0 / 1920))";
+            circles[3].style.transform = "translateX(calc(100vw * 0 / 1920))";
+            // Reset inner circle size
+            circles[0].firstChild.style.width = 253;
+            circles[0].firstChild.style.height = 253;
+            circles[1].firstChild.style.width = 253;
+            circles[1].firstChild.style.height = 253;
+            circles[2].firstChild.style.width = 253;
+            circles[2].firstChild.style.height = 253;
+
+            // Reset font size and max width
+            circles[0].firstChild.firstChild.style.fontSize = "";
+            circles[1].firstChild.firstChild.style.fontSize = "";
+            circles[2].firstChild.firstChild.style.fontSize = "";
+            circles[0].firstChild.firstChild.style.maxWidth = "";
+            circles[1].firstChild.firstChild.style.maxWidth = "";
+            circles[2].firstChild.firstChild.style.maxWidth = "";
+
+            //Reset COMMUNITY ASSOCIATION text color
+            circles[0].firstChild.firstChild.style.color = "#fff";
+
+            // Reset zIndex
+            circles[0].style.zIndex = 3; // COMMUNITY ASSOCIATION
+            circles[1].style.zIndex = 2; // GOVERNMENT
+            circles[2].style.zIndex = 1; // AFFINITY ORGANIZATION
+          }
+        }
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
+      }
     }
-    return [
-      { translateX: 210, translateY: 58 },
-      { translateX: 78, translateY: 85 },
-      { translateX: 20, translateY: 85 },
-      { translateX: 370, translateY: 375 },
-    ];
   };
-
-  const circleTranslations = getCircleTranslations();
-
-  const getScaleValue = () => {
-    if (isXLargeScreen) {
-      return 1.4;
-    } else if (isLargeScreen) {
-      return 1.5;
-    } else if (isMediumScreen) {
-      return 1.3;
-    } else if (isSmallScreen) {
-      return 1.2;
-    } else if (isXSmallScreen) {
-      return 1;
-    }
-    return 1.4; // Default value
-  };
-
-  const scaleValue = getScaleValue();
-
-  const getFontSizeValue = () => {
-    if (isXLargeScreen) {
-      return { xl: 18, lg: 18, md: 14 };
-    } else if (isLargeScreen) {
-      return { xl: 18, lg: 18, md: 14 };
-    } else if (isMediumScreen) {
-      return { xl: 16, lg: 12, md: 10 };
-    } else if (isSmallScreen) {
-      return { xl: 14, lg: 12, md: 10 };
-    } else if (isXSmallScreen) {
-      return { xl: 12, lg: 12, md: 10 };
-    }
-    return { xl: 18, lg: 18, md: 14 }; // Default value
-  };
-  const fontSizeValue = getFontSizeValue();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const extraScroll = 30; // İstediğiniz ekstra scroll mesafesini buraya yazabilirsiniz
-
-      if (scrollPosition > windowHeight + extraScroll) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-        setImageVisible(false); // Reset image visibility when scrolling up
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   useEffect(() => {
-    if (scrolled) {
-      const timeout = setTimeout(() => {
-        setImageVisible(true);
-      }, 100); // Adjust the delay as needed
-      return () => clearTimeout(timeout);
+    if (!animation) {
+      setTimeout(() => {
+        if (!animation) {
+          if (outerfirstCircleContainerRef.current) {
+            outerfirstCircleContainerRef.current.style.border =
+              "5px dashed #FFC000";
+            outerfirstCircleContainerRef.current.style.transition =
+              "border 0.4s ease-in-out";
+          }
+          if (outersecondCircleContainerRef.current) {
+            outersecondCircleContainerRef.current.style.border =
+              "5px dashed #2E86AB";
+            outersecondCircleContainerRef.current.style.transition =
+              "border 0.4s ease-in-out";
+          }
+          if (outerthirdCircleContainerRef.current) {
+            outerthirdCircleContainerRef.current.style.border =
+              "5px dashed #76848A";
+            outerthirdCircleContainerRef.current.style.transition =
+              "border 0.4s ease-in-out";
+          }
+        }
+      }, 500);
     }
-  }, [scrolled]);
+  }, [animation]);
 
   return (
-    <Container sx={styles.container}>
-      <Box sx={styles.circleContainer}>
-        <Box
-          sx={{
-            ...styles.circle,
-            ...(scrolled && {
-              transform: `translate(${circleTranslations[0].translateX}%, ${circleTranslations[0].translateY}%) scale(1.2)`,
-              opacity: 0.8,
-              width: { xl: 500, lg: 450, md: 379, sm: 349 },
-              height: { xl: 500, lg: 450, md: 379, sm: 349 },
-            }),
-            borderColor: scrolled ? "transparent" : "#FFC000",
-            zIndex: 3,
-          }}
-        >
-          <Box sx={{ ...styles.innerCircle, background: "#FFC000" }}>
-            <Typography
+    <Box sx={{ overflow: "hidden" }}>
+      <Container
+        sx={{
+          width: "100%",
+          justifyContent: "center",
+          position: "relative",
+          textAlign: "center",
+          display: {
+            xl: "flex",
+            lg: "flex",
+            md: "none",
+            sm: "none",
+            xs: "none",
+          },
+          minHeight: "500px",
+        }}
+      >
+        <Box sx={styles.circleContainer} ref={circleContainerRef}>
+          <Box
+            sx={{
+              ...styles.circle,
+              borderColor: "#FFC000",
+              zIndex: 3,
+            }}
+            ref={outerfirstCircleContainerRef}
+          >
+            <Box
               sx={{
-                ...styles.circleText,
-                ...(scrolled && {
-                  position: "relative",
-                  top: -50, // Adjust the value as needed for top offset
-                  fontSize: fontSizeValue,
-                }),
+                ...styles.innerCircle,
+                background: "#FFC000",
+                opacity: circleOpacity,
               }}
             >
-              GOVERNMENT
-            </Typography>
+              <Typography sx={styles.circleText}>
+                COMMUNITY ASSOCIATION
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-        <Box
-          sx={{
-            ...styles.circle,
-            ...(scrolled && {
-              transform: `translate(${circleTranslations[1].translateX}%, ${circleTranslations[1].translateY}%) scale(1.2)`,
-              width: { xl: 500, lg: 450, md: 379, sm: 349 },
-              height: { xl: 500, lg: 450, md: 379, sm: 349 },
-            }),
-            borderColor: scrolled ? "transparent" : "#2887AC",
-            zIndex: 2,
-          }}
-        >
-          <Box sx={{ ...styles.innerCircle, background: "#2887AC" }}>
-            <Typography
+          <Box
+            sx={{
+              ...styles.circle,
+              borderColor: "#2887AC",
+              zIndex: 2,
+            }}
+            ref={outersecondCircleContainerRef}
+          >
+            <Box
               sx={{
-                ...styles.circleText,
-                ...(scrolled && {
-                  position: "relative",
-                  top: 20,
-                  color: "black",
-                  right: 50, // Adjust the value as needed for left offset
-                  fontSize: fontSizeValue,
-                }),
+                ...styles.innerCircle,
+                background: "#2887AC",
+                /* opacity: circleOpacity, */
               }}
             >
-              <span>COMMUNITY</span>
-               
-              <span>ASSOCIATION</span>
-            </Typography>
+              <Typography sx={styles.circleText}>GOVERNMENT </Typography>
+            </Box>
           </Box>
-        </Box>
-        <Box
-          sx={{
-            ...styles.circle,
-            ...(scrolled && {
-              transform: `translate(${circleTranslations[2].translateX}%, ${circleTranslations[2].translateY}%) scale(1.2)`,
-              opacity: 0.8,
-              width: { xl: 500, lg: 450, md: 379, sm: 349 },
-              height: { xl: 500, lg: 450, md: 379, sm: 349 },
-            }),
-            borderColor: scrolled ? "transparent" : "#76848A",
-            zIndex: 3,
-          }}
-        >
-          <Box sx={{ ...styles.innerCircle, background: "#76848A" }}>
-            <Typography
+          <Box
+            sx={{
+              ...styles.circle,
+              borderColor: "#76848A",
+              zIndex: 1,
+            }}
+            ref={outerthirdCircleContainerRef}
+          >
+            <Box
               sx={{
-                ...styles.circleText,
-                ...(scrolled && {
-                  position: "relative",
-                  top: 20,
-                  left: 40, // Adjust the value as needed for left offset
-                  fontSize: { xl: 18, lg: 18, md: 14 },
-                  whiteSpace: "normal",
-                  wordBreak: "break-word",
-                  width: "80%", // Adjust the width as needed
-                }),
+                ...styles.innerCircle,
+                background: "#76848A",
+                opacity: circleOpacity,
               }}
             >
-              <span>AFFINITY</span>
-              <span>ORGANIZATION</span>
-               
-            </Typography>
+              <Typography sx={styles.circleText}>
+                AFFINITY ORGANIZATION
+              </Typography>
+            </Box>
           </Box>
-          {/* New Image Box */}
+          <Box
+            sx={[
+              thirdstyles.logo,
+              {
+                display: {
+                  xl: "flex",
+                  lg: "flex",
+                  md: "none",
+                  sm: "none",
+                  xs: "none",
+                },
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                height: "100%",
+                opacity: logoOpacity,
+              },
+            ]}
+            position="absolute"
+          >
+            <img src={logo} alt="CIVA Logo" style={thirdstyles.logoImage} />
+          </Box>
+        </Box>
+      </Container>
+      <Container
+        sx={{
+          ...thirdstyles.container,
+          paddingLeft: "0 !important",
+          pb: { xl: "10%", lg: "10%", md: 0, sm: 0, xs: 0 },
+        }}
+        ref={containerRef}
+      >
+        <Box sx={thirdstyles.textContainer}>
+          <Box sx={thirdstyles.sideBorder} />
+          <Typography variant="h4" sx={thirdstyles.heading}>
+            CIVA CONNECTS
+          </Typography>
+          <Typography
+            variant="h1"
+            sx={thirdstyles.subHeading}
+            ref={containerRef}
+          >
+            Our dynamic, integrated platform brings <br />
+            stakeholders together to create <br /> meaningful programs with
+            measurable <br /> impact.
+          </Typography>
         </Box>
         <Box
-          sx={{
-            ...styles.imageBox,
-            ...(imageVisible && {
-              visibility: "visible",
-              opacity: 1,
-              transform: `translate(${circleTranslations[3].translateX}%, ${circleTranslations[3].translateY}%) scale(${scaleValue})`,
-            }),
-          }}
+          sx={[
+            thirdstyles.vennContainer,
+            {
+              display: {
+                xl: "none",
+                lg: "none",
+                md: "block",
+                sm: "block",
+                xs: "block",
+              },
+            },
+          ]}
         >
           <img
-            src={civalogoImage}
+            src={venDiagram}
             alt="CIVA Venn Diagram"
-            style={{ ...styles.image, transform: "scale(0.6)" }}
+            style={thirdstyles.vennImage}
           />
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 
 const styles = {
   container: {
-    widtwidth: "100%",
-    display: { xs: "none", sm: "block", md: "block" },
+    display: { xs: "none", sm: "none", md: "none", lg: "block", xl: "block" },
     textAlign: "center",
     marginTop: 9,
     marginBottom: 14,
-    marginLeft: { xl: "20%", lg: "5%", md: "0" }, // Adjust for responsiveness
+    marginLeft: { xl: 42, lg: 12, md: 0, sm: 0, xs: 0 },
+    position: "relative",
   },
   circleContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     gap: 3,
-    transition: "all 1s ease",
+    transition: "transform 0.6s ease-in-out", // Added smooth transition
   },
   circle: {
     width: { xl: 410, lg: 350, md: 279, sm: 249 },
     height: { xl: 410, lg: 350, md: 279, sm: 249 },
     borderRadius: "50%",
-    border: "5px dashed",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    transition: "transform 1s ease, width 1s ease, height 1s ease", // Updated transitions
+    marginLeft: { xl: -2, lg: -3, md: -4 },
+    marginRight: -5,
+    transition: "border 2s ease, opacity 0.6s ease-in-out",
   },
   circleText: {
-    fontSize: { xl: 24, lg: 24, md: 16 },
+    fontSize: { xl: 24, lg: 24, md: 24 },
     fontWeight: 900,
     textAlign: "center",
-    lineHeight: { xl: "28px", lg: "28px", md: "19px" },
+    lineHeight: { xl: "22px", lg: "22px", md: "19px", sm: "19px", xs: "19px" },
     color: "#fff",
     fontFamily: "Public Sans",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
+    transition: "transform 0.6s ease-in-out",
   },
   innerCircle: {
     width: { xl: 253, lg: 253, md: 173, sm: 163 },
@@ -296,20 +420,173 @@ const styles = {
     marginLeft: -20,
     marginRight: -20,
     zIndex: 3,
+    transition:
+      "width 0.6s ease-in-out, height 0.6s ease-in-out, opacity 0.6s ease-in-out",
   },
-  imageBox: {
-    position: "absolute",
-    visibility: "hidden",
-    transform: "translate(100%, 150%)",
-    opacity: 1,
-    transition: "opacity 1s ease, transform 1s ease",
-    zIndex: 4, // Ensure it's above other elements
+  textContainer: {
+    textAlign: "center",
+    marginBottom: 4,
+  },
+  heading: {
+    fontWeight: "bold",
+    marginBottom: 2,
+  },
+  subHeading: {
+    color: "#555",
+    marginBottom: 3,
+  },
+  button: {
+    backgroundColor: "#FFC000",
+    color: "black",
+    "&:hover": {
+      backgroundColor: "#e6ac00",
+    },
+  },
+};
+
+const thirdstyles = {
+  container: {
+    textAlign: "center",
+    display: "flex",
+    justifyItems: "center",
+    flexDirection: { xs: "column-reverse", sm: "row", md: "row" },
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: { xs: 10, sm: 15 },
+    marginTop: { xs: 10, sm: 15 },
+  },
+  textContainer: {
+    justifyContent: "center",
+    textAlign: "left",
+    maxWidth: { xl: "40%", lg: "50%", md: "50%", sm: "50%", xs: "356px" },
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    gap: { xl: "32px", lg: "32px", md: "22px", sm: "22px", xs: "22px" },
+    marginRight: { xl: 10 },
+    marginTop: {
+      xl: "-100px",
+      lg: "-150px",
+      md: "-150px",
+      sm: "0px",
+      xs: "60px",
+    },
+    paddingLeft: { xl: 5, lg: 5, md: 5, sm: 7, xs: 5 },
+  },
+  sideBorder: {
+    "&::before": {
+      content: '""',
+      position: {
+        xs: "relative",
+        sm: "relative",
+        md: "relative",
+        lg: "absolute",
+        xl: "absolute",
+      },
+      left: {
+        xl: "230px",
+        lg: "0px",
+        md: "0px",
+        sm: "0px",
+        xs: "0px",
+      },
+      height: {
+        xl: "298px",
+        lg: "298px",
+        md: "298px",
+        sm: "268px",
+        xs: "233px",
+      },
+      marginTop: { xl: 0, lg: 0, md: 0, sm: 0, xs: 0 },
+      width: "16px",
+      backgroundColor: "black",
+    },
+  },
+  heading: {
+    fontFamily: "Public Sans",
+    fontWeight: "900",
+    fontSize: { xs: "36px", sm: "44px", md: "52px" },
+    lineHeight: { xs: "42px", sm: "58px" },
+  },
+  subHeading: {
+    color: "#010101",
+    fontWeight: 700,
+    fontSize: { md: "23px", sm: "20px", xs: "18px" },
+    lineHeight: "29px",
+    fontFamily: "Inter",
+  },
+  button: {
+    width: { md: "70%", xs: "95%" },
+    padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" },
+    fontFamily: "Inter",
+    fontSize: {
+      xs: "18px",
+      sm: "18px",
+      md: "18px",
+      lg: "22px",
+      xl: "22px",
+    },
+    lineHeight: { xs: "22px", sm: "22px", md: "22px", lg: "27px", xl: "27px" },
+    fontWeight: 700,
+    borderRadius: "12px",
+    textTransform: "none",
+    backgroundColor: "#FFC000",
+    color: "black",
+    "&:hover": {
+      backgroundColor: "#e8ae00",
+    },
+  },
+  vennContainer: {
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: { xs: 4, sm: 0, md: 0 },
+    paddingLeft: { xl: 0, lg: 0, md: 5, xs: 5 },
+    transition: "transform 0.6s ease-in-out", // Added smooth transition
+  },
+  logo: {
+    width: { xl: 163, lg: 163 },
+    height: { xl: 163, lg: 163 },
+    borderRadius: 100,
+    backgroundColor: "#000000",
+    transition: "all 0.2s ease-in-out",
+    zIndex: 3,
+  },
+  circle: {
+    position: {
+      xs: "relative",
+      sm: "relative",
+      md: "relative",
+      lg: "absolute",
+      xl: "absolute",
+    },
+    width: 140,
+    height: 140,
     borderRadius: "50%",
-    backgroundColor: "black",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    padding: 2,
   },
-  image: {
-    width: 100, // Adjust the size as needed
-    height: 100,
+  vennText: {
+    color: "#fff",
+    fontSize: 12,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+
+  vennImage: {
+    maxWidth: "100%",
+    height: "auto",
+    width: "100%",
+  },
+
+  logoImage: {
+    maxWidth: "50%",
+    height: "93.5px",
+    width: "70px",
   },
 };
 

@@ -84,13 +84,13 @@ const FourthSection = () => {
       }, 2500); // Adjust the delay as needed
       const timeout6 = setTimeout(() => {
         setPlatform6Visible(true);
-      }, 3500); // Adjust the delay as needed
+      }, 1500); // Adjust the delay as needed
       const timeout7 = setTimeout(() => {
         setPlatform7Visible(true);
-      }, 4000); // Adjust the delay as needed
+      }, 2400); // Adjust the delay as needed
       const timeout8 = setTimeout(() => {
         setPlatform8Visible(true);
-      }, 4500); // Adjust the delay as needed
+      }, 3300); // Adjust the delay as needed
 
       return () => {
         clearTimeout(timeout0);

@@ -5,12 +5,12 @@ import venDiagram from "../assets/venDiagram.png";
 const ThirdSection = () => {
   return (
     <Container
-      sx={{
+      /* sx={{
         ...styles.container,
         paddingLeft: "0 !important",
-      }}
+      }} */
     >
-      <Box sx={styles.textContainer}>
+   {/*    <Box sx={styles.textContainer}>
         <Box sx={styles.sideBorder} />
         <Typography variant="h4" sx={styles.heading}>
           CIVA CONNECTS
@@ -20,7 +20,7 @@ const ThirdSection = () => {
           stakeholders together to create <br /> meaningful programs with
           measurable <br /> impact.
         </Typography>
-      </Box>
+      </Box> */}
       <Box sx={styles.vennContainer}>
         {/* <img
           src={venDiagram}
