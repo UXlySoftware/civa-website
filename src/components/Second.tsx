@@ -257,7 +257,14 @@ const SecondSection = () => {
                 opacity: circleOpacity,
               }}
             >
-              <Typography sx={styles.circleText}>
+              <Typography sx={{
+                ...styles.circleText,
+                ...(animation && {
+                  marginLeft:'20%',
+                  lineHeight: 0.85,
+                })
+
+              }}>
                 COMMUNITY ASSOCIATION
               </Typography>
             </Box>
@@ -295,7 +302,14 @@ const SecondSection = () => {
                 opacity: circleOpacity,
               }}
             >
-              <Typography sx={styles.circleText}>
+              <Typography sx={{
+                ...styles.circleText,
+                ...(animation && {
+                  marginLeft:'-30%',
+                  lineHeight: 0.85,
+                })
+
+              }}>
                 AFFINITY ORGANIZATION
               </Typography>
             </Box>
