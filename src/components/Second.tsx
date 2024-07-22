@@ -260,7 +260,7 @@ const SecondSection = () => {
               <Typography sx={{
                 ...styles.circleText,
                 ...(animation && {
-                  marginLeft:'20%',
+                  marginLeft:'15%',
                   lineHeight: 0.85,
                 })
 
@@ -305,7 +305,7 @@ const SecondSection = () => {
               <Typography sx={{
                 ...styles.circleText,
                 ...(animation && {
-                  marginLeft:'-30%',
+                  marginLeft:'-25%',
                   lineHeight: 0.85,
                 })
 
