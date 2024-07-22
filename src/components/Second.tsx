@@ -257,15 +257,15 @@ const SecondSection = () => {
                 opacity: circleOpacity,
               }}
             >
-              <Typography sx={{
-                ...styles.circleText,
-                ...(animation && {
-
-                  marginLeft:'0%',
-                  lineHeight: 1.3,
-                })
-
-              }}>
+              <Typography
+                sx={{
+                  ...styles.circleText,
+                  ...(animation && {
+                    marginLeft: "0%",
+                    lineHeight: 1.3,
+                  }),
+                }}
+              >
                 COMMUNITY ASSOCIATION
               </Typography>
             </Box>
@@ -303,18 +303,18 @@ const SecondSection = () => {
                 opacity: circleOpacity,
               }}
             >
-              <Typography sx={{
-                ...styles.circleText,
-                ...(animation && {
-                  marginLeft:'0%',
-                  lineHeight: 1.3,
-                  '@media (max-width: 1366px)': {
-              marginLeft: '-20%',
-            },
-
-                })
-
-              }}>
+              <Typography
+                sx={{
+                  ...styles.circleText,
+                  ...(animation && {
+                    marginLeft: "0%",
+                    lineHeight: 1.3,
+                    "@media (max-width: 1366px)": {
+                      marginLeft: "-20%",
+                    },
+                  }),
+                }}
+              >
                 AFFINITY ORGANIZATION
               </Typography>
             </Box>
@@ -423,7 +423,7 @@ const styles = {
     fontSize: { xl: 24, lg: 24, md: 24 },
     fontWeight: 900,
     textAlign: "center",
-    lineHeight: { xl: "22px", lg: "22px", md: "19px", sm: "19px", xs: "19px" },
+    lineHeight: { xl: "28px", lg: "24px", md: "21px", sm: "19px", xs: "19px" },
     color: "#fff",
     fontFamily: "Public Sans",
     transition: "transform 0.6s ease-in-out",
