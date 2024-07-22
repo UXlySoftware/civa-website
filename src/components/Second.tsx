@@ -260,8 +260,9 @@ const SecondSection = () => {
               <Typography sx={{
                 ...styles.circleText,
                 ...(animation && {
-                  marginLeft:'15%',
-                  lineHeight: 0.9,
+
+                  marginLeft:'0%',
+                  lineHeight: 1.3,
                 })
 
               }}>
@@ -305,8 +306,8 @@ const SecondSection = () => {
               <Typography sx={{
                 ...styles.circleText,
                 ...(animation && {
-                  marginLeft:'-25%',
-                  lineHeight: 0.9,
+                  marginLeft:'0%',
+                  lineHeight: 1.3,
                 })
 
               }}>
@@ -605,3 +606,8 @@ const thirdstyles = {
 };
 
 export default SecondSection;
+/* xs, extra-small: 0px
+sm, small: 600px
+md, medium: 900px
+lg, large: 1200px
+xl, extra-large: 1536px */
