@@ -312,7 +312,6 @@ const SecondSection = () => {
                     "@media (max-width: 1537px)": {
                       marginLeft: "-20%",
                     },
-                    
                   }),
                 }}
               >
