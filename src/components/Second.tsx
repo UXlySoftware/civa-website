@@ -309,9 +309,10 @@ const SecondSection = () => {
                   ...(animation && {
                     marginLeft: "0%",
                     lineHeight: 1.3,
-                    "@media (max-width: 1366px)": {
+                    "@media (max-width: 1537px)": {
                       marginLeft: "-20%",
                     },
+                    
                   }),
                 }}
               >
