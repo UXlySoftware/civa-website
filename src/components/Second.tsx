@@ -261,7 +261,7 @@ const SecondSection = () => {
                 ...styles.circleText,
                 ...(animation && {
                   marginLeft:'15%',
-                  lineHeight: 0.85,
+                  lineHeight: 0.9,
                 })
 
               }}>
@@ -306,7 +306,7 @@ const SecondSection = () => {
                 ...styles.circleText,
                 ...(animation && {
                   marginLeft:'-25%',
-                  lineHeight: 0.85,
+                  lineHeight: 0.9,
                 })
 
               }}>
