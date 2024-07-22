@@ -245,6 +245,11 @@ const SecondSection = () => {
           <Box
             sx={{
               ...styles.circle,
+              ...(animation && {
+                "@media (max-width: 1537px)": {
+                  marginTop: "25%",
+                },
+              }),
               borderColor: "#FFC000",
               zIndex: 3,
             }}
@@ -265,6 +270,7 @@ const SecondSection = () => {
                     lineHeight: 1.3,
                     "@media (max-width: 1537px)": {
                       marginLeft: "10%",
+                      
                     },
                   }),
                 }}
@@ -276,6 +282,11 @@ const SecondSection = () => {
           <Box
             sx={{
               ...styles.circle,
+              ...(animation && {
+                "@media (max-width: 1537px)": {
+                  marginTop: "25%",
+                },
+              }),
               borderColor: "#2887AC",
               zIndex: 2,
             }}
@@ -294,6 +305,11 @@ const SecondSection = () => {
           <Box
             sx={{
               ...styles.circle,
+              ...(animation && {
+                "@media (max-width: 1537px)": {
+                  marginTop: "25%",
+                },
+              }),
               borderColor: "#76848A",
               zIndex: 1,
             }}
@@ -338,7 +354,13 @@ const SecondSection = () => {
                 width: "100%",
                 height: "100%",
                 opacity: logoOpacity,
+                ...(animation && {
+                  "@media (max-width: 1537px)": {
+                    marginTop: "25%",
+                  },
+                }),
               },
+              
             ]}
             position="absolute"
           >
