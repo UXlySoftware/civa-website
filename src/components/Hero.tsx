@@ -105,6 +105,7 @@ const styles = {
       md: "0px 0px",
       sm: "0px 90px",
     },
+    maxWidth: "1440px",
   },
   innerLeft: {
     width: { xl: "80%", lg: "75%", md: "75%", sm: "83%" },
