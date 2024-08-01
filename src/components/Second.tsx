@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import venDiagram from "../assets/venDiagram.png";
 import logo from "../assets/civalogo.png";
-import zIndex from "@mui/material/styles/zIndex";
 
 const SecondSection = () => {
   const [circleOpacity, setCircleOpacity] = useState(1);
@@ -23,13 +22,14 @@ const SecondSection = () => {
       const windowHeight = window.innerHeight;
 
       if (containerBottom <= windowHeight) {
+        
         setCircleOpacity(0.8); // Set to semi-transparent
-
         setAnimation(true);
+        
         if (vennContainerRef.current) {
           vennContainerRef.current.style.transform =
             "translateY(calc(100vw * -50 / 1920))";
-          vennContainerRef.current.style.transition =
+            vennContainerRef.current.style.transition =
             "transform 0.6s ease-in-out";
         }
         if (outerfirstCircleContainerRef.current) {
@@ -245,11 +245,11 @@ const SecondSection = () => {
           <Box
             sx={{
               ...styles.circle,
-              ...(animation && {
+            /*   ...(animation && {
                 "@media (max-width: 1537px)": {
                   marginTop: "25%",
                 },
-              }),
+              }), */
               borderColor: "#FFC000",
               zIndex: 3,
             }}
@@ -282,11 +282,11 @@ const SecondSection = () => {
           <Box
             sx={{
               ...styles.circle,
-              ...(animation && {
+             /*  ...(animation && {
                 "@media (max-width: 1537px)": {
                   marginTop: "25%",
                 },
-              }),
+              }), */
               borderColor: "#2887AC",
               zIndex: 2,
             }}
@@ -305,11 +305,11 @@ const SecondSection = () => {
           <Box
             sx={{
               ...styles.circle,
-              ...(animation && {
+             /*  ...(animation && {
                 "@media (max-width: 1537px)": {
                   marginTop: "25%",
                 },
-              }),
+              }), */
               borderColor: "#76848A",
               zIndex: 1,
             }}
@@ -354,11 +354,11 @@ const SecondSection = () => {
                 width: "100%",
                 height: "100%",
                 opacity: logoOpacity,
-                ...(animation && {
+                /* ...(animation && {
                   "@media (max-width: 1537px)": {
                     marginTop: "25%",
                   },
-                }),
+                }), */
               },
               
             ]}
