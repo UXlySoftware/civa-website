@@ -1,6 +1,5 @@
 import React from "react";
 import OurMission from "../AboutUs/OurMission";
-import OurTeam from "../AboutUs/OurTeam";
 import JoinCommunity from "../../components/JoinCommunity";
 import CivaStory from "./CivaStory";
 import AboutUsHero from "./AboutUsHero";
@@ -13,7 +12,7 @@ const AboutUs = () => {
       <CivaStory />
       <OurMission />
       <Founders />
-      <OurTeam />
+      {/* <OurTeam /> */}
       <JoinCommunity />
     </>
   );
