@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
 
 import Government from "../assets/Government.svg";
@@ -9,15 +9,10 @@ import socialMobile from "../assets/socialMobile.png";
 import plusIcon from "../assets/plus.png";
 import equalIcon from "../assets/equal.png";
 
-const Platform = ({ customStyles = {} }) => (
-  <Box sx={{ ...styles.platform, ...customStyles }}></Box>
-);
-
 const FourthSection = () => {
-  // const secondLayerColors = ["#74ADC7", "#A4ACB1"];
-  // const thirdLayerColors = ["#BFD9E5", "#D5D9DB"];
-
   const [scrolled, setScrolled] = useState(false);
+  const hasAnimated = useRef(false); // Track animation trigger status
+
   const [platform0Visible, setPlatform0Visible] = useState(false);
   const [platform1Visible, setPlatform1Visible] = useState(false);
   const [platform2Visible, setPlatform2Visible] = useState(false);
@@ -28,29 +23,20 @@ const FourthSection = () => {
   const [platform7Visible, setPlatform7Visible] = useState(false);
   const [platform8Visible, setPlatform8Visible] = useState(false);
 
-
-
   useEffect(() => {
     const handleScroll = () => {
-      const element = document.getElementById("animatedBox");
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
+      if (!hasAnimated.current) {
+        // Only trigger if the animation hasn't run yet
+        const element = document.getElementById("animatedBox");
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
 
-        // Elementin görünürlüğünü kontrol et
-        if (rect.top < windowHeight && rect.bottom >= 0) {
-          setScrolled(true);
-        } else {
-          setScrolled(false);
-          setPlatform0Visible(false);
-          setPlatform1Visible(false);
-          setPlatform2Visible(false); // Reset platform visibility when scrolling up
-          setPlatform3Visible(false);
-          setPlatform4Visible(false);
-          setPlatform5Visible(false);
-          setPlatform6Visible(false);
-          setPlatform7Visible(false);
-          setPlatform8Visible(false);
+          // Check if the element is visible
+          if (rect.top < windowHeight && rect.bottom >= 0) {
+            setScrolled(true);
+            hasAnimated.current = true; // Mark the animation as triggered
+          }
         }
       }
     };
@@ -106,28 +92,6 @@ const FourthSection = () => {
     }
   }, [scrolled]);
 
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById("animatedBox");
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        // Elementin görünürlüğünü kontrol et
-        if (rect.top < windowHeight && rect.bottom >= 0) {
-          setScrolled(true);
-        } else {
-          setScrolled(false);
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <Container sx={styles.container} maxWidth={false}>
       {/* Engagement Empower section begins */}
@@ -156,7 +120,9 @@ const FourthSection = () => {
               ...styles.platform0,
               gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
               background: "#2E86AB",
-              transform: platform0Visible ? "translateX(0)" : "translateX(-50vw)",
+              transform: platform0Visible
+                ? "translateX(0)"
+                : "translateX(-50vw)",
             }}
           >
             <Typography variant="body1" sx={styles.platformText}>
@@ -167,14 +133,15 @@ const FourthSection = () => {
             {/* Plus sign */}
           </Box>
 
-          <Box 
-           id="animatedBox"
-          sx={{
-            ...styles.plusSignContainer,
-            ...(platform6Visible && {
-              visibility: "visible",
-            })
-            }}>
+          <Box
+            id="animatedBox"
+            sx={{
+              ...styles.plusSignContainer,
+              ...(platform6Visible && {
+                visibility: "visible",
+              }),
+            }}
+          >
             <Box
               component="img"
               src={plusIcon}
@@ -189,7 +156,9 @@ const FourthSection = () => {
               ...styles.platform1,
               gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
               background: "#76848A",
-              transform: platform1Visible ? "translateX(0)" : "translateX(50vw)",
+              transform: platform1Visible
+                ? "translateX(0)"
+                : "translateX(50vw)",
             }}
           >
             <img src={Community} alt="Community Icon" style={styles.icon} />
@@ -202,14 +171,14 @@ const FourthSection = () => {
 
         {/* Equal sign */}
         <Box
-            id="animatedBox"
-         sx={{
-          ...styles.dragHandleSignContainer,
-          ...(platform7Visible && {
-            visibility: "visible",
-          })
-          
-          }}>
+          id="animatedBox"
+          sx={{
+            ...styles.dragHandleSignContainer,
+            ...(platform7Visible && {
+              visibility: "visible",
+            }),
+          }}
+        >
           <Box
             component="img"
             alt="equal"
@@ -227,12 +196,13 @@ const FourthSection = () => {
               sx={{
                 ...styles.platform2,
                 ...(scrolled && {
-                gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
-                background: "#74ADC7",
-                
-                transform: platform2Visible ? "translateX(-25%)" : "translateX(-55vw)",
-              })
+                  gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
+                  background: "#74ADC7",
 
+                  transform: platform2Visible
+                    ? "translateX(-25%)"
+                    : "translateX(-55vw)",
+                }),
               }}
             ></Box>
 
@@ -241,22 +211,15 @@ const FourthSection = () => {
               sx={{
                 ...styles.platform3,
                 ...(scrolled && {
-                gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
-                background: "#A4ACB1",
-                transform: platform3Visible ? "translateX(25%)" : "translateX(55vw)",
-              })
+                  gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
+                  background: "#A4ACB1",
+                  transform: platform3Visible
+                    ? "translateX(25%)"
+                    : "translateX(55vw)",
+                }),
               }}
             ></Box>
           </Box>
-          {/* {secondLayerColors.map((bgColor, index) => (
-            <Platform
-              key={index}
-              customStyles={{
-                ...styles.shortenedPlatform,
-                backgroundColor: bgColor,
-              }}
-            />
-          ))} */}
         </Box>
 
         <Box id="animatedBox" sx={styles.shortestPlatformSection}>
@@ -267,7 +230,9 @@ const FourthSection = () => {
                 ...styles.platform4,
                 gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
                 background: "#BFD9E5",
-                transform: platform4Visible ? "translateX(-55%)" : "translateX(-55vw)",
+                transform: platform4Visible
+                  ? "translateX(-55%)"
+                  : "translateX(-55vw)",
               }}
             ></Box>
 
@@ -277,27 +242,21 @@ const FourthSection = () => {
                 ...styles.platform5,
                 gap: { xl: 7, lg: 7, md: 7, sm: 1, xs: 7 },
                 background: "#D5D9DB",
-                transform: platform5Visible ? "translateX(55%)" : "translateX(55vw)",
+                transform: platform5Visible
+                  ? "translateX(55%)"
+                  : "translateX(55vw)",
               }}
             ></Box>
           </Box>
-          {/* {thirdLayerColors.map((bgColor, index) => (
-            <Platform
-              key={index}
-              customStyles={{
-                ...styles.shortenedPlatform,
-                backgroundColor: bgColor,
-              }}
-            />
-          ))} */}
         </Box>
         {/* eClipse  */}
         <Box
-        id="animatedBox"
-          sx={{ ...styles.eClipseCss,
+          id="animatedBox"
+          sx={{
+            ...styles.eClipseCss,
             ...(platform8Visible && {
               visibility: "visible",
-            })
+            }),
           }}
         >
           <Box
@@ -361,8 +320,7 @@ const FourthSection = () => {
 };
 
 const styles = {
-  eClipseCss:{
-    
+  eClipseCss: {
     marginTop: { xl: 10, sm: 5, xs: 20 },
     display: "flex",
     justifyContent: "center",
@@ -602,7 +560,6 @@ const styles = {
     position: "relative",
     display: { xs: "none", sm: "flex" },
     transform: "translateX(-50vw)", // Başlangıç pozisyonu
-    
   },
   shortestPlatformSection1: {
     alignItems: "center",
@@ -611,7 +568,6 @@ const styles = {
     width: "100%",
     position: "relative",
     display: { xs: "none", sm: "flex" },
-    
   },
   shortestPlatformSection: {
     alignItems: "center",
@@ -620,7 +576,6 @@ const styles = {
     width: "100%",
     position: "relative",
     display: { xs: "none", sm: "flex" },
-    
   },
 
   heading: {
@@ -665,7 +620,6 @@ const styles = {
     transform: "translateX(-50%)",
     marginTop: "25px",
     visibility: "hidden",
-
   },
   DragHandleIcon: {
     width: "100%",
